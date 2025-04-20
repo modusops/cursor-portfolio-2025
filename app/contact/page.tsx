@@ -49,7 +49,7 @@ export default function Contact() {
               <div>
                 <div className="text-sm text-gray-500">Email</div>
                 <a href="mailto:hello@example.com" className="text-black hover:underline">
-                  hello@example.com
+                  juntochan@proton.me
                 </a>
               </div>
 
@@ -61,21 +61,11 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="text-black hover:underline"
                 >
-                  linkedin.com/in/yourname
+                  linkedin.com/in/davejuntochan
                 </a>
               </div>
 
-              <div>
-                <div className="text-sm text-gray-500">Twitter</div>
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-black hover:underline"
-                >
-                  @yourhandle
-                </a>
-              </div>
+          
             </div>
           </div>
         </div>
