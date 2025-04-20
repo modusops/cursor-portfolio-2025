@@ -5,31 +5,36 @@ export default function Work() {
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+        {/* Header with non-sticky logo */}
         <header className="flex items-center justify-between py-6">
           <div>
             <Link href="/">
               <h1 className="text-xl font-medium text-black">David Chan</h1>
             </Link>
           </div>
-          <nav className="flex space-x-4">
-            <Link href="/work" className="px-5 py-2 rounded-full bg-black text-white text-sm font-medium">
-              Work
-            </Link>
-            <Link
-              href="/about"
-              className="px-5 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors text-sm font-medium"
-            >
-              About
-            </Link>
-            <Link
-              href="/contact"
-              className="px-5 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors text-sm font-medium"
-            >
-              Contact
-            </Link>
-          </nav>
+
+          {/* Empty div to maintain layout with the sticky nav removed */}
+          <div className="md:block md:w-[216px]"></div>
         </header>
+
+        {/* Sticky Navigation */}
+        <nav className="fixed top-6 right-4 md:right-8 lg:right-[max(calc((100%-1280px)/2+32px),32px)] z-50 flex space-x-4 bg-white py-2 px-3 rounded-full shadow-sm">
+          <Link href="/work" className="px-5 py-2 rounded-full bg-black text-white text-sm font-medium">
+            Work
+          </Link>
+          <Link
+            href="/about"
+            className="px-5 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors text-sm font-medium"
+          >
+            About
+          </Link>
+          <Link
+            href="/contact"
+            className="px-5 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors text-sm font-medium"
+          >
+            Contact
+          </Link>
+        </nav>
 
         {/* Work Content */}
         <div className="py-12">
