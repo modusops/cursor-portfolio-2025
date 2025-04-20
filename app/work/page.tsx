@@ -8,8 +8,8 @@ export default function Work() {
         {/* Header */}
         <header className="flex items-center justify-between py-6">
           <div>
-            <Link href="/" className="text-xl text-gray-700 font-light">
-              David Chan
+            <Link href="/">
+              <h1 className="text-xl font-medium text-black">David Chan</h1>
             </Link>
           </div>
           <nav className="flex space-x-4">

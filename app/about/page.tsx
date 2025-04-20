@@ -7,8 +7,8 @@ export default function About() {
         {/* Header */}
         <header className="flex items-center justify-between py-6">
           <div>
-            <Link href="/" className="text-xl text-gray-700 font-light">
-              David Chan
+            <Link href="/">
+              <h1 className="text-xl font-medium text-black">David Chan</h1>
             </Link>
           </div>
           <nav className="flex space-x-4">
@@ -36,11 +36,16 @@ export default function About() {
 
           <div className="prose max-w-none text-lg">
             <p>
-              I'm a product designer I believe in crafting experiences that are not only functional but also beautiful and intuitive. I'm detail-oriented and driven by setting a high bar in design and execution (and knows what excellence looks like). With more than a decade of experience, I've worked on a wide range of projects across mobile, responsive web, and AI technologies. 
+              I'm a product designer I believe in crafting experiences that are not only functional but also beautiful
+              and intuitive. I'm detail-oriented and driven by setting a high bar in design and execution (and knows
+              what excellence looks like). With more than a decade of experience, I've worked on a wide range of
+              projects across mobile, responsive web, and AI technologies.
             </p>
-            
+
             <p>
-            As an IC with a history of taking on ambitious 0-to-1 projects, strategize, design, ship code, and as a former manager leading a team I can operate at all levels to help deliver exceptional product experiences through design and code. See my contributions: https://github.com/DaveChan-ux
+              As an IC with a history of taking on ambitious 0-to-1 projects, strategize, design, ship code, and as a
+              former manager leading a team I can operate at all levels to help deliver exceptional product experiences
+              through design and code. See my contributions: https://github.com/DaveChan-ux
             </p>
 
             <p>
