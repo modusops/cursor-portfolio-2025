@@ -44,7 +44,7 @@ export default function Home() {
         {/* Hero Section */}
         <div className="py-20 md:py-28">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-normal leading-tight tracking-tight text-black dark:text-white max-w-5xl transition-colors duration-200">
-            Staff Product Designer with 10 years of experience.
+            STAFF PRODUCT DESIGNER WITH 10 YEARS OF EXPERIENCE.
           </h1>
         </div>
 
