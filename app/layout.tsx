@@ -1,55 +1,15 @@
 import type React from "react"
 import type { Metadata } from "next"
-import localFont from "next/font/local"
+import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { ThemeToggle } from "@/components/theme-toggle"
 import "./globals.css"
 
-const geist = localFont({
-  src: [
-    {
-      path: "../public/fonts/Geist-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Geist-Medium.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Geist-SemiBold.woff2",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Geist-Light.woff2",
-      weight: "300",
-      style: "normal",
-    },
-  ],
-  variable: "--font-geist",
-})
-
-const geistMono = localFont({
-  src: [
-    {
-      path: "../public/fonts/GeistMono-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/GeistMono-Medium.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/GeistMono-SemiBold.woff2",
-      weight: "600",
-      style: "normal",
-    },
-  ],
-  variable: "--font-geist-mono",
+// Use Inter font from Google Fonts instead of local fonts that are causing issues
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-inter",
 })
 
 export const metadata: Metadata = {
@@ -66,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geist.variable} ${geistMono.variable} bg-white dark:bg-black text-black dark:text-white transition-colors duration-200`}
+        className={`${inter.variable} bg-white dark:bg-black text-black dark:text-white transition-colors duration-200`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}

@@ -8,12 +8,14 @@
   --scrollbar-width: 8px;
 }
 
+/* Use system monospace font for h1 elements */
 h1 {
-  font-family: var(--font-geist-mono);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+/* Use Inter font for other elements */
 h2 {
-  font-family: var(--font-geist);
+  font-family: var(--font-inter);
   font-weight: 500; /* Medium */
 }
 
@@ -21,33 +23,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-geist);
+  font-family: var(--font-inter);
   font-weight: 400; /* Regular */
 }
 
 p {
-  font-family: var(--font-geist);
+  font-family: var(--font-inter);
   font-weight: 400; /* Regular */
 }
-
-/* Remove the existing combined selector since we've broken it out above */
-/* Remove or comment out the existing combined selector:
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span,
-div,
-a,
-button,
-input,
-textarea,
-select,
-option {
-  font-family: var(--font-geist);
-} */
 
 /* Add a new rule for the remaining elements */
 span,
@@ -58,7 +41,7 @@ input,
 textarea,
 select,
 option {
-  font-family: var(--font-geist);
+  font-family: var(--font-inter);
 }
 
 .dark {
