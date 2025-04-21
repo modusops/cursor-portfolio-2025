@@ -2,16 +2,18 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import { PlusSign } from "@/components/plus-sign"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white dark:bg-black transition-colors duration-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white dark:bg-black transition-colors duration-200 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header with non-sticky logo */}
-        <header className="flex items-center justify-between py-6">
-          <div>
+        <header className="flex items-center justify-between py-6 relative">
+          <div className="flex items-center">
+            <PlusSign className="mr-3" />
             <Link href="/">
-              <h1 className="text-xl font-medium text-black dark:text-white">David Chan</h1>
+              <h1 className="text-xl font-medium text-black dark:text-white font-sans">David Chan</h1>
             </Link>
           </div>
 
@@ -42,14 +44,21 @@ export default function Home() {
         </nav>
 
         {/* Hero Section */}
-        <div className="py-20 md:py-28">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-normal leading-tight tracking-tight text-black dark:text-white max-w-5xl transition-colors duration-200">
+        <div className="py-20 md:py-28 relative">
+          <div className="absolute top-0 left-0 w-px h-20 bg-gray-800/30 dark:bg-white/20"></div>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extralight leading-tight tracking-tight text-black dark:text-white max-w-5xl transition-colors duration-200">
             STAFF PRODUCT DESIGNER WITH 10 YEARS OF EXPERIENCE.
           </h1>
+          <div className="absolute bottom-0 right-0 w-px h-20 bg-gray-800/30 dark:bg-white/20"></div>
         </div>
 
         {/* Projects Carousel */}
-        <div className="py-10">
+        <div className="py-10 relative">
+          <div className="flex items-center mb-8">
+            <PlusSign size="sm" className="mr-3" />
+            <h2 className="text-2xl font-medium">Featured Projects</h2>
+          </div>
+
           <div className="relative">
             {/* Carousel Container with Feathering */}
             <div className="relative overflow-hidden">
@@ -143,11 +152,20 @@ export default function Home() {
 
         {/* About Section */}
         <div
-          className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200"
+          className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200 relative"
           style={{ boxShadow: "rgba(255, 255, 255, 0.3) 0px 1px 2px 0px inset" }}
         >
+          <div className="absolute top-6 left-6">
+            <PlusSign size="lg" />
+          </div>
+
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-normal mb-16">About</h2>
+            <h2 className="text-4xl font-normal mb-16 flex items-center">
+              <span className="relative">
+                About
+                <div className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800/15 dark:bg-white/20"></div>
+              </span>
+            </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div className="aspect-square relative rounded-3xl overflow-hidden max-w-md mx-auto md:mx-0">
@@ -166,19 +184,19 @@ export default function Home() {
 
                 <ul className="space-y-4 text-gray-600 dark:text-gray-400 transition-colors duration-200">
                   <li className="flex items-start">
-                    <span className="mr-3">•</span>
+                    <PlusSign size="sm" className="mr-3 mt-1 flex-shrink-0" />
                     <span>Help you shape your product strategy without drowning in docs</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="mr-3">•</span>
+                    <PlusSign size="sm" className="mr-3 mt-1 flex-shrink-0" />
                     <span>Quickly create high-fidelity interactive prototypes to validate ideas</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="mr-3">•</span>
+                    <PlusSign size="sm" className="mr-3 mt-1 flex-shrink-0" />
                     <span>Collaborate directly with engineering teams to iterate swiftly</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="mr-3">•</span>
+                    <PlusSign size="sm" className="mr-3 mt-1 flex-shrink-0" />
                     <span>Build and nurture a design team that's set up for success</span>
                   </li>
                 </ul>
@@ -207,44 +225,62 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          <div className="absolute bottom-6 right-6">
+            <PlusSign size="lg" />
+          </div>
         </div>
 
         {/* Capabilities Section */}
         <div
-          className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200"
+          className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200 relative"
           style={{ boxShadow: "rgba(255, 255, 255, 0.3) 0px 1px 2px 0px inset" }}
         >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row md:justify-between md:items-start">
-              <h2 className="text-4xl font-normal mb-12 md:mb-0 md:w-1/3">Capabilities</h2>
+              <h2 className="text-4xl font-normal mb-12 md:mb-0 md:w-1/3 flex items-center">
+                <span className="relative">
+                  Capabilities
+                  <div className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800/15 dark:bg-white/20"></div>
+                </span>
+              </h2>
 
               <div className="md:w-2/3">
                 <div className="flex flex-wrap gap-4">
-                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200">
+                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    <PlusSign size="sm" className="mr-2" />
                     Product Design
                   </div>
-                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200">
+                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    <PlusSign size="sm" className="mr-2" />
                     Branding
                   </div>
-                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200">
+                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    <PlusSign size="sm" className="mr-2" />
                     Web Design
                   </div>
-                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200">
+                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    <PlusSign size="sm" className="mr-2" />
                     Strategy
                   </div>
-                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200">
+                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    <PlusSign size="sm" className="mr-2" />
                     0→1 Projects
                   </div>
-                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200">
+                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    <PlusSign size="sm" className="mr-2" />
                     Pitch Decks
                   </div>
-                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200">
+                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    <PlusSign size="sm" className="mr-2" />
                     Design Systems
                   </div>
-                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200">
+                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    <PlusSign size="sm" className="mr-2" />
                     Team Building
                   </div>
-                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200">
+                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    <PlusSign size="sm" className="mr-2" />
                     Coaching
                   </div>
                 </div>
@@ -255,27 +291,35 @@ export default function Home() {
 
         {/* Approach Section */}
         <div
-          className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200"
+          className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200 relative"
           style={{ boxShadow: "rgba(255, 255, 255, 0.3) 0px 1px 2px 0px inset" }}
         >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-normal mb-16">Approach</h2>
+            <h2 className="text-4xl font-normal mb-16 flex items-center">
+              <span className="relative">
+                Approach
+                <div className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800/15 dark:bg-white/20"></div>
+              </span>
+            </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
               {/* Item 1 */}
-              <div className="space-y-4">
-                <div className="text-gray-400 dark:text-gray-500 text-xl font-light transition-colors duration-200">
+              <div className="space-y-4 relative">
+                <div className="text-gray-400 dark:text-gray-500 text-xl font-light transition-colors duration-200 flex items-center">
+                  <PlusSign size="sm" className="mr-2" />
                   01
                 </div>
                 <h3 className="text-xl font-medium transition-colors duration-200">Shared ownership.</h3>
                 <p className="text-gray-600 dark:text-gray-400 transition-colors duration-200">
                   Whether I work independently or integrate with your team, everyone comes along the process.
                 </p>
+                <div className="absolute -bottom-8 left-0 right-0 h-px bg-gray-800/5 dark:bg-white/10"></div>
               </div>
 
               {/* Item 2 */}
-              <div className="space-y-4">
-                <div className="text-gray-400 dark:text-gray-500 text-xl font-light transition-colors duration-200">
+              <div className="space-y-4 relative">
+                <div className="text-gray-400 dark:text-gray-500 text-xl font-light transition-colors duration-200 flex items-center">
+                  <PlusSign size="sm" className="mr-2" />
                   02
                 </div>
                 <h3 className="text-xl font-medium transition-colors duration-200">
@@ -285,22 +329,26 @@ export default function Home() {
                   Quick iteration allows us to zoom through explorations until we arrive at something that feels just
                   right.
                 </p>
+                <div className="absolute -bottom-8 left-0 right-0 h-px bg-gray-800/5 dark:bg-white/10"></div>
               </div>
 
               {/* Item 3 */}
-              <div className="space-y-4">
-                <div className="text-gray-400 dark:text-gray-500 text-xl font-light transition-colors duration-200">
+              <div className="space-y-4 relative">
+                <div className="text-gray-400 dark:text-gray-500 text-xl font-light transition-colors duration-200 flex items-center">
+                  <PlusSign size="sm" className="mr-2" />
                   03
                 </div>
                 <h3 className="text-xl font-medium transition-colors duration-200">Show and tell.</h3>
                 <p className="text-gray-600 dark:text-gray-400 transition-colors duration-200">
                   I frequently share work in progress, usually in the form of screen recordings with a voice over.
                 </p>
+                <div className="absolute -bottom-8 left-0 right-0 h-px bg-gray-800/5 dark:bg-white/10"></div>
               </div>
 
               {/* Item 4 */}
-              <div className="space-y-4">
-                <div className="text-gray-400 dark:text-gray-500 text-xl font-light transition-colors duration-200">
+              <div className="space-y-4 relative">
+                <div className="text-gray-400 dark:text-gray-500 text-xl font-light transition-colors duration-200 flex items-center">
+                  <PlusSign size="sm" className="mr-2" />
                   04
                 </div>
                 <h3 className="text-xl font-medium transition-colors duration-200">Bias for action.</h3>
@@ -308,28 +356,33 @@ export default function Home() {
                   I prefer creating tangible artifacts to visualize the team's ideas over lengthy documents that often
                   go ignored.
                 </p>
+                <div className="absolute -bottom-8 left-0 right-0 h-px bg-gray-800/5 dark:bg-white/10"></div>
               </div>
 
               {/* Item 5 */}
-              <div className="space-y-4">
-                <div className="text-gray-400 dark:text-gray-500 text-xl font-light transition-colors duration-200">
+              <div className="space-y-4 relative">
+                <div className="text-gray-400 dark:text-gray-500 text-xl font-light transition-colors duration-200 flex items-center">
+                  <PlusSign size="sm" className="mr-2" />
                   05
                 </div>
                 <h3 className="text-xl font-medium transition-colors duration-200">I work in systems.</h3>
                 <p className="text-gray-600 dark:text-gray-400 transition-colors duration-200">
                   Whether it's a small feature or an entire design system, I create reusable components for the team.
                 </p>
+                <div className="absolute -bottom-8 left-0 right-0 h-px bg-gray-800/5 dark:bg-white/10"></div>
               </div>
 
               {/* Item 6 */}
-              <div className="space-y-4">
-                <div className="text-gray-400 dark:text-gray-500 text-xl font-light transition-colors duration-200">
+              <div className="space-y-4 relative">
+                <div className="text-gray-400 dark:text-gray-500 text-xl font-light transition-colors duration-200 flex items-center">
+                  <PlusSign size="sm" className="mr-2" />
                   06
                 </div>
                 <h3 className="text-xl font-medium transition-colors duration-200">Design is thinking.</h3>
                 <p className="text-gray-600 dark:text-gray-400 transition-colors duration-200">
                   I am not afraid to throw away an idea and explore divergent solutions. The more the merrier!
                 </p>
+                <div className="absolute -bottom-8 left-0 right-0 h-px bg-gray-800/5 dark:bg-white/10"></div>
               </div>
             </div>
           </div>
@@ -337,11 +390,16 @@ export default function Home() {
 
         {/* Testimonials Section */}
         <div
-          className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200"
+          className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200 relative"
           style={{ boxShadow: "rgba(255, 255, 255, 0.3) 0px 1px 2px 0px inset" }}
         >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-normal mb-16">In their words</h2>
+            <h2 className="text-4xl font-normal mb-16 flex items-center">
+              <span className="relative">
+                In their words
+                <div className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800/15 dark:bg-white/20"></div>
+              </span>
+            </h2>
 
             <div className="relative">
               {/* Carousel Container with Feathering */}
@@ -360,6 +418,9 @@ export default function Home() {
                       key={index}
                       className="w-[calc(50%-16px)] md:w-[calc(40%-16px)] lg:w-[calc(33.333%-22px)] aspect-square flex-shrink-0 snap-center bg-gray-50 dark:bg-gray-800 rounded-xl p-8 transition-all hover:shadow-lg relative flex flex-col transition-colors duration-200"
                     >
+                      <div className="absolute top-4 right-4">
+                        <PlusSign size="sm" />
+                      </div>
                       <div className="flex-1 flex flex-col">
                         <p className="text-lg text-gray-800 dark:text-gray-300 leading-relaxed flex-1 overflow-y-auto transition-colors duration-200">
                           {testimonial.quote}
@@ -446,15 +507,28 @@ export default function Home() {
 
         {/* Footer Section */}
         <div
-          className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200"
+          className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200 relative"
           style={{ boxShadow: "rgba(255, 255, 255, 0.3) 0px 1px 2px 0px inset" }}
         >
+          <div className="absolute top-6 right-6">
+            <PlusSign size="lg" />
+          </div>
+
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-normal mb-16">Contact</h2>
+            <h2 className="text-4xl font-normal mb-16 flex items-center">
+              <span className="relative">
+                Contact
+                <div className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800/15 dark:bg-white/20"></div>
+              </span>
+            </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
               {/* Contact Info */}
-              <div className="bg-gray-100 dark:bg-gray-800 rounded-3xl p-10 space-y-6 transition-colors duration-200">
+              <div className="bg-gray-100 dark:bg-gray-800 rounded-3xl p-10 space-y-6 transition-colors duration-200 relative">
+                <div className="absolute top-4 left-4">
+                  <PlusSign size="sm" />
+                </div>
+
                 <h3 className="text-2xl font-normal text-black dark:text-white transition-colors duration-200">
                   Need a Design Partner?
                 </h3>
@@ -633,6 +707,10 @@ export default function Home() {
             <div className="mt-20 text-center text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
               © COPYRIGHT 2025
             </div>
+          </div>
+
+          <div className="absolute bottom-6 left-6">
+            <PlusSign size="lg" />
           </div>
         </div>
       </div>

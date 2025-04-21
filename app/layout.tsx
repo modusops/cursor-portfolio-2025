@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { GridBackground } from "@/components/grid-background"
 import "./globals.css"
 
 // Use Inter font from Google Fonts instead of local fonts that are causing issues
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} bg-white dark:bg-black text-black dark:text-white transition-colors duration-200`}
       >
+        <GridBackground />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
           <ThemeToggle />
