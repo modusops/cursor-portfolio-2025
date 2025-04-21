@@ -10,7 +10,7 @@ export default function Contact() {
         <header className="flex items-center justify-between py-6">
           <div>
             <Link href="/">
-              <h1 className="text-xl font-medium text-black dark:text-white transition-colors duration-200">
+              <h1 className="text-xl font-medium text-black dark:text-white transition-colors duration-200 font-sans">
                 David Chan
               </h1>
             </Link>
@@ -44,7 +44,7 @@ export default function Contact() {
 
         {/* Contact Content */}
         <div className="py-20 max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-medium mb-8 text-black dark:text-white transition-colors duration-200">
+          <h1 className="text-4xl md:text-5xl font-medium mb-8 text-black dark:text-white transition-colors duration-200 font-sans">
             Contact
           </h1>
 
