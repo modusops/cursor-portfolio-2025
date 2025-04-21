@@ -5,13 +5,13 @@ import Image from "next/image"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-black transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with non-sticky logo */}
         <header className="flex items-center justify-between py-6">
           <div>
             <Link href="/">
-              <h1 className="text-xl font-medium text-black">David Chan</h1>
+              <h1 className="text-xl font-medium text-black dark:text-white">David Chan</h1>
             </Link>
           </div>
 
@@ -20,19 +20,22 @@ export default function Home() {
         </header>
 
         {/* Sticky Navigation */}
-        <nav className="fixed top-6 right-4 md:right-8 lg:right-[max(calc((100%-1280px)/2+32px),32px)] z-50 flex space-x-4 bg-white py-2 px-3 rounded-full shadow-sm">
-          <Link href="/work" className="px-5 py-2 rounded-full bg-black text-white text-sm font-medium">
+        <nav className="fixed top-6 right-4 md:right-8 lg:right-[max(calc((100%-1280px)/2+32px),32px)] z-50 flex space-x-4 bg-white dark:bg-gray-800 py-2 px-3 rounded-full shadow-sm transition-colors duration-200">
+          <Link
+            href="/work"
+            className="px-5 py-2 rounded-full bg-black dark:bg-white text-white dark:text-black text-sm font-medium"
+          >
             Work
           </Link>
           <Link
             href="/about"
-            className="px-5 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors text-sm font-medium"
+            className="px-5 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors text-sm font-medium"
           >
             About
           </Link>
           <Link
             href="/contact"
-            className="px-5 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors text-sm font-medium"
+            className="px-5 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors text-sm font-medium"
           >
             Contact
           </Link>
@@ -40,7 +43,7 @@ export default function Home() {
 
         {/* Hero Section */}
         <div className="py-20 md:py-28">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-normal leading-tight tracking-tight text-black max-w-5xl">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-normal leading-tight tracking-tight text-black dark:text-white max-w-5xl transition-colors duration-200">
             Staff Product Designer with 10 years of experience.
           </h1>
         </div>
@@ -51,7 +54,7 @@ export default function Home() {
             {/* Carousel Container with Feathering */}
             <div className="relative overflow-hidden">
               {/* Left Feathering Gradient */}
-              <div className="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
+              <div className="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-r from-white dark:from-black to-transparent"></div>
 
               {/* Carousel */}
               <div
@@ -62,7 +65,7 @@ export default function Home() {
                 {projects.map((project) => (
                   <div
                     key={project.slug}
-                    className="min-w-[85%] md:min-w-[45%] lg:min-w-[30%] flex-shrink-0 snap-center bg-gray-50 rounded-xl p-6 transition-all hover:shadow-lg hover:scale-110 hover:z-10 origin-center duration-300 relative"
+                    className="min-w-[85%] md:min-w-[45%] lg:min-w-[30%] flex-shrink-0 snap-center bg-gray-50 dark:bg-gray-800 rounded-xl p-6 transition-all hover:shadow-lg hover:scale-110 hover:z-10 origin-center duration-300 relative"
                   >
                     <Link href={`/projects/${project.slug}`}>
                       <div className="aspect-[4/3] relative mb-6 overflow-hidden rounded-lg">
@@ -73,15 +76,19 @@ export default function Home() {
                           className="object-cover"
                         />
                       </div>
-                      <h2 className="text-xl font-medium text-black mb-1">{project.title}</h2>
-                      <p className="text-gray-500 text-sm">{project.description}</p>
+                      <h2 className="text-xl font-medium text-black dark:text-white mb-1 transition-colors duration-200">
+                        {project.title}
+                      </h2>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
+                        {project.description}
+                      </p>
                     </Link>
                   </div>
                 ))}
               </div>
 
               {/* Right Feathering Gradient */}
-              <div className="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-l from-white dark:from-black to-transparent"></div>
             </div>
 
             {/* Navigation Arrows */}
@@ -90,7 +97,7 @@ export default function Home() {
                 const container = document.getElementById("carousel-container")
                 if (container) container.scrollBy({ left: -container.offsetWidth / 2, behavior: "smooth" })
               }}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-md z-20 hidden md:block"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 shadow-md z-20 hidden md:block transition-colors duration-200"
               aria-label="Scroll left"
             >
               <svg
@@ -103,7 +110,7 @@ export default function Home() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="size-5"
+                className="size-5 text-gray-700 dark:text-gray-300"
               >
                 <path d="m15 18-6-6 6-6" />
               </svg>
@@ -113,7 +120,7 @@ export default function Home() {
                 const container = document.getElementById("carousel-container")
                 if (container) container.scrollBy({ left: container.offsetWidth / 2, behavior: "smooth" })
               }}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-md z-20 hidden md:block"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 shadow-md z-20 hidden md:block transition-colors duration-200"
               aria-label="Scroll right"
             >
               <svg
@@ -126,7 +133,7 @@ export default function Home() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="size-5"
+                className="size-5 text-gray-700 dark:text-gray-300"
               >
                 <path d="m9 18 6-6-6-6" />
               </svg>
@@ -135,7 +142,10 @@ export default function Home() {
         </div>
 
         {/* About Section */}
-        <div className="py-20 bg-white text-black rounded-xl my-20 border border-gray-200">
+        <div
+          className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200"
+          style={{ boxShadow: "rgba(255, 255, 255, 0.3) 0px 1px 2px 0px inset" }}
+        >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl font-normal mb-16">About</h2>
 
@@ -149,12 +159,12 @@ export default function Home() {
                   I help early-stage startups ship fast without compromising quality.
                 </h3>
 
-                <p className="text-lg text-gray-600">
+                <p className="text-lg text-gray-600 dark:text-gray-400 transition-colors duration-200">
                   I've spent the last fifteen years building 0→1 products for the world's top tech companies. Today, I
                   partner with founders to bring their ideas to life. As a fractional design partner, I will:
                 </p>
 
-                <ul className="space-y-4 text-gray-600">
+                <ul className="space-y-4 text-gray-600 dark:text-gray-400 transition-colors duration-200">
                   <li className="flex items-start">
                     <span className="mr-3">•</span>
                     <span>Help you shape your product strategy without drowning in docs</span>
@@ -175,7 +185,7 @@ export default function Home() {
 
                 <Link
                   href="/about"
-                  className="inline-flex items-center text-black hover:text-gray-600 transition-colors"
+                  className="inline-flex items-center text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                 >
                   Read more
                   <svg
@@ -200,22 +210,43 @@ export default function Home() {
         </div>
 
         {/* Capabilities Section */}
-        <div className="py-20 bg-white text-black rounded-xl my-20 border border-gray-200">
+        <div
+          className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200"
+          style={{ boxShadow: "rgba(255, 255, 255, 0.3) 0px 1px 2px 0px inset" }}
+        >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row md:justify-between md:items-start">
               <h2 className="text-4xl font-normal mb-12 md:mb-0 md:w-1/3">Capabilities</h2>
 
               <div className="md:w-2/3">
                 <div className="flex flex-wrap gap-4">
-                  <div className="border border-gray-300 rounded-full px-8 py-4 text-lg">Product Design</div>
-                  <div className="border border-gray-300 rounded-full px-8 py-4 text-lg">Branding</div>
-                  <div className="border border-gray-300 rounded-full px-8 py-4 text-lg">Web Design</div>
-                  <div className="border border-gray-300 rounded-full px-8 py-4 text-lg">Strategy</div>
-                  <div className="border border-gray-300 rounded-full px-8 py-4 text-lg">0→1 Projects</div>
-                  <div className="border border-gray-300 rounded-full px-8 py-4 text-lg">Pitch Decks</div>
-                  <div className="border border-gray-300 rounded-full px-8 py-4 text-lg">Design Systems</div>
-                  <div className="border border-gray-300 rounded-full px-8 py-4 text-lg">Team Building</div>
-                  <div className="border border-gray-300 rounded-full px-8 py-4 text-lg">Coaching</div>
+                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200">
+                    Product Design
+                  </div>
+                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200">
+                    Branding
+                  </div>
+                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200">
+                    Web Design
+                  </div>
+                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200">
+                    Strategy
+                  </div>
+                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200">
+                    0→1 Projects
+                  </div>
+                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200">
+                    Pitch Decks
+                  </div>
+                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200">
+                    Design Systems
+                  </div>
+                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200">
+                    Team Building
+                  </div>
+                  <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200">
+                    Coaching
+                  </div>
                 </div>
               </div>
             </div>
@@ -223,27 +254,34 @@ export default function Home() {
         </div>
 
         {/* Approach Section */}
-        <div className="py-20 bg-white text-black rounded-xl my-20 border border-gray-200">
+        <div
+          className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200"
+          style={{ boxShadow: "rgba(255, 255, 255, 0.3) 0px 1px 2px 0px inset" }}
+        >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl font-normal mb-16">Approach</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
               {/* Item 1 */}
               <div className="space-y-4">
-                <div className="text-gray-400 text-xl font-light">01</div>
-                <h3 className="text-xl font-medium">Shared ownership.</h3>
-                <p className="text-gray-600">
+                <div className="text-gray-400 dark:text-gray-500 text-xl font-light transition-colors duration-200">
+                  01
+                </div>
+                <h3 className="text-xl font-medium transition-colors duration-200">Shared ownership.</h3>
+                <p className="text-gray-600 dark:text-gray-400 transition-colors duration-200">
                   Whether I work independently or integrate with your team, everyone comes along the process.
                 </p>
               </div>
 
               {/* Item 2 */}
               <div className="space-y-4">
-                <div className="text-gray-400 text-xl font-light">02</div>
-                <h3 className="text-xl font-medium">
+                <div className="text-gray-400 dark:text-gray-500 text-xl font-light transition-colors duration-200">
+                  02
+                </div>
+                <h3 className="text-xl font-medium transition-colors duration-200">
                   I work fast, like <span className="italic">really</span> fast.
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-400 transition-colors duration-200">
                   Quick iteration allows us to zoom through explorations until we arrive at something that feels just
                   right.
                 </p>
@@ -251,18 +289,22 @@ export default function Home() {
 
               {/* Item 3 */}
               <div className="space-y-4">
-                <div className="text-gray-400 text-xl font-light">03</div>
-                <h3 className="text-xl font-medium">Show and tell.</h3>
-                <p className="text-gray-600">
+                <div className="text-gray-400 dark:text-gray-500 text-xl font-light transition-colors duration-200">
+                  03
+                </div>
+                <h3 className="text-xl font-medium transition-colors duration-200">Show and tell.</h3>
+                <p className="text-gray-600 dark:text-gray-400 transition-colors duration-200">
                   I frequently share work in progress, usually in the form of screen recordings with a voice over.
                 </p>
               </div>
 
               {/* Item 4 */}
               <div className="space-y-4">
-                <div className="text-gray-400 text-xl font-light">04</div>
-                <h3 className="text-xl font-medium">Bias for action.</h3>
-                <p className="text-gray-600">
+                <div className="text-gray-400 dark:text-gray-500 text-xl font-light transition-colors duration-200">
+                  04
+                </div>
+                <h3 className="text-xl font-medium transition-colors duration-200">Bias for action.</h3>
+                <p className="text-gray-600 dark:text-gray-400 transition-colors duration-200">
                   I prefer creating tangible artifacts to visualize the team's ideas over lengthy documents that often
                   go ignored.
                 </p>
@@ -270,18 +312,22 @@ export default function Home() {
 
               {/* Item 5 */}
               <div className="space-y-4">
-                <div className="text-gray-400 text-xl font-light">05</div>
-                <h3 className="text-xl font-medium">I work in systems.</h3>
-                <p className="text-gray-600">
+                <div className="text-gray-400 dark:text-gray-500 text-xl font-light transition-colors duration-200">
+                  05
+                </div>
+                <h3 className="text-xl font-medium transition-colors duration-200">I work in systems.</h3>
+                <p className="text-gray-600 dark:text-gray-400 transition-colors duration-200">
                   Whether it's a small feature or an entire design system, I create reusable components for the team.
                 </p>
               </div>
 
               {/* Item 6 */}
               <div className="space-y-4">
-                <div className="text-gray-400 text-xl font-light">06</div>
-                <h3 className="text-xl font-medium">Design is thinking.</h3>
-                <p className="text-gray-600">
+                <div className="text-gray-400 dark:text-gray-500 text-xl font-light transition-colors duration-200">
+                  06
+                </div>
+                <h3 className="text-xl font-medium transition-colors duration-200">Design is thinking.</h3>
+                <p className="text-gray-600 dark:text-gray-400 transition-colors duration-200">
                   I am not afraid to throw away an idea and explore divergent solutions. The more the merrier!
                 </p>
               </div>
@@ -290,7 +336,10 @@ export default function Home() {
         </div>
 
         {/* Testimonials Section */}
-        <div className="py-20 bg-white text-black rounded-xl my-20 border border-gray-200">
+        <div
+          className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200"
+          style={{ boxShadow: "rgba(255, 255, 255, 0.3) 0px 1px 2px 0px inset" }}
+        >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl font-normal mb-16">In their words</h2>
 
@@ -298,7 +347,7 @@ export default function Home() {
               {/* Carousel Container with Feathering */}
               <div className="relative overflow-hidden">
                 {/* Left Feathering Gradient */}
-                <div className="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-r from-white dark:from-black to-transparent"></div>
 
                 {/* Carousel */}
                 <div
@@ -309,10 +358,10 @@ export default function Home() {
                   {testimonials.map((testimonial, index) => (
                     <div
                       key={index}
-                      className="w-[calc(50%-16px)] md:w-[calc(40%-16px)] lg:w-[calc(33.333%-22px)] aspect-square flex-shrink-0 snap-center bg-gray-50 rounded-xl p-8 transition-all hover:shadow-lg relative flex flex-col"
+                      className="w-[calc(50%-16px)] md:w-[calc(40%-16px)] lg:w-[calc(33.333%-22px)] aspect-square flex-shrink-0 snap-center bg-gray-50 dark:bg-gray-800 rounded-xl p-8 transition-all hover:shadow-lg relative flex flex-col transition-colors duration-200"
                     >
                       <div className="flex-1 flex flex-col">
-                        <p className="text-lg text-gray-800 leading-relaxed flex-1 overflow-y-auto">
+                        <p className="text-lg text-gray-800 dark:text-gray-300 leading-relaxed flex-1 overflow-y-auto transition-colors duration-200">
                           {testimonial.quote}
                         </p>
 
@@ -327,8 +376,12 @@ export default function Home() {
                             />
                           </div>
                           <div>
-                            <h4 className="font-medium text-black">{testimonial.name}</h4>
-                            <p className="text-sm text-gray-500">{testimonial.title}</p>
+                            <h4 className="font-medium text-black dark:text-white transition-colors duration-200">
+                              {testimonial.name}
+                            </h4>
+                            <p className="text-sm text-gray-500 dark:text-gray-400 transition-colors duration-200">
+                              {testimonial.title}
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -337,7 +390,7 @@ export default function Home() {
                 </div>
 
                 {/* Right Feathering Gradient */}
-                <div className="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-l from-white dark:from-black to-transparent"></div>
               </div>
 
               {/* Navigation Arrows */}
@@ -346,7 +399,7 @@ export default function Home() {
                   const container = document.getElementById("testimonials-container")
                   if (container) container.scrollBy({ left: -container.offsetWidth / 2, behavior: "smooth" })
                 }}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-md z-20 hidden md:block"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 shadow-md z-20 hidden md:block transition-colors duration-200"
                 aria-label="Scroll left"
               >
                 <svg
@@ -359,7 +412,7 @@ export default function Home() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="size-5"
+                  className="size-5 text-gray-700 dark:text-gray-300"
                 >
                   <path d="m15 18-6-6 6-6" />
                 </svg>
@@ -369,7 +422,7 @@ export default function Home() {
                   const container = document.getElementById("testimonials-container")
                   if (container) container.scrollBy({ left: container.offsetWidth / 2, behavior: "smooth" })
                 }}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-md z-20 hidden md:block"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 shadow-md z-20 hidden md:block transition-colors duration-200"
                 aria-label="Scroll right"
               >
                 <svg
@@ -382,7 +435,7 @@ export default function Home() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="size-5"
+                  className="size-5 text-gray-700 dark:text-gray-300"
                 >
                   <path d="m9 18 6-6-6-6" />
                 </svg>
@@ -392,24 +445,34 @@ export default function Home() {
         </div>
 
         {/* Footer Section */}
-        <div className="py-20 bg-white text-black rounded-xl my-20 border border-gray-200">
+        <div
+          className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200"
+          style={{ boxShadow: "rgba(255, 255, 255, 0.3) 0px 1px 2px 0px inset" }}
+        >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl font-normal mb-16">Contact</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
               {/* Contact Info */}
-              <div className="bg-gray-100 rounded-3xl p-10 space-y-6">
-                <h3 className="text-2xl font-normal text-black">Need a Design Partner?</h3>
+              <div className="bg-gray-100 dark:bg-gray-800 rounded-3xl p-10 space-y-6 transition-colors duration-200">
+                <h3 className="text-2xl font-normal text-black dark:text-white transition-colors duration-200">
+                  Need a Design Partner?
+                </h3>
 
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-gray-300 transition-colors duration-200">
                   I'm currently prioritizing projects in consumer, education, and healthcare. Shoot me a note with your
                   details at{" "}
-                  <a href="mailto:hello@example.com" className="text-black hover:underline">
+                  <a
+                    href="mailto:hello@example.com"
+                    className="text-black dark:text-white hover:underline transition-colors duration-200"
+                  >
                     hello@example.com
                   </a>
                 </p>
 
-                <p className="text-gray-700 pt-8">Available in Summer '25.</p>
+                <p className="text-gray-700 dark:text-gray-300 pt-8 transition-colors duration-200">
+                  Available in Summer '25.
+                </p>
               </div>
 
               {/* Social Links */}
@@ -421,7 +484,7 @@ export default function Home() {
                     href="https://twitter.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-gray-700 hover:text-black transition-colors"
+                    className="flex items-center text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -444,7 +507,7 @@ export default function Home() {
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-gray-700 hover:text-black transition-colors"
+                    className="flex items-center text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -469,7 +532,7 @@ export default function Home() {
                     href="https://substack.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-gray-700 hover:text-black transition-colors"
+                    className="flex items-center text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -495,7 +558,7 @@ export default function Home() {
                     href="https://bsky.app"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-gray-700 hover:text-black transition-colors"
+                    className="flex items-center text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -520,7 +583,7 @@ export default function Home() {
                     href="https://read.cv"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-gray-700 hover:text-black transition-colors"
+                    className="flex items-center text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -543,7 +606,7 @@ export default function Home() {
                     href="https://instagram.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-gray-700 hover:text-black transition-colors"
+                    className="flex items-center text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -567,7 +630,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-20 text-center text-gray-500 text-sm">© COPYRIGHT 2025</div>
+            <div className="mt-20 text-center text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
+              © COPYRIGHT 2025
+            </div>
           </div>
         </div>
       </div>
