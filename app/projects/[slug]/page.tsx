@@ -3,9 +3,17 @@
 import Link from "next/link"
 import Image from "next/image"
 import { notFound } from "next/navigation"
+import { PlusSign } from "@/components/plus-sign"
+import { useEffect } from "react"
+import { AnimatedContent } from "@/components/animated-content"
 
 export default function ProjectPage({ params }: { params: { slug: string } }) {
   const project = projects.find((p) => p.slug === params.slug)
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   if (!project) {
     notFound()
@@ -16,9 +24,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with non-sticky logo */}
         <header className="flex items-center justify-between py-6">
-          <div>
+          <div className="flex items-center">
+            <PlusSign className="mr-3" />
             <Link href="/">
-              <h1 className="text-xl font-medium text-black dark:text-white transition-colors duration-200">
+              <h1 className="text-xl font-medium text-black dark:text-white transition-colors duration-200 font-sans">
                 David Chan
               </h1>
             </Link>
@@ -51,35 +60,37 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </nav>
 
         {/* Project Content */}
-        <div className="py-12">
-          <Link
-            href="/work"
-            className="text-sm text-gray-500 dark:text-gray-400 mb-8 inline-block transition-colors duration-200"
-          >
-            ← Back to projects
-          </Link>
+        <AnimatedContent>
+          <div className="py-12">
+            <Link
+              href="/work"
+              className="text-sm text-gray-500 dark:text-gray-400 mb-8 inline-block transition-colors duration-200"
+            >
+              ← Back to projects
+            </Link>
 
-          <h1 className="text-4xl md:text-5xl font-medium mb-4 text-black dark:text-white transition-colors duration-200">
-            {project.title}
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 transition-colors duration-200">
-            {project.description}
-          </p>
-
-          <div className="aspect-video relative mb-12 overflow-hidden rounded-xl">
-            <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
-          </div>
-
-          <div className="prose max-w-none dark:prose-invert transition-colors duration-200">
-            <p className="text-gray-800 dark:text-gray-200">
-              This is a placeholder for the detailed project description. In a real portfolio, you would include
-              information about the project, your role, the challenges faced, and the solutions implemented.
+            <h1 className="text-4xl md:text-5xl font-medium mb-4 text-black dark:text-white transition-colors duration-200">
+              {project.title}
+            </h1>
+            <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 transition-colors duration-200">
+              {project.description}
             </p>
-            <p className="text-gray-800 dark:text-gray-200">
-              You can also include additional images, videos, or other media to showcase the project in more detail.
-            </p>
+
+            <div className="aspect-video relative mb-12 overflow-hidden rounded-xl">
+              <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
+            </div>
+
+            <div className="prose max-w-none dark:prose-invert transition-colors duration-200">
+              <p className="text-gray-800 dark:text-gray-200">
+                This is a placeholder for the detailed project description. In a real portfolio, you would include
+                information about the project, your role, the challenges faced, and the solutions implemented.
+              </p>
+              <p className="text-gray-800 dark:text-gray-200">
+                You can also include additional images, videos, or other media to showcase the project in more detail.
+              </p>
+            </div>
           </div>
-        </div>
+        </AnimatedContent>
       </div>
     </div>
   )

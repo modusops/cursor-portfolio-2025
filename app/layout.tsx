@@ -9,7 +9,7 @@ import "./globals.css"
 // Use Inter font from Google Fonts instead of local fonts that are causing issues
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["100", "200", "300", "400", "500", "600"],
   variable: "--font-inter",
 })
 

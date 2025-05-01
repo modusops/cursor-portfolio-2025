@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { ThemeToggle } from "@/components/theme-toggle"
 import "./globals.css"
 
-const geist = Geist({ subsets: ["latin"], weight: ["300", "400", "500", "600"] })
+const geist = Geist({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600"] })
 const geistMono = GeistMono({ subsets: ["latin"], weight: ["400", "500", "600"] })
 
 export default function ClientLayout({

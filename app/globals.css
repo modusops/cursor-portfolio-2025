@@ -13,6 +13,13 @@ h1 {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+/* Hero heading specific styles */
+.hero-heading {
+  font-weight: 100 !important;
+  letter-spacing: 0.03em;
+  font-family: var(--font-inter);
+}
+
 /* Use Inter font for other elements */
 h2 {
   font-family: var(--font-inter);
@@ -131,4 +138,42 @@ body {
 /* Ensure proper stacking for hover effects */
 .hover\:z-10:hover {
   z-index: 10;
+}
+
+/* Page content animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.content-wrapper {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Staggered animation for children */
+.stagger-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stagger-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stagger-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.stagger-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.stagger-item:nth-child(5) {
+  animation-delay: 0.5s;
 }

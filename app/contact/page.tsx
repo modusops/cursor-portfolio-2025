@@ -1,14 +1,23 @@
 "use client"
 
 import Link from "next/link"
+import { PlusSign } from "@/components/plus-sign"
+import { useEffect } from "react"
+import { AnimatedContent } from "@/components/animated-content"
 
 export default function Contact() {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className="min-h-screen bg-white dark:bg-black transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with non-sticky logo */}
-        <header className="flex items-center justify-between py-6">
-          <div>
+        <header className="flex items-center justify-between py-6 relative">
+          <div className="flex items-center">
+            <PlusSign className="mr-3" />
             <Link href="/">
               <h1 className="text-xl font-medium text-black dark:text-white transition-colors duration-200 font-sans">
                 David Chan
@@ -43,42 +52,46 @@ export default function Contact() {
         </nav>
 
         {/* Contact Content */}
-        <div className="py-20 max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-medium mb-8 text-black dark:text-white transition-colors duration-200 font-sans">
-            Contact
-          </h1>
+        <AnimatedContent>
+          <div className="py-20 max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-medium mb-8 text-black dark:text-white transition-colors duration-200 font-sans">
+              Contact
+            </h1>
 
-          <div className="prose max-w-none text-lg dark:prose-invert transition-colors duration-200">
-            <p className="text-gray-800 dark:text-gray-200">
-              I'm currently available for new projects and collaborations. If you're interested in working together,
-              please reach out using one of the methods below.
-            </p>
+            <div className="prose max-w-none text-lg dark:prose-invert transition-colors duration-200">
+              <p className="text-gray-800 dark:text-gray-200">
+                I'm currently available for new projects and collaborations. If you're interested in working together,
+                please reach out using one of the methods below.
+              </p>
 
-            <div className="mt-8 space-y-4">
-              <div>
-                <div className="text-sm text-gray-500 dark:text-gray-400 transition-colors duration-200">Email</div>
-                <a
-                  href="mailto:juntochan@proton.me"
-                  className="text-black dark:text-white hover:underline transition-colors duration-200"
-                >
-                  juntochan@proton.me
-                </a>
-              </div>
+              <div className="mt-8 space-y-4">
+                <div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400 transition-colors duration-200">Email</div>
+                  <a
+                    href="mailto:juntochan@proton.me"
+                    className="text-black dark:text-white hover:underline transition-colors duration-200"
+                  >
+                    juntochan@proton.me
+                  </a>
+                </div>
 
-              <div>
-                <div className="text-sm text-gray-500 dark:text-gray-400 transition-colors duration-200">LinkedIn</div>
-                <a
-                  href="https://linkedin.com/in/davejuntochan"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-black dark:text-white hover:underline transition-colors duration-200"
-                >
-                  linkedin.com/in/davejuntochan
-                </a>
+                <div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400 transition-colors duration-200">
+                    LinkedIn
+                  </div>
+                  <a
+                    href="https://linkedin.com/in/davejuntochan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-black dark:text-white hover:underline transition-colors duration-200"
+                  >
+                    linkedin.com/in/davejuntochan
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </AnimatedContent>
       </div>
     </div>
   )

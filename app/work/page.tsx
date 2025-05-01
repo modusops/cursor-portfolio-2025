@@ -2,14 +2,23 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import { PlusSign } from "@/components/plus-sign"
+import { useEffect } from "react"
+import { AnimatedContent } from "@/components/animated-content"
 
 export default function Work() {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className="min-h-screen bg-white dark:bg-black transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with non-sticky logo */}
-        <header className="flex items-center justify-between py-6">
-          <div>
+        <header className="flex items-center justify-between py-6 relative">
+          <div className="flex items-center">
+            <PlusSign className="mr-3" />
             <Link href="/">
               <h1 className="text-xl font-medium text-black dark:text-white transition-colors duration-200 font-sans">
                 David Chan
@@ -44,32 +53,39 @@ export default function Work() {
         </nav>
 
         {/* Work Content */}
-        <div className="py-12">
-          <h1 className="text-4xl md:text-5xl font-medium mb-12 text-black dark:text-white transition-colors duration-200 font-sans">
-            Work
-          </h1>
+        <AnimatedContent>
+          <div className="py-12">
+            <h1 className="text-4xl md:text-5xl font-medium mb-12 text-black dark:text-white transition-colors duration-200 font-sans">
+              Work
+            </h1>
 
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-20">
-            {projects.map((project) => (
-              <Link
-                href={`/projects/${project.slug}`}
-                key={project.slug}
-                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 transition-all hover:shadow-md"
-              >
-                <div className="aspect-[4/3] relative mb-6 overflow-hidden rounded-lg">
-                  <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
-                </div>
-                <h2 className="text-xl font-medium text-black dark:text-white mb-1 transition-colors duration-200">
-                  {project.title}
-                </h2>
-                <p className="text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
-                  {project.description}
-                </p>
-              </Link>
-            ))}
+            {/* Projects Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-20">
+              {projects.map((project) => (
+                <Link
+                  href={`/projects/${project.slug}`}
+                  key={project.slug}
+                  className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 transition-all hover:shadow-md"
+                >
+                  <div className="aspect-[4/3] relative mb-6 overflow-hidden rounded-lg">
+                    <Image
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <h2 className="text-xl font-medium text-black dark:text-white mb-1 transition-colors duration-200">
+                    {project.title}
+                  </h2>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
+                    {project.description}
+                  </p>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
+        </AnimatedContent>
       </div>
     </div>
   )
