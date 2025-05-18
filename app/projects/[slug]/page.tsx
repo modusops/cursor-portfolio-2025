@@ -23,7 +23,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     <div className="min-h-screen bg-white dark:bg-black transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with non-sticky logo */}
-        <header className="flex items-center justify-between py-6">
+        <header className="flex items-center justify-between pt-[82px] md:pt-6 pb-6">
           <div className="flex items-center">
             <PlusSign className="mr-3" />
             <Link href="/">
@@ -38,7 +38,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </header>
 
         {/* Sticky Navigation */}
-        <nav className="fixed top-6 right-4 md:right-8 lg:right-[max(calc((100%-1280px)/2+32px),32px)] z-50 flex space-x-4 bg-white dark:bg-gray-800 py-2 px-3 rounded-full shadow-sm transition-colors duration-200">
+        <nav className="fixed top-6 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 lg:right-[max(calc((100%-1280px)/2+32px),32px)] z-50 flex space-x-4 bg-white dark:bg-gray-800 py-2 px-3 rounded-full shadow-md transition-colors duration-200">
           <Link
             href="/work"
             className="px-5 py-2 rounded-full bg-black dark:bg-white text-white dark:text-black text-sm font-medium transition-colors duration-200"
@@ -59,24 +59,24 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </Link>
         </nav>
 
-        {/* Project Content */}
+        {/* Project Content - Reduced top padding on mobile */}
         <AnimatedContent>
-          <div className="py-12">
+          <div className="py-6 md:py-12">
             <Link
               href="/work"
-              className="text-sm text-gray-500 dark:text-gray-400 mb-8 inline-block transition-colors duration-200"
+              className="text-sm text-gray-500 dark:text-gray-400 mb-4 md:mb-8 inline-block transition-colors duration-200"
             >
               ← Back to projects
             </Link>
 
-            <h1 className="text-4xl md:text-5xl font-medium mb-4 text-black dark:text-white transition-colors duration-200">
+            <h1 className="text-4xl md:text-5xl font-medium mb-2 md:mb-4 text-black dark:text-white transition-colors duration-200">
               {project.title}
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 transition-colors duration-200">
+            <p className="text-xl text-gray-600 dark:text-gray-400 mb-6 md:mb-8 transition-colors duration-200">
               {project.description}
             </p>
 
-            <div className="aspect-video relative mb-12 overflow-hidden rounded-xl">
+            <div className="aspect-video relative mb-8 md:mb-12 overflow-hidden rounded-xl">
               <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
             </div>
 

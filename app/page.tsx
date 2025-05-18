@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { PlusSign } from "@/components/plus-sign"
-import { useEffect } from "react"
+import { useEffect, useState, useRef } from "react"
 import { AnimatedContent } from "@/components/animated-content"
 
 export default function Home() {
@@ -12,11 +12,148 @@ export default function Home() {
     window.scrollTo(0, 0)
   }, [])
 
+  // State for projects carousel visibility
+  const [showLeftArrow, setShowLeftArrow] = useState(false)
+  const [showRightArrow, setShowRightArrow] = useState(true)
+  const [showLeftGradient, setShowLeftGradient] = useState(false)
+  const [showRightGradient, setShowRightGradient] = useState(true)
+  const carouselRef = useRef<HTMLDivElement>(null)
+
+  // State for testimonials carousel visibility
+  const [showTestimonialsLeftArrow, setShowTestimonialsLeftArrow] = useState(false)
+  const [showTestimonialsRightArrow, setShowTestimonialsRightArrow] = useState(true)
+  const [showTestimonialsLeftGradient, setShowTestimonialsLeftGradient] = useState(false)
+  const [showTestimonialsRightGradient, setShowTestimonialsRightGradient] = useState(true)
+  const testimonialsCarouselRef = useRef<HTMLDivElement>(null)
+
+  // State for active testimonial index (for pagination)
+  const [activeTestimonialIndex, setActiveTestimonialIndex] = useState(0)
+
+  // Function to check scroll position and update visibility for projects carousel
+  const updateArrowVisibility = () => {
+    if (!carouselRef.current) return
+
+    const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current
+
+    // Show left arrow and gradient if not at the beginning
+    const isScrolledRight = scrollLeft > 10
+    setShowLeftArrow(isScrolledRight)
+    setShowLeftGradient(isScrolledRight)
+
+    // Show right arrow and gradient if not at the end
+    // Add a small buffer (5px) to account for rounding errors
+    const hasMoreToScroll = scrollLeft + clientWidth < scrollWidth - 5
+    setShowRightArrow(hasMoreToScroll)
+    setShowRightGradient(hasMoreToScroll)
+  }
+
+  // Function to check scroll position and update visibility for testimonials carousel
+  const updateTestimonialsArrowVisibility = () => {
+    if (!testimonialsCarouselRef.current) return
+
+    const { scrollLeft, scrollWidth, clientWidth } = testimonialsCarouselRef.current
+
+    // Show left arrow and gradient if not at the beginning
+    const isScrolledRight = scrollLeft > 10
+    setShowTestimonialsLeftArrow(isScrolledRight)
+    setShowTestimonialsLeftGradient(isScrolledRight)
+
+    // Show right arrow and gradient if not at the end
+    // Add a small buffer (5px) to account for rounding errors
+    const hasMoreToScroll = scrollLeft + clientWidth < scrollWidth - 5
+    setShowTestimonialsRightArrow(hasMoreToScroll)
+    setShowTestimonialsRightGradient(hasMoreToScroll)
+
+    // Update active testimonial index for pagination
+    if (testimonialsCarouselRef.current) {
+      const scrollPosition = testimonialsCarouselRef.current.scrollLeft
+      const cardWidth = testimonialsCarouselRef.current.clientWidth
+      const newIndex = Math.round(scrollPosition / cardWidth)
+      if (newIndex !== activeTestimonialIndex) {
+        setActiveTestimonialIndex(newIndex)
+      }
+    }
+  }
+
+  // Set up scroll event listener for the projects carousel
+  useEffect(() => {
+    const carousel = carouselRef.current
+    if (!carousel) return
+
+    // Initial check
+    updateArrowVisibility()
+
+    // Add scroll event listener
+    carousel.addEventListener("scroll", updateArrowVisibility)
+
+    // Add resize listener to update arrows when window size changes
+    window.addEventListener("resize", updateArrowVisibility)
+
+    return () => {
+      carousel.removeEventListener("scroll", updateArrowVisibility)
+      window.removeEventListener("resize", updateArrowVisibility)
+    }
+  }, [])
+
+  // Set up scroll event listener for the testimonials carousel
+  useEffect(() => {
+    const carousel = testimonialsCarouselRef.current
+    if (!carousel) return
+
+    // Initial check
+    updateTestimonialsArrowVisibility()
+
+    // Add scroll event listener
+    carousel.addEventListener("scroll", updateTestimonialsArrowVisibility)
+
+    // Add resize listener to update arrows when window size changes
+    window.addEventListener("resize", updateTestimonialsArrowVisibility)
+
+    return () => {
+      carousel.removeEventListener("scroll", updateTestimonialsArrowVisibility)
+      window.removeEventListener("resize", updateTestimonialsArrowVisibility)
+    }
+  }, [activeTestimonialIndex])
+
+  // Function to scroll the projects carousel
+  const scrollCarousel = (direction: "left" | "right") => {
+    if (!carouselRef.current) return
+
+    const scrollAmount = carouselRef.current.clientWidth / 2
+    carouselRef.current.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    })
+  }
+
+  // Function to scroll the testimonials carousel
+  const scrollTestimonialsCarousel = (direction: "left" | "right") => {
+    if (!testimonialsCarouselRef.current) return
+
+    const scrollAmount = testimonialsCarouselRef.current.clientWidth
+    testimonialsCarouselRef.current.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    })
+  }
+
+  // Function to navigate to a specific testimonial
+  const goToTestimonial = (index: number) => {
+    if (!testimonialsCarouselRef.current) return
+
+    const cardWidth = testimonialsCarouselRef.current.clientWidth
+    testimonialsCarouselRef.current.scrollTo({
+      left: index * cardWidth,
+      behavior: "smooth",
+    })
+    setActiveTestimonialIndex(index)
+  }
+
   return (
     <div className="min-h-screen bg-white dark:bg-black transition-colors duration-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header with non-sticky logo */}
-        <header className="flex items-center justify-between py-6 relative">
+        <header className="flex items-center justify-between pt-[82px] md:pt-6 pb-6 relative">
           <div className="flex items-center">
             <PlusSign className="mr-3" />
             <Link href="/">
@@ -29,7 +166,7 @@ export default function Home() {
         </header>
 
         {/* Sticky Navigation */}
-        <nav className="fixed top-6 right-4 md:right-8 lg:right-[max(calc((100%-1280px)/2+32px),32px)] z-50 flex space-x-4 bg-white dark:bg-gray-800 py-2 px-3 rounded-full shadow-sm transition-colors duration-200">
+        <nav className="fixed top-6 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 lg:right-[max(calc((100%-1280px)/2+32px),32px)] z-50 flex space-x-4 bg-white dark:bg-gray-800 py-2 px-3 rounded-full shadow-md transition-colors duration-200">
           <Link
             href="/work"
             className="px-5 py-2 rounded-full bg-black dark:bg-white text-white dark:text-black text-sm font-medium"
@@ -50,9 +187,9 @@ export default function Home() {
           </Link>
         </nav>
 
-        {/* Hero Section */}
+        {/* Hero Section - Reduced top padding on mobile */}
         <AnimatedContent>
-          <div className="py-20 md:py-28 relative">
+          <div className="py-10 md:py-28 relative">
             <div className="absolute top-0 left-0 w-px h-20 bg-gray-800/30 dark:bg-white/20"></div>
             <h1
               className="text-4xl md:text-6xl lg:text-7xl font-[100] leading-tight tracking-wider text-black dark:text-white max-w-5xl transition-colors duration-200 font-sans"
@@ -76,11 +213,16 @@ export default function Home() {
               {/* Carousel Container with Feathering */}
               <div className="relative overflow-visible">
                 <div className="pt-8 pb-8 px-4 -mx-4 overflow-hidden">
-                  {/* Left Feathering Gradient */}
-                  <div className="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-r from-white dark:from-black to-transparent"></div>
+                  {/* Left Feathering Gradient - Only show when scrolled */}
+                  <div
+                    className={`absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-r from-white dark:from-black to-transparent transition-opacity duration-300 ${
+                      showLeftGradient ? "opacity-100" : "opacity-0"
+                    }`}
+                  ></div>
 
                   {/* Carousel */}
                   <div
+                    ref={carouselRef}
                     id="carousel-container"
                     className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 pt-4 scrollbar-hide"
                     style={{ scrollBehavior: "smooth" }}
@@ -88,7 +230,7 @@ export default function Home() {
                     {projects.map((project) => (
                       <div
                         key={project.slug}
-                        className="min-w-[85%] md:min-w-[45%] lg:min-w-[30%] flex-shrink-0 snap-center bg-gray-50 dark:bg-gray-800 rounded-xl p-6 transition-all hover:shadow-lg hover:scale-110 hover:z-10 origin-center duration-300 relative"
+                        className="min-w-[85%] md:min-w-[45%] lg:min-w-[30%] flex-shrink-0 snap-center bg-gray-50 dark:bg-gray-800 rounded-xl p-6 hover-float hover:shadow-lg hover:z-10 relative"
                       >
                         <Link href={`/projects/${project.slug}`}>
                           <div className="aspect-[4/3] relative mb-6 overflow-hidden rounded-lg">
@@ -110,18 +252,21 @@ export default function Home() {
                     ))}
                   </div>
 
-                  {/* Right Feathering Gradient */}
-                  <div className="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-l from-white dark:from-black to-transparent"></div>
+                  {/* Right Feathering Gradient - Only show when there's more content */}
+                  <div
+                    className={`absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-l from-white dark:from-black to-transparent transition-opacity duration-300 ${
+                      showRightGradient ? "opacity-100" : "opacity-0"
+                    }`}
+                  ></div>
                 </div>
               </div>
 
-              {/* Navigation Arrows */}
+              {/* Navigation Arrows with Fade Effect */}
               <button
-                onClick={() => {
-                  const container = document.getElementById("carousel-container")
-                  if (container) container.scrollBy({ left: -container.offsetWidth / 2, behavior: "smooth" })
-                }}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 shadow-md z-20 hidden md:block transition-colors duration-200"
+                onClick={() => scrollCarousel("left")}
+                className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 z-20 md:flex items-center justify-center transition-all duration-300 ${
+                  showLeftArrow ? "opacity-50" : "opacity-0 pointer-events-none"
+                }`}
                 aria-label="Scroll left"
               >
                 <svg
@@ -140,11 +285,10 @@ export default function Home() {
                 </svg>
               </button>
               <button
-                onClick={() => {
-                  const container = document.getElementById("carousel-container")
-                  if (container) container.scrollBy({ left: container.offsetWidth / 2, behavior: "smooth" })
-                }}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 shadow-md z-20 hidden md:block transition-colors duration-200"
+                onClick={() => scrollCarousel("right")}
+                className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 z-20 md:flex items-center justify-center transition-all duration-300 ${
+                  showRightArrow ? "opacity-50" : "opacity-0 pointer-events-none"
+                }`}
                 aria-label="Scroll right"
               >
                 <svg
@@ -427,11 +571,16 @@ export default function Home() {
               <div className="relative">
                 {/* Carousel Container with Feathering */}
                 <div className="relative overflow-hidden">
-                  {/* Left Feathering Gradient */}
-                  <div className="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-r from-white dark:from-black to-transparent"></div>
+                  {/* Left Feathering Gradient - Only show when scrolled */}
+                  <div
+                    className={`absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-r from-white dark:from-black to-transparent transition-opacity duration-300 hidden md:block ${
+                      showTestimonialsLeftGradient ? "opacity-100" : "opacity-0"
+                    }`}
+                  ></div>
 
                   {/* Carousel */}
                   <div
+                    ref={testimonialsCarouselRef}
                     id="testimonials-container"
                     className="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-8 scrollbar-hide"
                     style={{ scrollBehavior: "smooth" }}
@@ -439,7 +588,7 @@ export default function Home() {
                     {testimonials.map((testimonial, index) => (
                       <div
                         key={index}
-                        className="w-[calc(50%-16px)] md:w-[calc(40%-16px)] lg:w-[calc(33.333%-22px)] aspect-square flex-shrink-0 snap-center bg-gray-50 dark:bg-gray-800 rounded-xl p-8 transition-all hover:shadow-lg relative flex flex-col transition-colors duration-200"
+                        className="w-[calc(100%-32px)] md:w-[calc(40%-16px)] lg:w-[calc(33.333%-22px)] aspect-square flex-shrink-0 snap-center bg-gray-50 dark:bg-gray-800 rounded-xl p-8 hover:bg-gray-200 dark:hover:bg-gray-700 relative flex flex-col transition-all duration-200"
                       >
                         <div className="absolute top-4 right-4">
                           <PlusSign size="sm" />
@@ -473,17 +622,36 @@ export default function Home() {
                     ))}
                   </div>
 
-                  {/* Right Feathering Gradient */}
-                  <div className="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-l from-white dark:from-black to-transparent"></div>
+                  {/* Right Feathering Gradient - Only show when there's more content */}
+                  <div
+                    className={`absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-l from-white dark:from-black to-transparent transition-opacity duration-300 hidden md:block ${
+                      showTestimonialsRightGradient ? "opacity-100" : "opacity-0"
+                    }`}
+                  ></div>
                 </div>
 
-                {/* Navigation Arrows */}
+                {/* Pagination Dots - Only visible on mobile */}
+                <div className="flex justify-center mt-6 md:hidden">
+                  {testimonials.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => goToTestimonial(index)}
+                      className={`w-2.5 h-2.5 mx-1 rounded-full transition-all duration-200 ${
+                        index === activeTestimonialIndex
+                          ? "bg-gray-800 dark:bg-white scale-125"
+                          : "bg-gray-300 dark:bg-gray-600"
+                      }`}
+                      aria-label={`Go to testimonial ${index + 1}`}
+                    />
+                  ))}
+                </div>
+
+                {/* Navigation Arrows with Fade Effect */}
                 <button
-                  onClick={() => {
-                    const container = document.getElementById("testimonials-container")
-                    if (container) container.scrollBy({ left: -container.offsetWidth / 2, behavior: "smooth" })
-                  }}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 shadow-md z-20 hidden md:block transition-colors duration-200"
+                  onClick={() => scrollTestimonialsCarousel("left")}
+                  className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 z-20 hidden md:flex items-center justify-center transition-all duration-300 ${
+                    showTestimonialsLeftArrow ? "opacity-50" : "opacity-0 pointer-events-none"
+                  }`}
                   aria-label="Scroll left"
                 >
                   <svg
@@ -502,11 +670,10 @@ export default function Home() {
                   </svg>
                 </button>
                 <button
-                  onClick={() => {
-                    const container = document.getElementById("testimonials-container")
-                    if (container) container.scrollBy({ left: container.offsetWidth / 2, behavior: "smooth" })
-                  }}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 shadow-md z-20 hidden md:block transition-colors duration-200"
+                  onClick={() => scrollTestimonialsCarousel("right")}
+                  className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 z-20 hidden md:flex items-center justify-center transition-all duration-300 ${
+                    showTestimonialsRightArrow ? "opacity-50" : "opacity-0 pointer-events-none"
+                  }`}
                   aria-label="Scroll right"
                 >
                   <svg
@@ -549,7 +716,7 @@ export default function Home() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                 {/* Contact Info */}
-                <div className="bg-gray-100 dark:bg-gray-800 rounded-3xl p-10 space-y-6 transition-colors duration-200 relative">
+                <div className="bg-gray-100 dark:bg-gray-800 rounded-3xl p-10 space-y-6 transition-all duration-200 relative hover:bg-gray-200 dark:hover:bg-gray-700">
                   <div className="absolute top-4 left-4">
                     <PlusSign size="sm" />
                   </div>

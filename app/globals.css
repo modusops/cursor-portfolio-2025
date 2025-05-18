@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
   --scrollbar-width: 8px;
+  --float-transition: transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 /* Use system monospace font for h1 elements */
@@ -85,6 +86,15 @@ body {
   .scrollbar-hide {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+  }
+
+  /* Float animation utility class */
+  .hover-float {
+    transition: var(--float-transition);
+  }
+
+  .hover-float:hover {
+    transform: translateY(-8px);
   }
 }
 
@@ -176,4 +186,23 @@ body {
 }
 .stagger-item:nth-child(5) {
   animation-delay: 0.5s;
+}
+
+/* Carousel navigation arrows */
+.carousel-arrow {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-arrow.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.carousel-arrow.visible {
+  opacity: 1;
+}
+
+/* Add a subtle scale effect on hover */
+.carousel-arrow:hover {
+  transform: scale(1.1);
 }

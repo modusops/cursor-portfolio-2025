@@ -16,7 +16,7 @@ export default function Work() {
     <div className="min-h-screen bg-white dark:bg-black transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with non-sticky logo */}
-        <header className="flex items-center justify-between py-6 relative">
+        <header className="flex items-center justify-between pt-[82px] md:pt-6 pb-6 relative">
           <div className="flex items-center">
             <PlusSign className="mr-3" />
             <Link href="/">
@@ -31,7 +31,7 @@ export default function Work() {
         </header>
 
         {/* Sticky Navigation */}
-        <nav className="fixed top-6 right-4 md:right-8 lg:right-[max(calc((100%-1280px)/2+32px),32px)] z-50 flex space-x-4 bg-white dark:bg-gray-800 py-2 px-3 rounded-full shadow-sm transition-colors duration-200">
+        <nav className="fixed top-6 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 lg:right-[max(calc((100%-1280px)/2+32px),32px)] z-50 flex space-x-4 bg-white dark:bg-gray-800 py-2 px-3 rounded-full shadow-md transition-colors duration-200">
           <Link
             href="/work"
             className="px-5 py-2 rounded-full bg-black dark:bg-white text-white dark:text-black text-sm font-medium transition-colors duration-200"
@@ -52,15 +52,15 @@ export default function Work() {
           </Link>
         </nav>
 
-        {/* Work Content */}
+        {/* Work Content - Reduced top padding on mobile */}
         <AnimatedContent>
-          <div className="py-12">
-            <h1 className="text-4xl md:text-5xl font-medium mb-12 text-black dark:text-white transition-colors duration-200 font-sans">
+          <div className="py-6 md:py-12">
+            <h1 className="text-4xl md:text-5xl font-medium mb-6 md:mb-12 text-black dark:text-white transition-colors duration-200 font-sans">
               Work
             </h1>
 
             {/* Projects Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-12 md:pb-20">
               {projects.map((project) => (
                 <Link
                   href={`/projects/${project.slug}`}
