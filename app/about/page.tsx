@@ -4,6 +4,7 @@ import Link from "next/link"
 import { PlusSign } from "@/components/plus-sign"
 import { useEffect } from "react"
 import { AnimatedContent } from "@/components/animated-content"
+import Image from "next/image"
 
 export default function About() {
   // Scroll to top when component mounts
@@ -57,6 +58,16 @@ export default function About() {
             <h1 className="text-4xl md:text-5xl font-medium mb-6 md:mb-8 text-black dark:text-white transition-colors duration-200 font-sans">
               About
             </h1>
+
+            <div className="aspect-square relative rounded-3xl overflow-hidden max-w-md mx-auto md:mx-0">
+              <Image
+                src="/professional-portrait.png"
+                alt="David Chan avatar"
+                width={500}
+                height={500}
+                className="object-cover"
+              />
+            </div>
 
             <div className="prose max-w-none text-lg dark:prose-invert transition-colors duration-200">
               <p className="text-gray-800 dark:text-gray-200">

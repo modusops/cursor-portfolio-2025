@@ -950,7 +950,7 @@ const testimonials = [
       "David is a master at taming the chaos of the 0 → 1 process. He has the rare ability to jump into the early stages of open-ended projects and rapidly develop structure and systems. He is proactive, works with little to no direction — and he's also very fast!",
     name: "Tanuj Lalwani",
     title: "Head of Design, Daylight",
-    image: "/confident-leader.png",
+    image: "/diverse-person-portrait.png",
     linkedin: "https://www.linkedin.com/in/tanujlalwani/",
   },
   {
@@ -958,7 +958,7 @@ const testimonials = [
       "I cannot recommend David enough. Truly world-class in every sense of the word. From helping to visualize an ambitious product story & vision, to playing an active role in bringing on senior full-time talent, and everything in between – David can seemingly do it all. Our product, team, culture, and customers are in a stronger position thanks to our time together.",
     name: "Jinen Kamdar",
     title: "CPO, Gather",
-    image: "/confident-leader.png",
+    image: "/diverse-person-portrait.png",
     linkedin: "https://www.linkedin.com/in/jinen/",
   },
   {
@@ -966,7 +966,7 @@ const testimonials = [
       "David is a superb designer. He grasps what we are seeking to build and is lightning fast at turning our thoughts into designs. This facilitates a quick feedback cycle leading to designs we are all happy with in an impressively short period of time.",
     name: "Greg Dooley",
     title: "Engineering Partner, GV",
-    image: "/confident-leader.png",
+    image: "/diverse-person-portrait.png",
     linkedin: "https://www.linkedin.com/in/greg-dooley-03809924/",
   },
   {
@@ -974,7 +974,7 @@ const testimonials = [
       "Working with David transformed our product development process. His design thinking approach helped us identify user pain points we hadn't considered. Within weeks, he delivered a comprehensive design system that our engineering team could implement seamlessly. His work directly contributed to a 40% increase in user engagement.",
     name: "Sarah Chen",
     title: "Founder & CEO, Wavelength",
-    image: "/confident-leader.png",
+    image: "/diverse-person-portrait.png",
     linkedin: "https://www.linkedin.com/in/havedare/",
   },
   {
@@ -982,7 +982,7 @@ const testimonials = [
       "David's ability to balance aesthetic excellence with functional design is unmatched. When we brought him in, we had a complex product with an unclear user journey. He simplified everything without sacrificing depth, creating an intuitive experience that our users love. His collaborative approach made the entire process enjoyable and educational for our team.",
     name: "Marcus Johnson",
     title: "Product Director, Nexus Health",
-    image: "/confident-leader.png",
+    image: "/diverse-person-portrait.png",
     linkedin: "https://www.linkedin.com/in/marcus-johnson-755749216/",
   },
 ]
