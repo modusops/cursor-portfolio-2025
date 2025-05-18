@@ -599,7 +599,13 @@ export default function Home() {
                           </p>
 
                           <div className="flex items-center mt-6">
-                            <div className="w-12 h-12 rounded-full overflow-hidden mr-4 flex-shrink-0">
+                            <a
+                              href={testimonial.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="w-12 h-12 rounded-full overflow-hidden mr-4 flex-shrink-0 cursor-pointer transition-transform duration-200 hover:scale-110"
+                              aria-label={`View ${testimonial.name}'s LinkedIn profile`}
+                            >
                               <Image
                                 src={testimonial.image || "/placeholder.svg?height=100&width=100&query=portrait"}
                                 alt={testimonial.name}
@@ -607,7 +613,7 @@ export default function Home() {
                                 height={48}
                                 className="object-cover w-full h-full"
                               />
-                            </div>
+                            </a>
                             <div>
                               <h4 className="font-medium text-black dark:text-white transition-colors duration-200">
                                 {testimonial.name}
@@ -945,6 +951,7 @@ const testimonials = [
     name: "Tanuj Lalwani",
     title: "Head of Design, Daylight",
     image: "/confident-leader.png",
+    linkedin: "https://www.linkedin.com/in/tanujlalwani/",
   },
   {
     quote:
@@ -952,6 +959,7 @@ const testimonials = [
     name: "Jinen Kamdar",
     title: "CPO, Gather",
     image: "/confident-leader.png",
+    linkedin: "https://www.linkedin.com/in/jinen/",
   },
   {
     quote:
@@ -959,6 +967,7 @@ const testimonials = [
     name: "Greg Dooley",
     title: "Engineering Partner, GV",
     image: "/confident-leader.png",
+    linkedin: "https://www.linkedin.com/in/greg-dooley-03809924/",
   },
   {
     quote:
@@ -966,6 +975,7 @@ const testimonials = [
     name: "Sarah Chen",
     title: "Founder & CEO, Wavelength",
     image: "/confident-leader.png",
+    linkedin: "https://www.linkedin.com/in/havedare/",
   },
   {
     quote:
@@ -973,5 +983,6 @@ const testimonials = [
     name: "Marcus Johnson",
     title: "Product Director, Nexus Health",
     image: "/confident-leader.png",
+    linkedin: "https://www.linkedin.com/in/marcus-johnson-755749216/",
   },
 ]
