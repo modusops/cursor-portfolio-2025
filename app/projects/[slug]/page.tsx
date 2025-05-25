@@ -50,13 +50,6 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         {/* Project Content - Reduced top padding on mobile */}
         <AnimatedContent>
           <div className="py-6 md:py-12">
-            <Link
-              href="/work"
-              className="text-sm text-gray-500 dark:text-gray-400 mb-4 md:mb-8 inline-block transition-colors duration-200"
-            >
-              ← Back to projects
-            </Link>
-
             <h1 className="text-4xl md:text-5xl font-medium mb-2 md:mb-4 text-black dark:text-white transition-colors duration-200">
               {project.title}
             </h1>
