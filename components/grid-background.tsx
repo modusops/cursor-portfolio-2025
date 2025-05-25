@@ -1,15 +1,20 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { usePathname } from "next/navigation"
 
 export function GridBackground() {
   const [mounted, setMounted] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     setMounted(true)
   }, [])
 
-  if (!mounted) return null
+  // Hide grid background on project pages
+  const isProjectPage = pathname?.startsWith("/projects/")
+
+  if (!mounted || isProjectPage) return null
 
   return (
     <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">

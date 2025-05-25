@@ -59,7 +59,7 @@ export default function About() {
               About
             </h1>
 
-            <div className="aspect-square relative rounded-3xl overflow-hidden max-w-md mx-auto md:mx-0">
+            <div className="aspect-square relative rounded-3xl overflow-hidden max-w-md mx-auto md:mx-0 mb-8 md:mb-12">
               <Image
                 src="/professional-portrait.png"
                 alt="David Chan avatar"
