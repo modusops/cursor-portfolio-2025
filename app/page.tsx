@@ -919,28 +919,28 @@ export default function Home() {
 
 const projects = [
   {
-    title: "Daylight",
-    description: "A more caring computer",
-    image: "/placeholder.svg?height=400&width=600",
-    slug: "daylight",
+    title: "LTK Chat",
+    description: "Building stronger creator-led communities",
+    image: "/feature-thumbnail-1.png",
+    slug: "ltk-chat",
   },
   {
-    title: "Workmate",
-    description: "Your AI executive assistant",
-    image: "/placeholder.svg?height=400&width=600",
-    slug: "workmate",
+    title: "Creator",
+    description: "Personalized creator coach powered by AI",
+    image: "/creator-hero.png",
+    slug: "creator",
   },
   {
-    title: "Slingshot",
-    description: "Personalized AI counselor",
-    image: "/placeholder.svg?height=400&width=600",
-    slug: "slingshot",
+    title: "Sono",
+    description: "Modern training platform for startups",
+    image: "/sono-hero.png",
+    slug: "sono",
   },
   {
-    title: "Patreon",
-    description: "Helping creators connect with fans",
-    image: "/placeholder.svg?height=400&width=600",
-    slug: "patreon",
+    title: "Shopify",
+    description: "Making commerce better for everyone",
+    image: "/shopify-hero.png",
+    slug: "shopify",
   },
 ]
 
