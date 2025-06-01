@@ -5,6 +5,8 @@ import Image from "next/image"
 import { PlusSign } from "@/components/plus-sign"
 import { useEffect, useState, useRef } from "react"
 import { AnimatedContent } from "@/components/animated-content"
+import styles from './styles/fade.module.css'
+import { TypewriterText } from "./components/TypewriterText"
 
 export default function Home() {
   // Scroll to top when component mounts
@@ -149,6 +151,25 @@ export default function Home() {
     setActiveTestimonialIndex(index)
   }
 
+  useEffect(() => {
+    const updateSection = () => {
+      // First, remove all active classes (reset all animations)
+      document.querySelectorAll(`.${styles['fade-in']}`).forEach(el => {
+        el.classList.remove(styles.active);
+      });
+      
+      setTimeout(() => {
+        // Add active class to hero text with delay
+        document.querySelectorAll(`.${styles['fade-in']}`).forEach((el, i) => {
+          setTimeout(() => el.classList.add(styles.active), i * 400);
+        });
+      }, 600);
+    };
+
+    // Run animation on mount
+    updateSection();
+  }, []);
+
   return (
     <div className="min-h-screen bg-white dark:bg-black transition-colors duration-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -192,10 +213,15 @@ export default function Home() {
           <div className="py-10 md:py-28 relative">
             <div className="absolute top-0 left-0 w-px h-20 bg-gray-800/30 dark:bg-white/20"></div>
             <h1
-              className="text-4xl md:text-6xl lg:text-7xl font-[100] leading-tight tracking-wider text-black dark:text-white max-w-5xl transition-colors duration-200 font-sans"
-              style={{ fontWeight: 100, letterSpacing: "0.03em" }}
+              className={`text-4xl md:text-6xl lg:text-7xl font-[200] leading-tight tracking-wider text-black dark:text-white max-w-5xl transition-colors duration-200 font-sans ${styles['fade-in']}`}
+              style={{ fontWeight: 200, letterSpacing: "-0.01em" }}
             >
-              STAFF PRODUCT DESIGNER WITH 10 YEARS OF EXPERIENCE.
+              <TypewriterText 
+                text="STAFF PRODUCT DESIGNER WITH 10 YEARS OF EXPERIENCE."
+                delay={50}
+                className="inline-block"
+                style={{ fontWeight: 200, letterSpacing: "-0.01em" }}
+              />
             </h1>
             <div className="absolute bottom-0 right-0 w-px h-20 bg-gray-800/30 dark:bg-white/20"></div>
           </div>
