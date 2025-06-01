@@ -57,11 +57,12 @@ export const ThreeImagesGrid: React.FC<{ images: ImageProps[] }> = ({ images }) 
 
 export const HeroImage: React.FC<ImageProps> = ({ src, alt }) => (
   <div className="mb-12 md:mb-20">
-    <div className="aspect-[21/9] relative overflow-hidden rounded-xl">
+    <div className="aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9] relative overflow-hidden rounded-xl">
       <Image
         src={src}
         alt={alt}
         fill
+        sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 80vw"
         className="object-cover"
         priority
       />

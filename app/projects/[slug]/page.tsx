@@ -23,8 +23,9 @@ interface ProjectPageProps {
   };
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = projects[params.slug as keyof typeof projects];
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const slug = await params.slug;
+  const project = projects[slug as keyof typeof projects];
 
   if (!project) {
     notFound()

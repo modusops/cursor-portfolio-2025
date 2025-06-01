@@ -4,7 +4,7 @@ import { SingleFullWidth, TwoImagesGrid, ThreeImagesGrid, HeroImage } from '@/ap
 export const ltkChatProject = {
   title: "LTK Chat",
   description: "Building stronger creator-led communities",
-  coverImage: "/feature-thumbnail-1.png",
+  coverImage: "/chat-hero.jpg",
   slug: "ltk-chat",
   metadata: {
     role: "Lead Product Designer",
