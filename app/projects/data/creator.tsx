@@ -4,16 +4,37 @@ import { SingleFullWidth, TwoImagesGrid, ThreeImagesGrid, HeroImage } from '@/ap
 export const creatorProject = {
   title: "Creator",
   description: "Personalized creator coach powered by AI",
-  coverImage: "/creator-hero.png",
+  coverImage: "/placeholder.jpg",
   slug: "creator",
   metadata: {
-    role: "Product Design Lead",
-    timeline: "2024",
-    team: "Solo Project"
+    role: "Lead Designer",
+    timeline: "2023",
+    team: "Design, Engineering, AI"
   },
-  layout: "standard", // Using standard layout instead of split
+  layout: "standard",
   content: (
     <>
+      <section>
+        <h2>Overview</h2>
+        <p>
+          Creator is an AI-powered platform that helps content creators optimize their workflow,
+          improve their content strategy, and grow their audience through personalized coaching and analytics.
+        </p>
+      </section>
+
+      <TwoImagesGrid 
+        images={[
+          {
+            src: "/placeholder.jpg",
+            alt: "Creator dashboard interface"
+          },
+          {
+            src: "/placeholder.jpg",
+            alt: "AI coaching interface"
+          }
+        ]}
+      />
+
       <HeroImage 
         src="/creator-hero.png" 
         alt="Creator AI coaching platform interface"

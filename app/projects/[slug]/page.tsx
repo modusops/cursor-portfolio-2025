@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { notFound } from "next/navigation"
-import { PlusSign } from "@/components/plus-sign"
+import { PlusSign } from "@/app/components/plus-sign"
 import { ProjectLayoutWrapper } from '@/app/components/layouts/ProjectLayoutWrapper';
 import { ltkChatProject } from '../data/ltk-chat';
 import { creatorProject } from '../data/creator';
@@ -24,11 +24,12 @@ interface ProjectPageProps {
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  const slug = await params.slug;
+  // No need to await params.slug as it's already available
+  const slug = params.slug;
   const project = projects[slug as keyof typeof projects];
 
   if (!project) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -40,7 +41,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       content={project.content}
       metadata={project.metadata}
     />
-  )
+  );
 }
 
 export async function generateStaticParams() {

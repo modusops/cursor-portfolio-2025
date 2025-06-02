@@ -261,7 +261,7 @@ export default function Home() {
                         <Link href={`/projects/${project.slug}`}>
                           <div className="aspect-[4/3] relative mb-6 overflow-hidden rounded-lg">
                             <Image
-                              src={project.image || "/placeholder.svg"}
+                              src={project.image || "/placeholder.jpg"}
                               alt={project.title}
                               fill
                               className="object-cover"
@@ -633,7 +633,7 @@ export default function Home() {
                               aria-label={`View ${testimonial.name}'s LinkedIn profile`}
                             >
                               <Image
-                                src={testimonial.image || "/placeholder.svg?height=100&width=100&query=portrait"}
+                                src={testimonial.image || "/placeholder.jpg?height=100&width=100&query=portrait"}
                                 alt={testimonial.name}
                                 width={48}
                                 height={48}

@@ -4,7 +4,7 @@ import { SingleFullWidth, TwoImagesGrid, ThreeImagesGrid, HeroImage } from '@/ap
 export const sonoProject = {
   title: "Sono",
   description: "Modern training platform for startups",
-  coverImage: "/sono-hero.png",
+  coverImage: "/placeholder.jpg",
   slug: "sono",
   metadata: {
     role: "Lead Designer",
@@ -26,11 +26,11 @@ export const sonoProject = {
       <TwoImagesGrid 
         images={[
           {
-            src: "/sono-dashboard.png",
+            src: "/placeholder.jpg",
             alt: "Sono main dashboard interface"
           },
           {
-            src: "/sono-analytics.png",
+            src: "/placeholder.jpg",
             alt: "Learning analytics dashboard"
           }
         ]}

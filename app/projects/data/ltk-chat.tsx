@@ -17,11 +17,23 @@ export const ltkChatProject = {
       <section>
         <h2>Overview</h2>
         <p>
-          LTK Chat revolutionizes how creators interact with their communities. 
-          This platform enables direct, meaningful conversations between creators and their followers,
-          fostering stronger relationships and more engaged communities.
+          LTK Chat is a new platform feature that enables creators to build stronger connections with their community
+          through real-time messaging and engagement tools.
         </p>
       </section>
+
+      <TwoImagesGrid 
+        images={[
+          {
+            src: "/placeholder.jpg",
+            alt: "LTK Chat research findings"
+          },
+          {
+            src: "/placeholder.jpg",
+            alt: "Early wireframes and concepts"
+          }
+        ]}
+      />
 
       <HeroImage 
         src="/ltk-chat-hero.png" 

@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { PlusSign } from "@/components/plus-sign"
+import { PlusSign } from "@/app/components/plus-sign"
 import { useEffect } from "react"
 import { AnimatedContent } from "@/components/animated-content"
 
