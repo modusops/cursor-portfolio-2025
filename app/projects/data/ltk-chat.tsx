@@ -25,12 +25,51 @@ export const ltkChatProject = {
       <TwoImagesGrid 
         images={[
           {
-            src: "/placeholder.jpg",
-            alt: "LTK Chat research findings"
+            src: "/two-images-ltk-creator-emoji.jpg",
+            alt: "creator emoji"
           },
           {
-            src: "/placeholder.jpg",
-            alt: "Early wireframes and concepts"
+            src: "/two-images-ltk-reaction.jpg",
+            alt: "reactions"
+          }
+        ]}
+      />
+
+<ThreeImagesGrid 
+        images={[
+          {
+            src: "/three-images-ltk-creator-input.jpg",
+            alt: "Creator input"
+          },
+          {
+            src: "/three-images-ltk-creator-image-preview.jpg",
+            alt: "Creator image preview"
+          },
+          {
+            src: "/three-images-ltk-creator-video-preview.jpg",
+            alt: "Creator video preview"
+          }
+        ]}
+      />
+
+      <section>
+        <h2>Process & Approach</h2>
+        <p>
+          The design process involved extensive research with creators and their audiences.
+          We conducted multiple rounds of user interviews, prototyping, and testing to ensure
+          the platform met both creators' and followers' needs.
+        </p>
+      </section>
+
+      <TwoImagesGrid 
+        images={[
+          {
+            src: "/two-videos-pull-to-refresh.mp4",
+            alt: "pull to refresh"
+          },
+          {
+            src: "/two-videos-pull-to-refresh.mp4",
+            alt: "pull to refresh"
           }
         ]}
       />
