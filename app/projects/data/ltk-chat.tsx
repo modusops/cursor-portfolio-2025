@@ -65,11 +65,13 @@ export const ltkChatProject = {
         images={[
           {
             src: "/two-videos-pull-to-refresh.mp4",
-            alt: "pull to refresh"
+            alt: "pull to refresh",
+            isVideo: true
           },
           {
             src: "/two-videos-pull-to-refresh.mp4",
-            alt: "pull to refresh"
+            alt: "pull to refresh",
+            isVideo: true
           }
         ]}
       />
