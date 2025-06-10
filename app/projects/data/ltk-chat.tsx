@@ -69,8 +69,8 @@ export const ltkChatProject = {
             isVideo: true
           },
           {
-            src: "/two-videos-pull-to-refresh.mp4",
-            alt: "pull to refresh",
+            src: "/two-videos-ltk-pull-to-refresh-zoom.mp4",
+            alt: "pull to refresh zoom",
             isVideo: true
           }
         ]}
