@@ -53,19 +53,21 @@ export const ltkChatProject = {
       />
 
       <section>
-        <h2>Process & Approach</h2>
+        <h2>Image and video uploads</h2>
         <p>
-          The design process involved extensive research with creators and their audiences.
-          We conducted multiple rounds of user interviews, prototyping, and testing to ensure
-          the platform met both creators' and followers' needs.
+          I designed the image and video upload experience to be simple and intuitive. 
+          The main feed media cards were crafted to allow a great viewing experience 
+          while ensuring users could still easily tap or swipe down to dismiss the keyboard with ease.
+          The expanded views were triggered by a single tap which would open the media in a full screen view of 
+          the media with iOS's blur material layered beneath it to create a sense of depth, hierarchy and immersion. 
         </p>
       </section>
 
       <TwoImagesGrid 
         images={[
           {
-            src: "/two-videos-pull-to-refresh.mp4",
-            alt: "pull to refresh",
+            src: "/two-videos-ltk-emoji-confetti2.mp4",
+            alt: "emoji confetti",
             isVideo: true
           },
           {
@@ -76,98 +78,34 @@ export const ltkChatProject = {
         ]}
       />
 
-      <HeroImage 
-        src="/ltk-chat-hero.png" 
-        alt="LTK Chat platform overview"
-      />
-
-      <section>
-        <h2>The Challenge</h2>
+<section>
+        <h2>Delightful animations</h2>
         <p>
-          Creators needed a more direct way to connect with their audience beyond traditional social media platforms.
-          The challenge was to build a communication tool that maintained the professional boundary while enabling
-          personal connections.
-        </p>
-      </section>
-
-      <TwoImagesGrid 
-        images={[
-          {
-            src: "/ltk-chat-wireframes.png",
-            alt: "Early wireframes and sketches"
-          },
-          {
-            src: "/ltk-chat-research.png",
-            alt: "User research findings"
-          }
-        ]}
-      />
-
-      <section>
-        <h2>Key Features</h2>
-        <ul>
-          <li>Real-time messaging with advanced moderation tools</li>
-          <li>Customizable chat rooms for different topics</li>
-          <li>Integration with LTK's existing creator tools</li>
-          <li>Analytics dashboard for engagement metrics</li>
-        </ul>
-      </section>
-
-      <ThreeImagesGrid 
-        images={[
-          {
-            src: "/ltk-chat-feature-1.png",
-            alt: "Real-time messaging interface"
-          },
-          {
-            src: "/ltk-chat-feature-2.png",
-            alt: "Moderation tools dashboard"
-          },
-          {
-            src: "/ltk-chat-feature-3.png",
-            alt: "Analytics visualization"
-          }
-        ]}
-      />
-
-      <section>
-        <h2>Process & Approach</h2>
-        <p>
-          The design process involved extensive research with creators and their audiences.
-          We conducted multiple rounds of user interviews, prototyping, and testing to ensure
-          the platform met both creators' and followers' needs.
+          One of the core goals of the LTK Chat experience was to create a sense of delight and engagement through
+          thoughtful animations and interactions. I protoyped a number of experiments in SwiftUI that resulted in sustained
+          user engagement with the reactions feature. Another experiment was the pull up to refresh interaction design.
+          This design was necessary due to the nature of the app and how the data gets refreshed. The subtle animation is triggered
+          when new content is available while the user is in-feed. Subtle animations that educate the user is carefully considered
+          throughout the entire chat experience.
         </p>
       </section>
 
       <SingleFullWidth 
-        src="/ltk-chat-process.png"
-        alt="Design process and iterations"
+          src="/one-video-ltk-cardlightleak-test.mp4"
+          alt="emoji confetti"
+          isVideo={true}
       />
 
       <section>
-        <h2>Impact</h2>
+        <h2>Social proof</h2>
         <p>
-          Since launch, LTK Chat has seen:
+          As we were building the chat feature, we wanted to emphasize the social nature of the product by adding
+          a social proof element to the chat experience. I prototyped a special membership card with gyroscopic and parallax effect.
+          This card would be displayed in the profile section of the chat experience as something a creator could show off to a friend.
+          While experienes like these may not always lead to growth in observed metrics, they are a great way to create a memorable experience for the user. 
         </p>
-        <ul>
-          <li>50% increase in creator-follower engagement</li>
-          <li>30% higher retention rates for participating creators</li>
-          <li>Positive feedback from both creators and followers</li>
-        </ul>
       </section>
 
-      <TwoImagesGrid 
-        images={[
-          {
-            src: "/ltk-chat-metrics.png",
-            alt: "Engagement metrics dashboard"
-          },
-          {
-            src: "/ltk-chat-testimonials.png",
-            alt: "User testimonials and feedback"
-          }
-        ]}
-      />
     </>
   )
 }; 

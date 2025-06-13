@@ -15,7 +15,6 @@ export const SingleFullWidth: React.FC<ImageProps> = ({ src, alt, isVideo }) => 
       {isVideo ? (
         <video
           src={src}
-          controls
           autoPlay
           loop
           muted
@@ -42,7 +41,6 @@ export const TwoImagesGrid: React.FC<{ images: ImageProps[] }> = ({ images }) =>
           {image.isVideo ? (
             <video
               src={image.src}
-              controls
               autoPlay
               loop
               muted
