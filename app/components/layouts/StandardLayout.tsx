@@ -37,7 +37,6 @@ export const StandardLayout: React.FC<StandardLayoutProps> = ({
       <AnimatedContent>
         <header className="mb-12">
           <h1 className="text-4xl md:text-5xl font-medium mb-4 text-black dark:text-white transition-colors duration-200 font-sans">{title}</h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">{description}</p>
           {metadata && (
             <div className="grid grid-cols-3 gap-4 mb-8">
               {metadata.role && (
@@ -60,7 +59,7 @@ export const StandardLayout: React.FC<StandardLayoutProps> = ({
               )}
             </div>
           )}
-          <div className="relative w-full h-[60vh] rounded-lg overflow-hidden">
+          <div className="relative w-full h-[60vh] overflow-hidden mb-8">
             <Image
               src={coverImage}
               alt={`${title} cover image`}
@@ -69,6 +68,7 @@ export const StandardLayout: React.FC<StandardLayoutProps> = ({
               priority
             />
           </div>
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">{description}</p>
         </header>
       </AnimatedContent>
       <AnimatedContent className="delay-100">

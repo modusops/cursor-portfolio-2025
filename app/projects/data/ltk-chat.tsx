@@ -3,7 +3,7 @@ import { SingleFullWidth, TwoImagesGrid, ThreeImagesGrid, HeroImage } from '@/ap
 
 export const ltkChatProject = {
   title: "LTK Chat",
-  description: "Building stronger creator-led communities",
+  description: "LTK Chat enables creators to build stronger communities through real-time messaging and engagement tools. I was the lead product designer and worked with a small engineering team to launch LTK's first social product. ",
   coverImage: "/chat-hero.jpg",
   slug: "ltk-chat",
   metadata: {
@@ -14,52 +14,46 @@ export const ltkChatProject = {
   layout: "standard",
   content: (
     <>
-      <section>
-        <h2>Overview</h2>
-        <p>
-          LTK Chat is a new platform feature that enables creators to build stronger connections with their community
-          through real-time messaging and engagement tools.
-        </p>
-      </section>
-
+ 
       <TwoImagesGrid 
         images={[
           {
             src: "/two-images-ltk-creator-emoji.jpg",
-            alt: "creator emoji"
+            alt: "creator emoji",
+            description: "The emoji picker allows creators to express themselves in conversations with their community members"
           },
           {
             src: "/two-images-ltk-reaction.jpg",
-            alt: "reactions"
+            alt: "reactions",
+            description: "Users can react to messages with custom emojis, making conversations more engaging and interactive"
           }
         ]}
       />
 
-<ThreeImagesGrid 
+      <ThreeImagesGrid 
         images={[
           {
             src: "/three-images-ltk-creator-input.jpg",
-            alt: "Creator input"
+            alt: "Creator input",
+            description: "The message input interface supports rich text formatting and media attachments"
           },
           {
             src: "/three-images-ltk-creator-image-preview.jpg",
-            alt: "Creator image preview"
+            alt: "Creator image preview",
+            description: "Real-time image preview helps creators ensure their content looks perfect before sending"
           },
           {
             src: "/three-images-ltk-creator-video-preview.jpg",
-            alt: "Creator video preview"
+            alt: "Creator video preview",
+            description: "Video preview functionality allows creators to review their video messages before sharing"
           }
         ]}
       />
 
       <section>
-        <h2>Image and video uploads</h2>
+        <h2>Design details</h2>
         <p>
-          I designed the image and video upload experience to be simple and intuitive. 
-          The main feed media cards were crafted to allow a great viewing experience 
-          while ensuring users could still easily tap or swipe down to dismiss the keyboard with ease.
-          The expanded views were triggered by a single tap which would open the media in a full screen view of 
-          the media with iOS's blur material layered beneath it to create a sense of depth, hierarchy and immersion. 
+          The subtle animations appear throughout the chat experience to educate the user and add a sense of wonder and delight.
         </p>
       </section>
 
@@ -78,33 +72,29 @@ export const ltkChatProject = {
         ]}
       />
 
-<section>
+      <section>
         <h2>Delightful animations</h2>
         <p>
           One of the core goals of the LTK Chat experience was to create a sense of delight and engagement through
           thoughtful animations and interactions. I protoyped a number of experiments in SwiftUI that resulted in sustained
-          user engagement with the reactions feature. Another experiment was the pull up to refresh interaction design.
-          This design was necessary due to the nature of the app and how the data gets refreshed. The subtle animation is triggered
-          when new content is available while the user is in-feed. Subtle animations that educate the user is carefully considered
-          throughout the entire chat experience.
+          user engagement with the reactions feature.
         </p>
       </section>
 
       <SingleFullWidth 
           src="/one-video-ltk-cardlightleak-test.mp4"
           alt="emoji confetti"
+          description="To give members a sense of achievement on completing their first shop share and to emphasize the social nature of the product, I prototyped a special membership card with gyroscopic and parallax effect.
+          This card would be displayed in the profile section of the chat experience as something a creator could show off to friends."
           isVideo={true}
       />
 
-      <section>
-        <h2>Social proof</h2>
-        <p>
-          As we were building the chat feature, we wanted to emphasize the social nature of the product by adding
-          a social proof element to the chat experience. I prototyped a special membership card with gyroscopic and parallax effect.
-          This card would be displayed in the profile section of the chat experience as something a creator could show off to a friend.
-          While experienes like these may not always lead to growth in observed metrics, they are a great way to create a memorable experience for the user. 
-        </p>
-      </section>
+      <SingleFullWidth 
+          src="/one-video-ltk-confetti.mp4"
+          alt="emoji confetti"
+          description="Followers who react first to a comment trigger an emoji confetti animation."
+          isVideo={true}
+            />
 
     </>
   )

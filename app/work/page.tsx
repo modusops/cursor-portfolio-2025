@@ -67,7 +67,7 @@ export default function Work() {
                   key={project.slug}
                   className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 transition-all hover:shadow-md"
                 >
-                  <div className="aspect-[4/3] relative mb-6 overflow-hidden rounded-lg">
+                  <div className="aspect-[4/3] relative mb-6 overflow-hidden">
                     <Image
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}

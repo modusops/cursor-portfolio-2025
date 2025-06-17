@@ -7,11 +7,12 @@ interface ImageProps {
   src: string;
   alt: string;
   isVideo?: boolean;
+  description?: string;
 }
 
-export const SingleFullWidth: React.FC<ImageProps> = ({ src, alt, isVideo }) => (
+export const SingleFullWidth: React.FC<ImageProps> = ({ src, alt, isVideo, description }) => (
   <div className="my-12 md:my-20">
-    <div className="aspect-video relative overflow-hidden rounded-xl">
+    <div className="aspect-video relative overflow-hidden">
       {isVideo ? (
         <video
           src={src}
@@ -30,6 +31,11 @@ export const SingleFullWidth: React.FC<ImageProps> = ({ src, alt, isVideo }) => 
         />
       )}
     </div>
+    {description && (
+      <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm">
+        {description}
+      </p>
+    )}
   </div>
 );
 
@@ -37,23 +43,30 @@ export const TwoImagesGrid: React.FC<{ images: ImageProps[] }> = ({ images }) =>
   <div className="my-12 md:my-20">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
       {images.slice(0, 2).map((image, index) => (
-        <div key={index} className="aspect-[4/3] relative overflow-hidden rounded-xl">
-          {image.isVideo ? (
-            <video
-              src={image.src}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className="object-cover"
-            />
+        <div key={index}>
+          <div className="aspect-[4/3] relative overflow-hidden">
+            {image.isVideo ? (
+              <video
+                src={image.src}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover"
+              />
+            )}
+          </div>
+          {image.description && (
+            <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm">
+              {image.description}
+            </p>
           )}
         </div>
       ))}
@@ -65,22 +78,29 @@ export const ThreeImagesGrid: React.FC<{ images: ImageProps[] }> = ({ images }) 
   <div className="my-12 md:my-20">
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
       {images.slice(0, 3).map((image, index) => (
-        <div key={index} className="aspect-[4/3] relative overflow-hidden rounded-xl">
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
-            className="object-cover"
-          />
+        <div key={index}>
+          <div className="aspect-[4/3] relative overflow-hidden">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className="object-cover"
+            />
+          </div>
+          {image.description && (
+            <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm">
+              {image.description}
+            </p>
+          )}
         </div>
       ))}
     </div>
   </div>
 );
 
-export const HeroImage: React.FC<ImageProps> = ({ src, alt }) => (
+export const HeroImage: React.FC<ImageProps> = ({ src, alt, description }) => (
   <div className="mb-12 md:mb-20">
-    <div className="aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9] relative overflow-hidden rounded-xl">
+    <div className="aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9] relative overflow-hidden">
       <Image
         src={src}
         alt={alt}
@@ -90,5 +110,10 @@ export const HeroImage: React.FC<ImageProps> = ({ src, alt }) => (
         priority
       />
     </div>
+    {description && (
+      <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm">
+        {description}
+      </p>
+    )}
   </div>
 ); 

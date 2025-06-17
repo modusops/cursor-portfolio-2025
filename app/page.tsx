@@ -259,7 +259,7 @@ export default function Home() {
                         className="min-w-[85%] md:min-w-[45%] lg:min-w-[30%] flex-shrink-0 snap-center bg-gray-50 dark:bg-gray-800 rounded-xl p-6 hover-float hover:shadow-lg hover:z-10 relative"
                       >
                         <Link href={`/projects/${project.slug}`}>
-                          <div className="aspect-[4/3] relative mb-6 overflow-hidden rounded-lg">
+                          <div className="aspect-[4/3] relative mb-6 overflow-hidden">
                             <Image
                               src={project.image || "/placeholder.jpg"}
                               alt={project.title}
@@ -355,7 +355,7 @@ export default function Home() {
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                <div className="aspect-square relative rounded-3xl overflow-hidden max-w-md mx-auto md:mx-0">
+                <div className="aspect-square relative overflow-hidden max-w-md mx-auto md:mx-0">
                   <Image src="/avatar.jpeg" alt="David Chan avatar" width={500} height={500} className="object-cover" />
                 </div>
 
