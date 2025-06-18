@@ -11,7 +11,6 @@ export const ltkChatProject = {
     timeline: "2023 - Present",
     team: "Product Design, Engineering, Product Management"
   },
-  layout: "standard",
   content: (
     <>
  
@@ -82,7 +81,7 @@ export const ltkChatProject = {
       </section>
 
       <SingleFullWidth 
-          src="/one-video-ltk-cardlightleak-test.mp4"
+          src="/one-video-ltk-lightleak.mp4"
           alt="emoji confetti"
           description="To give members a sense of achievement on completing their first shop share and to emphasize the social nature of the product, I prototyped a special membership card with gyroscopic and parallax effect.
           This card would be displayed in the profile section of the chat experience as something a creator could show off to friends."

@@ -2,10 +2,8 @@
 
 import React from 'react';
 import { StandardLayout } from './StandardLayout';
-import { SplitLayout } from './SplitLayout';
 
 interface ProjectLayoutWrapperProps {
-  layout: string;
   title: string;
   description: string;
   coverImage: string;
@@ -17,10 +15,6 @@ interface ProjectLayoutWrapperProps {
   };
 }
 
-export const ProjectLayoutWrapper: React.FC<ProjectLayoutWrapperProps> = ({
-  layout,
-  ...props
-}) => {
-  const LayoutComponent = layout === 'split' ? SplitLayout : StandardLayout;
-  return <LayoutComponent {...props} />;
+export const ProjectLayoutWrapper: React.FC<ProjectLayoutWrapperProps> = (props) => {
+  return <StandardLayout {...props} />;
 }; 

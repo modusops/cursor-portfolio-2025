@@ -11,7 +11,6 @@ export const sonoProject = {
     timeline: "2023",
     team: "Design, Engineering, Content"
   },
-  layout: "standard",
   content: (
     <>
       <section>

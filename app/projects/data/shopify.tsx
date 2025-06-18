@@ -11,7 +11,6 @@ export const shopifyProject = {
     timeline: "2023-2024",
     team: "Design Systems, Platform"
   },
-  layout: "standard", // Using standard layout for variety
   content: (
     <>
       <HeroImage 

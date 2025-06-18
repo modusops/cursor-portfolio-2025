@@ -26,7 +26,7 @@ export const StandardLayout: React.FC<StandardLayoutProps> = ({
   metadata
 }) => {
   return (
-    <article className="max-w-5xl mx-auto px-4 py-12 relative">
+    <article className="max-w-7xl mx-auto px-4 py-12 relative">
       <Link 
         href="/" 
         className="fixed left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 lg:right-[max(calc((100%-1280px)/2+32px),32px)] top-8 p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors z-50"
