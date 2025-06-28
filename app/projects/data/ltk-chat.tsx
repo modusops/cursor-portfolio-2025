@@ -11,6 +11,7 @@ export const ltkChatProject = {
     timeline: "2023 - Present",
     team: "Product Design, Engineering, Product Management"
   },
+  layout: "standard",
   content: (
     <>
  
