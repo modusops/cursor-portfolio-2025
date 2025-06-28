@@ -61,7 +61,7 @@ export default function About() {
 
             <div className="aspect-square relative overflow-hidden max-w-md mx-auto md:mx-0 mb-8 md:mb-12">
               <Image
-                src="/professional-portrait.png"
+                src="/headshot.png"
                 alt="David Chan avatar"
                 width={500}
                 height={500}
@@ -71,21 +71,9 @@ export default function About() {
 
             <div className="prose max-w-none text-lg dark:prose-invert transition-colors duration-200">
               <p className="text-gray-800 dark:text-gray-200">
-                I'm a product designer I believe in crafting experiences that are not only functional but also beautiful
-                and intuitive. I'm detail-oriented and driven by setting a high bar in design and execution (and knows
-                what excellence looks like). With more than a decade of experience, I've worked on a wide range of
-                projects across mobile, responsive web, and AI technologies.
-              </p>
-
-              <p className="text-gray-800 dark:text-gray-200">
-                As an IC with a history of taking on ambitious 0-to-1 projects, strategize, design, ship code, and as a
-                former manager leading a team I can operate at all levels to help deliver exceptional product
-                experiences through design and code. See my contributions: https://github.com/DaveChan-ux
-              </p>
-
-              <p className="text-gray-800 dark:text-gray-200">
-                My approach combines strategic thinking with hands-on execution. I believe in designing with purpose,
-                focusing on solving real user problems while aligning with business goals.
+              I'm a seasoned product designer with experience building and shipping compellling digital experiences on desktop, mobile, and web for consumer, B2B SaaS, enterprise and AI products. 
+              I believe great design is half art and half science and always born from a deep understanding of the user and the business. 
+              Great design for me isn't just about the aesthetics, it's about the emotions it evokes, and the connection it creates between the user and the product.
               </p>
 
               <h2 className="text-2xl font-medium mt-12 mb-4 text-black dark:text-white transition-colors duration-200">
