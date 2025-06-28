@@ -946,14 +946,14 @@ export default function Home() {
 const projects = [
   {
     title: "LTK Chat",
-    description: "Building stronger creator-led communities",
+    description: "Build stronger creator-led communities",
     image: "/feature-thumbnail-1.png",
     slug: "ltk-chat",
   },
   {
-    title: "Creator",
-    description: "Personalized creator coach powered by AI",
-    image: "/creator-hero.png",
+    title: "LTK Creator",
+    description: "Helping creators understand their business",
+    image: "/feature-thumbnail-2.png",
     slug: "creator",
   },
   {
