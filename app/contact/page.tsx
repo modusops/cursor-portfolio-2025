@@ -54,9 +54,9 @@ export default function Contact() {
         {/* Contact Content - Reduced top padding on mobile */}
         <AnimatedContent>
           <div className="py-8 md:py-20 max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-medium mb-6 md:mb-8 text-black dark:text-white transition-colors duration-200 font-sans">
+            {/* <h1 className="text-4xl md:text-5xl font-light mb-6 md:mb-8 text-black dark:text-white transition-colors duration-200 font-sans">
               Contact
-            </h1>
+            </h1> */}
 
             <div className="prose max-w-none text-lg dark:prose-invert transition-colors duration-200">
               <p className="text-gray-800 dark:text-gray-200">

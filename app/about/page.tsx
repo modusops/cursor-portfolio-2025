@@ -55,9 +55,7 @@ export default function About() {
         {/* About Content - Reduced top padding on mobile */}
         <AnimatedContent>
           <div className="py-8 md:py-20 max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-medium mb-6 md:mb-8 text-black dark:text-white transition-colors duration-200 font-sans">
-              About
-            </h1>
+
 
             <div className="aspect-square relative overflow-hidden max-w-md mx-auto md:mx-0 mb-8 md:mb-12">
               <Image
@@ -73,42 +71,55 @@ export default function About() {
               <p className="text-gray-800 dark:text-gray-200">
               I'm a seasoned product designer with experience building and shipping compellling digital experiences on desktop, mobile, and web for consumer, B2B SaaS, enterprise and AI products. 
               I believe great design is half art and half science and always born from a deep understanding of the user and the business. 
-              Great design for me isn't just about the aesthetics, it's about the emotions it evokes, and the connection it creates between the user and the product.
+              <br />
+              <br /> Great design for me isn't just about the aesthetics, it's about the emotions it evokes, and the connection it creates between the user and the product.
               </p>
-
-              <h2 className="text-2xl font-medium mt-12 mb-4 text-black dark:text-white transition-colors duration-200">
+              <h2 className="text-4xl font-normal mt-12 mb-4 text-black dark:text-white transition-colors duration-200">
                 Experience
               </h2>
 
               <ul className="space-y-6">
                 <li>
-                  <div className="font-medium text-black dark:text-white transition-colors duration-200">
-                    Staff Product Designer
-                  </div>
-                  <div className="text-gray-600 dark:text-gray-400 transition-colors duration-200">
-                    LTK, 2023-Present
+                  <div>
+                    <span className="font-medium text-black dark:text-white transition-colors duration-200">
+                    Staff Product Designer 
+                  </span>
+                  <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
+                     LTK, 2023-Present
+                    </span>
                   </div>
                 </li>
+
                 <li>
-                  <div className="font-medium text-black dark:text-white transition-colors duration-200">
+                  <div>
+                    <span className="font-medium text-black dark:text-white transition-colors duration-200">
                     Founding Product Designer
+                  </span>
+                  <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
+                    Sono, 2022-2023
+                    </span>
                   </div>
-                  <div className="text-gray-600 dark:text-gray-400 transition-colors duration-200">Sono, 2022-2023</div>
                 </li>
+
                 <li>
-                  <div className="font-medium text-black dark:text-white transition-colors duration-200">
+                  <div>
+                    <span className="font-medium text-black dark:text-white transition-colors duration-200">
                     Product Design Manager
-                  </div>
-                  <div className="text-gray-600 dark:text-gray-400 transition-colors duration-200">
+                  </span>
+                  <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
                     Shopify, 2021-2022
+                    </span>
                   </div>
                 </li>
+
                 <li>
-                  <div className="font-medium text-black dark:text-white transition-colors duration-200">
+                  <div>
+                    <span className="font-medium text-black dark:text-white transition-colors duration-200">
                     Senior Product Designer
-                  </div>
-                  <div className="text-gray-600 dark:text-gray-400 transition-colors duration-200">
-                    Adobe, 2019-2021
+                  </span>
+                  <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
+                   Adobe, 2019-2020
+                    </span>
                   </div>
                 </li>
               </ul>
