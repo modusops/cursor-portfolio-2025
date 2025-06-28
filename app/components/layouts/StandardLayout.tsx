@@ -36,7 +36,7 @@ export const StandardLayout: React.FC<StandardLayoutProps> = ({
       </Link>
       <AnimatedContent>
         <header className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-medium mb-4 text-black dark:text-white transition-colors duration-200 font-sans">{title}</h1>
+          <h1 className="text-4xl md:text-5xl font-light mb-4 text-black dark:text-white transition-colors duration-200 font-sans">{title}</h1>
           {metadata && (
             <div className="grid grid-cols-3 gap-4 mb-8">
               {metadata.role && (

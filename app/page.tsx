@@ -210,7 +210,7 @@ export default function Home() {
 
         {/* Hero Section - Reduced top padding on mobile */}
         <AnimatedContent>
-          <div className="py-10 md:py-28 relative">
+          <div className="py-0 md:py-28 relative">
             <div className="absolute top-0 left-0 w-px h-20 bg-gray-800/30 dark:bg-white/20"></div>
             <h1
               className={`text-4xl md:text-6xl lg:text-7xl font-[200] leading-tight tracking-wider text-black dark:text-white max-w-5xl transition-colors duration-200 font-sans ${styles['fade-in']}`}
@@ -229,11 +229,11 @@ export default function Home() {
 
         {/* Projects Carousel */}
         <AnimatedContent className="delay-100">
-          <div className="py-10 relative">
-            <div className="flex items-center mb-8">
+          <div className="py-0 relative">
+            {/* <div className="flex items-center mb-8">
               <PlusSign size="sm" className="mr-3" />
               <h2 className="text-2xl font-medium">Featured Projects</h2>
-            </div>
+            </div> */}
 
             <div className="relative">
               {/* Carousel Container with Feathering */}
@@ -356,7 +356,7 @@ export default function Home() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 <div className="aspect-square relative overflow-hidden max-w-md mx-auto md:mx-0">
-                  <Image src="/avatar.jpeg" alt="David Chan avatar" width={500} height={500} className="object-cover" />
+                  <Image src="/headshot.png" alt="David Chan avatar" width={500} height={500} className="object-cover" />
                 </div>
 
                 <div className="space-y-8">
@@ -580,153 +580,6 @@ export default function Home() {
           </div>
         </AnimatedContent>
 
-        {/* Testimonials Section */}
-        <AnimatedContent className="delay-500">
-          <div
-            className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200 relative"
-            style={{ boxShadow: "rgba(255, 255, 255, 0.3) 0px 1px 2px 0px inset" }}
-          >
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-4xl font-normal mb-16 flex items-center">
-                <span className="relative">
-                  In their words
-                  <div className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800/15 dark:bg-white/20"></div>
-                </span>
-              </h2>
-
-              <div className="relative">
-                {/* Carousel Container with Feathering */}
-                <div className="relative overflow-hidden">
-                  {/* Left Feathering Gradient - Only show when scrolled */}
-                  <div
-                    className={`absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-r from-white dark:from-black to-transparent transition-opacity duration-300 hidden md:block ${
-                      showTestimonialsLeftGradient ? "opacity-100" : "opacity-0"
-                    }`}
-                  ></div>
-
-                  {/* Carousel */}
-                  <div
-                    ref={testimonialsCarouselRef}
-                    id="testimonials-container"
-                    className="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-8 scrollbar-hide"
-                    style={{ scrollBehavior: "smooth" }}
-                  >
-                    {testimonials.map((testimonial, index) => (
-                      <div
-                        key={index}
-                        className="w-[calc(100%-32px)] md:w-[calc(40%-16px)] lg:w-[calc(33.333%-22px)] aspect-square flex-shrink-0 snap-center bg-gray-50 dark:bg-gray-800 rounded-xl p-8 hover:bg-gray-200 dark:hover:bg-gray-700 relative flex flex-col transition-all duration-200"
-                      >
-                        <div className="absolute top-4 right-4">
-                          <PlusSign size="sm" />
-                        </div>
-                        <div className="flex-1 flex flex-col">
-                          <p className="text-lg text-gray-800 dark:text-gray-300 leading-relaxed flex-1 overflow-y-auto transition-colors duration-200">
-                            {testimonial.quote}
-                          </p>
-
-                          <div className="flex items-center mt-6">
-                            <a
-                              href={testimonial.linkedin}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="w-12 h-12 rounded-full overflow-hidden mr-4 flex-shrink-0 cursor-pointer transition-transform duration-200 hover:scale-110"
-                              aria-label={`View ${testimonial.name}'s LinkedIn profile`}
-                            >
-                              <Image
-                                src={testimonial.image || "/placeholder.jpg?height=100&width=100&query=portrait"}
-                                alt={testimonial.name}
-                                width={48}
-                                height={48}
-                                className="object-cover w-full h-full"
-                              />
-                            </a>
-                            <div>
-                              <h4 className="font-medium text-black dark:text-white transition-colors duration-200">
-                                {testimonial.name}
-                              </h4>
-                              <p className="text-sm text-gray-500 dark:text-gray-400 transition-colors duration-200">
-                                {testimonial.title}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Right Feathering Gradient - Only show when there's more content */}
-                  <div
-                    className={`absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-l from-white dark:from-black to-transparent transition-opacity duration-300 hidden md:block ${
-                      showTestimonialsRightGradient ? "opacity-100" : "opacity-0"
-                    }`}
-                  ></div>
-                </div>
-
-                {/* Pagination Dots - Only visible on mobile */}
-                <div className="flex justify-center mt-6 md:hidden">
-                  {testimonials.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => goToTestimonial(index)}
-                      className={`w-2.5 h-2.5 mx-1 rounded-full transition-all duration-200 ${
-                        index === activeTestimonialIndex
-                          ? "bg-gray-800 dark:bg-white scale-125"
-                          : "bg-gray-300 dark:bg-gray-600"
-                      }`}
-                      aria-label={`Go to testimonial ${index + 1}`}
-                    />
-                  ))}
-                </div>
-
-                {/* Navigation Arrows with Fade Effect */}
-                <button
-                  onClick={() => scrollTestimonialsCarousel("left")}
-                  className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 z-20 hidden md:flex items-center justify-center transition-all duration-300 ${
-                    showTestimonialsLeftArrow ? "opacity-50" : "opacity-0 pointer-events-none"
-                  }`}
-                  aria-label="Scroll left"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="size-5 text-gray-700 dark:text-gray-300"
-                  >
-                    <path d="m15 18-6-6 6-6" />
-                  </svg>
-                </button>
-                <button
-                  onClick={() => scrollTestimonialsCarousel("right")}
-                  className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 z-20 hidden md:flex items-center justify-center transition-all duration-300 ${
-                    showTestimonialsRightArrow ? "opacity-50" : "opacity-0 pointer-events-none"
-                  }`}
-                  aria-label="Scroll right"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="size-5 text-gray-700 dark:text-gray-300"
-                  >
-                    <path d="m9 18 6-6-6-6" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </AnimatedContent>
 
         {/* Footer Section */}
         <AnimatedContent className="delay-600">
