@@ -50,7 +50,7 @@ export const creatorProject = {
       />
 
       <SingleFullWidth 
-          src="/one-image-creator-loading-state-detail.jpg"
+          src="/one-image-creator-loading-state-detail2.jpg"
           alt="creator loading detail"
           // description="The loading state component is used to indicate that the app is loading data. I wrote the styleguide for best practices implementing loading state by working closely with engineers. The styleguide eventually became a template for the rest of the design team."
           isVideo={false}
@@ -72,7 +72,7 @@ export const creatorProject = {
             isVideo: true
           },
           {
-            src: "/two-videos-creator-community-zoom.mp4",
+            src: "/two-videos-creator-community-zoom2.mp4",
             alt: "community module zoom",
             description: "User receives a light haptic feedback when the module opens. Haptic feedback is again given as they drag their finger across the chart.",
             isVideo: true

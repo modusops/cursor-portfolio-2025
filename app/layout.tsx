@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} bg-white dark:bg-black text-black dark:text-white transition-colors duration-200`}
+        className={`${inter.variable} bg-white dark:bg-black text-black dark:text-white transition-colors duration-200 custom-plus-cursor`}
       >
         <GridBackground />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
