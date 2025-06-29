@@ -256,10 +256,10 @@ export default function Home() {
                     {projects.map((project) => (
                       <div
                         key={project.slug}
-                        className="min-w-[85%] md:min-w-[45%] lg:min-w-[30%] flex-shrink-0 snap-center bg-gray-50 dark:bg-gray-800 rounded-xl p-6 hover-float hover:shadow-lg hover:z-10 relative"
+                        className="group min-w-[85%] md:min-w-[45%] lg:min-w-[30%] flex-shrink-0 snap-center bg-gray-50 dark:bg-gray-800 rounded-xl p-6 hover-float hover:shadow-lg hover:z-10 relative flex flex-col"
                       >
-                        <Link href={`/projects/${project.slug}`}>
-                          <div className="aspect-[4/3] relative mb-6 overflow-hidden">
+                        <Link href={`/projects/${project.slug}`} className="flex flex-col h-full">
+                          <div className="aspect-[4/3] relative mb-6 overflow-hidden transition-transform duration-300 group-hover:scale-105">
                             <Image
                               src={project.image || "/placeholder.jpg"}
                               alt={project.title}
@@ -267,12 +267,14 @@ export default function Home() {
                               className="object-cover"
                             />
                           </div>
-                          <h2 className="text-xl font-medium text-black dark:text-white mb-1 transition-colors duration-200">
-                            {project.title}
-                          </h2>
-                          <p className="text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
-                            {project.description}
-                          </p>
+                          <div className="mt-auto">
+                            <h2 className="text-xl font-medium text-black dark:text-white mb-1 transition-colors duration-200">
+                              {project.title}
+                            </h2>
+                            <p className="text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
+                              {project.description}
+                            </p>
+                          </div>
                         </Link>
                       </div>
                     ))}
