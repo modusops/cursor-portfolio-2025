@@ -59,7 +59,7 @@ export const StandardLayout: React.FC<StandardLayoutProps> = ({
               )}
             </div>
           )}
-          <div className="relative w-full h-[60vh] overflow-hidden mb-8">
+          <div className="aspect-video relative overflow-hidden mb-8">
             <Image
               src={coverImage}
               alt={`${title} cover image`}

@@ -11,7 +11,7 @@ interface ImageProps {
 }
 
 export const SingleFullWidth: React.FC<ImageProps> = ({ src, alt, isVideo, description }) => (
-  <div className="my-12 md:my-20">
+  <div className="single-full-width my-12 md:my-20">
     <div className="aspect-video relative overflow-hidden">
       {isVideo ? (
         <video
@@ -40,7 +40,7 @@ export const SingleFullWidth: React.FC<ImageProps> = ({ src, alt, isVideo, descr
 );
 
 export const TwoImagesGrid: React.FC<{ images: ImageProps[] }> = ({ images }) => (
-  <div className="my-12 md:my-20">
+  <div className="two-images-grid my-12 md:my-20">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
       {images.slice(0, 2).map((image, index) => (
         <div key={index}>
@@ -75,7 +75,7 @@ export const TwoImagesGrid: React.FC<{ images: ImageProps[] }> = ({ images }) =>
 );
 
 export const ThreeImagesGrid: React.FC<{ images: ImageProps[] }> = ({ images }) => (
-  <div className="my-12 md:my-20">
+  <div className="three-images-grid my-12 md:my-20">
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
       {images.slice(0, 3).map((image, index) => (
         <div key={index}>
