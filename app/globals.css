@@ -243,11 +243,11 @@ body {
 
 /* Custom Plus Cursor */
 .custom-plus-cursor {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48' fill='none'><rect x='22' y='0' width='4' height='48' fill='rgba(0,0,0,0.2)'/><rect x='0' y='22' width='48' height='4' fill='rgba(0,0,0,0.2)'/></svg>") 24 24, auto;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'><rect x='14' y='0' width='4' height='32' fill='rgba(0,0,0,0.2)'/><rect x='0' y='14' width='32' height='4' fill='rgba(0,0,0,0.2)'/></svg>") 16 16, auto;
 }
 
 .dark .custom-plus-cursor {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48' fill='none'><rect x='22' y='0' width='4' height='48' fill='rgba(255,255,255,0.2)'/><rect x='0' y='22' width='48' height='4' fill='rgba(255,255,255,0.2)'/></svg>") 24 24, auto;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'><rect x='14' y='0' width='4' height='32' fill='rgba(255,255,255,0.2)'/><rect x='0' y='14' width='32' height='4' fill='rgba(255,255,255,0.2)'/></svg>") 16 16, auto;
 }
 
 /* Hot Pink Plus Cursor for Tappable Elements - Works in both light and dark modes */
@@ -261,7 +261,7 @@ body {
 .dark .custom-plus-cursor [role="button"]:hover,
 .dark .custom-plus-cursor .hover\:cursor-pointer:hover,
 .dark .custom-plus-cursor .cursor-pointer:hover {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48' fill='none'><rect x='22' y='0' width='4' height='48' fill='%23FF00FF'/><rect x='0' y='22' width='48' height='4' fill='%23FF00FF'/></svg>") 24 24, auto !important;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'><rect x='14' y='0' width='4' height='32' fill='%23FF00FF'/><rect x='0' y='14' width='32' height='4' fill='%23FF00FF'/></svg>") 16 16, auto !important;
 }
 
 /* Apply plus cursor to all tappable elements */
@@ -270,7 +270,7 @@ body {
 .custom-plus-cursor [role="button"],
 .custom-plus-cursor .hover\:cursor-pointer,
 .custom-plus-cursor .cursor-pointer {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48' fill='none'><rect x='22' y='0' width='4' height='48' fill='rgba(0,0,0,0.2)'/><rect x='0' y='22' width='48' height='4' fill='rgba(0,0,0,0.2)'/></svg>") 24 24, auto;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'><rect x='14' y='0' width='4' height='32' fill='rgba(0,0,0,0.2)'/><rect x='0' y='14' width='32' height='4' fill='rgba(0,0,0,0.2)'/></svg>") 16 16, auto;
 }
 
 .dark .custom-plus-cursor a,
@@ -278,7 +278,7 @@ body {
 .dark .custom-plus-cursor [role="button"],
 .dark .custom-plus-cursor .hover\:cursor-pointer,
 .dark .custom-plus-cursor .cursor-pointer {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48' fill='none'><rect x='22' y='0' width='4' height='48' fill='rgba(255,255,255,0.2)'/><rect x='0' y='22' width='48' height='4' fill='rgba(255,255,255,0.2)'/></svg>") 24 24, auto;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'><rect x='14' y='0' width='4' height='32' fill='rgba(255,255,255,0.2)'/><rect x='0' y='14' width='32' height='4' fill='rgba(255,255,255,0.2)'/></svg>") 16 16, auto;
 }
 
 section + .single-full-width,

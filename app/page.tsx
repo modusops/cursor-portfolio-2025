@@ -217,7 +217,7 @@ export default function Home() {
               style={{ fontWeight: 200, letterSpacing: "-0.01em" }}
             >
               <TypewriterText 
-                text="STAFF PRODUCT DESIGNER WITH 10 YEARS OF EXPERIENCE."
+                text="Staff Product Designer based in Seattle. Obsess over craft. Champion users. Sweat every detail.."
                 delay={50}
                 className="inline-block"
                 style={{ fontWeight: 200, letterSpacing: "-0.01em" }}
@@ -356,10 +356,10 @@ export default function Home() {
                 </span>
               </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                <div className="aspect-square relative overflow-hidden max-w-md mx-auto md:mx-0">
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-12 items-start">
+                {/* <div className="aspect-square relative overflow-hidden max-w-md mx-auto md:mx-0">
                   <Image src="/headshot.png" alt="David Chan avatar" width={500} height={500} className="object-cover" />
-                </div>
+                </div> */}
 
                 <div className="space-y-8">
                   <h3 className="text-3xl md:text-4xl font-normal leading-tight">
@@ -371,7 +371,63 @@ export default function Home() {
                     partner with founders to bring their ideas to life. As a fractional design partner, I will:
                   </p>
 
-                  <ul className="space-y-4 text-gray-600 dark:text-gray-400 transition-colors duration-200">
+                  <p className="text-gray-800 dark:text-gray-200">
+              I'm a seasoned product designer with experience building and shipping compellling digital experiences on desktop, mobile, and web for consumer, B2B SaaS, enterprise and AI products. 
+              I believe great design is half art and half science and always born from a deep understanding of the user and the business. 
+              <br />
+              <br /> Great design for me isn't just about the aesthetics, it's about the emotions it evokes, and the connection it creates between the user and the product.
+              </p>
+              <h3 className="text-xl font-medium mt-12 mb-4 text-black dark:text-white transition-colors duration-200">
+                Experience
+              </h3>
+
+              <ul className="space-y-4">
+                <li>
+                  <div>
+                    <span className="font-medium text-black dark:text-white transition-colors duration-200">
+                    Staff Product Designer 
+                  </span>
+                  <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
+                     LTK, 2023-Present
+                    </span>
+                  </div>
+                </li>
+
+                <li>
+                  <div>
+                    <span className="font-medium text-black dark:text-white transition-colors duration-200">
+                    Founding Product Designer
+                  </span>
+                  <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
+                    Sono, 2022-2023
+                    </span>
+                  </div>
+                </li>
+
+                <li>
+                  <div>
+                    <span className="font-medium text-black dark:text-white transition-colors duration-200">
+                    Product Design Manager
+                  </span>
+                  <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
+                    Shopify, 2021-2022
+                    </span>
+                  </div>
+                </li>
+
+                <li>
+                  <div>
+                    <span className="font-medium text-black dark:text-white transition-colors duration-200">
+                    Senior Product Designer
+                  </span>
+                  <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
+                   Adobe, 2019-2020
+                    </span>
+                  </div>
+                </li>
+              </ul>
+
+                  {/* <ul className="space-y-4 text-gray-600 dark:text-gray-400 transition-colors duration-200">
                     <li className="flex items-start">
                       <PlusSign size="sm" className="mr-3 mt-1 flex-shrink-0" />
                       <span>Help you shape your product strategy without drowning in docs</span>
@@ -388,9 +444,9 @@ export default function Home() {
                       <PlusSign size="sm" className="mr-3 mt-1 flex-shrink-0" />
                       <span>Build and nurture a design team that's set up for success</span>
                     </li>
-                  </ul>
+                  </ul> */}
 
-                  <Link
+                  {/* <Link
                     href="/about"
                     className="inline-flex items-center text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                   >
@@ -410,7 +466,7 @@ export default function Home() {
                       <path d="M5 12h14" />
                       <path d="m12 5 7 7-7 7" />
                     </svg>
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>
