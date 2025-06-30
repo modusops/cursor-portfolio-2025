@@ -194,12 +194,12 @@ export default function Home() {
           >
             Home
           </Link>
-          <Link
+          {/* <Link
             href="/about"
             className="nav-item px-5 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white rounded-full transition-colors text-sm font-medium relative"
           >
             About
-          </Link>
+          </Link> */}
           <Link
             href="/contact"
             className="nav-item px-5 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white rounded-full transition-colors text-sm font-medium relative"
@@ -217,7 +217,7 @@ export default function Home() {
               style={{ fontWeight: 200, letterSpacing: "-0.01em" }}
             >
               <TypewriterText 
-                text="Staff Product Designer based in Seattle. Obsess over craft. Champion users. Sweat every detail.."
+                text="STAFF PRODUCT DESIGNER BASED IN SEATTLE🌲. OBSESS OVER CRAFT🛠️. CHAMPION USERS."
                 delay={50}
                 className="inline-block"
                 style={{ fontWeight: 200, letterSpacing: "-0.01em" }}
@@ -363,20 +363,21 @@ export default function Home() {
 
                 <div className="space-y-8">
                   <h3 className="text-3xl md:text-4xl font-normal leading-tight">
-                    I help early-stage startups ship fast without compromising quality.
+                    I help teams ship fast (and learn) without compromising quality.
                   </h3>
 
                   <p className="text-lg text-gray-600 dark:text-gray-400 transition-colors duration-200">
-                    I've spent the last fifteen years building 0→1 products for the world's top tech companies. Today, I
-                    partner with founders to bring their ideas to life. As a fractional design partner, I will:
+                    I've helped build products for the world's top tech companies.
+                    As a seasoned product designer with experience building and shipping compellling digital experiences on desktop, mobile, and web for consumer, B2B SaaS, enterprise and AI products, 
+                  I believe great design is half art and half science and always born from a deep understanding of the user and the business. 
                   </p>
 
-                  <p className="text-gray-800 dark:text-gray-200">
-              I'm a seasoned product designer with experience building and shipping compellling digital experiences on desktop, mobile, and web for consumer, B2B SaaS, enterprise and AI products. 
-              I believe great design is half art and half science and always born from a deep understanding of the user and the business. 
-              <br />
-              <br /> Great design for me isn't just about the aesthetics, it's about the emotions it evokes, and the connection it creates between the user and the product.
-              </p>
+                  {/* <p className="text-gray-800 dark:text-gray-200">
+                  I'm a seasoned product designer with experience building and shipping compellling digital experiences on desktop, mobile, and web for consumer, B2B SaaS, enterprise and AI products. 
+                  I believe great design is half art and half science and always born from a deep understanding of the user and the business. 
+                  <br />
+                  <br /> Great design for me isn't just about the aesthetics, it's about the emotions it evokes, and the connection it creates between the user and the product.
+                  </p> */}
               <h3 className="text-xl font-medium mt-12 mb-4 text-black dark:text-white transition-colors duration-200">
                 Experience
               </h3>
@@ -477,7 +478,7 @@ export default function Home() {
           </div>
         </AnimatedContent>
 
-        {/* Capabilities Section */}
+        {/* Passionate about Section */}
         <AnimatedContent className="delay-300">
           <div
             className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200 relative"
@@ -487,7 +488,7 @@ export default function Home() {
               <div className="flex flex-col md:flex-row md:justify-between md:items-start">
                 <h2 className="text-4xl font-normal mb-12 md:mb-0 md:w-1/3 flex items-center">
                   <span className="relative">
-                    Capabilities
+                    Passions
                     <div className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800/15 dark:bg-white/20"></div>
                   </span>
                 </h2>
@@ -496,7 +497,19 @@ export default function Home() {
                   <div className="flex flex-wrap gap-4">
                     <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
                       <PlusSign size="sm" className="mr-2" />
-                      Product Design
+                      Information Architecture
+                    </div>
+                    <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                      <PlusSign size="sm" className="mr-2" />
+                      User Research
+                    </div>
+                    <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                      <PlusSign size="sm" className="mr-2" />
+                      Usability
+                    </div>
+                    <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                      <PlusSign size="sm" className="mr-2" />
+                      iOS Design
                     </div>
                     <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
                       <PlusSign size="sm" className="mr-2" />
@@ -516,7 +529,7 @@ export default function Home() {
                     </div>
                     <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
                       <PlusSign size="sm" className="mr-2" />
-                      Pitch Decks
+                      Scalable Designs
                     </div>
                     <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
                       <PlusSign size="sm" className="mr-2" />
@@ -529,6 +542,10 @@ export default function Home() {
                     <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
                       <PlusSign size="sm" className="mr-2" />
                       Coaching
+                    </div>
+                    <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                      <PlusSign size="sm" className="mr-2" />
+                      Prototyping
                     </div>
                   </div>
                 </div>
@@ -669,13 +686,13 @@ export default function Home() {
                   </h3>
 
                   <p className="text-gray-700 dark:text-gray-300 transition-colors duration-200">
-                    I'm currently prioritizing projects in consumer, education, and healthcare. Shoot me a note with
+                    I'm currently prioritizing projects in consumer and healthcare. Shoot me a message with
                     your details at{" "}
                     <a
-                      href="mailto:hello@example.com"
+                      href="mailto:juntochan@proton.me"
                       className="text-black dark:text-white hover:underline transition-colors duration-200"
                     >
-                      hello@example.com
+                      juntochan@proton.me
                     </a>
                   </p>
 
@@ -689,7 +706,7 @@ export default function Home() {
                   <h3 className="text-2xl font-normal mb-8">Elsewhere</h3>
 
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-y-8">
-                    <a
+                    {/* <a
                       href="https://twitter.com"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -710,10 +727,10 @@ export default function Home() {
                         <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
                       </svg>
                       Twitter
-                    </a>
+                    </a> */}
 
                     <a
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/davejuntochan/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
@@ -737,7 +754,7 @@ export default function Home() {
                       LinkedIn
                     </a>
 
-                    <a
+                    {/* <a
                       href="https://substack.com"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -761,10 +778,10 @@ export default function Home() {
                         <path d="M7 17h10" />
                       </svg>
                       Substack
-                    </a>
+                    </a> */}
 
                     <a
-                      href="https://bsky.app"
+                      href="https://bsky.app/profile/designpappa.bsky.social"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
@@ -788,7 +805,7 @@ export default function Home() {
                       Bluesky
                     </a>
 
-                    <a
+                    {/* <a
                       href="https://read.cv"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -809,9 +826,9 @@ export default function Home() {
                         <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
                       </svg>
                       read.cv
-                    </a>
+                    </a> */}
 
-                    <a
+                    {/* <a
                       href="https://instagram.com"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -834,7 +851,7 @@ export default function Home() {
                         <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                       </svg>
                       Instagram
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>

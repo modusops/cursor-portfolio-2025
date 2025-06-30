@@ -37,12 +37,12 @@ export default function Contact() {
           >
             Home
           </Link>
-          <Link
+          {/* <Link
             href="/about"
             className="nav-item px-5 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white rounded-full transition-colors text-sm font-medium relative"
           >
             About
-          </Link>
+          </Link> */}
           <Link
             href="/contact"
             className="nav-item active px-5 py-2 rounded-full bg-black dark:bg-white text-white dark:text-black text-sm font-medium transition-colors duration-200 relative"
