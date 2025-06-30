@@ -74,7 +74,7 @@ export default function About() {
               <br />
               <br /> Great design for me isn't just about the aesthetics, it's about the emotions it evokes, and the connection it creates between the user and the product.
               </p>
-              <h3 className="text-2xl font-medium mt-12 mb-4 text-black dark:text-white transition-colors duration-200">
+              <h3 className="text-xl font-medium mt-12 mb-4 text-black dark:text-white transition-colors duration-200">
                 Experience
               </h3>
 
