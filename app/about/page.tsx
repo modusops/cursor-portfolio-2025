@@ -16,7 +16,7 @@ export default function About() {
     <div className="min-h-screen bg-white dark:bg-black transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with non-sticky logo */}
-        <header className="flex items-center justify-between pt-[82px] md:pt-6 pb-6 relative">
+        {/* <header className="flex items-center justify-between pt-[82px] md:pt-6 pb-6 relative">
           <div className="flex items-center">
             <PlusSign className="mr-3" />
             <Link href="/">
@@ -26,9 +26,8 @@ export default function About() {
             </Link>
           </div>
 
-          {/* Empty div to maintain layout with the sticky nav removed */}
           <div className="md:block md:w-[216px]"></div>
-        </header>
+        </header> */}
 
         {/* Sticky Navigation */}
         <nav className="fixed top-6 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 lg:right-[max(calc((100%-1280px)/2+32px),32px)] z-50 flex space-x-4 bg-white dark:bg-gray-800 py-2 px-3 rounded-full shadow-md transition-colors duration-200">

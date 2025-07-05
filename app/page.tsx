@@ -174,7 +174,7 @@ export default function Home() {
     <div className="min-h-screen bg-white dark:bg-black transition-colors duration-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header with non-sticky logo */}
-        <header className="flex items-center justify-between pt-[82px] md:pt-6 pb-6 relative">
+        {/* <header className="flex items-center justify-between pt-[82px] md:pt-6 pb-6 relative">
           <div className="flex items-center">
             <PlusSign className="mr-3" />
             <Link href="/">
@@ -182,35 +182,31 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Empty div to maintain layout with the sticky nav removed */}
           <div className="md:block md:w-[216px]"></div>
-        </header>
+        </header> */}
 
         {/* Sticky Navigation */}
-        <nav className="fixed top-6 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 lg:right-[max(calc((100%-1280px)/2+32px),32px)] z-50 flex space-x-4 bg-white dark:bg-gray-800 py-2 px-3 rounded-full shadow-md transition-colors duration-200">
-          <Link
-            href="/"
-            className="nav-item active px-5 py-2 rounded-full bg-black dark:bg-white text-white dark:text-black text-sm font-medium transition-colors duration-200 relative"
-          >
-            Home
-          </Link>
-          {/* <Link
-            href="/about"
-            className="nav-item px-5 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white rounded-full transition-colors text-sm font-medium relative"
-          >
-            About
-          </Link> */}
-          <Link
-            href="/contact"
-            className="nav-item px-5 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white rounded-full transition-colors text-sm font-medium relative"
-          >
-            Contact
-          </Link>
+        <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] lg:w-1/2 z-50 flex items-center justify-between bg-white dark:bg-gray-800 py-2 px-3 rounded-full shadow-md transition-colors duration-200">
+          <h1 className="text-xl font-medium text-black dark:text-white font-sans pl-2">Dave Chan</h1>
+          <div className="flex items-center space-x-4 pr-2">
+            <Link
+              href="/"
+              className="nav-item active px-5 py-2 rounded-full bg-black dark:bg-white text-white dark:text-black text-sm font-medium transition-colors duration-200 relative"
+            >
+              Home
+            </Link>
+            <Link
+              href="/contact"
+              className="nav-item px-5 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white rounded-full transition-colors text-sm font-medium relative"
+            >
+              Contact
+            </Link>
+          </div>
         </nav>
 
         {/* Hero Section - Reduced top padding on mobile */}
         <AnimatedContent>
-          <div className="py-0 md:py-28 relative">
+          <div className="py-28 relative">
             <div className="absolute top-0 left-0 w-px h-20 bg-gray-800/30 dark:bg-white/20"></div>
             <h1
               className={`text-4xl md:text-6xl lg:text-7xl font-[200] leading-tight tracking-wider text-black dark:text-white max-w-5xl transition-colors duration-200 font-sans ${styles['fade-in']}`}
