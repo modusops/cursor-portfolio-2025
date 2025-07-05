@@ -8,8 +8,8 @@ export const creatorProject = {
   slug: "creator",
   metadata: {
     role: "Lead Designer",
-    timeline: "2023",
-    team: "Design, Engineering, AI"
+    timeline: "Q1 2024 - Q4 2024",
+    team: "Design, Engineering, Product, Marketing, Creator Success, Insights and Analytics, Design Systems, Activation"
   },
   layout: "standard",
   content: (
@@ -24,14 +24,25 @@ export const creatorProject = {
       <SingleFullWidth 
           src="/one-video-ltk-creator-home.mp4"
           alt="creator home"
-          description="The home page of the creator app features a dashboard and modules showing key performance merics for a creator's business. The information can be filtered by the date selectors on the top."
+          description="The home page of the creator app features a dashboard and modules showing key performance merics for a creator's business. The information can be filtered by the date selectors on the top. In Q1 2024, the company made a strategic bet on improving the creator app experience, beginning with a revamp of the home tab. I was tapped to lead this initiative from the design side 3 months after joining the company.
+          The page would be fully rewritten in SwiftUI, where as previously, it was a mix of UIKIT and webviews."
           isVideo={true}
+      />
+
+      <SingleFullWidth
+        src="/one-image-creator-workshop.jpg"
+        alt="creator workshop"
+        description="I led workshops at the beginning of Q1 with stakeholders across 5 teams to drive alignment with an ambitious goal to kick off design at the end of Q1 2024 and begin delivering incremental value by start of Q2 2024.
+        To build alignment and sustain momentum, one hour workshop sessions were held at least twice a week to gain business context and learn from teams who understood their segment of users the most. 
+        I also invited in staff FE and BE engineers and together took a peek under the hood to understand what current issues can be fixed with new SwiftUI stack or where unforseen issues may lie."
+        isVideo={false}
       />
 
       <section>
         <h2>Design systems</h2>
         <p>
-          Through the early days of the project, I explored many new components and design systems that ultimately contributed to the company design system. Components such as the card and loading state components were built from scratch in Figma and SwiftUI.
+          As one of the first designers to work with the newly formed design system team and implement the new components; my responsibility was to not only define the new components, but also included helping define the workflow between product design and design system team.
+          As a result of the redesign, the home tab became the first page to be fully written in SwiftUI utilizing the new library. I helped lay the foundations for how design and design systems team might collaborate in the future.
         </p>
       </section>
 
@@ -40,6 +51,13 @@ export const creatorProject = {
           alt="creator layout"
           // description="The home page of the creator app"
           isVideo={false}
+      />
+
+      <SingleFullWidth
+        src="/one-image-creator-documentation.jpg"
+        alt="creator documentation"
+        description="I worked with the design systems team to set up many new processes for creating new components in Figma and how ICs should document their components."
+        isVideo={false}
       />
 
       <SingleFullWidth 
@@ -87,6 +105,12 @@ export const creatorProject = {
           isVideo={false}
       />
 
+      <SingleFullWidth
+        src="/one-image-creator-results.jpg"
+        alt="results of the redesign"
+        description="The redesign was a success made possible by relentless focus on solving creator problems, attention to detail, and focusing on delivering incremental value."
+        isVideo={false}
+      />
 
       
     </>

@@ -212,7 +212,7 @@ export default function Home() {
               style={{ fontWeight: 200, letterSpacing: "-0.01em" }}
             >
               <TypewriterText 
-                text="STAFF PRODUCT DESIGNER BASED IN SEATTLE🌲. OBSESS OVER CRAFT🛠️. CHAMPION USERS."
+                text="STAFF PRODUCT DESIGNER BASED IN SEATTLE🌲. OBSESSES OVER CRAFT."
                 delay={50}
                 className="inline-block"
                 style={{ fontWeight: 200, letterSpacing: "-0.01em" }}
@@ -572,7 +572,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-medium transition-colors duration-200">Shared ownership.</h3>
                   <p className="text-gray-600 dark:text-gray-400 transition-colors duration-200">
-                    Whether I work independently or integrate with your team, everyone comes along the process.
+                    Whether I work independently or integrate with a team, everyone comes along the process.
                   </p>
                   <div className="absolute -bottom-8 left-0 right-0 h-px bg-gray-800/5 dark:bg-white/10"></div>
                 </div>
@@ -587,7 +587,7 @@ export default function Home() {
                     I work fast, like <span className="italic">really</span> fast.
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 transition-colors duration-200">
-                    Quick iteration allows us to zoom through explorations until we arrive at something that feels just
+                    Quick iteration allows me to zoom through explorations until I arrive at something that feels just
                     right.
                   </p>
                   <div className="absolute -bottom-8 left-0 right-0 h-px bg-gray-800/5 dark:bg-white/10"></div>
@@ -775,7 +775,7 @@ export default function Home() {
                       Substack
                     </a> */}
 
-                    <a
+                    {/* <a
                       href="https://bsky.app/profile/designpappa.bsky.social"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -798,7 +798,7 @@ export default function Home() {
                         <path d="M10 15V6" />
                       </svg>
                       Bluesky
-                    </a>
+                    </a> */}
 
                     {/* <a
                       href="https://read.cv"
@@ -851,14 +851,14 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="mt-20 text-center text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
-                © COPYRIGHT 2025
-              </div>
             </div>
 
             <div className="absolute bottom-6 left-6">
               <PlusSign size="lg" />
             </div>
+          </div>
+          <div className="mt-20 mb-10 text-center text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
+            © COPYRIGHT 2025 <a href="https://github.com/modusops?tab=overview&from=2025-07-01&to=2025-07-06" target="_blank" rel="noopener noreferrer" className="text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200">Built with Cursor</a>
           </div>
         </AnimatedContent>
       </div>
@@ -880,17 +880,17 @@ const projects = [
     slug: "creator",
   },
   {
-    title: "Sono",
-    description: "Modern training platform for startups",
-    image: "/sono-hero.png",
-    slug: "sono",
+    title: "COMING SOON",
+    description: "Please hold while new designs are uploading..",
+    image: "/feature-thumbnail-3.png",
+    slug: "WIP",
   },
-  {
-    title: "Shopify",
-    description: "Making commerce better for everyone",
-    image: "/shopify-hero.png",
-    slug: "shopify",
-  },
+  // {
+  //   title: "Shopify",
+  //   description: "Making commerce better for everyone",
+  //   image: "/shopify-hero.png",
+  //   slug: "shopify",
+  // },
 ]
 
 const testimonials = [
