@@ -29,9 +29,9 @@ export const StandardLayout: React.FC<StandardLayoutProps> = ({
     <article className="max-w-7xl mx-auto px-4 py-12 relative">
       <Link 
         href="/" 
-        className="fixed left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 lg:right-[max(calc((100%-1280px)/2+32px),32px)] top-8 p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors z-50"
+        className="fixed left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 lg:right-[max(calc((100%-1280px)/2+32px),32px)] top-8 p-2 rounded-full backdrop-blur-lg backdrop-saturate-150 backdrop-brightness-110 bg-white/20 dark:bg-gray-800/20 hover:bg-white/30 dark:hover:bg-gray-800/30 border border-white/30 dark:border-gray-700/30 shadow-lg transition-all duration-200 z-50"
       >
-        <X className="h-6 w-6" />
+        <X className="h-6 w-6 text-black dark:text-white drop-shadow-sm" />
         <span className="sr-only">Close</span>
       </Link>
       <AnimatedContent>
