@@ -248,31 +248,58 @@ export default function Home() {
                     className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 pt-4 scrollbar-hide"
                     style={{ scrollBehavior: "smooth" }}
                   >
-                    {projects.map((project) => (
-                      <div
-                        key={project.slug}
-                        className="group min-w-[85%] md:min-w-[45%] lg:min-w-[30%] flex-shrink-0 snap-center bg-gray-50 dark:bg-gray-800 rounded-xl p-6 hover-float hover:shadow-lg hover:z-10 relative flex flex-col"
-                      >
-                        <Link href={`/projects/${project.slug}`} className="flex flex-col h-full">
-                          <div className="aspect-[4/3] relative mb-6 overflow-hidden transition-transform duration-300 group-hover:scale-105">
-                            <Image
-                              src={project.image || "/placeholder.jpg"}
-                              alt={project.title}
-                              fill
-                              className="object-cover"
-                            />
-                          </div>
-                          <div className="mt-auto">
-                            <h2 className="text-xl font-medium text-black dark:text-white mb-1 transition-colors duration-200">
-                              {project.title}
-                            </h2>
-                            <p className="text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
-                              {project.description}
-                            </p>
-                          </div>
-                        </Link>
-                      </div>
-                    ))}
+                    {projects.map((project) => {
+                      const isComingSoon = project.slug === "WIP";
+                      
+                      return (
+                        <div
+                          key={project.slug}
+                          className={`group min-w-[85%] md:min-w-[45%] lg:min-w-[30%] flex-shrink-0 snap-center bg-gray-50 dark:bg-gray-800 rounded-xl p-6 hover-float relative flex flex-col transition-colors duration-500 ease-in-out hover:bg-gray-100 dark:hover:bg-gray-700 hover:shadow-lg hover:z-10 ${
+                            isComingSoon ? "cursor-not-allowed" : ""
+                          }`}
+                        >
+                          {isComingSoon ? (
+                            <div className="flex flex-col h-full pointer-events-none">
+                              <div className="aspect-[4/3] relative mb-6 overflow-hidden transition-transform duration-300 group-hover:scale-105">
+                                <Image
+                                  src={project.image || "/placeholder.jpg"}
+                                  alt={project.title}
+                                  fill
+                                  className="object-cover"
+                                />
+                              </div>
+                              <div className="mt-auto">
+                                <h2 className="text-xl font-medium text-black dark:text-white mb-1 transition-colors duration-200">
+                                  {project.title}
+                                </h2>
+                                <p className="text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
+                                  {project.description}
+                                </p>
+                              </div>
+                            </div>
+                          ) : (
+                            <Link href={`/projects/${project.slug}`} className="flex flex-col h-full">
+                              <div className="aspect-[4/3] relative mb-6 overflow-hidden transition-transform duration-300 group-hover:scale-105">
+                                <Image
+                                  src={project.image || "/placeholder.jpg"}
+                                  alt={project.title}
+                                  fill
+                                  className="object-cover"
+                                />
+                              </div>
+                              <div className="mt-auto">
+                                <h2 className="text-xl font-medium text-black dark:text-white mb-1 transition-colors duration-200">
+                                  {project.title}
+                                </h2>
+                                <p className="text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
+                                  {project.description}
+                                </p>
+                              </div>
+                            </Link>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
 
                   {/* Right Feathering Gradient - Only show when there's more content */}
@@ -880,7 +907,7 @@ const projects = [
     slug: "creator",
   },
   {
-    title: "COMING SOON",
+    title: "Coming Soon",
     description: "Please hold while new designs are uploading..",
     image: "/feature-thumbnail-3.png",
     slug: "WIP",
