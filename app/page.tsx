@@ -404,48 +404,154 @@ export default function Home() {
                 Experience
               </h3>
 
-              <ul className="space-y-4">
+              <ul className="space-y-6">
                 <li>
-                  <div>
-                    <span className="font-medium text-black dark:text-white transition-colors duration-200">
-                    Staff Product Designer 
-                  </span>
-                  <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
-                     LTK, 2023-Present
-                    </span>
+                  <div className="space-y-1">
+                    <div className="flex items-center">
+                      <Image
+                        src="/ltk-logo.png"
+                        alt="LTK logo"
+                        width={20}
+                        height={20}
+                        className="mr-3"
+                      />
+                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
+                        LTK
+                      </span>
+                    </div>
+                    <div>
+                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
+                        Staff Product Designer
+                      </span>
+                      <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
+                        2023-Present
+                      </span>
+                    </div>
                   </div>
                 </li>
 
                 <li>
-                  <div>
-                    <span className="font-medium text-black dark:text-white transition-colors duration-200">
-                    Founding Product Designer
-                  </span>
-                  <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
-                    Sono, 2022-2023
-                    </span>
+                  <div className="space-y-1">
+                    <div className="flex items-center">
+                      <Image
+                        src="/sono-logo.png"
+                        alt="Sono logo"
+                        width={20}
+                        height={20}
+                        className="mr-3"
+                      />
+                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
+                        Sono
+                      </span>
+                    </div>
+                    <div>
+                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
+                        Founding Product Designer
+                      </span>
+                      <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
+                        2022-2023
+                      </span>
+                    </div>
                   </div>
                 </li>
 
                 <li>
-                  <div>
-                    <span className="font-medium text-black dark:text-white transition-colors duration-200">
-                    Product Design Manager
-                  </span>
-                  <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
-                    Shopify, 2021-2022
-                    </span>
+                  <div className="space-y-1">
+                    <div className="flex items-center">
+                      <Image
+                        src="/shopify-logo.png"
+                        alt="Shopify logo"
+                        width={20}
+                        height={20}
+                        className="mr-3"
+                      />
+                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
+                        Shopify
+                      </span>
+                    </div>
+                    <div>
+                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
+                        Product Design Manager
+                      </span>
+                      <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
+                        2021-2022
+                      </span>
+                    </div>
                   </div>
                 </li>
 
                 <li>
-                  <div>
-                    <span className="font-medium text-black dark:text-white transition-colors duration-200">
-                    Senior Product Designer
-                  </span>
-                  <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
-                   Adobe, 2019-2020
-                    </span>
+                  <div className="space-y-1">
+                    <div className="flex items-center">
+                      <Image
+                        src="/adobe-logo.png"
+                        alt="Adobe logo"
+                        width={20}
+                        height={20}
+                        className="mr-3"
+                      />
+                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
+                        Adobe
+                      </span>
+                    </div>
+                    <div>
+                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
+                        Senior Product Designer
+                      </span>
+                      <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
+                        2019-2022
+                      </span>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div className="space-y-1">
+                    <div className="flex items-center">
+                      <Image
+                        src="/tesla-logo.png"
+                        alt="Tesla logo"
+                        width={20}
+                        height={20}
+                        className="mr-3"
+                      />
+                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
+                        Tesla
+                      </span>
+                    </div>
+                    <div>
+                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
+                        Senior Product Designer
+                      </span>
+                      <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
+                        2018-2019
+                      </span>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div className="space-y-1">
+                    <div className="flex items-center">
+                      <Image
+                        src="/shutterstock-logo.png"
+                        alt="Shutterstock logo"
+                        width={20}
+                        height={20}
+                        className="mr-3"
+                      />
+                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
+                        Shutterstock
+                      </span>
+                    </div>
+                    <div>
+                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
+                        Senior Product Designer
+                      </span>
+                      <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
+                        2016-2018
+                      </span>
+                    </div>
                   </div>
                 </li>
               </ul>
