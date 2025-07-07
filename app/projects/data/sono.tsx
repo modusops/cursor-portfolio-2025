@@ -14,8 +14,8 @@ export const sonoProject = {
   content: (
     <>
       <section>
-        <h2>Overview</h2>
-        <p>
+        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Overview</h2>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
           Sono is a modern training platform that helps startups onboard and upskill their teams efficiently.
           By combining interactive learning modules with real-time feedback, Sono makes professional development
           engaging and measurable.
@@ -36,8 +36,8 @@ export const sonoProject = {
       />
 
       <section>
-        <h2>The Problem</h2>
-        <p>
+        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>The Problem</h2>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
           Startups often struggle with consistent team training and development. Traditional learning
           management systems are too rigid and enterprise-focused, while ad-hoc solutions lack
           structure and accountability.
@@ -50,8 +50,8 @@ export const sonoProject = {
       />
 
       <section>
-        <h2>Solution</h2>
-        <p>
+        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Solution</h2>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
           We created a flexible, modular platform that adapts to each company's unique needs:
         </p>
         <ul>
@@ -80,8 +80,8 @@ export const sonoProject = {
       />
 
       <section>
-        <h2>Design Process</h2>
-        <p>
+        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Design Process</h2>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
           The design process focused on creating an intuitive experience that could scale
           with growing teams. We conducted extensive user research with startup founders,
           HR leaders, and employees to understand their unique challenges and needs.
@@ -102,8 +102,8 @@ export const sonoProject = {
       />
 
       <section>
-        <h2>Key Features</h2>
-        <p>
+        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Key Features</h2>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
           The platform includes several innovative features designed specifically for startup teams:
         </p>
       </section>
@@ -114,8 +114,8 @@ export const sonoProject = {
       />
 
       <section>
-        <h2>Impact</h2>
-        <p>
+        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Impact</h2>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
           Since launch, Sono has helped over 100 startups improve their team development:
         </p>
         <ul>
@@ -132,8 +132,8 @@ export const sonoProject = {
       />
 
       <section>
-        <h2>Future Development</h2>
-        <p>
+        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Future Development</h2>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
           We continue to evolve the platform based on user feedback and changing startup needs.
           Upcoming features include AI-powered learning recommendations, advanced analytics,
           and expanded integration capabilities.

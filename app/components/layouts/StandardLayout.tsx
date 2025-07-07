@@ -36,29 +36,30 @@ export const StandardLayout: React.FC<StandardLayoutProps> = ({
       </Link>
       <AnimatedContent>
         <header className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-light mb-4 text-black dark:text-white transition-colors duration-200 font-sans">{title}</h1>
+          <h1 className="font-semibold mb-4 text-black dark:text-white transition-colors duration-200 font-sans" style={{ fontSize: '48px', letterSpacing: '-0.03em' }}>{title}</h1>
           {metadata && (
             <div className="grid grid-cols-3 gap-4 mb-8">
               {metadata.role && (
                 <div>
-                  <h3 className="font-medium mb-1">Role</h3>
-                  <p className="text-gray-600 dark:text-gray-300">{metadata.role}</p>
+                  <h3 className="font-extrabold mb-1" style={{ fontSize: '12px' }}>Role</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm font-light">{metadata.role}</p>
                 </div>
               )}
               {metadata.timeline && (
                 <div>
-                  <h3 className="font-medium mb-1">Timeline</h3>
-                  <p className="text-gray-600 dark:text-gray-300">{metadata.timeline}</p>
+                  <h3 className="font-extrabold mb-1" style={{ fontSize: '12px' }}>Timeline</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm font-light">{metadata.timeline}</p>
                 </div>
               )}
               {metadata.team && (
                 <div>
-                  <h3 className="font-medium mb-1">Team</h3>
-                  <p className="text-gray-600 dark:text-gray-300">{metadata.team}</p>
+                  <h3 className="font-extrabold mb-1" style={{ fontSize: '12px' }}>Team</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm font-light">{metadata.team}</p>
                 </div>
               )}
             </div>
           )}
+          <p className="text-sm font-light text-gray-600 dark:text-gray-300 mb-6" style={{ letterSpacing: '-0.03em' }}>{description}</p>
           <div className="aspect-video relative overflow-hidden mb-8">
             <Image
               src={coverImage}
@@ -68,7 +69,6 @@ export const StandardLayout: React.FC<StandardLayoutProps> = ({
               priority
             />
           </div>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">{description}</p>
         </header>
       </AnimatedContent>
       <AnimatedContent className="delay-100">

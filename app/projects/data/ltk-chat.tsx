@@ -31,8 +31,8 @@ export const ltkChatProject = {
       />
 
       <section>
-        <h2>MVP features</h2>
-        <p>
+        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>MVP features</h2>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
           For the MVP, creators could only post text and link messages. Followers could send an emoji reply, but not send text replies to form threads yet. 50 creators were selected to be a part of the initial beta launch and were given white glove support. The strategic bet to release the Chat feature with only text support was that Creators in the short-term, Creators would be eager to bring their audience from Instagram. For Consumers, I fought hard to make emoji reactions a priority (over analytics). I reasoned that Consumers needed an expression mechanism that in turn drove motivated Creators to continue posting.
         </p>
       </section>
@@ -73,8 +73,8 @@ export const ltkChatProject = {
       />
 
       <section>
-        <h2>Design details</h2>
-        <p>
+        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Design details</h2>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
           Subtle design details were thoughtfully added for polish and simplicity while driving new social behaviors on LTK.
         </p>
       </section>
@@ -95,8 +95,8 @@ export const ltkChatProject = {
       />
 
       <section>
-        <h2>Delightful animations</h2>
-        <p>
+        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Delightful animations</h2>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
           One of the core goals of the LTK Chat experience was to create a sense of delight and engagement through
           thoughtful animations and interactions. I protoyped a number of experiments in SwiftUI that resulted in sustained
           user engagement with the reactions feature.
