@@ -36,8 +36,8 @@ export const shopifyProject = {
       />
 
       <section>
-        <h2>Project Overview</h2>
-        <p>
+        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Project Overview</h2>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
           Led the redesign of Shopify's core commerce platform, focusing on improving
           merchant experience across devices while maintaining the platform's powerful
           capabilities. The goal was to simplify complex workflows without sacrificing
@@ -51,8 +51,8 @@ export const shopifyProject = {
       />
 
       <section>
-        <h2>Design System Evolution</h2>
-        <p>
+        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Design System Evolution</h2>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
           A key part of this project was evolving Shopify's design system to support
           new use cases while maintaining consistency across the platform. We introduced:
         </p>
@@ -78,8 +78,8 @@ export const shopifyProject = {
       />
 
       <section>
-        <h2>Key Improvements</h2>
-        <p>
+        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Key Improvements</h2>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
           The redesign focused on several critical areas of the merchant experience:
         </p>
       </section>
@@ -102,8 +102,8 @@ export const shopifyProject = {
       />
 
       <section>
-        <h2>Mobile-First Approach</h2>
-        <p>
+        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Mobile-First Approach</h2>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
           With an increasing number of merchants managing their businesses on mobile,
           we prioritized a responsive, mobile-first design that works seamlessly across
           all devices.
@@ -116,8 +116,8 @@ export const shopifyProject = {
       />
 
       <section>
-        <h2>Research & Testing</h2>
-        <p>
+        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Research & Testing</h2>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
           Our design process involved extensive research and testing with merchants:
         </p>
       </section>
@@ -136,8 +136,8 @@ export const shopifyProject = {
       />
 
       <section>
-        <h2>Results</h2>
-        <p>
+        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Results</h2>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
           The redesign led to significant improvements in merchant satisfaction and efficiency:
         </p>
         <ul>
@@ -154,8 +154,8 @@ export const shopifyProject = {
       />
 
       <section>
-        <h2>Looking Forward</h2>
-        <p>
+        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Looking Forward</h2>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
           This redesign sets the foundation for Shopify's next generation of commerce tools.
           The modular design system and improved architecture allow for faster iteration
           and easier implementation of new features.

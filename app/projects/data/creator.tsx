@@ -16,7 +16,7 @@ export const creatorProject = {
     <>
       <section>
         {/* <h2>Helping creators understand their business</h2> */}
-        <p>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
           The Creator app home page is the most heavily trafficked page by an order of magnitude. It is the first page a creator sees when they log in and it is the page they return to most often. It is also the page that is most likely to be shared with other creators. Through interviews with creators and stakeholders, the company knew that the page needed a redesign to help support new business goals while also improving the user experience.
         </p>
       </section>
@@ -39,8 +39,8 @@ export const creatorProject = {
       />
 
       <section>
-        <h2>Design systems</h2>
-        <p>
+        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Design systems</h2>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
           As one of the first designers to work with the newly formed design system team and implement the new components; my responsibility was to not only define the new components, but also included helping define the workflow between product design and design system team.
           As a result of the redesign, the home tab became the first page to be fully written in SwiftUI utilizing the new library. I helped lay the foundations for how design and design systems team might collaborate in the future.
         </p>

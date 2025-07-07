@@ -32,7 +32,7 @@ export const SingleFullWidth: React.FC<ImageProps> = ({ src, alt, isVideo, descr
       )}
     </div>
     {description && (
-      <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm">
+      <p className="mt-2 text-gray-500 dark:text-gray-400 text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
         {description}
       </p>
     )}
@@ -64,7 +64,7 @@ export const TwoImagesGrid: React.FC<{ images: ImageProps[] }> = ({ images }) =>
             )}
           </div>
           {image.description && (
-            <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm">
+            <p className="mt-2 text-gray-500 dark:text-gray-400 text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
               {image.description}
             </p>
           )}
@@ -88,7 +88,7 @@ export const ThreeImagesGrid: React.FC<{ images: ImageProps[] }> = ({ images }) 
             />
           </div>
           {image.description && (
-            <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm">
+            <p className="mt-2 text-gray-500 dark:text-gray-400 text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
               {image.description}
             </p>
           )}
@@ -111,7 +111,7 @@ export const HeroImage: React.FC<ImageProps> = ({ src, alt, description }) => (
       />
     </div>
     {description && (
-      <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm">
+      <p className="mt-2 text-gray-500 dark:text-gray-400 text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
         {description}
       </p>
     )}

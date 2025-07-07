@@ -269,10 +269,10 @@ export default function Home() {
                                 />
                               </div>
                               <div className="mt-auto">
-                                <h2 className="text-xl font-medium text-black dark:text-white mb-1 transition-colors duration-200">
+                                <h2 className="text-2xl font-semibold text-black dark:text-white mb-1 transition-colors duration-200" style={{ letterSpacing: '-0.03em' }}>
                                   {project.title}
                                 </h2>
-                                <p className="text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
+                                <p className="text-xs font-light text-gray-500 dark:text-white transition-colors duration-200" style={{ letterSpacing: '-0.03em' }}>
                                   {project.description}
                                 </p>
                               </div>
@@ -288,10 +288,10 @@ export default function Home() {
                                 />
                               </div>
                               <div className="mt-auto">
-                                <h2 className="text-xl font-medium text-black dark:text-white mb-1 transition-colors duration-200">
+                                <h2 className="text-2xl font-semibold text-black dark:text-white mb-1 transition-colors duration-200" style={{ letterSpacing: '-0.03em' }}>
                                   {project.title}
                                 </h2>
-                                <p className="text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
+                                <p className="text-xs font-light text-gray-500 dark:text-white transition-colors duration-200" style={{ letterSpacing: '-0.03em' }}>
                                   {project.description}
                                 </p>
                               </div>
