@@ -3,46 +3,40 @@ import { SingleFullWidth, TwoImagesGrid, ThreeImagesGrid, HeroImage } from '@/ap
 
 export const creatorProject = {
   title: "Creator",
-  description: "Helping creators understand their business",
+  description: "The creator app home tab is the most heavily trafficked page on LTK's creator iOS app. Through interviews with creators and research of the underlying data, LTK found opportunities in a redesign of the page. The goal of the redesign included a re-architecture of the page using SwiftUI, a renewed focus on the core JTBD's, and support mission-critical objectives for the business, and most importantly improving the user experience.",
   coverImage: "/creator-hero.jpg",
   slug: "creator",
   metadata: {
-    role: "Lead Designer",
+    role: "Lead Product Designer",
     timeline: "Q1 2024 - Q4 2024",
-    team: "Design, Engineering, Product, Marketing, Creator Success, Insights and Analytics, Design Systems, Activation"
+    team: "Design, Engineering, Product, Marketing, Creator Success, Insights and Analytics, Design System, Activation"
   },
   layout: "standard",
   content: (
     <>
-      <section>
-        {/* <h2>Helping creators understand their business</h2> */}
-        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
-          The Creator app home page is the most heavily trafficked page by an order of magnitude. It is the first page a creator sees when they log in and it is the page they return to most often. It is also the page that is most likely to be shared with other creators. Through interviews with creators and stakeholders, the company knew that the page needed a redesign to help support new business goals while also improving the user experience.
-        </p>
-      </section>
-
+    
       <SingleFullWidth 
           src="/one-video-ltk-creator-home.mp4"
           alt="creator home"
-          description="The home page of the creator app features a dashboard and modules showing key performance merics for a creator's business. The information can be filtered by the date selectors on the top. In Q1 2024, the company made a strategic bet on improving the creator app experience, beginning with a revamp of the home tab. I was tapped to lead this initiative from the design side 3 months after joining the company.
-          The page would be fully rewritten in SwiftUI, where as previously, it was a mix of UIKIT and webviews."
+          description="The home page of the creator app features a dashboard of modules showing key performance metrics and insights for all parts of a creator's business ranging from visits, earnings, following count, commissions, click rates, and more. In Q1 2024, LTK made a strategic bet to improve the creator app experience, beginning with a revamp of the home tab. I was tapped to lead this initiative 3 months after joining the company.
+          The page was fully rewritten in SwiftUI (previously it was a mix of UIKit and web views)."
           isVideo={true}
       />
 
       <SingleFullWidth
         src="/one-image-creator-workshop.jpg"
         alt="creator workshop"
-        description="I led workshops at the beginning of Q1 with stakeholders across 5 teams to drive alignment with an ambitious goal to kick off design at the end of Q1 2024 and begin delivering incremental value by start of Q2 2024.
-        To build alignment and sustain momentum, one hour workshop sessions were held at least twice a week to gain business context and learn from teams who understood their segment of users the most. 
-        I also invited in staff FE and BE engineers and together took a peek under the hood to understand what current issues can be fixed with new SwiftUI stack or where unforseen issues may lie."
+        description="I led workshops at the beginning of Q1 with stakeholders across 5 teams to drive alignment with the ambitious goal to kick off design at the end of Q1 2024 and begin delivering incremental value by start of Q2 2024.
+        To build alignment and sustain momentum, one hour workshop sessions were held at least twice a week to gain business context and learn from teams who understood the problem space the most. 
+        I also invited in staff frontend and backend engineers and together took a peek under the hood to understand what current issues could be fixed with new SwiftUI stack or where unforseen issues may lie. The project was staged in 4 milestones to ensure we were delivering value to creators as quickly as possible."
         isVideo={false}
       />
 
       <section>
         <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Design systems</h2>
         <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
-          As one of the first designers to work with the newly formed design system team and implement the new components; my responsibility was to not only define the new components, but also included helping define the workflow between product design and design system team.
-          As a result of the redesign, the home tab became the first page to be fully written in SwiftUI utilizing the new library. I helped lay the foundations for how design and design systems team might collaborate in the future.
+          As one of the first designers to work with the newly formed design system team and implement new components; my responsibility was to not only define the new components, but to also help define the workflows between product design and design system team.
+          The home tab became the first page to be fully written in SwiftUI utilizing the new library. I helped lay the foundations for how designers might interface with the system team in the future.
         </p>
       </section>
 
@@ -56,14 +50,14 @@ export const creatorProject = {
       <SingleFullWidth
         src="/one-image-creator-documentation.jpg"
         alt="creator documentation"
-        description="I worked with the design systems team to set up many new processes for creating new components in Figma and how ICs should document their components."
+        description="I worked with the design system team to set up many new processes for creating new components in Figma and how ICs should document their components."
         isVideo={false}
       />
 
       <SingleFullWidth 
           src="/one-image-creator-loading-state.jpg"
           alt="creator loading"
-          description="The loading state component is used to indicate that the app is loading data. I wrote the styleguide for best practices implementing loading state by working closely with engineers. The styleguide eventually became a template for the rest of the design team."
+          description="I led the design of the loading state component and wrote the usage guideline with the support of iOS engineers. The style guide became the template for all component guidelines."
           isVideo={false}
       />
 
@@ -77,7 +71,7 @@ export const creatorProject = {
       <SingleFullWidth 
           src="/one-image-creator-performance-goal.jpg"
           alt="creator performance goal"
-          description="I worked with multiple product owners to define the individual modules, how they would fit into the new architecture of the home page, and strategized with them the design that would best serve customers and help the business achieve its goals."
+          description="I worked with multiple product owners to define the individual modules; how they fit into the new architecture of the home page and strategized with them on the design that would best serve customers while helping the business achieve its goals."
           isVideo={false}
       />
 
@@ -101,14 +95,14 @@ export const creatorProject = {
       <SingleFullWidth 
           src="/one-image-creator-before-after.jpg"
           alt="creator before and after"
-          description="After the redesign was launched, a survey was sent to creators to guage their satisfaction with the new design. The results were overwhelmingly positive, with 87% of creators finding the home page extremly or very useful, which represented a +64% difference. We also observed a +27.8% increase in Creators who shared their shop and a +157% lift in creators who created a post. Lastly, we saw a +3.8% increase in the percentage of daily active users who visited the new home page."
+          description="After the redesign was launched, a survey was sent to creators to guage their satisfaction with the new design. The results were overwhelmingly positive with 87% of creators finding the home page extremly or very useful representing a +64% difference. We also observed a +27.8% increase in creators who shared their shop and a +157% lift in creators who created a post. Lastly, we saw a +3.8% increase in the percentage of daily active users who visited the new home page."
           isVideo={false}
       />
 
       <SingleFullWidth
         src="/one-image-creator-results.jpg"
         alt="results of the redesign"
-        description="The redesign was a success made possible by relentless focus on solving creator problems, attention to detail, and focusing on delivering incremental value."
+        description="The success of the redesign was made possible by a relentless focus on solving creator problems, attention to detail, and focusing on delivering value."
         isVideo={false}
       />
 

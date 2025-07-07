@@ -205,14 +205,14 @@ export default function Home() {
 
         {/* Hero Section - Reduced top padding on mobile */}
         <AnimatedContent>
-          <div className="py-28 relative">
+          <div className="pt-24 pb-20 relative">
             <div className="absolute top-0 left-0 w-px h-20 bg-gray-800/30 dark:bg-white/20"></div>
             <h1
               className={`text-4xl md:text-6xl lg:text-7xl font-[200] leading-tight tracking-wider text-black dark:text-white max-w-5xl transition-colors duration-200 font-sans ${styles['fade-in']}`}
               style={{ fontWeight: 200, letterSpacing: "-0.01em" }}
             >
               <TypewriterText 
-                text="STAFF PRODUCT DESIGNER BASED IN SEATTLE🌲. OBSESSES OVER CRAFT."
+                text="PRODUCT DESIGNER BASED IN SEATTLE. BUILDER. OBSESSES OVER CRAFT."
                 delay={50}
                 className="inline-block"
                 style={{ fontWeight: 200, letterSpacing: "-0.01em" }}
@@ -390,16 +390,10 @@ export default function Home() {
 
                   <p className="text-lg text-gray-600 dark:text-gray-400 transition-colors duration-200">
                     I've helped build products for the world's top tech companies.
-                    As a seasoned product designer with experience building and shipping compellling digital experiences on desktop, mobile, and web for consumer, B2B SaaS, enterprise and AI products, 
-                  I believe great design is half art and half science and always born from a deep understanding of the user and the business. 
+                    As a seasoned product designer with experience building and shipping compelling digital experiences on desktop, mobile, and web for consumer, B2B SaaS, enterprise and AI products, 
+                  I believe great design is half art and half science and always stem from a deep understanding of the user and the business. 
                   </p>
 
-                  {/* <p className="text-gray-800 dark:text-gray-200">
-                  I'm a seasoned product designer with experience building and shipping compellling digital experiences on desktop, mobile, and web for consumer, B2B SaaS, enterprise and AI products. 
-                  I believe great design is half art and half science and always born from a deep understanding of the user and the business. 
-                  <br />
-                  <br /> Great design for me isn't just about the aesthetics, it's about the emotions it evokes, and the connection it creates between the user and the product.
-                  </p> */}
               <h3 className="text-xl font-medium mt-12 mb-4 text-black dark:text-white transition-colors duration-200">
                 Experience
               </h3>
@@ -810,12 +804,11 @@ export default function Home() {
                   </div>
 
                   <h3 className="text-2xl font-normal text-black dark:text-white transition-colors duration-200">
-                    Need a Design Partner?
+                    Wanna get in touch?
                   </h3>
 
                   <p className="text-gray-700 dark:text-gray-300 transition-colors duration-200">
-                    I'm currently prioritizing projects in consumer and healthcare. Shoot me a message with
-                    your details at{" "}
+                    Happy to chat! Reach out to me at{" "}
                     <a
                       href="mailto:juntochan@proton.me"
                       className="text-black dark:text-white hover:underline transition-colors duration-200"
@@ -824,9 +817,9 @@ export default function Home() {
                     </a>
                   </p>
 
-                  <p className="text-gray-700 dark:text-gray-300 pt-8 transition-colors duration-200">
+                  {/* <p className="text-gray-700 dark:text-gray-300 pt-8 transition-colors duration-200">
                     Available in Summer '25.
-                  </p>
+                  </p> */}
                 </div>
 
                 {/* Social Links */}
@@ -1014,7 +1007,7 @@ const projects = [
   },
   {
     title: "Coming Soon",
-    description: "Please hold while new designs are uploading..",
+    description: "New design projects",
     image: "/feature-thumbnail-3.png",
     slug: "WIP",
   },
