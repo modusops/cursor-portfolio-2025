@@ -133,6 +133,13 @@ export const ltkChatProject = {
         isVideo={false}
       />
 
+      <section>
+        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Results</h2>
+        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
+          Chat is still in public beta with an official launch date of late July. The team is shoring up the user experience, learning, synthesizing and incorporating feedback from beta creators into the product. The Chat product is currently driving the most important company OKR and slated to receive additional funding directly due to my contributions to the project.
+        </p>
+      </section>
+
     </>
   )
 }; 
