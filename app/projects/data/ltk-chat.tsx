@@ -136,7 +136,7 @@ export const ltkChatProject = {
       <section>
         <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Results</h2>
         <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
-          Chat is still in public beta with an official launch date of late July 2025. The team is shoring up the user experience, learning, synthesizing and incorporating feedback from beta creators into the product. The Chat product is currently driving the most important company OKR and slated to receive additional funding directly due to my contributions to the project.
+          Chat is still in public beta with an official launch date of late August 2025. The team is shoring up the user experience, learning, synthesizing and incorporating feedback from beta creators into the product. The project is currently driving the most important company OKR and slated to receive additional funding directly due to my contributions to the project. In a recent second batch of creator invitations to the feature, we're seeing sustained growth at 125%+ increase in daily direct users. This has been the company's most successful product launch in 2025.
         </p>
       </section>
 
