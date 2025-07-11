@@ -7,6 +7,7 @@ import { ltkChatProject } from '../data/ltk-chat';
 import { creatorProject } from '../data/creator';
 import { sonoProject } from '../data/sono';
 import { shopifyProject } from '../data/shopify';
+import { experimentsProject } from '../data/experiments';
 
 // Add more project imports here as you create them
 const projects = {
@@ -14,6 +15,7 @@ const projects = {
   'creator': creatorProject,
   'sono': sonoProject,
   'shopify': shopifyProject,
+  'experiments': experimentsProject,
   // Add more projects here
 };
 
@@ -34,7 +36,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <ProjectLayoutWrapper
-      layout={project.layout}
       title={project.title}
       description={project.description}
       coverImage={project.coverImage}

@@ -6,7 +6,7 @@ import { StandardLayout } from './StandardLayout';
 interface ProjectLayoutWrapperProps {
   title: string;
   description: string;
-  coverImage: string;
+  coverImage?: string;
   content: React.ReactNode;
   metadata?: {
     role?: string;

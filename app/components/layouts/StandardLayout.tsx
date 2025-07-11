@@ -9,7 +9,7 @@ import { AnimatedContent } from '@/components/animated-content';
 interface StandardLayoutProps {
   title: string;
   description: string;
-  coverImage: string;
+  coverImage?: string;
   content: React.ReactNode;
   metadata?: {
     role?: string;
@@ -60,15 +60,17 @@ export const StandardLayout: React.FC<StandardLayoutProps> = ({
             </div>
           )}
           <p className="text-sm font-light text-gray-600 dark:text-gray-300 mb-6" style={{ letterSpacing: '-0.03em' }}>{description}</p>
-          <div className="aspect-video relative overflow-hidden mb-8">
-            <Image
-              src={coverImage}
-              alt={`${title} cover image`}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+          {coverImage && (
+            <div className="aspect-video relative overflow-hidden mb-8">
+              <Image
+                src={coverImage}
+                alt={`${title} cover image`}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          )}
         </header>
       </AnimatedContent>
       <AnimatedContent className="delay-100">
