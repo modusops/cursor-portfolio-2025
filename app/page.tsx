@@ -728,7 +728,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-medium transition-colors duration-200">Show and tell.</h3>
                   <p className="text-gray-600 dark:text-gray-400 transition-colors duration-200">
-                    I frequently share work in progress, usually in the form of screen recordings with a voice over.
+                    I frequently share work in progress with teammates to quickly align on the problem areas to help the proejct move forward and maintain momentum. There are no sacred cows.
                   </p>
                   <div className="absolute -bottom-8 left-0 right-0 h-px bg-gray-800/5 dark:bg-white/10"></div>
                 </div>
@@ -742,7 +742,7 @@ export default function Home() {
                   <h3 className="text-xl font-medium transition-colors duration-200">Bias for action.</h3>
                   <p className="text-gray-600 dark:text-gray-400 transition-colors duration-200">
                     I prefer creating tangible artifacts to visualize the team's ideas over lengthy documents that often
-                    go ignored.
+                    go ignored. I am also not afraid to throw away an idea and explore divergent solutions. The best way to learn is to fail.
                   </p>
                   <div className="absolute -bottom-8 left-0 right-0 h-px bg-gray-800/5 dark:bg-white/10"></div>
                 </div>
@@ -768,7 +768,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-medium transition-colors duration-200">Design is thinking.</h3>
                   <p className="text-gray-600 dark:text-gray-400 transition-colors duration-200">
-                    I am not afraid to throw away an idea and explore divergent solutions. The more the merrier!
+                    As Saul Bass is quoted saying "Design is thinking made visual." I treat design as a tool that allows me to visually communicate my ideas which I use to discuss at a conceptual level. 
                   </p>
                   <div className="absolute -bottom-8 left-0 right-0 h-px bg-gray-800/5 dark:bg-white/10"></div>
                 </div>
@@ -1004,6 +1004,12 @@ const projects = [
     description: "Helping creators understand their business",
     image: "/feature-thumbnail-2.png",
     slug: "creator",
+  },
+  {
+    title: "Experiments",
+    description: "For play learning",
+    image: "/feature-thumbnail-4.png",
+    slug: "experiments",
   },
   {
     title: "Coming Soon",
