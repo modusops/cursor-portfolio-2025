@@ -14,9 +14,33 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "David Chan - Design Portfolio",
-  description: "Fractional Design Partner for Early-Stage Teams",
-    generator: 'v0.dev'
+  title: "Dave Chan - Design Portfolio",
+  description: "Software designer. Builder.",
+  generator: 'Cursor',
+  openGraph: {
+    url: 'https://davechan.design/',
+    type: 'website',
+    title: 'Dave Chan - Design Portfolio',
+    description: 'Software designer. Builder.',
+    images: [
+      {
+        url: 'https://opengraph.b-cdn.net/production/images/570193a6-8317-4ff4-8cb7-7a5482ddadd8.png?token=cjKqrBdKdeT3jWuQpJze8WyHhegrJwrEHiMQMV5cgfU&height=1056&width=1080&expires=33288218390',
+        width: 1080,
+        height: 1056,
+        alt: 'Dave Chan - Design Portfolio'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@davechan',
+    creator: '@davechan',
+    title: 'Dave Chan - Design Portfolio',
+    description: 'Software designer. Builder.',
+    images: [
+      'https://opengraph.b-cdn.net/production/images/570193a6-8317-4ff4-8cb7-7a5482ddadd8.png?token=cjKqrBdKdeT3jWuQpJze8WyHhegrJwrEHiMQMV5cgfU&height=1056&width=1080&expires=33288218390'
+    ]
+  }
 }
 
 export default function RootLayout({
