@@ -36,6 +36,7 @@ export const ltkChatProject = {
         </p>
       </section>
 
+
       <TwoImagesGrid 
         images={[
           {
@@ -51,25 +52,13 @@ export const ltkChatProject = {
         ]}
       />
 
-      <ThreeImagesGrid 
-        images={[
-          {
-            src: "/three-images-ltk-creator-input.jpg",
-            alt: "Creator input",
-            description: "Media attachment"
-          },
-          {
-            src: "/three-images-ltk-creator-image-preview.jpg",
-            alt: "Creator image preview",
-            description: "Image preview"
-          },
-          {
-            src: "/three-images-ltk-creator-video-preview.jpg",
-            alt: "Creator video preview",
-            description: "Video preview"
-          }
-        ]}
+      <SingleFullWidth
+        src="/one-image-chat-features.jpg"
+        alt="features"
+        description="Some features on LTK Chat supporting the beta launch."
+        isVideo={false}
       />
+
 
       <section>
         <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Design details</h2>
@@ -130,6 +119,13 @@ export const ltkChatProject = {
         src="/one-image-chat-demos.jpg"
         alt="demo"
         description="I demo’d to the company how I leveraged AI in my workflows given leadership mandated teams try to embrace AI and explore ways to benefit from the technology. I demo'd the end-to-end process of creating AI-powered prototypes, some of which were incorporated into production code."
+        isVideo={false}
+      />
+
+      <SingleFullWidth
+        src="/one-image-chat-final.jpg"
+        alt="final screens"
+        description="Some screens from the final product experience in public beta."
         isVideo={false}
       />
 
