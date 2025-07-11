@@ -728,7 +728,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-medium transition-colors duration-200">Show and tell.</h3>
                   <p className="text-gray-600 dark:text-gray-400 transition-colors duration-200">
-                    I frequently share work in progress with teammates to quickly align on the problem areas to help the proejct move forward and maintain momentum. There are no sacred cows.
+                    I frequently share work in progress with teammates to quickly align on the problem areas to help projects move forward. There are no sacred cows.
                   </p>
                   <div className="absolute -bottom-8 left-0 right-0 h-px bg-gray-800/5 dark:bg-white/10"></div>
                 </div>
