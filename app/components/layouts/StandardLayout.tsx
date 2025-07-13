@@ -61,7 +61,7 @@ export const StandardLayout: React.FC<StandardLayoutProps> = ({
           )}
           <p className="text-sm font-light text-gray-600 dark:text-gray-300 mb-6" style={{ letterSpacing: '-0.03em' }}>{description}</p>
           {coverImage && (
-            <div className="aspect-video relative overflow-hidden mb-8">
+            <div className="aspect-video relative overflow-hidden rounded-2xl mb-8">
               <Image
                 src={coverImage}
                 alt={`${title} cover image`}
