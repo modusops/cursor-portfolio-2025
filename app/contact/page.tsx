@@ -28,14 +28,20 @@ export default function Contact() {
         </header> */}
 
         {/* Sticky Navigation */}
-        <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] lg:w-1/2 z-50 flex items-center justify-between backdrop-blur-lg backdrop-saturate-150 backdrop-brightness-110 bg-white/20 dark:bg-gray-800/20 py-2 px-3 rounded-full shadow-lg border border-white/30 dark:border-gray-700/30 transition-all duration-200">
-          <h1 className="text-xl font-medium text-black dark:text-white font-sans pl-2 drop-shadow-sm">Dave Chan</h1>
+        <nav className="fixed bottom-6 md:top-6 md:bottom-auto left-1/2 -translate-x-1/2 w-[90%] lg:w-1/2 z-50 flex items-center justify-between backdrop-blur-lg backdrop-saturate-150 backdrop-brightness-110 bg-white/20 dark:bg-gray-800/20 py-2 px-3 rounded-full shadow-lg border border-white/30 dark:border-gray-700/30 transition-all duration-200">
+          <h1 className="text-xl font-medium text-black dark:text-white font-sans pl-2 drop-shadow-sm hidden md:block">Dave Chan</h1>
           <div className="flex items-center space-x-4 pr-2">
             <Link
               href="/"
               className="nav-item px-5 py-2 text-black/90 dark:text-white/90 hover:text-black dark:hover:text-white rounded-full transition-all text-sm font-medium relative hover:bg-black/10 dark:hover:bg-white/20 backdrop-blur-sm border border-transparent hover:border-black/20 dark:hover:border-white/20 drop-shadow-sm"
             >
               Home
+            </Link>
+            <Link
+              href="/about"
+              className="nav-item px-5 py-2 text-black/90 dark:text-white/90 hover:text-black dark:hover:text-white rounded-full transition-all text-sm font-medium relative hover:bg-black/10 dark:hover:bg-white/20 backdrop-blur-sm border border-transparent hover:border-black/20 dark:hover:border-white/20 drop-shadow-sm"
+            >
+              About
             </Link>
             <Link
               href="/contact"
