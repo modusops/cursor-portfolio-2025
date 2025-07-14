@@ -75,26 +75,26 @@ export default function About() {
 
             <div className="prose max-w-none text-lg dark:prose-invert transition-colors duration-200">
               <p className="text-gray-500 dark:text-gray-400">
-              I was born in Hong Kong and moved to the Bay Area when I was in elementary school. My parents were an entrepreneurs who started their own business and I saw firsthand what it meant to build something from the ground up with nothing but dreams and hard work. I took that with me as a kid and was both a tinkerer and dreamy entrepreneur. At 12 years old, I created an animated movie using HyperCard on an  Apple IIGS, and I have been fascinated by computers since. When I was 17 I dabbled in art, started an apparels business and hustled graphic tees on the streets of SF. 
+              I was born in Hong Kong and moved to the Bay Area when I was in elementary school. My parents were entrepreneurs who started their own business and I saw firsthand what it meant to build something from the ground up with nothing but dreams and hard work. I took to heart my parents' journey as a kid, tinkering often with dreams of being an entrepreneur. At 12 years old, I created an animated movie using HyperCard on an Apple IIGS. When I was 17 I dabbled in art, film photography (won the class award for best photo), started an apparel business and hustled graphic tees on the streets of SF. 
               </p>
 
               <h3 className="text-sm font-medium mt-12 mb-4 text-black dark:text-white transition-colors duration-200">
                 Growing up
               </h3>
 
-              <p className="text-gray-500 dark:text-gray-400"> I've never stopped hustling, tinkering and learning since. I was briefly an industrial designer, an aspiring barista cooking up bespoke coffee recipes, and made (and sold) wallets made of recycled fabrics. 
+              <p className="text-gray-500 dark:text-gray-400"> I've never stopped hustling, tinkering and learning since. I was briefly an industrial designer and an aspiring barista cooking up bespoke coffee recipes, and I made (and sold) wallets from recycled fabrics. Through luck and hard work, I ended up working at companies like Tesla (if you bought a Model 3 in 2018-2019, I had a hand in making your car), Adobe, and Shopify.
               </p>
 
               <h3 className="text-sm font-medium mt-12 mb-4 text-black dark:text-white transition-colors duration-200">
                 What I do now
               </h3>
-              <p className="text-gray-500 dark:text-gray-400"> I'm currently a product designer at LTK leading the chat product on the consumer team. My biggest achievement this year has been picking up SwiftUI and Xcode, of which I had little prior experience. I put myself through a 30-day coding challenge and by the end of it, I was shipping code to the company repo, which has been a fun journey.
+              <p className="text-gray-500 dark:text-gray-400">I'm currently a product designer at LTK leading the chat product on the consumer team. My biggest achievement this year has been picking up SwiftUI and Xcode, both of which I had little prior experience with. I put myself through a 30-day coding challenge and by the end of it, I was shipping code to the company repo, which has been a fun journey. Oh, I also built this entire portfolio with Cursor from scratch. I get the feeling I'm gonna be building a lot more with AI. At the top of my list are a few digital art projects.
               </p>
 
               <h3 className="text-sm font-medium mt-12 mb-4 text-black dark:text-white transition-colors duration-200">
                 What design means to me
               </h3>
-              <p className="text-gray-500 dark:text-gray-400"> When people ask me what is great design, I immediately think back to the products and experiences that evoke positive memories. Great design for me isn't just about the aesthetics, it's about the emotions it evokes, and the connection it creates between the user and the product.
+              <p className="text-gray-500 dark:text-gray-400">When people ask me what great design is, I immediately think back to the products and experiences that evoke positive memories. Great design for me isn't just about the aesthetics, it's about the emotions it evokes, and the connection it creates between the user and the product.
               </p>
 
             </div>

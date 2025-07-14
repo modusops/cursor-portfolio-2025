@@ -54,7 +54,7 @@ export default function RootLayout({
         className={`${inter.variable} bg-white dark:bg-black text-black dark:text-white transition-colors duration-200 custom-plus-cursor`}
       >
         <GridBackground />
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           {children}
           <ThemeToggle />
         </ThemeProvider>
