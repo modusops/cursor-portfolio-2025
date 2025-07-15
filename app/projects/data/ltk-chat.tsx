@@ -59,6 +59,27 @@ export const ltkChatProject = {
         isVideo={false}
       />
 
+      <SingleFullWidth
+        src="/one-image-chat-surfaces.jpg"
+        alt="surfaces"
+        description="The chat feature opens up new avenues for users to interact socially with creators and with each other. Aside from the chat surface, I also designed the chat notifications, worked with other teams to prioritize chat content discovery throughout the app."
+        isVideo={false}
+      />
+
+      <SingleFullWidth
+        src="/one-image-chat-reactions.jpg"
+        alt="reactions"
+        description="An emoji floating menu was designed to let creators quickly react using the most common emojis. The floating menu simplifies the interaction and allows the pattern to be used as a primitive outside of chat on places like videos and Daily Drops (our version of Reels)."
+        isVideo={false}
+      />
+
+      <SingleFullWidth
+        src="/one-image-chat-reactions-scaled.jpg"
+        alt="reactions scaled"
+        description="The emoji reaction experience on posts, collections, and post commenting."
+        isVideo={false}
+      />
+
 
       <section>
         <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Design details</h2>
