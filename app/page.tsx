@@ -211,7 +211,7 @@ export default function Home() {
 
         {/* Hero Section - Reduced top padding on mobile */}
         <AnimatedContent>
-          <div className="pt-24 pb-20 relative">
+          <div className="py-8 md:pt-24 md:pb-20 relative">
             <div className="absolute top-0 left-0 w-px h-20 bg-gray-800/30 dark:bg-white/20"></div>
             <h1
               className={`text-4xl md:text-6xl lg:text-7xl font-[200] leading-tight tracking-wider text-black dark:text-white max-w-5xl transition-colors duration-200 font-sans ${styles['fade-in']}`}
