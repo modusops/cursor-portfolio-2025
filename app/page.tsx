@@ -260,7 +260,7 @@ export default function Home() {
                       return (
                         <div
                           key={project.slug}
-                          className={`group min-w-[85%] md:min-w-[45%] lg:min-w-[30%] flex-shrink-0 snap-center bg-gray-50 dark:bg-gray-800 rounded-xl p-6 hover-float relative flex flex-col transition-colors duration-500 ease-in-out hover:bg-gray-100 dark:hover:bg-gray-700 hover:shadow-lg hover:z-10 ${
+                          className={`group min-w-[85%] md:min-w-[45%] lg:min-w-[30%] flex-shrink-0 snap-center bg-gray-50 dark:bg-gray-900 rounded-xl p-6 hover-float relative flex flex-col transition-colors duration-500 ease-in-out hover:bg-gray-100 dark:hover:bg-gray-800 hover:shadow-md hover:z-10 ${
                             isComingSoon ? "cursor-not-allowed" : ""
                           }`}
                         >
