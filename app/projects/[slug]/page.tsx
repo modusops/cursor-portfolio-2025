@@ -8,6 +8,7 @@ import { creatorProject } from '../data/creator';
 import { sonoProject } from '../data/sono';
 import { shopifyProject } from '../data/shopify';
 import { experimentsProject } from '../data/experiments';
+import { lightenProject } from '../data/lighten';
 
 // Add more project imports here as you create them
 const projects = {
@@ -16,6 +17,7 @@ const projects = {
   'sono': sonoProject,
   'shopify': shopifyProject,
   'experiments': experimentsProject,
+  'lighten': lightenProject,
   // Add more projects here
 };
 
