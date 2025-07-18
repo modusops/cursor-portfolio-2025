@@ -1012,6 +1012,12 @@ const projects = [
     slug: "creator",
   },
   {
+    title: "Lighten AI",
+    description: "Using AI to unlock real-time patient insights",
+    image: "/feature-thumbnail-5.png",
+    slug: "lighten",
+  },
+  {
     title: "Experiments",
     description: "For play learning",
     image: "/feature-thumbnail-4.png",
