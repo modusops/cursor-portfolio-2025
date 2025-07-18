@@ -3,7 +3,7 @@ import { SingleFullWidth, TwoImagesGrid, ThreeImagesGrid, HeroImage } from '@/ap
 
 export const creatorProject = {
   title: "Creator",
-  description: "The creator app home tab is the most heavily trafficked page on LTK's creator iOS app. Through interviews with creators and research of the underlying data, LTK found opportunities in a redesign of the page. The goal of the redesign included a re-architecture of the page using SwiftUI, a renewed focus on the core JTBD's, and support mission-critical objectives for the business, and most importantly improving the user experience.",
+  description: "I led a strategic redesign of the creator app home tab, LTK's highest-traffic creator iOS experience, based on comprehensive creator interview insights and data research findings. I orchestrated a complete experience re-architecture using SwiftUI while realigning interface design with core Jobs-To-Be-Done and mission-critical business objectives, resulting in significant user experience improvements.",
   coverImage: "/creator-hero.jpg",
   slug: "creator",
   metadata: {
@@ -18,25 +18,21 @@ export const creatorProject = {
       <SingleFullWidth 
           src="/one-video-ltk-creator-home.mp4"
           alt="creator home"
-          description="The home page of the creator app features a dashboard of modules showing key performance metrics and insights for all parts of a creator's business ranging from visits, earnings, following count, commissions, click rates, and more. In Q1 2024, LTK made a strategic bet to improve the creator app experience, beginning with a revamp of the home tab. I was tapped to lead this initiative 3 months after joining the company.
-          The page was fully rewritten in SwiftUI (previously it was a mix of UIKit and web views)."
+          description="I led the strategic redesign of LTK's creator dashboard—a comprehensive performance hub displaying critical business metrics including visits, earnings, commissions, click rates, and following analytics. Following LTK's Q1 2024 strategic commitment to elevate the creator app experience, I was chosen to drive this foundational initiative, collaborating with engineering to completely rewrite the platform from mixed UIKit/web view architecture to native SwiftUI implementation."
           isVideo={true}
       />
 
       <SingleFullWidth
         src="/one-image-creator-workshop.jpg"
         alt="creator workshop"
-        description="I led workshops at the beginning of Q1 with stakeholders across 5 teams to drive alignment with the ambitious goal to kick off design at the end of Q1 2024 and begin delivering incremental value by start of Q2 2024.
-        To build alignment and sustain momentum, one hour workshop sessions were held at least twice a week to gain business context and learn from teams who understood the problem space the most. 
-        I also invited in staff frontend and backend engineers and together took a peek under the hood to understand what current issues could be fixed with new SwiftUI stack or where unforseen issues may lie. The project was staged in 4 milestones to ensure we were delivering value to creators as quickly as possible."
+        description="I designed and facilitated stakeholder alignment workshops spanning 5 teams to support aggressive Q1-Q2 delivery timeline, ensuring shared understanding of project goals and constraints. I conducted bi-weekly collaborative sessions to synthesize business context and domain expertise while building sustained project momentum. Partnering with senior engineering staff to perform comprehensive technical assessment, I evaluated SwiftUI migration opportunities and potential implementation challenges. By establishing 4-milestone delivery framework, we prioritized rapid creator value delivery and iterative improvement cycles."
         isVideo={false}
       />
 
       <section>
         <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Design systems</h2>
         <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
-          As one of the first designers to work with the newly formed design system team and implement new components; my responsibility was to not only define the new components, but to also help define the workflows between product design and design system team.
-          The home tab became the first page to be fully written in SwiftUI utilizing the new library. I helped lay the foundations for how designers might interface with the system team in the future.
+        I served as one of the first product designers to partner with LTK's newly established design system team, taking dual responsibility for defining new component specifications and establishing collaborative workflows between product design and system teams. I led the home tab as the inaugural SwiftUI implementation utilizing the new component library, creating foundational processes and interface patterns that would guide future designer-system team collaboration across the organization.
         </p>
       </section>
 
@@ -50,14 +46,14 @@ export const creatorProject = {
       <SingleFullWidth
         src="/one-image-creator-documentation.jpg"
         alt="creator documentation"
-        description="I worked with the design system team to set up many new processes for creating new components in Figma and how ICs should document their components."
+        description="I partnered with the design system team to develop structured processes governing component creation in Figma and establishing documentation standards for individual contributors. I built foundational workflows that ensured design system quality and consistency while enabling efficient cross-team collaboration."
         isVideo={false}
       />
 
       <SingleFullWidth 
           src="/one-image-creator-loading-state.jpg"
           alt="creator loading"
-          description="I led the design of the loading state component and wrote the usage guideline with the support of iOS engineers. The style guide became the template for all component guidelines."
+          description="I co-led the comprehensive design and documentation of the loading state component, collaborating closely with iOS engineers to create detailed usage guidelines. This work became the organizational template for all subsequent component documentation, establishing design system standards that scaled across the entire component library and team workflows."
           isVideo={false}
       />
 
@@ -71,7 +67,7 @@ export const creatorProject = {
       <SingleFullWidth 
           src="/one-image-creator-performance-goal.jpg"
           alt="creator performance goal"
-          description="I worked with multiple product owners to define the individual modules; how they fit into the new architecture of the home page and strategized with them on the design that would best serve customers while helping the business achieve its goals."
+          description="I collaborated with multiple product owners to define individual module specifications, architectural integration within the new home page framework, and strategic design approaches that optimized customer experience while advancing key business goals. I led alignment sessions that balanced diverse stakeholder priorities through user-centered design strategy."
           isVideo={false}
       />
 
@@ -86,7 +82,7 @@ export const creatorProject = {
           {
             src: "/two-videos-creator-community-zoom2.mp4",
             alt: "community module zoom",
-            description: "User receives a light haptic feedback when the module opens. Haptic feedback is again given as they drag their finger across the chart.",
+            description: "I implemented a haptic feedback that provides users with subtle tactile confirmation when modules open, followed by continuous feedback during chart exploration gestures. This interaction design creates intuitive physical connection between user actions and interface responses, improving data engagement and accessibility.",
             isVideo: true
           }
         ]}
@@ -95,14 +91,14 @@ export const creatorProject = {
       <SingleFullWidth 
           src="/one-image-creator-before-after.jpg"
           alt="creator before and after"
-          description="After the redesign was launched, a survey was sent to creators to guage their satisfaction with the new design. The results were overwhelmingly positive with 87% of creators finding the home page extremly or very useful representing a +64% difference. We also observed a +27.8% increase in creators who shared their shop and a +157% lift in creators who created a post. Lastly, we saw a +3.8% increase in the percentage of daily active users who visited the new home page."
+          description="Post-launch creator satisfaction survey revealed overwhelming positive response with 87% of creators rating the new home page extremely or very useful—representing a substantial +64% improvement over the previous design. This user satisfaction translated into significant behavioral changes including +27.8% increase in creators sharing their shops, +157% lift in post creation activity, and +3.8% growth in daily active users engaging with the redesigned home page experience."
           isVideo={false}
       />
 
       <SingleFullWidth
         src="/one-image-creator-results.jpg"
         alt="results of the redesign"
-        description="The success of the redesign was made possible by a relentless focus on solving creator problems, attention to detail, and focusing on delivering value."
+        description="The project's success originated from maintaining a dedication to creator problem-solving, meticulous commitment to design quality and detail execution, and strategic focus on value delivery that meaningfully improved creator workflows. This approach to user advocacy and quality-driven design created the conditions for product satisfaction and engagement improvements."
         isVideo={false}
       />
 
