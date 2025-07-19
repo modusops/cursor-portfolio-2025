@@ -29,7 +29,7 @@ export const StandardLayout: React.FC<StandardLayoutProps> = ({
     <article className="max-w-7xl mx-auto px-4 py-12 relative">
       <Link 
         href="/" 
-        className="fixed left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 lg:right-[max(calc((100%-1280px)/2+32px),32px)] top-8 p-2 rounded-full backdrop-blur-lg backdrop-saturate-150 backdrop-brightness-110 bg-white/20 dark:bg-gray-800/20 hover:bg-white/30 dark:hover:bg-gray-800/30 border border-white/30 dark:border-gray-700/30 shadow-lg transition-all duration-200 z-50"
+        className="fixed left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 lg:right-[max(calc((100%-1280px)/2+32px),32px)] bottom-8 md:bottom-auto md:top-8 p-2 rounded-full backdrop-blur-lg backdrop-saturate-150 backdrop-brightness-110 bg-white/20 dark:bg-gray-800/20 hover:bg-white/30 dark:hover:bg-gray-800/30 border border-white/30 dark:border-gray-700/30 shadow-lg transition-all duration-200 z-50"
       >
         <X className="h-6 w-6 text-black dark:text-white drop-shadow-sm" />
         <span className="sr-only">Close</span>
@@ -38,7 +38,7 @@ export const StandardLayout: React.FC<StandardLayoutProps> = ({
         <header className="mb-12">
           <h1 className="font-semibold mb-4 text-black dark:text-white transition-colors duration-200 font-sans" style={{ fontSize: '48px', letterSpacing: '-0.03em' }}>{title}</h1>
           {metadata && (
-            <div className="grid grid-cols-3 gap-4 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-4 mb-8">
               {metadata.role && (
                 <div>
                   <h3 className="font-extrabold mb-1" style={{ fontSize: '12px' }}>Role</h3>
