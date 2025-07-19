@@ -237,8 +237,68 @@ export default function Home() {
             </div> */}
 
             <div className="relative">
-              {/* Carousel Container with Feathering */}
-              <div className="relative overflow-visible">
+              {/* Mobile: Vertical Stack */}
+              <div className="md:hidden">
+                <div className="pt-8 pb-8 px-4 -mx-4">
+                  <div className="flex flex-col gap-6">
+                    {projects.map((project) => {
+                      const isComingSoon = project.slug === "WIP";
+                      
+                      return (
+                        <div
+                          key={project.slug}
+                          className={`group w-full bg-gray-50 dark:bg-gray-900 rounded-xl p-6 hover-float relative flex flex-col transition-colors duration-500 ease-in-out hover:bg-gray-100 dark:hover:bg-gray-800 hover:shadow-md hover:z-10 ${
+                            isComingSoon ? "cursor-not-allowed" : ""
+                          }`}
+                        >
+                          {isComingSoon ? (
+                            <div className="flex flex-col h-full pointer-events-none">
+                              <div className="aspect-[4/3] relative mb-6 overflow-hidden transition-transform duration-300 group-hover:scale-105">
+                                <Image
+                                  src={project.image || "/placeholder.jpg"}
+                                  alt={project.title}
+                                  fill
+                                  className="object-cover"
+                                />
+                              </div>
+                              <div className="mt-auto">
+                                <h2 className="text-2xl font-semibold text-black dark:text-white mb-1 transition-colors duration-200" style={{ letterSpacing: '-0.03em' }}>
+                                  {project.title}
+                                </h2>
+                                <p className="text-xs font-light text-gray-500 dark:text-white transition-colors duration-200" style={{ letterSpacing: '-0.03em' }}>
+                                  {project.description}
+                                </p>
+                              </div>
+                            </div>
+                          ) : (
+                            <Link href={`/projects/${project.slug}`} className="flex flex-col h-full">
+                              <div className="aspect-[4/3] relative mb-6 overflow-hidden transition-transform duration-300 group-hover:scale-105">
+                                <Image
+                                  src={project.image || "/placeholder.jpg"}
+                                  alt={project.title}
+                                  fill
+                                  className="object-cover"
+                                />
+                              </div>
+                              <div className="mt-auto">
+                                <h2 className="text-2xl font-semibold text-black dark:text-white mb-1 transition-colors duration-200" style={{ letterSpacing: '-0.03em' }}>
+                                  {project.title}
+                                </h2>
+                                <p className="text-xs font-light text-gray-500 dark:text-white transition-colors duration-200" style={{ letterSpacing: '-0.03em' }}>
+                                  {project.description}
+                                </p>
+                              </div>
+                            </Link>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              {/* Desktop: Carousel Container with Feathering */}
+              <div className="hidden md:block relative overflow-visible">
                 <div className="pt-8 pb-8 px-4 -mx-4 overflow-hidden">
                   {/* Left Feathering Gradient - Only show when scrolled */}
                   <div
@@ -317,10 +377,10 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Navigation Arrows with Fade Effect */}
+              {/* Navigation Arrows with Fade Effect - Hidden on mobile */}
               <button
                 onClick={() => scrollCarousel("left")}
-                className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 z-20 md:flex items-center justify-center transition-all duration-300 ${
+                className={`hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 z-20 items-center justify-center transition-all duration-300 ${
                   showLeftArrow ? "opacity-50" : "opacity-0 pointer-events-none"
                 }`}
                 aria-label="Scroll left"
@@ -342,7 +402,7 @@ export default function Home() {
               </button>
               <button
                 onClick={() => scrollCarousel("right")}
-                className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 z-20 md:flex items-center justify-center transition-all duration-300 ${
+                className={`hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 z-20 items-center justify-center transition-all duration-300 ${
                   showRightArrow ? "opacity-50" : "opacity-0 pointer-events-none"
                 }`}
                 aria-label="Scroll right"
