@@ -14,14 +14,14 @@ export const experimentsProject = {
           {
             src: "/two-videos-experiment-music.mp4",
             alt: "AI music",
-            description: "Created with Bolt.",
+            description: "AI music prompt interface created with Bolt.",
             isVideo: true
 
           },
           {
             src: "/two-videos-experiment-gyroscopic.mp4",
             alt: "Gyroscopic metal card",
-            description: "Created with Lovable, Claude, Xcode.",
+            description: "Card with light leak and gyroscopic effect. [View code](https://github.com/DaveChan-ux/membership-card-gyroscope-effect)",
             isVideo: true
           }
         ]}
@@ -32,14 +32,14 @@ export const experimentsProject = {
           {
             src: "/two-videos-experiment-parallax1.mp4",
             alt: "Parallax effect",
-            description: "Created with Claude, Xcode",
+            description: "An experiment with parallax meant to create the illusion of elements that seem to be hovering on top of the screen.",
             isVideo: true
 
           },
           {
             src: "/two-videos-experiment-parallax2.mp4",
             alt: "Parallax effect",
-            description: "Created with Claude, Xcode",
+            description: "Using parallax to create the illusion that there is hidden content behind the user's viewport. [View code](https://github.com/DaveChan-ux/ShopTemplateParallax4)",
             isVideo: true
           }
         ]}
