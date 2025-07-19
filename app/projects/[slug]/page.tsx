@@ -28,8 +28,7 @@ interface ProjectPageProps {
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  // No need to await params.slug as it's already available
-  const slug = params.slug;
+  const { slug } = await params;
   const project = projects[slug as keyof typeof projects];
 
   if (!project) {
