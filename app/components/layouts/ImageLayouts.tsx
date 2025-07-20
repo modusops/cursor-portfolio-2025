@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import ReactMarkdown from 'react-markdown';
 
 interface ImageProps {
   src: string;
@@ -32,9 +33,23 @@ export const SingleFullWidth: React.FC<ImageProps> = ({ src, alt, isVideo, descr
       )}
     </div>
     {description && (
-      <p className="mt-2 text-gray-500 dark:text-gray-400 text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
-        {description}
-      </p>
+      <div className="mt-2 text-gray-500 dark:text-gray-400 text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
+        <ReactMarkdown 
+          components={{
+            a: (props) => (
+              <a 
+                {...props}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-400 hover:underline transition-colors"
+              />
+            ),
+            p: (props) => <span {...props} />
+          }}
+        >
+          {description}
+        </ReactMarkdown>
+      </div>
     )}
   </div>
 );
@@ -64,9 +79,23 @@ export const TwoImagesGrid: React.FC<{ images: ImageProps[] }> = ({ images }) =>
             )}
           </div>
           {image.description && (
-            <p className="mt-2 text-gray-500 dark:text-gray-400 text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
-              {image.description}
-            </p>
+            <div className="mt-2 text-gray-500 dark:text-gray-400 text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
+              <ReactMarkdown 
+                components={{
+                  a: (props) => (
+                    <a 
+                      {...props}
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-blue-600 dark:text-blue-400 hover:underline transition-colors"
+                    />
+                  ),
+                  p: (props) => <span {...props} />
+                }}
+              >
+                {image.description}
+              </ReactMarkdown>
+            </div>
           )}
         </div>
       ))}
@@ -88,9 +117,23 @@ export const ThreeImagesGrid: React.FC<{ images: ImageProps[] }> = ({ images }) 
             />
           </div>
           {image.description && (
-            <p className="mt-2 text-gray-500 dark:text-gray-400 text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
-              {image.description}
-            </p>
+            <div className="mt-2 text-gray-500 dark:text-gray-400 text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
+              <ReactMarkdown 
+                components={{
+                  a: (props) => (
+                    <a 
+                      {...props}
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-blue-600 dark:text-blue-400 hover:underline transition-colors"
+                    />
+                  ),
+                  p: (props) => <span {...props} />
+                }}
+              >
+                {image.description}
+              </ReactMarkdown>
+            </div>
           )}
         </div>
       ))}
@@ -111,9 +154,23 @@ export const HeroImage: React.FC<ImageProps> = ({ src, alt, description }) => (
       />
     </div>
     {description && (
-      <p className="mt-2 text-gray-500 dark:text-gray-400 text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
-        {description}
-      </p>
+      <div className="mt-2 text-gray-500 dark:text-gray-400 text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
+        <ReactMarkdown 
+          components={{
+            a: (props) => (
+              <a 
+                {...props}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-400 hover:underline transition-colors"
+              />
+            ),
+            p: (props) => <span {...props} />
+          }}
+        >
+          {description}
+        </ReactMarkdown>
+      </div>
     )}
   </div>
 ); 
