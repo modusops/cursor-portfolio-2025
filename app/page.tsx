@@ -185,9 +185,12 @@ export default function Home() {
           <div className="md:block md:w-[216px]"></div>
         </header> */}
 
-        <nav className="fixed bottom-6 md:top-6 md:bottom-auto left-1/2 -translate-x-1/2 w-[90%] lg:w-1/2 z-50 flex items-center justify-between backdrop-blur-lg backdrop-saturate-150 backdrop-brightness-110 bg-white/20 dark:bg-gray-800/20 py-2 px-3 rounded-full shadow-lg border border-white/30 dark:border-gray-700/30 transition-all duration-200">
+        <nav className="fixed bottom-6 md:top-6 md:bottom-auto left-1/2 -translate-x-1/2 z-50 flex items-center md:justify-between justify-center backdrop-blur-lg backdrop-saturate-150 backdrop-brightness-110 bg-white/20 dark:bg-gray-800/20 py-2 px-3 rounded-full shadow-lg border border-white/30 dark:border-gray-700/30 transition-all duration-200
+  w-max md:w-[90%] lg:w-1/2">
+
           <h1 className="text-xl font-medium text-black dark:text-white font-sans pl-2 drop-shadow-sm hidden md:block">Dave Chan</h1>
-          <div className="flex items-center space-x-4 pr-2">
+
+          <div className="flex items-center space-x-4">
             <Link
               href="/"
               className="nav-item active px-5 py-2 rounded-full bg-black dark:bg-white backdrop-blur-sm text-white dark:text-black text-sm font-medium transition-all duration-200 relative border border-black dark:border-white hover:bg-gray-800 dark:hover:bg-gray-100 hover:border-gray-800 dark:hover:border-gray-100 drop-shadow-sm"
@@ -208,6 +211,7 @@ export default function Home() {
             </Link>
           </div>
         </nav>
+
 
         {/* Hero Section - Reduced top padding on mobile */}
         <AnimatedContent>
@@ -1033,8 +1037,13 @@ export default function Home() {
               <PlusSign size="lg" />
             </div>
           </div>
-          <div className="mt-20 mb-10 text-center text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
-            © COPYRIGHT 2025 <a href="https://github.com/modusops?tab=overview&from=2025-07-01&to=2025-07-06" target="_blank" rel="noopener noreferrer" className="text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200">Built with Cursor</a>
+          <div className="mt-20 mb-10 text-center space-y-3">
+            <div className="text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
+              © COPYRIGHT 2025 <a href="https://github.com/modusops?tab=overview&from=2025-07-01&to=2025-07-06" target="_blank" rel="noopener noreferrer" className="text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200">Built with Cursor</a>
+            </div>
+            <div className="flex justify-center">
+              <span className="inline-flex items-center px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs font-light border border-gray-200 dark:border-gray-700 transition-colors duration-200"><div className="w-2 h-2 rounded-full bg-violet-700 border border-violet-800 mr-2"></div>Updated July 21, 2025</span>
+            </div>
           </div>
         </AnimatedContent>
       </div>
