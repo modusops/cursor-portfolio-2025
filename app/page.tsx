@@ -1037,7 +1037,7 @@ export default function Home() {
               <PlusSign size="lg" />
             </div>
           </div>
-          <div className="mt-20 mb-10 text-center space-y-3">
+          <div className="mt-20 mb-10 pb-20 md:pb-0 text-center space-y-3">
             <div className="text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
               © COPYRIGHT 2025 <a href="https://github.com/modusops?tab=overview&from=2025-07-01&to=2025-07-06" target="_blank" rel="noopener noreferrer" className="text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200">Built with Cursor</a>
             </div>
