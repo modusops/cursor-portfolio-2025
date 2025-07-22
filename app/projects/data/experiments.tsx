@@ -52,6 +52,13 @@ export const experimentsProject = {
         isVideo={true}
       />
 
+      <SingleFullWidth
+        src="/one-video-experiment-blur.mp4"
+        alt="Blur"
+        description="For pillarboxed or letterboxed images, I created an algorithm that detects the luminance of any image, applying the material api and the correct thickness optimized for visual symmetry. For example on extremely dark or light images, applying the incorrect material thickness might result in too much contrast between the image and the empty spaces on each side. [View code](https://github.com/DaveChan-ux/post-background-blur-effect-06162025)"
+        isVideo={true}
+      />
+
     </>
   )
 }; 
