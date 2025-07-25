@@ -67,8 +67,15 @@ export const creatorProject = {
       <SingleFullWidth 
           src="/one-image-creator-performance-goal.jpg"
           alt="creator performance goal"
-          description="I collaborated with multiple product owners to define individual module specifications, architectural integration within the new home page framework, and strategic design approaches that optimized customer experience while advancing key business goals. I led alignment sessions that balanced diverse stakeholder priorities through user-centered design strategy."
+          description="Each module underwent multiple design iterations in close collaboration with product, engineering, and design systems partners. Throughout this process, I also played an active role in shaping the overall product strategy."
           isVideo={false}
+      />
+
+      <SingleFullWidth
+        src="/one-image-creator-cards.jpg"
+        alt="creator cards"
+        description="The design of the home screen card component established it as a foundational UI element, enabling its reuse and adaptability across the entire platform."
+        isVideo={false}
       />
 
     <TwoImagesGrid 
