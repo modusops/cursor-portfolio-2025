@@ -93,6 +93,12 @@ export default function Work() {
 
 const projects = [
   {
+    title: "Sono",
+    description: "Building the future of team collaboration",
+    image: "/placeholder.svg?height=400&width=600",
+    slug: "sono",
+  },
+  {
     title: "Daylight",
     description: "A more caring computer",
     image: "/placeholder.svg?height=400&width=600",

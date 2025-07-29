@@ -3,142 +3,90 @@ import { SingleFullWidth, TwoImagesGrid, ThreeImagesGrid, HeroImage } from '@/ap
 
 export const sonoProject = {
   title: "Sono",
-  description: "Modern training platform for startups",
-  coverImage: "/placeholder.jpg",
+  description: "As founding designer at Sono, I partnered directly with the CEO and co-founders to transform their knowledge management vision into a comprehensive product experience. Working in a fast-paced seed-stage environment, I designed the complete interface while rapidly iterating based on user feedback to guide the product toward product-market fit. The designs prioritize speed and functionality over polish, reflecting the urgency required in early-stage product development.",
+  coverImage: "/sono-hero.jpg",
   slug: "sono",
   metadata: {
-    role: "Lead Designer",
-    timeline: "2023",
-    team: "Design, Engineering, Content"
+    role: "Founding Product Designer",
+    timeline: "2022-2023",
+    team: "CEO-Cofounder, CTO-Cofounder, Founding Software Engineer"
   },
+  layout: "standard",
   content: (
     <>
-      <section>
-        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Overview</h2>
-        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
-          Sono is a modern training platform that helps startups onboard and upskill their teams efficiently.
-          By combining interactive learning modules with real-time feedback, Sono makes professional development
-          engaging and measurable.
-        </p>
-      </section>
 
-      <TwoImagesGrid 
-        images={[
-          {
-            src: "/placeholder.jpg",
-            alt: "Sono main dashboard interface"
-          },
-          {
-            src: "/placeholder.jpg",
-            alt: "Learning analytics dashboard"
-          }
-        ]}
+      <SingleFullWidth
+        src="/one-image-sono-prompt.jpg"
+        alt="Sono Prompt Interface"
+        description="The Sono prompt interface serves as the central hub for document creation, empowering users to generate comprehensive knowledge management materials through an intuitive, AI-driven experience. This core feature transforms how teams capture, organize, and share institutional knowledge by providing a streamlined interface that adapts to diverse content creation needs."
+        isVideo={false}
       />
 
-      <section>
-        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>The Problem</h2>
-        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
-          Startups often struggle with consistent team training and development. Traditional learning
-          management systems are too rigid and enterprise-focused, while ad-hoc solutions lack
-          structure and accountability.
-        </p>
-      </section>
-
-      <SingleFullWidth 
-        src="/sono-problem.png"
-        alt="Visualization of training challenges in startups"
+      <SingleFullWidth
+        src="/one-image-prompt-design.jpg"
+        alt="Prompt Design System"
+        description="Advanced prompt design system that enables users to create sophisticated knowledge management workflows."
+        isVideo={false}
       />
 
-      <section>
-        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Solution</h2>
-        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
-          We created a flexible, modular platform that adapts to each company's unique needs:
-        </p>
-        <ul>
-          <li>Customizable learning paths</li>
-          <li>Interactive content creation tools</li>
-          <li>Progress tracking and analytics</li>
-          <li>Peer learning and mentorship features</li>
-        </ul>
-      </section>
-
-      <ThreeImagesGrid 
-        images={[
-          {
-            src: "/sono-learning-paths.png",
-            alt: "Customizable learning paths interface"
-          },
-          {
-            src: "/sono-content-creation.png",
-            alt: "Content creation tools"
-          },
-          {
-            src: "/sono-mentorship.png",
-            alt: "Peer learning and mentorship features"
-          }
-        ]}
+      <SingleFullWidth
+        src="/one-image-sono-data.jpg"
+        alt="data"
+        description="Sono integrates seamlessly with diverse internal data sources, enabling users to create targeted content that serves both employee needs and HR deployment strategies across the organization."
+        isVideo={false}
       />
 
-      <section>
-        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Design Process</h2>
-        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
-          The design process focused on creating an intuitive experience that could scale
-          with growing teams. We conducted extensive user research with startup founders,
-          HR leaders, and employees to understand their unique challenges and needs.
-        </p>
-      </section>
-
-      <TwoImagesGrid 
-        images={[
-          {
-            src: "/sono-research.png",
-            alt: "User research and insights"
-          },
-          {
-            src: "/sono-iterations.png",
-            alt: "Design iterations and prototypes"
-          }
-        ]}
+      <SingleFullWidth
+        src="/one-image-sono-builder.jpg"
+        alt="node based workflow builder"
+        description="I developed a node-based workflow builder with conditional logic capabilities, featuring an integrated prompt interface for dynamic content creation. The visual editor enables users to construct automated deployment processes while maintaining flexibility through AI-assisted content generation."
+        isVideo={false}
       />
 
-      <section>
-        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Key Features</h2>
-        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
-          The platform includes several innovative features designed specifically for startup teams:
-        </p>
-      </section>
-
-      <SingleFullWidth 
-        src="/sono-features.png"
-        alt="Overview of Sono's key features"
+      <SingleFullWidth
+        src="/one-image-sono-collaboration.jpg"
+        alt="Collaboration"
+        description="Multiplayer mode."
+        isVideo={false}
       />
 
-      <section>
-        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Impact</h2>
-        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
-          Since launch, Sono has helped over 100 startups improve their team development:
-        </p>
-        <ul>
-          <li>70% reduction in onboarding time</li>
-          <li>85% employee engagement rate</li>
-          <li>3x increase in skill development tracking</li>
-          <li>92% team satisfaction rate</li>
-        </ul>
-      </section>
-
-      <HeroImage 
-        src="/sono-results.png"
-        alt="Visual representation of Sono's impact metrics"
+      <SingleFullWidth
+        src="/one-image-sono-chat.jpg"
+        alt="Sono Chat"
+        description="I designed an integrated conversational interface that enables users to collaboratively build and refine workflows through natural language interaction with Sono AI. The chat UI seamlessly integrates with the visual workflow builder, allowing users to describe their automation needs and receive intelligent suggestions for workflow structure and content generation."
+        isVideo={false}
       />
 
-      <section>
-        <h2 className="font-extrabold" style={{ fontSize: '14px' }}>Future Development</h2>
-        <p className="text-sm font-light" style={{ letterSpacing: '-0.03em' }}>
-          We continue to evolve the platform based on user feedback and changing startup needs.
-          Upcoming features include AI-powered learning recommendations, advanced analytics,
-          and expanded integration capabilities.
-        </p>
-      </section>
+      <SingleFullWidth
+        src="/one-image-sono-onboarding.jpg"
+        alt="Modify editor"
+        description="Users can modify content within the editor."
+        isVideo={false}
+      />
+
+      <SingleFullWidth
+        src="/one-image-sono-template.jpg"
+        alt="Workflows"
+        // description="Settings and configuration made simple and intuitive."
+        isVideo={false}
+      />
+
+      <SingleFullWidth
+        src="/one-image-sono-preview.jpg"
+        alt="Settings"
+        // description="Settings and configuration made simple and intuitive."
+        isVideo={false}
+      />
+
+      <SingleFullWidth
+        src="/one-image-sono-workflow.jpg"
+        alt="Settings"
+        // description="Settings and configuration made simple and intuitive."
+        isVideo={false}
+      />
+
+
+
     </>
   )
 }; 
