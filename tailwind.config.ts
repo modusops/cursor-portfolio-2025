@@ -10,6 +10,23 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        '16': 'repeat(16, minmax(0, 1fr))',
+      },
+      gridColumnStart: {
+        '13': '13',
+        '14': '14',
+        '15': '15',
+        '16': '16',
+        '17': '17',
+      },
+      gridColumnEnd: {
+        '13': '13',
+        '14': '14',
+        '15': '15',
+        '16': '16',
+        '17': '17',
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -66,6 +83,8 @@ const config: Config = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        '4xl': '2rem',
+        '5xl': '2.5rem',
       },
       keyframes: {
         "accordion-down": {
@@ -93,9 +112,9 @@ const config: Config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         blink: 'blink 1s step-end infinite',
-        fontFamily: {
-          sans: ["var(--font-inter)"],
-        },
+      },
+      fontFamily: {
+        sans: ["var(--font-inter)"],
       },
     },
   },
