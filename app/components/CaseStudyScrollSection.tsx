@@ -16,6 +16,7 @@ interface CaseStudyScrollSectionProps {
 
 export function CaseStudyScrollSection({ slides }: CaseStudyScrollSectionProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('down');
   const [isLocked, setIsLocked] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const isTransitioning = useRef(false);
@@ -55,6 +56,7 @@ export function CaseStudyScrollSection({ slides }: CaseStudyScrollSectionProps) 
           // Lock and move to next slide
           e.preventDefault();
           setIsLocked(true);
+          setScrollDirection('down');
           isTransitioning.current = true;
           setCurrentSlide(prev => prev + 1);
           setTimeout(() => {
@@ -69,6 +71,7 @@ export function CaseStudyScrollSection({ slides }: CaseStudyScrollSectionProps) 
           // Lock and move to previous slide
           e.preventDefault();
           setIsLocked(true);
+          setScrollDirection('up');
           isTransitioning.current = true;
           setCurrentSlide(prev => prev - 1);
           setTimeout(() => {
@@ -92,33 +95,47 @@ export function CaseStudyScrollSection({ slides }: CaseStudyScrollSectionProps) 
   return (
     <div
       ref={containerRef}
-      className="min-h-screen grid grid-cols-10 gap-12 px-16 items-center relative"
+      className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 items-center relative min-h-[900px]"
     >
-      {/* LEFT COLUMN: Text content - 40% width */}
-      <div className="col-start-1 col-end-5">
-        <div className="relative h-[50vh]">
-          {slides.map((slide, i) => (
-            <div
-              key={i}
-              className="absolute top-0 left-0 w-full transition-all duration-700 ease-out"
-              style={{
-                opacity: currentSlide === i ? 1 : 0,
-                transform: `translateY(${currentSlide === i ? '0px' : '40px'})`,
-                pointerEvents: currentSlide === i ? 'auto' : 'none',
-              }}
-            >
-              <h2 className="text-[27px] lg:text-[45px] font-bold mb-6 break-words">{slide.title}</h2>
-              <p className="text-[15px] lg:text-[20px] text-gray-600 leading-relaxed">
-                {slide.description}
-              </p>
-            </div>
-          ))}
-        </div>
+      {/* LEFT COLUMN: Text content - 4 columns (40%) */}
+      <div className="col-span-1 md:col-span-4 relative h-[900px]">
+        {slides.map((slide, i) => {
+          const isActive = currentSlide === i;
+          let translateY = '0px';
+          
+          if (!isActive) {
+            // Determine animation direction based on scroll direction and slide position
+            if (scrollDirection === 'down') {
+              // Scrolling down: incoming slides come from below (positive Y)
+              translateY = i > currentSlide ? '40px' : '-40px';
+            } else {
+              // Scrolling up: incoming slides come from above (negative Y)
+              translateY = i < currentSlide ? '-40px' : '40px';
+            }
+          }
+          
+          return (
+          <div
+            key={i}
+            className="absolute top-0 left-0 w-full transition-all duration-700 ease-out flex flex-col gap-3"
+            style={{
+              opacity: isActive ? 1 : 0,
+              transform: `translateY(${translateY})`,
+              pointerEvents: isActive ? 'auto' : 'none',
+            }}
+          >
+            <h2 className="text-[28px] md:text-[36px] leading-[34px] md:leading-[40px] font-normal break-words text-black dark:text-white transition-colors duration-200">{slide.title}</h2>
+            <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] text-black dark:text-white break-words transition-colors duration-200">
+              {slide.description}
+            </p>
+          </div>
+          );
+        })}
       </div>
 
-      {/* RIGHT COLUMN: Media content - 60% width, ALWAYS 100vh */}
-      <div className="col-start-5 col-end-11">
-        <div className="relative h-screen">
+      {/* RIGHT COLUMN: Media content - 6 columns (60%), 900px height */}
+      <div className="col-span-1 md:col-span-6 relative h-[900px]">
+        <div className="relative w-full h-full bg-gray-50 dark:bg-gray-900 rounded-[32px] overflow-hidden transition-colors duration-200">
           {slides.map((slide, i) => (
             <div
               key={i}
@@ -130,7 +147,7 @@ export function CaseStudyScrollSection({ slides }: CaseStudyScrollSectionProps) 
             >
               {slide.isVideo ? (
                 <video
-                  className="w-full h-full object-cover rounded-4xl"
+                  className="w-full h-full object-contain rounded-[32px]"
                   autoPlay
                   muted
                   loop
@@ -140,12 +157,12 @@ export function CaseStudyScrollSection({ slides }: CaseStudyScrollSectionProps) 
                   <source src={slide.media} type="video/mp4" />
                 </video>
               ) : (
-                <div className="relative w-full h-full rounded-4xl overflow-hidden bg-gray-100">
+                <div className="relative w-full h-full rounded-[32px] overflow-hidden">
                   <Image
                     src={slide.media}
                     alt={slide.title}
                     fill
-                    className="object-cover"
+                    className="object-contain"
                     priority={i === 0}
                   />
                 </div>
@@ -155,8 +172,8 @@ export function CaseStudyScrollSection({ slides }: CaseStudyScrollSectionProps) 
         </div>
       </div>
 
-      {/* PAGINATION DOTS - Fixed to right of image */}
-      <div className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col gap-4">
+      {/* PAGINATION DOTS - Fixed to right edge of viewport */}
+      <div className="hidden md:flex absolute right-8 top-1/2 -translate-y-1/2 flex-col gap-4">
         {slides.map((_, i) => (
           <button
             key={i}
@@ -164,10 +181,10 @@ export function CaseStudyScrollSection({ slides }: CaseStudyScrollSectionProps) 
             aria-label={`Slide ${i + 1}`}
           >
             <span
-              className={`block w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`block w-2 h-2 rounded-full transition-all duration-300 ${
                 currentSlide === i
-                  ? 'bg-black scale-125'
-                  : 'bg-gray-300 group-hover:bg-gray-400'
+                  ? 'bg-black dark:bg-white'
+                  : 'bg-gray-200 dark:bg-gray-700 group-hover:bg-gray-300 dark:group-hover:bg-gray-600'
               }`}
             />
           </button>
