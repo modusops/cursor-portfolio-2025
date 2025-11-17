@@ -30,15 +30,18 @@ export function CaseStudyWrapper({ children }: CaseStudyWrapperProps) {
 
   if (isMobile) {
     return (
-      <div className="min-h-screen flex items-center justify-center px-8 bg-[#F8F8F8]">
-        <div className="max-w-md text-center">
-          <h1 className="text-3xl font-bold mb-6">Desktop Experience</h1>
-          <p className="text-lg text-gray-600 leading-relaxed mb-4">
-            This case study is crafted for desktop viewing.
-          </p>
-          <p className="text-base text-gray-500">
-            Please visit on a larger screen for the full interactive experience.
-          </p>
+      <div className="min-h-screen bg-white dark:bg-black flex items-center justify-center px-16 transition-colors duration-200">
+        <div className="grid grid-cols-5 gap-0 w-full max-w-md">
+          <div className="col-span-1"></div>
+          <div className="col-span-3 flex flex-col gap-6 items-center text-center">
+            <h1 className="text-[36px] leading-[40px] font-normal font-sans text-black dark:text-white transition-colors duration-200">
+              Mobile not supported
+            </h1>
+            <p className="text-[20px] leading-[30px] font-normal font-sans text-gray-400 dark:text-gray-500 transition-colors duration-200">
+              This case study is crafted for desktop viewing
+            </p>
+          </div>
+          <div className="col-span-1"></div>
         </div>
       </div>
     );
