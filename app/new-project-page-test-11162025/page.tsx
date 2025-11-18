@@ -45,7 +45,7 @@ export default function NewProjectPageTest11162025() {
               <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">
                 I've helped build products for the world's top tech companies. As a seasoned product designer with experience building and
               </p>
-              {/* Meta Information - 2 columns */}
+              {/* Meta Information - 3 columns */}
               <div className="flex gap-0">
                 <div className="flex flex-col gap-1 w-[136px]">
                   <p className="text-[14px] leading-[24px] text-gray-500 dark:text-gray-400 transition-colors duration-200">Years</p>
@@ -54,6 +54,60 @@ export default function NewProjectPageTest11162025() {
                 <div className="flex flex-col gap-1 w-[136px]">
                   <p className="text-[14px] leading-[24px] text-gray-500 dark:text-gray-400 transition-colors duration-200">Role</p>
                   <p className="text-[14px] leading-[24px] text-black dark:text-white transition-colors duration-200">Lead designer</p>
+                </div>
+                <div className="flex flex-col gap-1 w-[200px]">
+                  <p className="text-[14px] leading-[24px] text-gray-500 dark:text-gray-400 transition-colors duration-200">Team</p>
+                  <div className="flex gap-1">
+                    <Image
+                      src="/chaitanya.png"
+                      alt="Chaitanya"
+                      width={24}
+                      height={24}
+                      className="rounded-full"
+                    />
+                    <Image
+                      src="/dave.png"
+                      alt="Dave"
+                      width={24}
+                      height={24}
+                      className="rounded-full"
+                    />
+                    <Image
+                      src="/jeromy.png"
+                      alt="Jeromy"
+                      width={24}
+                      height={24}
+                      className="rounded-full"
+                    />
+                    <Image
+                      src="/khalid.png"
+                      alt="Khalid"
+                      width={24}
+                      height={24}
+                      className="rounded-full"
+                    />
+                    <Image
+                      src="/liz.png"
+                      alt="Liz"
+                      width={24}
+                      height={24}
+                      className="rounded-full"
+                    />
+                    <Image
+                      src="/maddie.png"
+                      alt="Maddie"
+                      width={24}
+                      height={24}
+                      className="rounded-full"
+                    />
+                    <Image
+                      src="/nathan.png"
+                      alt="Nathan"
+                      width={24}
+                      height={24}
+                      className="rounded-full"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
