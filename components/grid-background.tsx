@@ -11,9 +11,9 @@ export function GridBackground() {
     setMounted(true)
   }, [])
 
-  // Hide grid background on project pages and case study test pages
+  // Hide grid background on project pages and case study pages
   const isProjectPage = pathname?.startsWith("/projects/")
-  const isCaseStudyPage = pathname?.startsWith("/new-project-page-test-")
+  const isCaseStudyPage = pathname?.startsWith("/new-project-page-test-") || pathname?.startsWith("/case-study-")
 
   if (!mounted || isProjectPage || isCaseStudyPage) return null
 
