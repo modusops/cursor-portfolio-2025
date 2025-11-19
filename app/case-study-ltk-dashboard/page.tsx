@@ -56,7 +56,7 @@ export default function CaseStudyLTKDashboard() {
       },
     {
       title: 'All business and play',
-      description: 'Who says you can’t mix business and pleasure?Utilizing my expertise in SwiftUI, I prototyped an immersive experience when the creator shared their storefront.',
+      description: 'Who says you can’t mix business and pleasure? Utilizing my expertise in SwiftUI, I prototyped an immersive experience when the creator shared their storefront.',
       media: '/two-videos-experiment-parallax1.mp4',
       isVideo: true,
       },
@@ -275,7 +275,7 @@ export default function CaseStudyLTKDashboard() {
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
               <p className="text-[28px] md:text-[36px] leading-[34px] md:leading-[42px] font-light text-black dark:text-white transition-colors duration-200">
-              Team work makes the dream work. The success of this project rested on transparency, trust, and a laser focus on understanding our users and deeply empathizing with them. Our team met multiple times weekly to ensure there was significant progress and momentum.
+              Team work makes the dream work. The success of this project rested on transparency, trust, and a laser focus on understanding our users and deeply empathizing with them. Our team met multiple times weekly to ensure progress and momentum.
               </p>
             </div>
           </section>
@@ -315,7 +315,7 @@ export default function CaseStudyLTKDashboard() {
               </div>
               {/* Description Text */}
               <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">
-              We shipped the final solution in just under 6 months and saw a positive lift in post rates after the redesign. In addition users were surveyed before and after the redesign and resulted a signification increase in user satisfaction.
+              We shipped the final solution in just under 6 months and saw a positive lift in post rates after the redesign. In addition the redesign resulted an increase in user satisfaction.
               </p>
             </div>
           </section>
