@@ -18,8 +18,84 @@ export function CaseStudyScrollSection({ slides }: CaseStudyScrollSectionProps) 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('down');
   const [isLocked, setIsLocked] = useState(false);
+  const [hasSnapped, setHasSnapped] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const isTransitioning = useRef(false);
+  const isSnapping = useRef(false);
+
+  // Scroll snapping effect - snaps section to top when approaching
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    let lastScrollY = window.scrollY;
+    let scrollDirection: 'up' | 'down' = 'down';
+
+    const handleSnap = () => {
+      const rect = container.getBoundingClientRect();
+      const currentScrollY = window.scrollY;
+      const sectionTop = rect.top + currentScrollY;
+      const viewportHeight = window.innerHeight;
+      
+      // Determine scroll direction
+      scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
+      lastScrollY = currentScrollY;
+      
+      // Check if section is within 200px of viewport top and below viewport (scrolling down)
+      const distanceFromTop = rect.top;
+      const isInSnapZoneDown = distanceFromTop > 0 && distanceFromTop <= 200;
+      
+      // Check if section is within 200px of viewport bottom and above viewport (scrolling up)
+      const distanceFromBottom = viewportHeight - rect.bottom;
+      const isInSnapZoneUp = rect.bottom > 0 && distanceFromBottom > 0 && distanceFromBottom <= 200;
+      
+      // Snap when scrolling down toward section
+      if (isInSnapZoneDown && scrollDirection === 'down' && !hasSnapped && !isSnapping.current) {
+        isSnapping.current = true;
+        setHasSnapped(true);
+        
+        // Smooth scroll to section top
+        window.scrollTo({
+          top: sectionTop,
+          behavior: 'smooth'
+        });
+        
+        // Reset snapping flag after animation completes
+        setTimeout(() => {
+          isSnapping.current = false;
+        }, 1000);
+      }
+      
+      // Snap when scrolling up toward section
+      if (isInSnapZoneUp && scrollDirection === 'up' && !hasSnapped && !isSnapping.current) {
+        isSnapping.current = true;
+        setHasSnapped(true);
+        
+        // Smooth scroll to section top
+        window.scrollTo({
+          top: sectionTop,
+          behavior: 'smooth'
+        });
+        
+        // Reset snapping flag after animation completes
+        setTimeout(() => {
+          isSnapping.current = false;
+        }, 1000);
+      }
+      
+      // Reset hasSnapped when section scrolls out of view above or below viewport
+      if (rect.bottom < 0 || rect.top > viewportHeight) {
+        setHasSnapped(false);
+      }
+    };
+
+    // Use scroll event to detect approach
+    window.addEventListener('scroll', handleSnap, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleSnap);
+    };
+  }, [hasSnapped]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -174,21 +250,59 @@ export function CaseStudyScrollSection({ slides }: CaseStudyScrollSectionProps) 
 
       {/* PAGINATION DOTS - Fixed to right edge of viewport */}
       <div className="hidden md:flex absolute right-8 top-1/2 -translate-y-1/2 flex-col gap-4">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            className="group"
-            aria-label={`Slide ${i + 1}`}
-          >
-            <span
-              className={`block w-2 h-2 rounded-full transition-all duration-300 ${
-                currentSlide === i
-                  ? 'bg-black dark:bg-white'
-                  : 'bg-gray-200 dark:bg-gray-700 group-hover:bg-gray-300 dark:group-hover:bg-gray-600'
-              }`}
-            />
-          </button>
-        ))}
+        {slides.map((_, i) => {
+          const handleDotClick = () => {
+            if (i === currentSlide) return; // Already on this slide
+            
+            // Determine scroll direction
+            const direction = i > currentSlide ? 'down' : 'up';
+            
+            // Lock section and set direction
+            setIsLocked(true);
+            setScrollDirection(direction);
+            isTransitioning.current = true;
+            
+            // Update slide
+            setCurrentSlide(i);
+            
+            // Ensure section is visible by snapping to top if needed
+            const container = containerRef.current;
+            if (container) {
+              const rect = container.getBoundingClientRect();
+              const sectionTop = rect.top + window.scrollY;
+              
+              // Only snap if section is not already at top
+              if (rect.top > 50) {
+                window.scrollTo({
+                  top: sectionTop,
+                  behavior: 'smooth'
+                });
+              }
+            }
+            
+            // Reset transition flag
+            setTimeout(() => {
+              isTransitioning.current = false;
+            }, 400);
+          };
+          
+          return (
+            <button
+              key={i}
+              className="group cursor-pointer"
+              aria-label={`Go to slide ${i + 1}`}
+              onClick={handleDotClick}
+            >
+              <span
+                className={`block w-2 h-2 rounded-full transition-all duration-300 ${
+                  currentSlide === i
+                    ? 'bg-black dark:bg-white scale-125'
+                    : 'bg-gray-200 dark:bg-gray-700 group-hover:bg-gray-300 dark:group-hover:bg-gray-600'
+                }`}
+              />
+            </button>
+          );
+        })}
       </div>
     </div>
   );
