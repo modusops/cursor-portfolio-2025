@@ -3,6 +3,8 @@ import { CaseStudyScrollSection } from '@/app/components/CaseStudyScrollSection'
 import Image from 'next/image';
 import Link from 'next/link';
 import { X } from 'lucide-react';
+import { AnimatedContent } from '@/components/animated-content';
+import { AnimatedCounter } from '@/app/components/AnimatedCounter';
 
 export default function CaseStudyLTKDashboard() {
   const slides1 = [
@@ -52,7 +54,7 @@ export default function CaseStudyLTKDashboard() {
       isVideo: false,
       },
     {
-      title: 'All business, yes play',
+      title: 'All business and play',
       description: 'Who says you can’t mix business and pleasure?Utilizing my expertise in SwiftUI, I prototyped an immersive experience when the creator shared their storefront.',
       media: '/two-videos-experiment-parallax1.mp4',
       isVideo: true,
@@ -75,9 +77,10 @@ export default function CaseStudyLTKDashboard() {
           <X className="h-6 w-6 text-black dark:text-white drop-shadow-sm" />
           <span className="sr-only">Close</span>
         </Link>
-        <div className="flex flex-col gap-[80px]">
+        <div className="flex flex-col gap-[104px]">
           {/* Hero Section */}
-          <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+          <AnimatedContent>
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
             <div className="col-span-1 md:col-span-4 flex items-start">
               <h1 className="text-[28px] md:text-[36px] leading-[32px] md:leading-[40px] font-normal font-sans text-black dark:text-white transition-colors duration-200">
                 LTK Dashboard Redesign
@@ -85,7 +88,7 @@ export default function CaseStudyLTKDashboard() {
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
               <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">
-              A month after joining the company, I was tasked with lead the redesign of the creator app home experience. I helped launch the MVP in 4 months, introduced two new foundational components to the design system, and was the first designer in company history to ship code to production.
+              A month after joining the company, I was tasked with leading the redesign of the creator app home experience. I helped launch the MVP in 4 months, introduced two new foundational components to the design system, and was the first designer in company history to ship code to production.
               </p>
               {/* Meta Information - 3 columns */}
               <div className="flex gap-0">
@@ -154,9 +157,11 @@ export default function CaseStudyLTKDashboard() {
               </div>
             </div>
           </section>
+          </AnimatedContent>
 
           {/* Image Section */}
-          <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+          <AnimatedContent className="delay-100">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
             <div className="col-span-1 md:col-span-10">
               <div className="relative w-full rounded-[32px] overflow-hidden" style={{ aspectRatio: '1312/421' }}>
                 <Image
@@ -170,41 +175,47 @@ export default function CaseStudyLTKDashboard() {
               </div>
             </div>
           </section>
+          </AnimatedContent>
 
           {/* Problem Section */}
-          <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+          <AnimatedContent className="delay-200">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
             <div className="col-span-1 md:col-span-4 flex items-start">
               <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
                 PROBLEM
               </h2>
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
-              <p className="text-[28px] md:text-[36px] leading-[34px] md:leading-[42px] font-normal text-black dark:text-white transition-colors duration-200">
-              The existing home page was focused on motivating creators to post and share links. While that strategy was effective for new users to the platform, it alienated existing Creators who couldn’t easily understand their business. As a result, posting rates was negatively impacted.
+              <p className="text-[28px] md:text-[36px] leading-[34px] md:leading-[42px] font-light text-black dark:text-white transition-colors duration-200">
+              The existing home page was focused on motivating creators to post and share links. While that strategy was effective for new users to the platform, it alienated existing Creators who couldn’t easily understand their business. As a result, posting rates declined.
               </p>
             </div>
           </section>
+          </AnimatedContent>
 
           {/* How Might We Section */}
-          <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+          <AnimatedContent className="delay-300">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
             <div className="col-span-1 md:col-span-4 flex items-start">
               <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
                 HOW MIGHT WE
               </h2>
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
-              <p className="text-[28px] md:text-[36px] leading-[34px] md:leading-[42px] font-normal text-black dark:text-white transition-colors duration-200">
-              How might we increase posting rates by helping creators understand their business while showing relevant and timely information?
+              <p className="text-[28px] md:text-[36px] leading-[34px] md:leading-[42px] font-light text-black dark:text-white transition-colors duration-200">
+              How might we increase posting rates and help creators understand their business by showing relevant and timely information?
               </p>
             </div>
           </section>
+          </AnimatedContent>
 
           {/* Image Section */}
-          <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+          <AnimatedContent className="delay-400">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
             <div className="col-span-1 md:col-span-10">
               <div className="relative w-full rounded-[32px] overflow-hidden" style={{ aspectRatio: '1312/421' }}>
                 <Image
-                  src="/casestudy-ltk-dashboard-image.png"
+                  src="/casestudy-ltk-dashboard-image.jpg"
                   alt="LTK Dashboard screens showing Overview, Visits, and Earnings analytics"
                   fill
                   className="object-contain rounded-[32px]"
@@ -214,23 +225,29 @@ export default function CaseStudyLTKDashboard() {
               </div>
             </div>
           </section>
+          </AnimatedContent>
 
           {/*Context*/}
-          <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+          <AnimatedContent className="delay-500">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
             <div className="col-span-1 md:col-span-4 flex items-start">
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
               <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">
-              Through research of creators on the platform and embracing an iterative design process, I was able to conceive several design solutions that were tested with users. I worked closely with engineers and members of the design system team to take advantage of a re-architecture of the mobile app leveraging native capabilities that were previously unavailable and also helped create the design system intake model that the rest of the design team used.
+              Through research of creators on the platform and embracing an iterative design process, I conceived several design solutions that were tested with users. I worked closely with engineers and members of the design system team, taking advantage of a re-architecture of the mobile app leveraging native capabilities that were previously unavailable and helped create the design system intake model that the rest of the design team used.
               </p>
             </div>
           </section>
+          </AnimatedContent>
 
           {/* Scroll-Triggered Section with 60/40 split and 100vh images */}
-          <CaseStudyScrollSection slides={slides1} />
+          <AnimatedContent className="delay-600">
+            <CaseStudyScrollSection slides={slides1} />
+          </AnimatedContent>
 
           {/*Context*/}
-          <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+          <AnimatedContent className="delay-700">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
             <div className="col-span-1 md:col-span-4 flex items-start">
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
@@ -239,26 +256,32 @@ export default function CaseStudyLTKDashboard() {
               </p>
             </div>
           </section>
+          </AnimatedContent>
 
           {/* Scroll-Triggered Section with 60/40 split and 100vh images */}
+          <AnimatedContent className="delay-800">
             <CaseStudyScrollSection slides={slides2} />
+          </AnimatedContent>
 
           {/* BTS Section */}
-          <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+          <AnimatedContent className="delay-900">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
             <div className="col-span-1 md:col-span-4 flex items-start">
               <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
                 BEHIND THE SCENES
               </h2>
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
-              <p className="text-[28px] md:text-[36px] leading-[34px] md:leading-[42px] font-normal text-black dark:text-white transition-colors duration-200">
+              <p className="text-[28px] md:text-[36px] leading-[34px] md:leading-[42px] font-light text-black dark:text-white transition-colors duration-200">
               Team work makes the dream work. The success of this project rested on transparency, trust, and a laser focus on understanding our users and deeply empathizing with them. Our team met multiple times weekly to ensure there was significant progress and momentum.
               </p>
             </div>
           </section>
+          </AnimatedContent>
 
           {/* Outcomes Section */}
-          <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+          <AnimatedContent className="delay-1000">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
             <div className="col-span-1 md:col-span-4 flex items-start">
               <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
                 OUTCOMES
@@ -268,14 +291,16 @@ export default function CaseStudyLTKDashboard() {
               {/* Metrics Grid - 3 columns */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="flex flex-col gap-2">
-                  <div className="text-[32px] md:text-[36px] leading-[38px] md:leading-[40px] font-normal text-black dark:text-white transition-colors duration-200">
-                    64%<span className="text-[#adf98c] text-[0.75em]">↗</span>
+                  <div className="text-[32px] md:text-[36px] leading-[38px] md:leading-[40px] font-light text-black dark:text-white transition-colors duration-200">
+                    <AnimatedCounter value={64} suffix="%" />
+                    <span className="text-[#8ECE72] text-[1em] inline-block -translate-y-[2px]">+</span>
                   </div>
                   <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">User satisfaction</p>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <div className="text-[32px] md:text-[36px] leading-[38px] md:leading-[40px] font-normal text-black dark:text-white transition-colors duration-200">
-                    5%<span className="text-[#adf98c] text-[0.75em]">↗</span>
+                  <div className="text-[32px] md:text-[36px] leading-[38px] md:leading-[40px] font-light text-black dark:text-white transition-colors duration-200">
+                    <AnimatedCounter value={5} suffix="%" />
+                    <span className="text-[#8ECE72] text-[1em] inline-block -translate-y-[2px]">+</span>
                   </div>
                   <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">Creators who post</p>
                 </div>
@@ -292,6 +317,7 @@ export default function CaseStudyLTKDashboard() {
               </p>
             </div>
           </section>
+          </AnimatedContent>
         </div>
       </div>
     </CaseStudyWrapper>
