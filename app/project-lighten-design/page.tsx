@@ -23,7 +23,7 @@ export default function NewProjectPageTest11192025() {
               </div>
               <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
                 <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">
-                  I was a contract founding designer for the Lighten AI founding team, helping them bring their product idea to life. I worked closely with the CEO and co-founders, designing all aspects of the product and partnered with a visual designer to bring the idea to life. Lighten AI successfully raised their seed funding in early late 2024.
+                  I was a contract founding designer for the Lighten AI founding team, helping them bring their product idea to life. I worked closely with the CEO and co-founders, designing all aspects of the product to bring the idea to life. Lighten AI successfully raised their seed funding in early late 2024.
                 </p>
                 {/* Meta Information */}
                 <div className="flex gap-0">
@@ -206,7 +206,7 @@ export default function NewProjectPageTest11192025() {
                       MANAGING INFORMATION DENSITY
                     </h3>
                     <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-light text-black dark:text-white transition-colors duration-200">
-                      Unstructured medical documents are tedious to review. Making content and instructions from Lighten AI easy to read was important. A careful balance of information density and usability was key to meeting the founders' vision.
+                      Unstructured medical documents are tedious to review. Making content and instructions from Lighten AI easy to read was important. A careful balance of information density and usability was key to meeting the founders' vision and user needs.
                     </p>
                   </div>
                 </div>
@@ -242,7 +242,7 @@ export default function NewProjectPageTest11192025() {
                       PROGRESSIVE DISCLOSURE
                     </h3>
                     <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-light text-black dark:text-white transition-colors duration-200">
-                      Progressive disclosure and being meticulous about showing information at the right place and time made the product feel both polished and easy to use.
+                      I used progressive disclosure was extra meticulous about showing information at the right place and time made the product feel both polished and easy to use.
                     </p>
                   </div>
                 </div>
@@ -301,7 +301,7 @@ export default function NewProjectPageTest11192025() {
                 </div>
                 {/* Description Text */}
                 <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">
-                  The redesign received positive feedback from human reviewers, helping the business reach their business and fundraising milestone.
+                  The redesign received positive feedback from users, helping the business reach its goals and fundraising milestone.
                 </p>
               </div>
             </section>
