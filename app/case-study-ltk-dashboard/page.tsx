@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { X } from 'lucide-react';
 import { AnimatedContent } from '@/components/animated-content';
 import { AnimatedCounter } from '@/app/components/AnimatedCounter';
+import { Navigation } from '@/app/components/Navigation';
 
 export default function CaseStudyLTKDashboard() {
   const slides1 = [
@@ -69,10 +70,11 @@ export default function CaseStudyLTKDashboard() {
 
   return (
     <CaseStudyWrapper>
+      <Navigation hideOnScroll={true} />
       <div className="min-h-screen bg-white dark:bg-black scroll-smooth pt-32 pb-32 transition-colors duration-200">
         <Link 
           href="/" 
-          className="fixed right-16 top-8 p-2 rounded-full backdrop-blur-lg backdrop-saturate-150 backdrop-brightness-110 bg-white/20 dark:bg-gray-800/20 hover:bg-white/30 dark:hover:bg-gray-800/30 border border-white/30 dark:border-gray-700/30 shadow-lg transition-all duration-200 z-50"
+          className="fixed right-16 top-8 p-2 rounded-full backdrop-blur-lg backdrop-saturate-150 backdrop-brightness-110 bg-white/20 dark:bg-gray-800/20 hover:bg-white/30 dark:hover:bg-gray-800/30 border border-white/30 dark:border-gray-700/30 shadow-lg transition-all duration-200 z-50 hidden"
         >
           <X className="h-6 w-6 text-black dark:text-white drop-shadow-sm" />
           <span className="sr-only">Close</span>
