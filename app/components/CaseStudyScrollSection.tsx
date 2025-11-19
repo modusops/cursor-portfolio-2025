@@ -135,7 +135,7 @@ export function CaseStudyScrollSection({ slides }: CaseStudyScrollSectionProps) 
 
       {/* RIGHT COLUMN: Media content - 6 columns (60%), 900px height */}
       <div className="col-span-1 md:col-span-6 relative h-[900px]">
-        <div className="relative w-full h-full bg-gray-50 dark:bg-gray-900 rounded-[32px] overflow-hidden transition-colors duration-200">
+        <div className="relative w-full h-full rounded-[32px] overflow-hidden transition-colors duration-200" style={{ backgroundColor: '#EDEFF2' }}>
           {slides.map((slide, i) => (
             <div
               key={i}

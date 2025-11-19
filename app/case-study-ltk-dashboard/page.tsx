@@ -9,19 +9,19 @@ export default function CaseStudyLTKDashboard() {
     {
       title: 'Coach Cards',
       description: 'Creators are busy and often crave bite-sized information they can understand at a glance. I designed a system of scrollable cards with useful information that was highly interactive and could be repurposed for different use cases.',
-      media: '/chat-hero.jpg',
+      media: '/casestudy-ltk-dashboard-slide1-1.jpg',
       isVideo: false,
     },
     {
       title: 'AI Chatbot',
       description: 'What if creators could chat with the app instead of searching for information? The AI Chatbot leverages LLMs to help creators understand their key business data; lifting insights and business summaries through conversations.',
-      media: '/one-image-chat-workshop.jpg',
+      media: '/casestudy-ltk-dashboard-slide1-2.jpg',
       isVideo: false,
     },
     {
       title: 'Data Visualization',
       description: 'Business data can be complex to understand. We learned while creators are great at driving sales; they lack business acumen. By highlighting key metrics using charts to visualize data, we could help bridge the gap between insight and knowledge.',
-      media: '/one-image-chat-features.jpg',
+      media: '/casestudy-ltk-dashboard-slide1-3.jpg',
       isVideo: false,
     },
   ];
@@ -29,38 +29,38 @@ export default function CaseStudyLTKDashboard() {
   const slides2 = [
     {
       title: 'Helping connect users with their data',
-      description: 'Creators come in all flavors. Some are comfortable with data while others need a helping hand. In addition, some information is best understood over a period of time. Users can toggle between graphical or numerical representation of key business data.Creators are busy and often crave bite-sized information they can understand at a glance. I designed a system of scrollable cards with useful information that was highly interactive and could be repurposed for different use cases.',
-      media: '/chat-hero.jpg',
+      description: 'Creators come in all flavors. Some are comfortable with data while others need a helping hand. In addition, some information is best understood over a period of time. Users can toggle between graphical or numerical representation of key business data.',
+      media: '/casestudy-ltk-dashboard-slide2-1.jpg',
       isVideo: false,
     },
     {
       title: 'Always a delightful experience',
       description: 'A business app should be delightful to use. I brought consumer-grade polish through attention to details and experimentation. Different animations were tested and fine-tuned for a highly crafted experience.',
-      media: '/one-image-chat-workshop.jpg',
+      media: '/casestudy-ltk-dashboard-slide2-2.jpg',
       isVideo: false,
     },
     {
       title: 'Designed for diverse needs',
       description: 'Different creators have different needs. For creators with less followers, post and visit metrics are prioritized. For established creators, earnings and commission data are the default views.',
-      media: '/one-image-chat-features.jpg',
+      media: '/casestudy-ltk-dashboard-slide2-3.jpg',
       isVideo: false,
     },
     {
       title: 'Flexible and editable',
       description: 'Want a specific layout of your business data? Just tap into settings to turn on and off specific charts or reorganize them to fit your needs.',
-      media: '/one-image-chat-features.jpg',
+      media: '/casestudy-ltk-dashboard-slide2-4.jpg',
       isVideo: false,
       },
     {
       title: 'All business, yes play',
       description: 'Who says you can’t mix business and pleasure?Utilizing my expertise in SwiftUI, I prototyped an immersive experience when the creator shared their storefront.',
-      media: '/one-image-chat-features.jpg',
-      isVideo: false,
+      media: '/two-videos-experiment-parallax1.mp4',
+      isVideo: true,
       },
     {
       title: 'Designing at scale',
       description: 'Once the design solution was solidified, I evangelized the new component and contributed to scaling it across our ecosystem, helping other teams adopt the new pattern.',
-      media: '/one-image-chat-features.jpg',
+      media: '/casestudy-ltk-dashboard-slide2-5.jpg',
       isVideo: false,
         },
   ];
@@ -160,7 +160,7 @@ export default function CaseStudyLTKDashboard() {
             <div className="col-span-1 md:col-span-10">
               <div className="relative w-full rounded-[32px] overflow-hidden" style={{ aspectRatio: '1312/421' }}>
                 <Image
-                  src="/ltk-dashboard-screens.png"
+                  src="/casestudy-ltk-dashboard-hero.jpg"
                   alt="LTK Dashboard screens showing Overview, Visits, and Earnings analytics"
                   fill
                   className="object-contain rounded-[32px]"
@@ -204,7 +204,7 @@ export default function CaseStudyLTKDashboard() {
             <div className="col-span-1 md:col-span-10">
               <div className="relative w-full rounded-[32px] overflow-hidden" style={{ aspectRatio: '1312/421' }}>
                 <Image
-                  src="/ltk-dashboard-screens.png"
+                  src="/casestudy-ltk-dashboard-image.png"
                   alt="LTK Dashboard screens showing Overview, Visits, and Earnings analytics"
                   fill
                   className="object-contain rounded-[32px]"
