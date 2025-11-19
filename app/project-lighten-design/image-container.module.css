@@ -1,0 +1,19 @@
+/* Scoped CSS for image containers on this page only */
+/* Ensures Next.js Image wrapper elements respect parent border radius */
+
+/* Target Next.js Image wrapper spans (created by fill prop) */
+.lightenProjectPage [class*="rounded-"] > span {
+  border-radius: inherit !important;
+  overflow: hidden !important;
+}
+
+/* Target the actual img element inside Next.js Image */
+.lightenProjectPage [class*="rounded-"] img {
+  border-radius: inherit !important;
+}
+
+/* Ensure all direct children inherit border radius */
+.lightenProjectPage [class*="rounded-"] > * {
+  border-radius: inherit !important;
+}
+

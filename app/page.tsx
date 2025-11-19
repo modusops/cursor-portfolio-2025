@@ -251,7 +251,7 @@ export default function Home() {
                               </div>
                             </div>
                           ) : (
-                            <Link href={project.slug === "creator" ? "/case-study-ltk-dashboard" : `/projects/${project.slug}`} className="flex flex-col h-full">
+                            <Link href={project.slug === "creator" ? "/case-study-ltk-dashboard" : project.slug === "lighten" ? "/project-lighten-design" : `/projects/${project.slug}`} className="flex flex-col h-full">
                               <div className="aspect-[4/3] relative mb-6 overflow-hidden transition-transform duration-300 group-hover:scale-105">
                                 <Image
                                   src={project.image || "/placeholder.jpg"}
@@ -324,7 +324,7 @@ export default function Home() {
                               </div>
                             </div>
                           ) : (
-                            <Link href={project.slug === "creator" ? "/case-study-ltk-dashboard" : `/projects/${project.slug}`} className="flex flex-col h-full">
+                            <Link href={project.slug === "creator" ? "/case-study-ltk-dashboard" : project.slug === "lighten" ? "/project-lighten-design" : `/projects/${project.slug}`} className="flex flex-col h-full">
                               <div className="aspect-[4/3] relative mb-6 overflow-hidden transition-transform duration-300 group-hover:scale-105">
                                 <Image
                                   src={project.image || "/placeholder.jpg"}
@@ -1018,7 +1018,7 @@ export default function Home() {
               © COPYRIGHT 2025 <a href="https://github.com/modusops?tab=overview&from=2025-07-01&to=2025-07-06" target="_blank" rel="noopener noreferrer" className="text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200">Built with Cursor</a>
             </div>
             <div className="flex justify-center">
-              <span className="inline-flex items-center px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs font-light border border-gray-200 dark:border-gray-700 transition-colors duration-200"><div className="w-2 h-2 rounded-full bg-violet-700 border border-violet-800 mr-2"></div>Updated July 29, 2025</span>
+              <span className="inline-flex items-center px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs font-light border border-gray-200 dark:border-gray-700 transition-colors duration-200"><div className="w-2 h-2 rounded-full bg-violet-700 border border-violet-800 mr-2"></div>Updated November 01, 2025</span>
             </div>
           </div>
         </AnimatedContent>
@@ -1028,12 +1028,6 @@ export default function Home() {
 }
 
 const projects = [
-  {
-    title: "LTK Chat",
-    description: "Build stronger creator-led communities",
-    image: "/feature-thumbnail-1.png",
-    slug: "ltk-chat",
-  },
   {
     title: "LTK Creator",
     description: "Helping creators understand their business",
@@ -1045,6 +1039,12 @@ const projects = [
     description: "Using AI to unlock real-time patient insights",
     image: "/feature-thumbnail-5.png",
     slug: "lighten",
+  },
+  {
+    title: "LTK Chat",
+    description: "Build stronger creator-led communities",
+    image: "/feature-thumbnail-1.png",
+    slug: "ltk-chat",
   },
   {
     title: "Sono",

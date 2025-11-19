@@ -13,7 +13,7 @@ export function GridBackground() {
 
   // Hide grid background on project pages and case study pages
   const isProjectPage = pathname?.startsWith("/projects/")
-  const isCaseStudyPage = pathname?.startsWith("/new-project-page-test-") || pathname?.startsWith("/case-study-")
+  const isCaseStudyPage = pathname?.startsWith("/new-project-page-test-") || pathname?.startsWith("/case-study-") || pathname?.startsWith("/project-lighten-design")
 
   if (!mounted || isProjectPage || isCaseStudyPage) return null
 
