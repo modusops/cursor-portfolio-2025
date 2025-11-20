@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 interface CaseStudyWrapperProps {
   children: React.ReactNode;
@@ -30,18 +31,24 @@ export function CaseStudyWrapper({ children }: CaseStudyWrapperProps) {
 
   if (isMobile) {
     return (
-      <div className="min-h-screen bg-white dark:bg-black flex items-center justify-center px-16 transition-colors duration-200">
-        <div className="grid grid-cols-5 gap-0 w-full max-w-md">
-          <div className="col-span-1"></div>
-          <div className="col-span-3 flex flex-col gap-6 items-center text-center">
-            <h1 className="text-[36px] leading-[40px] font-normal font-sans text-black dark:text-white transition-colors duration-200">
-              Mobile not supported
-            </h1>
-            <p className="text-[20px] leading-[30px] font-normal font-sans text-gray-400 dark:text-gray-500 transition-colors duration-200">
-              This case study is crafted for desktop viewing
+      <div className="min-h-screen bg-white dark:bg-black flex items-center justify-center px-16 py-0 transition-colors duration-200">
+        <div className="flex flex-col gap-6 items-center justify-center max-w-[217px]">
+          <div className="flex flex-col gap-2 items-center text-center">
+            <p className="text-[20px] leading-[30px] font-medium font-sans text-black dark:text-white transition-colors duration-200">
+              This case study is optimized for a desktop experience :)
+            </p>
+            <div className="relative w-[50px] h-[31px]">
+              <Image
+                src="/mobile.png"
+                alt="Mobile device icon"
+                fill
+                className="object-contain"
+              />
+            </div>
+            <p className="text-[14px] leading-[24px] font-normal font-sans text-gray-500 dark:text-gray-400 transition-colors duration-200">
+              To view on mobile devices, please use landscape mode.
             </p>
           </div>
-          <div className="col-span-1"></div>
         </div>
       </div>
     );
