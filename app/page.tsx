@@ -186,7 +186,7 @@ export default function Home() {
           <div className="md:block md:w-[216px]"></div>
         </header> */}
 
-        <Navigation />
+        <Navigation hideOnScroll={true} />
 
 
         {/* Hero Section - Reduced top padding on mobile */}
