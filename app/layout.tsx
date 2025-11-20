@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     description: 'Software designer. Builder.',
     images: [
       {
-        url: 'https://opengraph.b-cdn.net/production/images/570193a6-8317-4ff4-8cb7-7a5482ddadd8.png?token=cjKqrBdKdeT3jWuQpJze8WyHhegrJwrEHiMQMV5cgfU&height=1056&width=1080&expires=33288218390',
-        width: 1080,
-        height: 1056,
+        url: 'https://opengraph.b-cdn.net/production/images/0bb81ddf-ceec-4bbe-b98d-eb75eec0a466.jpg?token=5E5w4olZpIBsOKlql1wEKa5K7OjaVwjRZmWKZHr9V90&height=1701&width=1200&expires=33299623463',
+        width: 1200,
+        height: 1701,
         alt: 'Dave Chan - Design Portfolio'
       }
     ]
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: 'Dave Chan - Design Portfolio',
     description: 'Software designer. Builder.',
     images: [
-      'https://opengraph.b-cdn.net/production/images/570193a6-8317-4ff4-8cb7-7a5482ddadd8.png?token=cjKqrBdKdeT3jWuQpJze8WyHhegrJwrEHiMQMV5cgfU&height=1056&width=1080&expires=33288218390'
+      'https://opengraph.b-cdn.net/production/images/0bb81ddf-ceec-4bbe-b98d-eb75eec0a466.jpg?token=5E5w4olZpIBsOKlql1wEKa5K7OjaVwjRZmWKZHr9V90&height=1701&width=1200&expires=33299623463'
     ]
   }
 }
