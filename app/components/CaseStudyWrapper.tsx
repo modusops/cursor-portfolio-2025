@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 
 interface CaseStudyWrapperProps {
   children: React.ReactNode;
@@ -24,6 +23,20 @@ export function CaseStudyWrapper({ children }: CaseStudyWrapperProps) {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  useEffect(() => {
+    if (isMobile && isClient) {
+      const timer = setTimeout(() => {
+        // Find the lottie-player element within the mobile view
+        const player = document.querySelector('.min-h-screen lottie-player') as any;
+        if (player) {
+          player.play();
+        }
+      }, 1000); // 1000ms delay
+
+      return () => clearTimeout(timer);
+    }
+  }, [isMobile, isClient]);
+
   // Prevent hydration mismatch - don't render anything until client-side
   if (!isClient) {
     return null;
@@ -37,14 +50,12 @@ export function CaseStudyWrapper({ children }: CaseStudyWrapperProps) {
             <p className="text-[20px] leading-[30px] font-medium font-sans text-black dark:text-white transition-colors duration-200">
               This case study is optimized for a desktop experience :)
             </p>
-            <div className="relative w-[50px] h-[31px]">
-              <Image
-                src="/mobile.png"
-                alt="Mobile device icon"
-                fill
-                className="object-contain"
-              />
-            </div>
+            <lottie-player
+              src="/mobile.json"
+              background="transparent"
+              speed="1"
+              style={{ width: '90px', height: '56px' }}
+            ></lottie-player>
             <p className="text-[14px] leading-[24px] font-normal font-sans text-gray-500 dark:text-gray-400 transition-colors duration-200">
               To view on mobile devices, please use landscape mode.
             </p>
