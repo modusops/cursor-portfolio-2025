@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import Script from "next/script"
 import { ThemeProvider } from "@/components/theme-provider"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { GridBackground } from "@/components/grid-background"
@@ -53,6 +54,10 @@ export default function RootLayout({
       <body
         className={`${inter.variable} bg-white dark:bg-black text-black dark:text-white transition-colors duration-200`}
       >
+        <Script
+          src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
+          strategy="beforeInteractive"
+        />
         <GridBackground />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
