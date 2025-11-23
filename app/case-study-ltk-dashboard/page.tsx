@@ -12,20 +12,23 @@ export default function CaseStudyLTKDashboard() {
     {
       title: 'Coach Cards',
       description: 'Creators are busy and often crave bite-sized information they can understand at a glance. I designed a system of scrollable cards with useful information that was highly interactive and could be repurposed for different use cases.',
-      media: '/casestudy-ltk-dashboard-slide1-1.jpg',
+      media: '/swipeablecards.json',
       isVideo: false,
+      isLottie: true,
     },
     {
       title: 'AI Chatbot',
       description: 'What if creators could chat with the app instead of searching for information? The AI Chatbot leverages LLMs to help creators understand their key business data; lifting insights and business summaries through conversations.',
-      media: '/casestudy-ltk-dashboard-slide1-2.jpg',
+      media: '/chatbot.json',
       isVideo: false,
+      isLottie: true,
     },
     {
       title: 'Data Visualization',
       description: 'Business data can be complex to understand. We learned while creators are great at driving sales; they lack business acumen. By highlighting key metrics using charts to visualize data, we could help bridge the gap between insight and knowledge.',
-      media: '/casestudy-ltk-dashboard-slide1-3.jpg',
+      media: '/datavisualization.json',
       isVideo: false,
+      isLottie: true,
     },
   ];
 
