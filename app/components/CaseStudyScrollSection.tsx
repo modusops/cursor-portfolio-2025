@@ -8,6 +8,7 @@ interface Slide {
   description: string;
   media: string;
   isVideo?: boolean;
+  isLottie?: boolean;
 }
 
 interface CaseStudyScrollSectionProps {
@@ -168,6 +169,32 @@ export function CaseStudyScrollSection({ slides }: CaseStudyScrollSectionProps) 
     };
   }, [currentSlide, isLocked, slides.length]);
 
+  // Handle Lottie animation playback when slide becomes active
+  useEffect(() => {
+    // Wait for transition to complete before playing animation
+    const timer = setTimeout(() => {
+      slides.forEach((slide, i) => {
+        if (slide.isLottie) {
+          const lottiePlayer = document.querySelector(`lottie-player[data-slide-index="${i}"]`) as any;
+          if (lottiePlayer) {
+            if (currentSlide === i) {
+              // Stop, reset to beginning, and play for active slide
+              lottiePlayer.stop();
+              lottiePlayer.seek(0);
+              lottiePlayer.play();
+            } else {
+              // Stop and reset inactive slides
+              lottiePlayer.stop();
+              lottiePlayer.seek(0);
+            }
+          }
+        }
+      });
+    }, 400); // Match transition duration
+
+    return () => clearTimeout(timer);
+  }, [currentSlide, slides]);
+
   return (
     <div
       ref={containerRef}
@@ -232,6 +259,16 @@ export function CaseStudyScrollSection({ slides }: CaseStudyScrollSectionProps) 
                 >
                   <source src={slide.media} type="video/mp4" />
                 </video>
+              ) : slide.isLottie ? (
+                <div className="relative w-full h-full rounded-[32px] overflow-hidden flex items-center justify-center">
+                  <lottie-player
+                    data-slide-index={i}
+                    src={slide.media}
+                    background="transparent"
+                    speed="1"
+                    style={{ width: '100%', height: '80%', maxWidth: '100%', maxHeight: '80%' }}
+                  />
+                </div>
               ) : (
                 <div className="relative w-full h-full rounded-[32px] overflow-hidden">
                   <Image
