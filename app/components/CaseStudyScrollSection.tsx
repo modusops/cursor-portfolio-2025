@@ -175,17 +175,24 @@ export function CaseStudyScrollSection({ slides }: CaseStudyScrollSectionProps) 
     const timer = setTimeout(() => {
       slides.forEach((slide, i) => {
         if (slide.isLottie) {
-          const lottiePlayer = document.querySelector(`lottie-player[data-slide-index="${i}"]`) as any;
-          if (lottiePlayer) {
-            if (currentSlide === i) {
-              // Stop, reset to beginning, and play for active slide
-              lottiePlayer.stop();
-              lottiePlayer.seek(0);
-              lottiePlayer.play();
-            } else {
-              // Stop and reset inactive slides
-              lottiePlayer.stop();
-              lottiePlayer.seek(0);
+          // Use containerRef to scope the query to this specific section
+          const container = containerRef.current;
+          if (container) {
+            const lottiePlayer = container.querySelector(`lottie-player[data-slide-index="${i}"]`) as any;
+            if (lottiePlayer) {
+              if (currentSlide === i) {
+                // Stop, reset to beginning, and play for active slide
+                lottiePlayer.stop();
+                lottiePlayer.seek(0);
+                // Add a small delay to ensure the element is ready
+                setTimeout(() => {
+                  lottiePlayer.play();
+                }, 50);
+              } else {
+                // Stop and reset inactive slides
+                lottiePlayer.stop();
+                lottiePlayer.seek(0);
+              }
             }
           }
         }
