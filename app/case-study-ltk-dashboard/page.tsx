@@ -6,6 +6,7 @@ import { X } from 'lucide-react';
 import { AnimatedContent } from '@/components/animated-content';
 import { AnimatedCounter } from '@/app/components/AnimatedCounter';
 import { Navigation } from '@/app/components/Navigation';
+import { TeamAvatars } from '@/app/components/TeamAvatars';
 
 export default function CaseStudyLTKDashboard() {
   const slides1 = [
@@ -107,57 +108,7 @@ export default function CaseStudyLTKDashboard() {
                 </div>
                 <div className="flex flex-col gap-1 w-[200px]">
                   <p className="text-[14px] leading-[24px] text-gray-500 dark:text-gray-400 transition-colors duration-200">Team</p>
-                  <div className="flex gap-1">
-                    <Image
-                      src="/chaitanya.png"
-                      alt="Chaitanya"
-                      width={24}
-                      height={24}
-                      className="rounded-full"
-                    />
-                    <Image
-                      src="/dave.png"
-                      alt="Dave"
-                      width={24}
-                      height={24}
-                      className="rounded-full"
-                    />
-                    <Image
-                      src="/jeromy.png"
-                      alt="Jeromy"
-                      width={24}
-                      height={24}
-                      className="rounded-full"
-                    />
-                    <Image
-                      src="/khalid.png"
-                      alt="Khalid"
-                      width={24}
-                      height={24}
-                      className="rounded-full"
-                    />
-                    <Image
-                      src="/liz.png"
-                      alt="Liz"
-                      width={24}
-                      height={24}
-                      className="rounded-full"
-                    />
-                    <Image
-                      src="/maddie.png"
-                      alt="Maddie"
-                      width={24}
-                      height={24}
-                      className="rounded-full"
-                    />
-                    <Image
-                      src="/nathan.png"
-                      alt="Nathan"
-                      width={24}
-                      height={24}
-                      className="rounded-full"
-                    />
-                  </div>
+                  <TeamAvatars />
                 </div>
               </div>
             </div>
