@@ -35,10 +35,11 @@ export default function CaseStudyLTKDashboard() {
 
   const slides2 = [
     {
-      title: 'Helping connect users with their data',
+      title: 'Connecting users with their data',
       description: 'Creators come in all flavors. Some are comfortable with data while others need a helping hand. In addition, some information is best understood over a period of time. Users can toggle between graphical or numerical representation of key business data.',
-      media: '/casestudy-ltk-dashboard-slide2-1.jpg',
+      media: '/togglenumberchart.json',
       isVideo: false,
+      isLottie: true,
     },
     {
       title: 'Always a delightful experience',
