@@ -41,12 +41,12 @@ export default function CaseStudyLTKDashboard() {
       isVideo: false,
       isLottie: true,
     },
-    {
-      title: 'Always a delightful experience',
-      description: 'A business app should be delightful to use. I brought consumer-grade polish through attention to details and experimentation. Different animations were tested and fine-tuned for a highly crafted experience.',
-      media: '/casestudy-ltk-dashboard-slide2-2.jpg',
-      isVideo: false,
-    },
+    // {
+    //   title: 'Always a delightful experience',
+    //   description: 'A business app should be delightful to use. I brought consumer-grade polish through attention to details and experimentation. Different animations were tested and fine-tuned for a highly crafted experience.',
+    //   media: '/casestudy-ltk-dashboard-slide2-2.jpg',
+    //   isVideo: false,
+    // },
     {
       title: 'Designed for diverse needs',
       description: 'Different creators have different needs. For creators with less followers, post and visit metrics are prioritized. For established creators, earnings and commission data are the default views.',
