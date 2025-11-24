@@ -191,8 +191,7 @@ export default function Home() {
 
         {/* Hero Section - Reduced top padding on mobile */}
         <AnimatedContent>
-          <div className="py-8 md:pt-24 md:pb-20 relative">
-            <div className="absolute top-0 left-0 w-px h-20 bg-gray-800/30 dark:bg-white/20"></div>
+          <div className="py-8 md:pt-44 md:pb-20 relative">
             <h1
               className={`text-4xl md:text-6xl lg:text-7xl font-[200] leading-tight tracking-wider text-black dark:text-white max-w-5xl transition-colors duration-200 font-sans ${styles['fade-in']}`}
               style={{ fontWeight: 200, letterSpacing: "-0.01em" }}
@@ -204,7 +203,9 @@ export default function Home() {
                 style={{ fontWeight: 200, letterSpacing: "-0.01em" }}
               />
             </h1>
-            <div className="absolute bottom-0 right-0 w-px h-20 bg-gray-800/30 dark:bg-white/20"></div>
+            <p className="text-lg font-light text-gray-600 dark:text-gray-400 transition-colors duration-200 mt-8 max-w-5xl">
+              I design products with an emphasis on simplicity, practicality and craft. I have a decade of experience working on globally scaled products as well as taking products from zero to one.
+            </p>
           </div>
         </AnimatedContent>
 
