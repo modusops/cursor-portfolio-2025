@@ -198,7 +198,7 @@ export default function Home() {
               style={{ fontWeight: 200, letterSpacing: "-0.01em" }}
             >
               <TypewriterText 
-                text="PRODUCT DESIGNER BASED IN SEATTLE. BUILDER. OBSESSES OVER CRAFT."
+                text="DESIGNER, STRATEGIST, AND BUILDER BASED IN SEATTLE."
                 delay={50}
                 className="inline-block"
                 style={{ fontWeight: 200, letterSpacing: "-0.01em" }}

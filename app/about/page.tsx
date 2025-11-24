@@ -83,7 +83,7 @@ export default function About() {
                 Growing up
               </h3>
 
-              <p className="text-gray-500 dark:text-gray-400"> I've never stopped hustling, tinkering and learning since. I was briefly an industrial designer and an aspiring barista cooking up bespoke coffee recipes, and I made (and sold) wallets from recycled fabrics. Through luck and hard work, I ended up working at companies like Tesla (if you bought a Model 3 in 2018-2019, I had a hand in making your car), Adobe, and Shopify.
+              <p className="text-gray-500 dark:text-gray-400"> I've not stopped tinkering and learning since. I was briefly an industrial designer and an aspiring barista cooking up bespoke coffee recipes, and I made (and sold) wallets from recycled fabrics. Through luck and hard work, I ended up working at companies like Tesla (if you bought a Model 3 in 2018-2019, I had a hand in making your car), Adobe, and Shopify.
               </p>
 
               <h3 className="text-sm font-medium mt-12 mb-4 text-black dark:text-white transition-colors duration-200">
