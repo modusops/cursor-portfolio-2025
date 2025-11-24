@@ -57,8 +57,9 @@ export default function CaseStudyLTKDashboard() {
     {
       title: 'Flexible and editable',
       description: 'Want a specific layout of your business data? Just tap into settings to turn on and off specific charts or reorganize them to fit your needs.',
-      media: '/casestudy-ltk-dashboard-slide2-4.jpg',
+      media: '/flexible.json',
       isVideo: false,
+      isLottie: true,
       },
     {
       title: 'All business and play',
