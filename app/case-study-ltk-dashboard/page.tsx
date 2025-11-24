@@ -70,8 +70,9 @@ export default function CaseStudyLTKDashboard() {
     {
       title: 'Designing at scale',
       description: 'Once the design solution was solidified, I evangelized the new component and contributed to scaling it across our ecosystem, helping other teams adopt the new pattern.',
-      media: '/casestudy-ltk-dashboard-slide2-5.jpg',
+      media: '/scale.json',
       isVideo: false,
+      isLottie: true,
         },
   ];
 
