@@ -310,13 +310,19 @@ export function CaseStudyScrollSection({ slides }: CaseStudyScrollSectionProps) 
                   <source src={slide.media} type="video/mp4" />
                 </video>
               ) : slide.isLottie ? (
-                <div className={`relative w-full h-full rounded-[32px] overflow-hidden flex ${i === 5 ? 'items-start' : 'items-center'} justify-center`}>
+                <div className={`relative w-full h-full rounded-[32px] overflow-hidden flex ${slide.media === '/scale.json' ? 'items-start' : 'items-center'} justify-center`}>
                   <lottie-player
                     data-slide-index={i}
                     src={slide.media}
                     background="transparent"
                     speed="1"
-                    style={{ width: '100%', height: i === 5 ? '100%' : '80%', maxWidth: '100%', maxHeight: i === 5 ? '100%' : '80%' }}
+                    style={{ 
+                      width: '100%', 
+                      height: slide.media === '/scale.json' ? '100%' : '80%', 
+                      maxWidth: '100%', 
+                      maxHeight: slide.media === '/scale.json' ? '100%' : '80%',
+                      display: 'block'
+                    }}
                   />
                 </div>
               ) : (
