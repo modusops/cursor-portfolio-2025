@@ -20,6 +20,7 @@ export function CaseStudyScrollSection({ slides }: CaseStudyScrollSectionProps) 
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('down');
   const [isLocked, setIsLocked] = useState(false);
   const [hasSnapped, setHasSnapped] = useState(false);
+  const [isInView, setIsInView] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const isTransitioning = useRef(false);
   const isSnapping = useRef(false);
@@ -169,8 +170,50 @@ export function CaseStudyScrollSection({ slides }: CaseStudyScrollSectionProps) 
     };
   }, [currentSlide, isLocked, slides.length]);
 
-  // Handle Lottie animation playback when slide becomes active
+  // Intersection Observer to detect when section comes into view
   useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsInView(entry.isIntersecting);
+        });
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of the section is visible
+        rootMargin: '0px',
+      }
+    );
+
+    observer.observe(container);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  // Handle Lottie animation playback when slide becomes active AND section is in view
+  useEffect(() => {
+    // Only play animations if section is in view
+    if (!isInView) {
+      // Stop all Lottie animations when section is out of view
+      slides.forEach((slide, i) => {
+        if (slide.isLottie) {
+          const container = containerRef.current;
+          if (container) {
+            const lottiePlayer = container.querySelector(`lottie-player[data-slide-index="${i}"]`) as any;
+            if (lottiePlayer) {
+              lottiePlayer.stop();
+              lottiePlayer.seek(0);
+            }
+          }
+        }
+      });
+      return;
+    }
+
     // Wait for transition to complete before playing animation
     const timer = setTimeout(() => {
       slides.forEach((slide, i) => {
@@ -200,7 +243,7 @@ export function CaseStudyScrollSection({ slides }: CaseStudyScrollSectionProps) 
     }, 400); // Match transition duration
 
     return () => clearTimeout(timer);
-  }, [currentSlide, slides]);
+  }, [currentSlide, slides, isInView]);
 
   return (
     <div
