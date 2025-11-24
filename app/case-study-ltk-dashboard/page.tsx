@@ -50,8 +50,9 @@ export default function CaseStudyLTKDashboard() {
     {
       title: 'Designed for diverse needs',
       description: 'Different creators have different needs. For creators with less followers, post and visit metrics are prioritized. For established creators, earnings and commission data are the default views.',
-      media: '/casestudy-ltk-dashboard-slide2-3.jpg',
+      media: '/diversecharts.json',
       isVideo: false,
+      isLottie: true,
     },
     {
       title: 'Flexible and editable',
