@@ -50,14 +50,16 @@ export default function CaseStudyLTKDashboard() {
     {
       title: 'Designed for diverse needs',
       description: 'Different creators have different needs. For creators with less followers, post and visit metrics are prioritized. For established creators, earnings and commission data are the default views.',
-      media: '/casestudy-ltk-dashboard-slide2-3.jpg',
+      media: '/diversecharts.json',
       isVideo: false,
+      isLottie: true,
     },
     {
       title: 'Flexible and editable',
       description: 'Want a specific layout of your business data? Just tap into settings to turn on and off specific charts or reorganize them to fit your needs.',
-      media: '/casestudy-ltk-dashboard-slide2-4.jpg',
+      media: '/flexible.json',
       isVideo: false,
+      isLottie: true,
       },
     {
       title: 'All business and play',
@@ -68,8 +70,9 @@ export default function CaseStudyLTKDashboard() {
     {
       title: 'Designing at scale',
       description: 'Once the design solution was solidified, I evangelized the new component and contributed to scaling it across our ecosystem, helping other teams adopt the new pattern.',
-      media: '/casestudy-ltk-dashboard-slide2-5.jpg',
+      media: '/scale.json',
       isVideo: false,
+      isLottie: true,
         },
   ];
 
