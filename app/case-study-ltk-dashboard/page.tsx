@@ -98,19 +98,19 @@ export default function CaseStudyLTKDashboard() {
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
               <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">
-              A month after joining the company, I was tasked with leading the redesign of the creator app home experience. I helped launch the MVP in 4 months, introduced two new foundational components to the design system, and was the first designer in company history to ship code to production.
+              LTK is a creator commerce platform that enables content creators to monetize their product recommendations by making them instantly shoppable for their followers through the LTK shopping app.
               </p>
               {/* Meta Information - 3 columns */}
-              <div className="flex gap-0">
-                <div className="flex flex-col gap-1 w-[136px]">
-                  <p className="text-[14px] leading-[24px] text-gray-500 dark:text-gray-400 transition-colors duration-200">Years</p>
-                  <p className="text-[14px] leading-[24px] text-black dark:text-white transition-colors duration-200">1/2024 - 4/2024</p>
+              <div className="flex gap-8">
+                <div className="flex flex-col gap-[2px]">
+                  <p className="text-[14px] leading-[24px] text-gray-500 dark:text-gray-400 transition-colors duration-200">Timeline</p>
+                  <p className="text-[14px] leading-[24px] text-black dark:text-white transition-colors duration-200">Q1 2024 - Q2 2024</p>
                 </div>
-                <div className="flex flex-col gap-1 w-[136px]">
+                <div className="flex flex-col gap-[2px]">
                   <p className="text-[14px] leading-[24px] text-gray-500 dark:text-gray-400 transition-colors duration-200">Role</p>
                   <p className="text-[14px] leading-[24px] text-black dark:text-white transition-colors duration-200">Lead designer</p>
                 </div>
-                <div className="flex flex-col gap-1 w-[200px]">
+                <div className="flex flex-col gap-[2px]">
                   <p className="text-[14px] leading-[24px] text-gray-500 dark:text-gray-400 transition-colors duration-200">Team</p>
                   <TeamAvatars />
                 </div>
@@ -137,8 +137,27 @@ export default function CaseStudyLTKDashboard() {
           </section>
           </AnimatedContent>
 
-          {/* Problem Section */}
+          {/* Overview Section */}
           <AnimatedContent className="delay-200">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+            <div className="col-span-1 md:col-span-4 flex items-start">
+              <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
+                OVERVIEW
+              </h2>
+            </div>
+            <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
+              <p className="text-[22px] leading-[28px] font-medium text-black dark:text-white transition-colors duration-200">
+              LTK helps creator's build and grow their social commerce business by providing monetization tools, analytics, and brand collaboration management in one platform.
+              </p>
+              <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-light text-black dark:text-white transition-colors duration-200">
+              During the winter of 2024, I worked with the creator success, marketing, engineering and data science team to improve the iOS creator app home page experience and drive growth. For this project, I restructured the page information architecture and introduced data visualization to give users a snapshot of their business in a simplified way. The page was launched successfully and helped strengthen LTK's growth metrics by helping creators easily understand their commerce data and take actions to grow their business.
+              </p>
+            </div>
+          </section>
+          </AnimatedContent>
+
+          {/* Problem Section */}
+          <AnimatedContent className="delay-300">
             <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
             <div className="col-span-1 md:col-span-4 flex items-start">
               <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
@@ -147,14 +166,14 @@ export default function CaseStudyLTKDashboard() {
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
               <p className="text-[28px] md:text-[36px] leading-[34px] md:leading-[42px] font-light text-black dark:text-white transition-colors duration-200">
-              The existing home page was focused on motivating creators to post and share links. While that strategy was effective for new users to the platform, it alienated existing Creators who couldn’t easily understand their business. As a result, posting rates declined.
+              The home page prioritized motivating users to create their first post and sharing it. However through research we learned creators were actually more interested in understanding their business and using data to inform their business decisions. As a result, user satisfaction and posting rates both declined.
               </p>
             </div>
           </section>
           </AnimatedContent>
 
           {/* How Might We Section */}
-          <AnimatedContent className="delay-300">
+          <AnimatedContent className="delay-400">
             <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
             <div className="col-span-1 md:col-span-4 flex items-start">
               <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
@@ -163,14 +182,14 @@ export default function CaseStudyLTKDashboard() {
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
               <p className="text-[28px] md:text-[36px] leading-[34px] md:leading-[42px] font-light text-black dark:text-white transition-colors duration-200">
-              How might we increase posting rates and help creators understand their business by showing relevant and timely information?
+              How might we help creators understand their business and increase posting and sharing rates by showing relevant and timely information?
               </p>
             </div>
           </section>
           </AnimatedContent>
 
           {/* Image Section */}
-          <AnimatedContent className="delay-400">
+          <AnimatedContent className="delay-500">
             <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
             <div className="col-span-1 md:col-span-10">
               <div className="relative w-full rounded-[32px] overflow-hidden" style={{ aspectRatio: '1312/421' }}>
@@ -188,7 +207,7 @@ export default function CaseStudyLTKDashboard() {
           </AnimatedContent>
 
           {/*Context*/}
-          <AnimatedContent className="delay-500">
+          <AnimatedContent className="delay-600">
             <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
             <div className="col-span-1 md:col-span-4 flex items-start">
             </div>
@@ -201,12 +220,12 @@ export default function CaseStudyLTKDashboard() {
           </AnimatedContent>
 
           {/* Scroll-Triggered Section with 60/40 split and 100vh images */}
-          <AnimatedContent className="delay-600">
+          <AnimatedContent className="delay-700">
             <CaseStudyScrollSection slides={slides1} />
           </AnimatedContent>
 
           {/*Context*/}
-          <AnimatedContent className="delay-700">
+          <AnimatedContent className="delay-800">
             <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
             <div className="col-span-1 md:col-span-4 flex items-start">
             </div>
@@ -219,12 +238,12 @@ export default function CaseStudyLTKDashboard() {
           </AnimatedContent>
 
           {/* Scroll-Triggered Section with 60/40 split and 100vh images */}
-          <AnimatedContent className="delay-800">
+          <AnimatedContent className="delay-900">
             <CaseStudyScrollSection slides={slides2} />
           </AnimatedContent>
 
           {/* BTS Section */}
-          <AnimatedContent className="delay-900">
+          <AnimatedContent className="delay-1000">
             <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
             <div className="col-span-1 md:col-span-4 flex items-start">
               <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
@@ -239,8 +258,24 @@ export default function CaseStudyLTKDashboard() {
           </section>
           </AnimatedContent>
 
+          {/* Retrospective Section */}
+          <AnimatedContent className="delay-1100">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+            <div className="col-span-1 md:col-span-4 flex items-start">
+              <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
+                RETROSPECTIVE
+              </h2>
+            </div>
+            <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
+              <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">
+              This experience reinforces for me why crafting a great product experience isn't just about showing users information—it's also about when and how information is delivered. By balancing business and user needs through research and effective collaboration, teams can craft product experiences that are useful without overwhelming users with too much data.
+              </p>
+            </div>
+          </section>
+          </AnimatedContent>
+
           {/* Outcomes Section */}
-          <AnimatedContent className="delay-1000">
+          <AnimatedContent className="delay-1200">
             <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
             <div className="col-span-1 md:col-span-4 flex items-start">
               <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
