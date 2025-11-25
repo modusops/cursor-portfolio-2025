@@ -1,5 +1,4 @@
 import { CaseStudyWrapper } from '@/app/components/CaseStudyWrapper';
-import { CaseStudyScrollSection } from '@/app/components/CaseStudyScrollSection';
 import Image from 'next/image';
 import Link from 'next/link';
 import { X } from 'lucide-react';
@@ -7,6 +6,7 @@ import { AnimatedContent } from '@/components/animated-content';
 import { AnimatedCounter } from '@/app/components/AnimatedCounter';
 import { Navigation } from '@/app/components/Navigation';
 import { TeamAvatars } from '@/app/components/TeamAvatars';
+import { ViewportMedia } from '@/app/components/ViewportMedia';
 
 export default function CaseStudyLTKDashboard() {
   const slides1 = [
@@ -219,10 +219,36 @@ export default function CaseStudyLTKDashboard() {
           </section>
           </AnimatedContent>
 
-          {/* Scroll-Triggered Section with 60/40 split and 100vh images */}
-          <AnimatedContent className="delay-700">
-            <CaseStudyScrollSection slides={slides1} />
-          </AnimatedContent>
+          {/* Individual Slide Sections - slides1 */}
+          {slides1.map((slide, index) => {
+            const delayClasses = ['delay-700', 'delay-800', 'delay-900'];
+            return (
+            <AnimatedContent key={index} className={delayClasses[index] || 'delay-700'}>
+              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 items-center min-h-[700px]">
+                {/* LEFT COLUMN: Text content - 4 columns (40%) */}
+                <div className="col-span-1 md:col-span-4 flex flex-col gap-3">
+                  <h2 className="text-[28px] md:text-[36px] leading-[34px] md:leading-[40px] font-normal break-words text-black dark:text-white transition-colors duration-200">
+                    {slide.title}
+                  </h2>
+                  <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] text-black dark:text-white break-words transition-colors duration-200">
+                    {slide.description}
+                  </p>
+                </div>
+
+                {/* RIGHT COLUMN: Media content - 6 columns (60%), reduced height to fit viewport */}
+                <div className="col-span-1 md:col-span-6 relative h-[700px]">
+                  <ViewportMedia
+                    media={slide.media}
+                    title={slide.title}
+                    isVideo={slide.isVideo}
+                    isLottie={slide.isLottie}
+                    priority={index === 0}
+                  />
+                </div>
+              </section>
+            </AnimatedContent>
+            );
+          })}
 
           {/*Context*/}
           <AnimatedContent className="delay-800">
@@ -237,10 +263,36 @@ export default function CaseStudyLTKDashboard() {
           </section>
           </AnimatedContent>
 
-          {/* Scroll-Triggered Section with 60/40 split and 100vh images */}
-          <AnimatedContent className="delay-900">
-            <CaseStudyScrollSection slides={slides2} />
-          </AnimatedContent>
+          {/* Individual Slide Sections - slides2 */}
+          {slides2.map((slide, index) => {
+            const delayClasses = ['delay-900', 'delay-1000', 'delay-1100', 'delay-1200', 'delay-1300'];
+            return (
+            <AnimatedContent key={index} className={delayClasses[index] || 'delay-900'}>
+              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 items-center min-h-[700px]">
+                {/* LEFT COLUMN: Text content - 4 columns (40%) */}
+                <div className="col-span-1 md:col-span-4 flex flex-col gap-3">
+                  <h2 className="text-[28px] md:text-[36px] leading-[34px] md:leading-[40px] font-normal break-words text-black dark:text-white transition-colors duration-200">
+                    {slide.title}
+                  </h2>
+                  <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] text-black dark:text-white break-words transition-colors duration-200">
+                    {slide.description}
+                  </p>
+                </div>
+
+                {/* RIGHT COLUMN: Media content - 6 columns (60%), reduced height to fit viewport */}
+                <div className="col-span-1 md:col-span-6 relative h-[700px]">
+                  <ViewportMedia
+                    media={slide.media}
+                    title={slide.title}
+                    isVideo={slide.isVideo}
+                    isLottie={slide.isLottie}
+                    priority={index === 0}
+                  />
+                </div>
+              </section>
+            </AnimatedContent>
+            );
+          })}
 
           {/* BTS Section */}
           <AnimatedContent className="delay-1000">
