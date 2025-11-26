@@ -59,9 +59,11 @@ export function Navigation({ hideOnScroll = false }: NavigationProps) {
           : 'translate-y-0 opacity-100'
       }`}
     >
-      <h1 className="text-xl font-medium text-black dark:text-white font-sans pl-2 drop-shadow-sm hidden md:block">
-        Dave Chan
-      </h1>
+      <Link href="/">
+        <h1 className="text-xl font-medium text-black dark:text-white font-sans pl-2 drop-shadow-sm hidden md:block hover:opacity-80 transition-opacity cursor-pointer">
+          Dave Chan
+        </h1>
+      </Link>
 
       <div className="flex items-center space-x-4">
         <Link
