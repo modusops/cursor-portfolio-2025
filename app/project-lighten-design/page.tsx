@@ -23,15 +23,15 @@ export default function NewProjectPageTest11192025() {
               </div>
               <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
                 <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">
-                  I was a contract founding designer for the Lighten AI founding team, helping them bring their product idea to life. I worked closely with the CEO and co-founders, designing all aspects of the product to bring the idea to life. Lighten AI successfully raised their seed funding in early late 2024.
+                Lighten is a healthcare AI platform that helps clinical teams extract critical patient data from medical records; enabling faster care decisions, cohort identification for clinical trials, and preventive care interventions. I was a contract founding designer for the Lighten AI founding team, helping them bring their product idea to life. I worked closely with the CEO and co-founders, designing all aspects of the product to bring the idea to life. Lighten AI successfully raised their seed funding in early late 2024.
                 </p>
                 {/* Meta Information */}
                 <div className="flex gap-0">
-                  <div className="flex flex-col gap-1 w-[136px]">
-                    <p className="text-[14px] leading-[24px] text-gray-500 dark:text-gray-400 transition-colors duration-200">Year</p>
+                  <div className="flex flex-col gap-[2px] w-[136px]">
+                    <p className="text-[14px] leading-[24px] text-gray-500 dark:text-gray-400 transition-colors duration-200">Timeline</p>
                     <p className="text-[14px] leading-[24px] text-black dark:text-white transition-colors duration-200">2024-2025</p>
                   </div>
-                  <div className="flex flex-col gap-1 w-[152px]">
+                  <div className="flex flex-col gap-[2px] w-[152px]">
                     <p className="text-[14px] leading-[24px] text-gray-500 dark:text-gray-400 transition-colors duration-200">Role</p>
                     <p className="text-[14px] leading-[24px] text-black dark:text-white transition-colors duration-200">Founding designer</p>
                   </div>
@@ -59,7 +59,7 @@ export default function NewProjectPageTest11192025() {
           </AnimatedContent> */}
 
           {/* Problem Section */}
-          <AnimatedContent className="delay-200">
+          {/* <AnimatedContent className="delay-200">
             <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
               <div className="col-span-1 md:col-span-4 flex items-start">
                 <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
@@ -68,14 +68,14 @@ export default function NewProjectPageTest11192025() {
               </div>
               <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
                 <p className="text-[28px] md:text-[36px] leading-[34px] md:leading-[42px] font-light text-black dark:text-white transition-colors duration-200">
-                  The existing user experience was confusing and hard to use. Even for experienced reviewers, there was a lot of unnecessary friction leading to slower review time, increased labeling errors, lower model confidence scores. The human stakes were high; the issues were leading to slower clinical decision cycles, cohort identification delay and missed preventative care.
+                  Through user research, we learned the user experience was confusing with lots of friction leading to slower review time, increased labeling errors, lower model confidence scores. The human stakes were high; the issues were leading to slower clinical decision cycles, cohort identification delay and missed preventative care.
                 </p>
               </div>
             </section>
-          </AnimatedContent>
+          </AnimatedContent> */}
 
           {/* Business Goals Section */}
-          <AnimatedContent className="delay-300">
+          {/* <AnimatedContent className="delay-300">
             <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
               <div className="col-span-1 md:col-span-4 flex items-start">
                 <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
@@ -88,10 +88,10 @@ export default function NewProjectPageTest11192025() {
                 </p>
               </div>
             </section>
-          </AnimatedContent>
+          </AnimatedContent> */}
 
           {/* How Might We Section */}
-          <AnimatedContent className="delay-400">
+          {/* <AnimatedContent className="delay-400">
             <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
               <div className="col-span-1 md:col-span-4 flex items-start">
                 <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
@@ -104,7 +104,7 @@ export default function NewProjectPageTest11192025() {
                 </p>
               </div>
             </section>
-          </AnimatedContent>
+          </AnimatedContent> */}
 
           {/* Image + Text Grouping 1 */}
           <div className="flex flex-col gap-[36px]">
@@ -129,7 +129,7 @@ export default function NewProjectPageTest11192025() {
             <AnimatedContent className="delay-600">
               <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
                 <div className="col-span-1 md:col-span-10 flex flex-col items-center">
-                  <div className="flex flex-col gap-4 max-w-[768px]">
+                  <div className="flex flex-col gap-1 max-w-[768px]">
                     <h3 className="text-[18px] leading-[24px] md:leading-[28px] font-medium text-black dark:text-white transition-colors duration-200">
                       THE EDITOR
                     </h3>
@@ -165,12 +165,12 @@ export default function NewProjectPageTest11192025() {
             <AnimatedContent className="delay-800">
               <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
                 <div className="col-span-1 md:col-span-10 flex flex-col items-center">
-                  <div className="flex flex-col gap-4 max-w-[768px]">
+                  <div className="flex flex-col gap-1 max-w-[768px]">
                     <h3 className="text-[18px] leading-[24px] md:leading-[28px] font-medium text-black dark:text-white transition-colors duration-200">
                       CONSUMER GRADE EXPERIENCE FOR ENTERPRISE
                     </h3>
                     <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-light text-black dark:text-white transition-colors duration-200">
-                      Lighten AI's users are medical professionals used to viewing large amounts of unstructured data in complex enterprise software. The vision was to create a new class of software made for medical professionals balanced with great user experience typical of consumer product experiences.
+                      Lighten AI's users are medical professionals who are used to viewing large amounts of unstructured data in cumbersome enterprise software. The vision was to create a new class of software made for medical professionals balanced with great user experience typical of consumer products.
                     </p>
                   </div>
                 </div>
@@ -201,7 +201,7 @@ export default function NewProjectPageTest11192025() {
             <AnimatedContent className="delay-1000">
               <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
                 <div className="col-span-1 md:col-span-10 flex flex-col items-center">
-                  <div className="flex flex-col gap-4 max-w-[768px]">
+                  <div className="flex flex-col gap-1 max-w-[768px]">
                     <h3 className="text-[18px] leading-[24px] md:leading-[28px] font-medium text-black dark:text-white transition-colors duration-200">
                       MANAGING INFORMATION DENSITY
                     </h3>
@@ -237,12 +237,12 @@ export default function NewProjectPageTest11192025() {
             <AnimatedContent className="delay-1200">
               <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
                 <div className="col-span-1 md:col-span-10 flex flex-col items-center">
-                  <div className="flex flex-col gap-4 max-w-[768px]">
+                  <div className="flex flex-col gap-1 max-w-[768px]">
                     <h3 className="text-[18px] leading-[24px] md:leading-[28px] font-medium text-black dark:text-white transition-colors duration-200">
                       PROGRESSIVE DISCLOSURE
                     </h3>
                     <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-light text-black dark:text-white transition-colors duration-200">
-                      I used progressive disclosure was extra meticulous about showing information at the right place and time made the product feel both polished and easy to use.
+                      I often leveraged progressive disclosure and was extra meticulous about showing information at the right place and time to ensure the product was both polished and easy to use.
                     </p>
                   </div>
                 </div>
@@ -260,7 +260,7 @@ export default function NewProjectPageTest11192025() {
               </div>
               <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
                 <p className="text-[28px] md:text-[36px] leading-[34px] md:leading-[42px] font-light text-black dark:text-white transition-colors duration-200">
-                  Unlike consumer products, simplicity in healthcare prioritizes confidence and comprehension. Solutions often require adapting consumer design patterns to fit healthcare's higher stakes and information density.
+                  My biggest takeaway from this project was that unlike consumer products, simplicity in healthcare takes on a different meaning. Priority should be placed on user confidence and comprehension. Design solutions in this sector often require adapting consumer design patterns to fit healthcare's higher stakes and information density.
                 </p>
               </div>
             </section>
@@ -300,7 +300,7 @@ export default function NewProjectPageTest11192025() {
                   </div>
                 </div>
                 {/* Description Text */}
-                <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">
+                <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-light text-black dark:text-white transition-colors duration-200">
                   The redesign received positive feedback from users, helping the business reach its goals and fundraising milestone.
                 </p>
               </div>
