@@ -252,7 +252,7 @@ export default function Home() {
                               </div>
                             </div>
                           ) : (
-                            <Link href={project.slug === "creator" ? "/case-study-ltk-dashboard" : project.slug === "lighten" ? "/project-lighten-design" : `/projects/${project.slug}`} className="flex flex-col h-full">
+                            <Link href={project.slug === "creator" ? "/case-study-ltk-dashboard-redesign" : project.slug === "lighten" ? "/project-lighten-design" : `/projects/${project.slug}`} className="flex flex-col h-full">
                               <div className="aspect-[4/3] relative mb-6 overflow-hidden transition-transform duration-300 group-hover:scale-105">
                                 <Image
                                   src={project.image || "/placeholder.jpg"}
@@ -325,7 +325,7 @@ export default function Home() {
                               </div>
                             </div>
                           ) : (
-                            <Link href={project.slug === "creator" ? "/case-study-ltk-dashboard" : project.slug === "lighten" ? "/project-lighten-design" : `/projects/${project.slug}`} className="flex flex-col h-full">
+                            <Link href={project.slug === "creator" ? "/case-study-ltk-dashboard-redesign" : project.slug === "lighten" ? "/project-lighten-design" : `/projects/${project.slug}`} className="flex flex-col h-full">
                               <div className="aspect-[4/3] relative mb-6 overflow-hidden transition-transform duration-300 group-hover:scale-105">
                                 <Image
                                   src={project.image || "/placeholder.jpg"}
@@ -855,7 +855,7 @@ export default function Home() {
                   </h3>
 
                   <p className="text-gray-700 dark:text-gray-300 transition-colors duration-200">
-                    Happy to chat! Reach out to me my social profiles. I look forward to connecting with you.
+                    Happy to chat! Reach out to me on LinkedIn. I look forward to connecting with you.
                     {/* <a
                       href="mailto:juntochan@proton.me"
                       className="text-black dark:text-white hover:underline transition-colors duration-200"
