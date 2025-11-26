@@ -98,7 +98,7 @@ export default function CaseStudyLTKDashboard() {
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
               <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">
-              LTK is a creator commerce platform that enables content creators to monetize their product recommendations by making them instantly shoppable for their followers through the LTK shopping app.
+              LTK helps creators build and grow their social commerce business by providing monetization tools, analytics, and brand collaboration management in one platform.
               </p>
               {/* Meta Information - 3 columns */}
               <div className="flex gap-8">
@@ -146,9 +146,6 @@ export default function CaseStudyLTKDashboard() {
               </h2>
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
-              <p className="text-[22px] leading-[28px] font-medium text-black dark:text-white transition-colors duration-200">
-              LTK helps creators build and grow their social commerce business by providing monetization tools, analytics, and brand collaboration management in one platform.
-              </p>
               <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-light text-black dark:text-white transition-colors duration-200">
               During the winter of 2024, I worked with the creator success, marketing, engineering and data science teams to improve the iOS creator app home page experience and drive growth. For this project, I restructured the page information architecture and introduced data visualization to give users a snapshot of their business in a simplified way. The page was launched successfully and helped strengthen LTK's growth metrics by helping creators easily understand their commerce data and take actions to grow their business.
               </p>
@@ -212,7 +209,7 @@ export default function CaseStudyLTKDashboard() {
             <div className="col-span-1 md:col-span-4 flex items-start">
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
-              <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">
+              <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-light text-black dark:text-white transition-colors duration-200">
               Through research of creators on the platform and embracing an iterative design process, I conceived several design solutions that were tested with users. I worked closely with engineers and members of the design system team, taking advantage of a re-architecture of the mobile app leveraging native capabilities that were previously unavailable and helped create the design system intake model that the rest of the design team used.
               </p>
             </div>
@@ -230,7 +227,7 @@ export default function CaseStudyLTKDashboard() {
                   <h2 className="text-[28px] md:text-[36px] leading-[34px] md:leading-[40px] font-normal break-words text-black dark:text-white transition-colors duration-200">
                     {slide.title}
                   </h2>
-                  <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] text-black dark:text-white break-words transition-colors duration-200">
+                  <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-[200] text-black dark:text-white break-words transition-colors duration-200">
                     {slide.description}
                   </p>
                 </div>
@@ -256,7 +253,7 @@ export default function CaseStudyLTKDashboard() {
             <div className="col-span-1 md:col-span-4 flex items-start">
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
-              <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">
+              <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-light text-black dark:text-white transition-colors duration-200">
               I rapidly iterated on various chart designs, collaborating with multiple teams who were significantly invested in the project such as the design system team, the business platform and creator success team. Through multiple workshop meetings, stakeholders were aligned quickly through a series of design walkthroughs of different concepts, user research and iterations based on feedback. I presented to the founders of the company, getting their approval without any major pushback.
               </p>
             </div>
@@ -274,7 +271,7 @@ export default function CaseStudyLTKDashboard() {
                   <h2 className="text-[28px] md:text-[36px] leading-[34px] md:leading-[40px] font-normal break-words text-black dark:text-white transition-colors duration-200">
                     {slide.title}
                   </h2>
-                  <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] text-black dark:text-white break-words transition-colors duration-200">
+                  <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-[200] text-black dark:text-white break-words transition-colors duration-200">
                     {slide.description}
                   </p>
                 </div>
@@ -319,7 +316,7 @@ export default function CaseStudyLTKDashboard() {
               </h2>
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
-              <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">
+              <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-light text-black dark:text-white transition-colors duration-200">
               This experience reinforces for me why crafting a great product experience isn't just about showing users information, it's also about when and how that information is delivered. By balancing business and user needs through research and effective collaboration, teams can craft product experiences that are useful without overwhelming users with too much data.
               </p>
             </div>
@@ -359,7 +356,7 @@ export default function CaseStudyLTKDashboard() {
                 </div> */}
               </div>
               {/* Description Text */}
-              <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">
+              <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-light text-black dark:text-white transition-colors duration-200">
               We shipped the final solution in just under 6 months and saw a positive lift in post rates after the redesign. In addition the redesign resulted an increase in user satisfaction.
               </p>
             </div>
