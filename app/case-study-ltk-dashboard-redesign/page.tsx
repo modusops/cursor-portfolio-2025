@@ -26,7 +26,7 @@ export default function CaseStudyLTKDashboard() {
     },
     {
       title: 'Data Visualization',
-      description: 'Business data can be complex to understand. We learned while creators are great at driving sales; they lack business acumen. By highlighting key metrics using charts to visualize data, we could help bridge the gap between insight and knowledge.',
+      description: 'Business data can be complex to understand. We found out that while creators are great at driving sales; they lack business acumen. By highlighting key metrics using charts to visualize data, we could help bridge the gap between insight and knowledge.',
       media: '/datavisualization.json',
       isVideo: false,
       isLottie: true,
@@ -147,10 +147,10 @@ export default function CaseStudyLTKDashboard() {
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
               <p className="text-[22px] leading-[28px] font-medium text-black dark:text-white transition-colors duration-200">
-              LTK helps creator's build and grow their social commerce business by providing monetization tools, analytics, and brand collaboration management in one platform.
+              LTK helps creators build and grow their social commerce business by providing monetization tools, analytics, and brand collaboration management in one platform.
               </p>
               <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-light text-black dark:text-white transition-colors duration-200">
-              During the winter of 2024, I worked with the creator success, marketing, engineering and data science team to improve the iOS creator app home page experience and drive growth. For this project, I restructured the page information architecture and introduced data visualization to give users a snapshot of their business in a simplified way. The page was launched successfully and helped strengthen LTK's growth metrics by helping creators easily understand their commerce data and take actions to grow their business.
+              During the winter of 2024, I worked with the creator success, marketing, engineering and data science teams to improve the iOS creator app home page experience and drive growth. For this project, I restructured the page information architecture and introduced data visualization to give users a snapshot of their business in a simplified way. The page was launched successfully and helped strengthen LTK's growth metrics by helping creators easily understand their commerce data and take actions to grow their business.
               </p>
             </div>
           </section>
@@ -166,7 +166,7 @@ export default function CaseStudyLTKDashboard() {
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
               <p className="text-[28px] md:text-[36px] leading-[34px] md:leading-[42px] font-light text-black dark:text-white transition-colors duration-200">
-              The home page prioritized motivating users to create their first post and sharing it. However through research we learned creators were actually more interested in understanding their business and using data to inform their business decisions. As a result, user satisfaction and posting rates both declined.
+              The home page prioritized motivating users to create their first post and sharing it. However we learned through research that while creators needed motivation early on, once they started posting it was difficult finding data and understanding the overall health of their business. As a result, user satisfaction and posting rates both declined.
               </p>
             </div>
           </section>
@@ -320,7 +320,7 @@ export default function CaseStudyLTKDashboard() {
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
               <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">
-              This experience reinforces for me why crafting a great product experience isn't just about showing users information—it's also about when and how information is delivered. By balancing business and user needs through research and effective collaboration, teams can craft product experiences that are useful without overwhelming users with too much data.
+              This experience reinforces for me why crafting a great product experience isn't just about showing users information, it's also about when and how that information is delivered. By balancing business and user needs through research and effective collaboration, teams can craft product experiences that are useful without overwhelming users with too much data.
               </p>
             </div>
           </section>
