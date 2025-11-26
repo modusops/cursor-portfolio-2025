@@ -106,12 +106,33 @@ const config: Config = {
         blink: {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0' },
+        },
+        "glow-flicker": {
+          '0%': {
+            opacity: '0.4',
+            transform: 'scale(1)',
+            filter: 'drop-shadow(0 0 1px rgba(139, 92, 246, 0.3))',
+            boxShadow: '0 0 2px rgba(139, 92, 246, 0.3)'
+          },
+          '50%': {
+            opacity: '1',
+            transform: 'scale(1.1)',
+            filter: 'drop-shadow(0 0 2px rgba(139, 92, 246, 0.6)) drop-shadow(0 0 4px rgba(139, 92, 246, 0.5))',
+            boxShadow: '0 0 3px rgba(139, 92, 246, 0.6), 0 0 6px rgba(139, 92, 246, 0.4)'
+          },
+          '100%': {
+            opacity: '0.4',
+            transform: 'scale(1)',
+            filter: 'drop-shadow(0 0 1px rgba(139, 92, 246, 0.3))',
+            boxShadow: '0 0 2px rgba(139, 92, 246, 0.3)'
+          },
         }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         blink: 'blink 1s step-end infinite',
+        "glow-flicker": "glow-flicker 3s ease-in-out infinite",
       },
       fontFamily: {
         sans: ["var(--font-inter)"],
