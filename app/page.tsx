@@ -538,16 +538,14 @@ export default function Home() {
             style={{ boxShadow: "rgba(255, 255, 255, 0.3) 0px 1px 2px 0px inset" }}
           >
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex flex-col md:flex-row md:justify-between md:items-start">
-                <h2 className="text-4xl font-normal mb-12 md:mb-0 md:w-1/3 flex items-center">
-                  <span className="relative">
-                    Passions
-                    <div className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800/15 dark:bg-white/20"></div>
-                  </span>
-                </h2>
+              <h2 className="text-4xl font-normal mb-16 flex items-center">
+                <span className="relative">
+                  Passions
+                  <div className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800/15 dark:bg-white/20"></div>
+                </span>
+              </h2>
 
-                <div className="md:w-2/3">
-                  <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4">
                     <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
                       <PlusSign size="sm" className="mr-2" />
                       Information Architecture
@@ -601,8 +599,6 @@ export default function Home() {
                       Prototyping
                     </div>
                   </div>
-                </div>
-              </div>
             </div>
           </div>
         </AnimatedContent>
