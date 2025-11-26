@@ -77,7 +77,7 @@ export function ViewportMedia({ media, title, isVideo = false, isLottie = false,
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Auto-play when coming into view (100% visible)
+            // Auto-play when coming into view (75% visible)
             if (wasOutOfViewRef.current) {
               // Reset video when coming back into view
               if (isVideo && videoRef.current) {
@@ -93,7 +93,7 @@ export function ViewportMedia({ media, title, isVideo = false, isLottie = false,
                 }
               }
               
-              // Auto-play when 100% visible
+              // Auto-play when 75% visible
               playMedia();
               wasOutOfViewRef.current = false;
             }
@@ -118,7 +118,7 @@ export function ViewportMedia({ media, title, isVideo = false, isLottie = false,
         });
       },
       {
-        threshold: 1.0, // Trigger when 100% of the element is visible
+        threshold: 0.75, // Trigger when 75% of the element is visible
         rootMargin: '0px',
       }
     );
