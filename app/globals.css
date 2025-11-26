@@ -151,6 +151,21 @@ body {
   .hover-float:hover {
     transform: translateY(-8px);
   }
+
+  /* Infinite scroll animation for experience carousel */
+  @keyframes scroll-left {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  .animate-scroll-left {
+    animation: scroll-left 27s linear infinite;
+    will-change: transform;
+  }
 }
 
 /* Custom scrollbar styling */

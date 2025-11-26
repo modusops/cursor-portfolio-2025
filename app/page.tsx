@@ -410,7 +410,7 @@ export default function Home() {
         {/* About Section */}
         <AnimatedContent className="delay-200">
           <div
-            className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200 relative"
+            className="py-12 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200 relative"
             style={{ boxShadow: "rgba(255, 255, 255, 0.3) 0px 1px 2px 0px inset" }}
           >
             <div className="absolute top-6 left-6">
@@ -418,7 +418,7 @@ export default function Home() {
             </div>
 
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-4xl font-normal mb-16 flex items-center">
+              <h2 className="text-4xl font-normal mb-12 flex items-center">
                 <span className="relative">
                   Experience
                   <div className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800/15 dark:bg-white/20"></div>
@@ -441,161 +441,45 @@ export default function Home() {
                   I believe great design is half art and half science and always stem from a deep understanding of the user and the business. 
                   </p>
 
-              <h3 className="text-xl font-medium mt-12 mb-4 text-black dark:text-white transition-colors duration-200">
+              <h3 className="text-xl font-medium mt-12 mb-6 text-black dark:text-white transition-colors duration-200">
                 Experience
               </h3>
 
-              <ul className="space-y-6">
-                <li>
-                  <div className="space-y-1">
-                    <div className="flex items-center">
-                      <Image
-                        src="/ltk-logo.png"
-                        alt="LTK logo"
-                        width={20}
-                        height={20}
-                        className="mr-3"
-                      />
-                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
-                        LTK
-                      </span>
+              {/* Horizontal Scrolling Carousel */}
+              <div className="relative overflow-hidden h-20">
+                {/* Left Feathering Gradient */}
+                <div className="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-r from-white dark:from-black to-transparent"></div>
+                
+                {/* Right Feathering Gradient */}
+                <div className="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-l from-white dark:from-black to-transparent"></div>
+                
+                <div className="inline-block whitespace-nowrap animate-scroll-left h-full align-middle">
+                  {/* Duplicate items for seamless loop */}
+                  {[...experienceItems, ...experienceItems].map((item, index) => (
+                    <div
+                      key={`${item.company}-${index}`}
+                      className="inline-block align-middle px-6 md:px-8 h-full"
+                    >
+                      <div className="flex items-center gap-2 md:gap-3 h-full">
+                        <Image
+                          src={item.logo}
+                          alt={`${item.company} logo`}
+                          width={24}
+                          height={24}
+                          className="flex-shrink-0"
+                        />
+                        <span className="font-medium text-sm md:text-base text-black dark:text-white transition-colors duration-200">
+                          {item.company}
+                        </span>
+                        {/* <span className="text-gray-400 dark:text-gray-500">•</span> */}
+                        <span className="font-light text-sm md:text-base text-gray-600 dark:text-gray-400 transition-colors duration-200">                          
+                          {item.role}
+                        </span>
+                      </div>
                     </div>
-                    <div>
-                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
-                        Staff Product Designer
-                      </span>
-                      <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
-                        2023-Present
-                      </span>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div className="space-y-1">
-                    <div className="flex items-center">
-                      <Image
-                        src="/sono-logo.png"
-                        alt="Sono logo"
-                        width={20}
-                        height={20}
-                        className="mr-3"
-                      />
-                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
-                        Sono
-                      </span>
-                    </div>
-                    <div>
-                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
-                        Founding Product Designer
-                      </span>
-                      <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
-                        2022-2023
-                      </span>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div className="space-y-1">
-                    <div className="flex items-center">
-                      <Image
-                        src="/shopify-logo.png"
-                        alt="Shopify logo"
-                        width={20}
-                        height={20}
-                        className="mr-3"
-                      />
-                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
-                        Shopify
-                      </span>
-                    </div>
-                    <div>
-                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
-                        Product Design Manager
-                      </span>
-                      <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
-                        2021-2022
-                      </span>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div className="space-y-1">
-                    <div className="flex items-center">
-                      <Image
-                        src="/adobe-logo.png"
-                        alt="Adobe logo"
-                        width={20}
-                        height={20}
-                        className="mr-3"
-                      />
-                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
-                        Adobe
-                      </span>
-                    </div>
-                    <div>
-                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
-                        Senior Product Designer
-                      </span>
-                      <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
-                        2019-2022
-                      </span>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div className="space-y-1">
-                    <div className="flex items-center">
-                      <Image
-                        src="/tesla-logo.png"
-                        alt="Tesla logo"
-                        width={20}
-                        height={20}
-                        className="mr-3"
-                      />
-                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
-                        Tesla
-                      </span>
-                    </div>
-                    <div>
-                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
-                        Senior Product Designer
-                      </span>
-                      <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
-                        2018-2019
-                      </span>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div className="space-y-1">
-                    <div className="flex items-center">
-                      <Image
-                        src="/shutterstock-logo.png"
-                        alt="Shutterstock logo"
-                        width={20}
-                        height={20}
-                        className="mr-3"
-                      />
-                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
-                        Shutterstock
-                      </span>
-                    </div>
-                    <div>
-                      <span className="font-medium text-black dark:text-white transition-colors duration-200">
-                        Senior Product Designer
-                      </span>
-                      <span className="text-gray-600 ml-2 dark:text-gray-400 transition-colors duration-200">
-                        2016-2018
-                      </span>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+                  ))}
+                </div>
+              </div>
 
                   {/* <ul className="space-y-4 text-gray-600 dark:text-gray-400 transition-colors duration-200">
                     <li className="flex items-start">
@@ -1027,6 +911,45 @@ export default function Home() {
     </div>
   )
 }
+
+const experienceItems = [
+  {
+    logo: "/ltk-logo.png",
+    company: "LTK",
+    role: "Staff Product Designer",
+    date: "2023-Present",
+  },
+  {
+    logo: "/sono-logo.png",
+    company: "Sono",
+    role: "Founding Product Designer",
+    date: "2022-2023",
+  },
+  {
+    logo: "/shopify-logo.png",
+    company: "Shopify",
+    role: "Product Design Manager",
+    date: "2021-2022",
+  },
+  {
+    logo: "/adobe-logo.png",
+    company: "Adobe",
+    role: "Senior Product Designer",
+    date: "2019-2022",
+  },
+  {
+    logo: "/tesla-logo.png",
+    company: "Tesla",
+    role: "Senior Product Designer",
+    date: "2018-2019",
+  },
+  {
+    logo: "/shutterstock-logo.png",
+    company: "Shutterstock",
+    role: "Senior Product Designer",
+    date: "2016-2018",
+  },
+];
 
 const projects = [
   {
