@@ -221,7 +221,7 @@ export default function CaseStudyLTKDashboard() {
             const delayClasses = ['delay-700', 'delay-800', 'delay-900'];
             return (
             <AnimatedContent key={index} className={delayClasses[index] || 'delay-700'}>
-              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 items-center min-h-[700px]">
+              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 items-center min-h-[400px] md:min-h-[700px]">
                 {/* LEFT COLUMN: Text content - 4 columns (40%) */}
                 <div className="col-span-1 md:col-span-4 flex flex-col gap-3">
                   <h2 className="text-[28px] md:text-[36px] leading-[34px] md:leading-[40px] font-normal break-words text-black dark:text-white transition-colors duration-200">
@@ -233,7 +233,7 @@ export default function CaseStudyLTKDashboard() {
                 </div>
 
                 {/* RIGHT COLUMN: Media content - 6 columns (60%), reduced height to fit viewport */}
-                <div className="col-span-1 md:col-span-6 relative h-[700px]">
+                <div className="col-span-1 md:col-span-6 relative h-[400px] md:h-[700px]">
                   <ViewportMedia
                     media={slide.media}
                     title={slide.title}
@@ -265,7 +265,7 @@ export default function CaseStudyLTKDashboard() {
             const delayClasses = ['delay-900', 'delay-1000', 'delay-1100', 'delay-1200', 'delay-1300'];
             return (
             <AnimatedContent key={index} className={delayClasses[index] || 'delay-900'}>
-              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 items-center min-h-[700px]">
+              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 items-center min-h-[400px] md:min-h-[700px]">
                 {/* LEFT COLUMN: Text content - 4 columns (40%) */}
                 <div className="col-span-1 md:col-span-4 flex flex-col gap-3">
                   <h2 className="text-[28px] md:text-[36px] leading-[34px] md:leading-[40px] font-normal break-words text-black dark:text-white transition-colors duration-200">
@@ -277,7 +277,7 @@ export default function CaseStudyLTKDashboard() {
                 </div>
 
                 {/* RIGHT COLUMN: Media content - 6 columns (60%), reduced height to fit viewport */}
-                <div className="col-span-1 md:col-span-6 relative h-[700px]">
+                <div className="col-span-1 md:col-span-6 relative h-[400px] md:h-[700px]">
                   <ViewportMedia
                     media={slide.media}
                     title={slide.title}
