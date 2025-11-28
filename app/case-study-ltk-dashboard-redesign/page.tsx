@@ -153,8 +153,8 @@ export default function CaseStudyLTKDashboard() {
           </section>
           </AnimatedContent>
 
-          {/* Problem Section */}
-          <AnimatedContent className="delay-300">
+          {/* Old Problem Section */}
+          {/* <AnimatedContent className="delay-300">
             <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
             <div className="col-span-1 md:col-span-4 flex items-start">
               <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
@@ -167,6 +167,32 @@ export default function CaseStudyLTKDashboard() {
               </p>
             </div>
           </section>
+          </AnimatedContent> */}
+
+          {/* Problem Section */}
+          <AnimatedContent className="delay-350">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 items-center min-h-[400px] md:min-h-[700px]">
+              {/* LEFT COLUMN: Text content - 4 columns (40%) */}
+              <div className="col-span-1 md:col-span-4 flex flex-col gap-3">
+              <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
+                PROBLEM
+              </h2>
+                <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-[200] text-black dark:text-white break-words transition-colors duration-200">
+                The home page prioritized motivating users to create their first post and sharing it. However we learned through research that while creators needed motivation early on, once they started posting it was difficult for them to find data and to understand the overall health of their business. We also learned creators preferred glanceable graphical information over a wall of numbers.
+                As a result of these issues, user satisfaction and posting rates both declined.                </p>
+              </div>
+
+              {/* RIGHT COLUMN: Media content - 6 columns (60%), reduced height to fit viewport */}
+              <div className="col-span-1 md:col-span-6 relative h-[400px] md:h-[700px]">
+                <ViewportMedia
+                  media="/creatorhomeold.json"
+                  title="Coach Cards"
+                  isVideo={false}
+                  isLottie={true}
+                  priority={false}
+                />
+              </div>
+            </section>
           </AnimatedContent>
 
           {/* How Might We Section */}
