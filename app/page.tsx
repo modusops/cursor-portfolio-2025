@@ -944,7 +944,7 @@ const projects = [
   },
   {
     title: "LTK Chat",
-    description: "Build stronger creator-led communities",
+    description: "Building stronger creator-led communities",
     image: "/feature-thumbnail-1.png",
     slug: "ltk-chat",
   },
@@ -956,16 +956,16 @@ const projects = [
   },
   {
     title: "Experiments",
-    description: "For play learning",
+    description: "Learning through experimentation",
     image: "/feature-thumbnail-4.png",
     slug: "experiments",
   },
-  {
-    title: "Coming Soon",
-    description: "New design projects",
-    image: "/feature-thumbnail-3.png",
-    slug: "WIP",
-  },
+  // {
+  //   title: "Coming Soon",
+  //   description: "New design projects",
+  //   image: "/feature-thumbnail-3.png",
+  //   slug: "WIP",
+  // },
   // {
   //   title: "Shopify",
   //   description: "Making commerce better for everyone",
