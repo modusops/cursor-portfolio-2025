@@ -15,7 +15,7 @@ export default function NewProjectPageTest11192025() {
         <div className="flex flex-col gap-[104px]">
           {/* Hero Section */}
           <AnimatedContent>
-            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
               <div className="col-span-1 md:col-span-4 flex items-start">
                 <h1 className="text-[28px] md:text-[36px] leading-[32px] md:leading-[40px] font-normal font-sans text-black dark:text-white transition-colors duration-200">
                   Lighten AI
@@ -42,7 +42,7 @@ export default function NewProjectPageTest11192025() {
 
           {/* Image Section */}
           {/* <AnimatedContent className="delay-100">
-            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
               <div className="col-span-1 md:col-span-10">
                 <div className="relative w-full max-w-[1312px] mx-auto h-[525px] rounded-[32px] overflow-hidden">
                   <Image
@@ -60,7 +60,7 @@ export default function NewProjectPageTest11192025() {
 
           {/* Problem Section */}
           {/* <AnimatedContent className="delay-200">
-            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
               <div className="col-span-1 md:col-span-4 flex items-start">
                 <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
                   PROBLEM
@@ -76,7 +76,7 @@ export default function NewProjectPageTest11192025() {
 
           {/* Business Goals Section */}
           {/* <AnimatedContent className="delay-300">
-            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
               <div className="col-span-1 md:col-span-4 flex items-start">
                 <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
                   BUSINESS GOALS
@@ -92,7 +92,7 @@ export default function NewProjectPageTest11192025() {
 
           {/* How Might We Section */}
           {/* <AnimatedContent className="delay-400">
-            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
               <div className="col-span-1 md:col-span-4 flex items-start">
                 <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
                   HOW MIGHT WE
@@ -110,7 +110,7 @@ export default function NewProjectPageTest11192025() {
           <div className="flex flex-col gap-[36px]">
             {/* Image Section */}
             <AnimatedContent className="delay-500">
-              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
                 <div className="col-span-1 md:col-span-10">
                   <div className="relative w-full max-w-[1312px] mx-auto h-[525px] rounded-[16px] md:rounded-[32px] overflow-hidden">
                     <Image
@@ -127,9 +127,9 @@ export default function NewProjectPageTest11192025() {
 
             {/* The Editor Section */}
             <AnimatedContent className="delay-600">
-              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
                 <div className="col-span-1 md:col-span-10 flex flex-col items-center">
-                  <div className="flex flex-col gap-1 max-w-[768px]">
+                  <div className="flex flex-col gap-1 max-w-[768px] stagger-children">
                     <h3 className="text-[18px] leading-[24px] md:leading-[28px] font-medium text-black dark:text-white transition-colors duration-200">
                       THE EDITOR
                     </h3>
@@ -146,7 +146,7 @@ export default function NewProjectPageTest11192025() {
           <div className="flex flex-col gap-[36px]">
             {/* Image Section */}
             <AnimatedContent className="delay-700">
-              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
                 <div className="col-span-1 md:col-span-10">
                   <div className="relative w-full max-w-[1312px] mx-auto h-[525px] rounded-[16px] md:rounded-[32px] overflow-hidden">
                     <Image
@@ -163,9 +163,9 @@ export default function NewProjectPageTest11192025() {
 
             {/* Consumer Grade Experience Section */}
             <AnimatedContent className="delay-800">
-              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
                 <div className="col-span-1 md:col-span-10 flex flex-col items-center">
-                  <div className="flex flex-col gap-1 max-w-[768px]">
+                  <div className="flex flex-col gap-1 max-w-[768px] stagger-children">
                     <h3 className="text-[18px] leading-[24px] md:leading-[28px] font-medium text-black dark:text-white transition-colors duration-200">
                       CONSUMER GRADE EXPERIENCE FOR ENTERPRISE
                     </h3>
@@ -182,7 +182,7 @@ export default function NewProjectPageTest11192025() {
           <div className="flex flex-col gap-[36px]">
             {/* Image Section */}
             <AnimatedContent className="delay-900">
-              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
                 <div className="col-span-1 md:col-span-10">
                   <div className="relative w-full max-w-[1312px] mx-auto h-[525px] rounded-[16px] md:rounded-[32px] overflow-hidden">
                     <Image
@@ -199,9 +199,9 @@ export default function NewProjectPageTest11192025() {
 
             {/* Managing Information Density Section */}
             <AnimatedContent className="delay-1000">
-              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
                 <div className="col-span-1 md:col-span-10 flex flex-col items-center">
-                  <div className="flex flex-col gap-1 max-w-[768px]">
+                  <div className="flex flex-col gap-1 max-w-[768px] stagger-children">
                     <h3 className="text-[18px] leading-[24px] md:leading-[28px] font-medium text-black dark:text-white transition-colors duration-200">
                       MANAGING INFORMATION DENSITY
                     </h3>
@@ -218,7 +218,7 @@ export default function NewProjectPageTest11192025() {
           <div className="flex flex-col gap-[36px]">
             {/* Image Section */}
             <AnimatedContent className="delay-1100">
-              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
                 <div className="col-span-1 md:col-span-10">
                   <div className="relative w-full max-w-[1312px] mx-auto h-[525px] rounded-[16px] md:rounded-[32px] overflow-hidden">
                     <Image
@@ -235,9 +235,9 @@ export default function NewProjectPageTest11192025() {
 
             {/* Progressive Disclosure Section */}
             <AnimatedContent className="delay-1200">
-              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
                 <div className="col-span-1 md:col-span-10 flex flex-col items-center">
-                  <div className="flex flex-col gap-1 max-w-[768px]">
+                  <div className="flex flex-col gap-1 max-w-[768px] stagger-children">
                     <h3 className="text-[18px] leading-[24px] md:leading-[28px] font-medium text-black dark:text-white transition-colors duration-200">
                       PROGRESSIVE DISCLOSURE
                     </h3>
@@ -252,7 +252,7 @@ export default function NewProjectPageTest11192025() {
 
           {/* Lessons Learned Section */}
           <AnimatedContent className="delay-1300">
-            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
               <div className="col-span-1 md:col-span-4 flex items-start">
                 <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
                   LESSONS LEARNED
@@ -268,7 +268,7 @@ export default function NewProjectPageTest11192025() {
 
           {/* Outcomes Section */}
           <AnimatedContent className="delay-1400">
-            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
               <div className="col-span-1 md:col-span-4 flex items-start">
                 <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
                   OUTCOMES
@@ -276,7 +276,7 @@ export default function NewProjectPageTest11192025() {
               </div>
               <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
                 {/* Metrics Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-children">
                   <div className="flex flex-col gap-2">
                     <div className="text-[32px] md:text-[36px] leading-[38px] md:leading-[40px] font-light text-black dark:text-white transition-colors duration-200">
                       <AnimatedCounter value={8} suffix="%" />

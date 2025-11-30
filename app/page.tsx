@@ -5,9 +5,10 @@ import Image from "next/image"
 import { PlusSign } from "./components/plus-sign"
 import { useEffect, useState, useRef } from "react"
 import { AnimatedContent } from "@/components/animated-content"
-import styles from './styles/fade.module.css'
 import { TypewriterText } from "./components/TypewriterText"
 import { Navigation } from "./components/Navigation"
+import { SpotlightPill } from "@/components/spotlight-pill"
+import { SpotlightCard } from "@/components/spotlight-card"
 
 export default function Home() {
   // Scroll to top when component mounts
@@ -152,25 +153,6 @@ export default function Home() {
     setActiveTestimonialIndex(index)
   }
 
-  useEffect(() => {
-    const updateSection = () => {
-      // First, remove all active classes (reset all animations)
-      document.querySelectorAll(`.${styles['fade-in']}`).forEach(el => {
-        el.classList.remove(styles.active);
-      });
-      
-      setTimeout(() => {
-        // Add active class to hero text with delay
-        document.querySelectorAll(`.${styles['fade-in']}`).forEach((el, i) => {
-          setTimeout(() => el.classList.add(styles.active), i * 400);
-        });
-      }, 600);
-    };
-
-    // Run animation on mount
-    updateSection();
-  }, []);
-
   return (
     <div className="min-h-screen bg-white dark:bg-black transition-colors duration-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -191,9 +173,9 @@ export default function Home() {
 
         {/* Hero Section - Reduced top padding on mobile */}
         <AnimatedContent>
-          <div className="py-8 md:pt-44 md:pb-20 relative">
+          <div className="py-8 md:pt-44 md:pb-20 relative stagger-children">
             <h1
-              className={`text-4xl md:text-6xl lg:text-7xl font-[200] leading-tight tracking-wider text-black dark:text-white max-w-5xl transition-colors duration-200 font-sans ${styles['fade-in']}`}
+              className="text-4xl md:text-6xl lg:text-7xl font-[200] leading-tight tracking-wider text-black dark:text-white max-w-5xl transition-colors duration-200 font-sans"
               style={{ fontWeight: 200, letterSpacing: "-0.01em" }}
             >
               <TypewriterText 
@@ -221,12 +203,12 @@ export default function Home() {
               {/* Mobile: Vertical Stack */}
               <div className="md:hidden">
                 <div className="pt-8 pb-8 px-4 -mx-4">
-                  <div className="flex flex-col gap-6">
+                  <div className="flex flex-col gap-6 stagger-children">
                     {projects.map((project) => {
                       const isComingSoon = project.slug === "WIP";
                       
                       return (
-                        <div
+                        <SpotlightCard
                           key={project.slug}
                           className={`group w-full bg-gray-50 dark:bg-gray-900 rounded-xl p-6 hover-float relative flex flex-col transition-colors duration-500 ease-in-out hover:bg-gray-100 dark:hover:bg-gray-800 hover:shadow-md hover:z-10 ${
                             isComingSoon ? "cursor-not-allowed" : ""
@@ -271,7 +253,7 @@ export default function Home() {
                               </div>
                             </Link>
                           )}
-                        </div>
+                        </SpotlightCard>
                       );
                     })}
                   </div>
@@ -292,14 +274,14 @@ export default function Home() {
                   <div
                     ref={carouselRef}
                     id="carousel-container"
-                    className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 pt-4 scrollbar-hide"
+                    className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 pt-4 scrollbar-hide stagger-children"
                     style={{ scrollBehavior: "smooth" }}
                   >
                     {projects.map((project) => {
                       const isComingSoon = project.slug === "WIP";
                       
                       return (
-                        <div
+                        <SpotlightCard
                           key={project.slug}
                           className={`group min-w-[85%] md:min-w-[45%] lg:min-w-[30%] flex-shrink-0 snap-center bg-gray-50 dark:bg-gray-900 rounded-xl p-6 hover-float relative flex flex-col transition-colors duration-500 ease-in-out hover:bg-gray-100 dark:hover:bg-gray-800 hover:shadow-md hover:z-10 ${
                             isComingSoon ? "cursor-not-allowed" : ""
@@ -344,7 +326,7 @@ export default function Home() {
                               </div>
                             </Link>
                           )}
-                        </div>
+                        </SpotlightCard>
                       );
                     })}
                   </div>
@@ -418,7 +400,7 @@ export default function Home() {
             </div>
 
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-4xl font-normal mb-12 flex items-center">
+              <h2 className="text-4xl font-normal mb-12 flex items-center animate-item">
                 <span className="relative">
                   Experience
                   <div className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800/15 dark:bg-white/20"></div>
@@ -430,7 +412,7 @@ export default function Home() {
                   <Image src="/headshot.png" alt="David Chan avatar" width={500} height={500} className="object-cover" />
                 </div> */}
 
-                <div className="space-y-8">
+                <div className="space-y-8 stagger-children">
                   <h3 className="text-3xl md:text-4xl font-normal leading-tight">
                     I help teams ship fast (and learn) without compromising quality.
                   </h3>
@@ -538,66 +520,66 @@ export default function Home() {
             style={{ boxShadow: "rgba(255, 255, 255, 0.3) 0px 1px 2px 0px inset" }}
           >
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-4xl font-normal mb-16 flex items-center">
+              <h2 className="text-4xl font-normal mb-16 flex items-center animate-item">
                 <span className="relative">
                   Passions
                   <div className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800/15 dark:bg-white/20"></div>
                 </span>
               </h2>
 
-              <div className="flex flex-wrap gap-4">
-                    <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+              <div className="flex flex-wrap gap-4 stagger-children">
+                    <SpotlightPill>
                       <PlusSign size="sm" className="mr-2" />
                       Information Architecture
-                    </div>
-                    <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    </SpotlightPill>
+                    <SpotlightPill>
                       <PlusSign size="sm" className="mr-2" />
                       User Research
-                    </div>
-                    <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    </SpotlightPill>
+                    <SpotlightPill>
                       <PlusSign size="sm" className="mr-2" />
                       Usability
-                    </div>
-                    <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    </SpotlightPill>
+                    <SpotlightPill>
                       <PlusSign size="sm" className="mr-2" />
                       iOS Design
-                    </div>
-                    <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    </SpotlightPill>
+                    <SpotlightPill>
                       <PlusSign size="sm" className="mr-2" />
                       Branding
-                    </div>
-                    <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    </SpotlightPill>
+                    <SpotlightPill>
                       <PlusSign size="sm" className="mr-2" />
                       Web Design
-                    </div>
-                    <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    </SpotlightPill>
+                    <SpotlightPill>
                       <PlusSign size="sm" className="mr-2" />
                       Strategy
-                    </div>
-                    <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    </SpotlightPill>
+                    <SpotlightPill>
                       <PlusSign size="sm" className="mr-2" />
                       0→1 Projects
-                    </div>
-                    <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    </SpotlightPill>
+                    <SpotlightPill>
                       <PlusSign size="sm" className="mr-2" />
                       Scalable Designs
-                    </div>
-                    <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    </SpotlightPill>
+                    <SpotlightPill>
                       <PlusSign size="sm" className="mr-2" />
                       Design Systems
-                    </div>
-                    <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    </SpotlightPill>
+                    <SpotlightPill>
                       <PlusSign size="sm" className="mr-2" />
                       Team Building
-                    </div>
-                    <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    </SpotlightPill>
+                    <SpotlightPill>
                       <PlusSign size="sm" className="mr-2" />
                       Coaching
-                    </div>
-                    <div className="border border-gray-300 dark:border-gray-700 rounded-full px-8 py-4 text-lg transition-colors duration-200 flex items-center">
+                    </SpotlightPill>
+                    <SpotlightPill>
                       <PlusSign size="sm" className="mr-2" />
                       Prototyping
-                    </div>
+                    </SpotlightPill>
                   </div>
             </div>
           </div>
@@ -610,14 +592,14 @@ export default function Home() {
             style={{ boxShadow: "rgba(255, 255, 255, 0.3) 0px 1px 2px 0px inset" }}
           >
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-4xl font-normal mb-16 flex items-center">
+              <h2 className="text-4xl font-normal mb-16 flex items-center animate-item">
                 <span className="relative">
                   Approach
                   <div className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800/15 dark:bg-white/20"></div>
                 </span>
               </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 stagger-children">
                 {/* Item 1 */}
                 <div className="space-y-4 relative">
                   <div className="text-gray-400 dark:text-gray-500 text-xl font-light transition-colors duration-200 flex items-center">
@@ -716,14 +698,14 @@ export default function Home() {
             </div>
 
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-4xl font-normal mb-16 flex items-center">
+              <h2 className="text-4xl font-normal mb-16 flex items-center animate-item">
                 <span className="relative">
                   Contact
                   <div className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800/15 dark:bg-white/20"></div>
                 </span>
               </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-16 stagger-children">
                 {/* Contact Info */}
                 <div className="bg-gray-100 dark:bg-gray-800 rounded-3xl p-10 space-y-6 transition-all duration-200 relative hover:bg-gray-200 dark:hover:bg-gray-700">
                   <div className="absolute top-4 left-4">

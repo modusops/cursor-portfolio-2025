@@ -58,7 +58,7 @@ export default function Contact() {
         {/* Contact Content - Centered in middle of page */}
         <AnimatedContent>
           <div className="min-h-[calc(100vh-200px)] flex items-center justify-center py-8 pb-24 md:py-28">
-            <div className="max-w-4xl mx-auto text-center">
+            <div className="max-w-4xl mx-auto text-center stagger-children">
               <div className="prose max-w-none text-lg dark:prose-invert transition-colors duration-200">
                 <p className="text-gray-800 dark:text-gray-200">
                   I'm currently available for new projects and collaborations. If you're interested in working together,
