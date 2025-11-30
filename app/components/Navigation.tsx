@@ -60,7 +60,7 @@ export function Navigation({ hideOnScroll = false }: NavigationProps) {
       }`}
     >
       <Link href="/">
-        <h1 className="text-xl font-medium text-black dark:text-white font-sans pl-2 drop-shadow-sm hidden md:block hover:opacity-80 transition-opacity cursor-pointer">
+        <h1 className="text-m font-light text-black dark:text-white font-sans pl-2 drop-shadow-sm hidden md:block hover:opacity-80 transition-opacity cursor-pointer">
           Dave Chan
         </h1>
       </Link>
@@ -68,7 +68,7 @@ export function Navigation({ hideOnScroll = false }: NavigationProps) {
       <div className="flex items-center space-x-4">
         <Link
           href="/"
-          className={`nav-item px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 relative drop-shadow-sm ${
+          className={`nav-item px-5 py-2 rounded-full text-sm font-light transition-all duration-200 relative drop-shadow-sm ${
             isHomeActive
               ? 'bg-black dark:bg-white backdrop-blur-sm text-white dark:text-black border border-black dark:border-white hover:bg-gray-800 dark:hover:bg-gray-100 hover:border-gray-800 dark:hover:border-gray-100'
               : 'text-black/90 dark:text-white/90 hover:text-black dark:hover:text-white hover:bg-black/10 dark:hover:bg-white/20 backdrop-blur-sm border border-transparent hover:border-black/20 dark:hover:border-white/20'
@@ -78,7 +78,7 @@ export function Navigation({ hideOnScroll = false }: NavigationProps) {
         </Link>
         <Link
           href="/about"
-          className={`nav-item px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 relative drop-shadow-sm ${
+          className={`nav-item px-5 py-2 rounded-full text-sm font-light transition-all duration-200 relative drop-shadow-sm ${
             isAboutActive
               ? 'bg-black dark:bg-white backdrop-blur-sm text-white dark:text-black border border-black dark:border-white hover:bg-gray-800 dark:hover:bg-gray-100 hover:border-gray-800 dark:hover:border-gray-100'
               : 'text-black/90 dark:text-white/90 hover:text-black dark:hover:text-white hover:bg-black/10 dark:hover:bg-white/20 backdrop-blur-sm border border-transparent hover:border-black/20 dark:hover:border-white/20'
@@ -88,7 +88,7 @@ export function Navigation({ hideOnScroll = false }: NavigationProps) {
         </Link>
         <Link
           href="/contact"
-          className={`nav-item px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 relative drop-shadow-sm ${
+          className={`nav-item px-5 py-2 rounded-full text-sm font-light transition-all duration-200 relative drop-shadow-sm ${
             isContactActive
               ? 'bg-black dark:bg-white backdrop-blur-sm text-white dark:text-black border border-black dark:border-white hover:bg-gray-800 dark:hover:bg-gray-100 hover:border-gray-800 dark:hover:border-gray-100'
               : 'text-black/90 dark:text-white/90 hover:text-black dark:hover:text-white hover:bg-black/10 dark:hover:bg-white/20 backdrop-blur-sm border border-transparent hover:border-black/20 dark:hover:border-white/20'
