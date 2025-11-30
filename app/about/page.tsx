@@ -59,7 +59,7 @@ export default function About() {
 
         {/* About Content - Reduced top padding on mobile */}
         <AnimatedContent>
-          <div className="py-8 pb-24 md:py-20 max-w-3xl mx-auto">
+          <div className="py-8 pb-24 md:py-20 max-w-3xl mx-auto stagger-children">
 
 
             {/* <div className="aspect-square relative overflow-hidden max-w-md mx-auto md:mx-0 mb-8 md:mb-12">

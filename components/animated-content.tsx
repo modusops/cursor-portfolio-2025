@@ -1,29 +1,53 @@
 "use client"
 
-import { type ReactNode, useEffect, useState } from "react"
+import { type ReactNode, useEffect, useState, useRef } from "react"
 
 interface AnimatedContentProps {
   children: ReactNode
   className?: string
+  delay?: number
+  threshold?: number
 }
 
-export function AnimatedContent({ children, className = "" }: AnimatedContentProps) {
-  const [isVisible, setIsVisible] = useState(false)
+export function AnimatedContent({ 
+  children, 
+  className = "", 
+  delay = 0,
+  threshold = 0.2 // Increased default threshold slightly
+}: AnimatedContentProps) {
+  const [isInView, setIsInView] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    // Small delay to ensure the animation runs after page load
-    const timer = setTimeout(() => {
-      setIsVisible(true)
-    }, 100)
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Add optional delay before setting in-view
+          if (delay > 0) {
+            setTimeout(() => setIsInView(true), delay)
+          } else {
+            setIsInView(true)
+          }
+          observer.unobserve(entry.target)
+        }
+      },
+      {
+        threshold: threshold,
+        rootMargin: "0px 0px -150px 0px" // Trigger slightly before bottom
+      }
+    )
 
-    return () => clearTimeout(timer)
-  }, [])
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => observer.disconnect()
+  }, [delay, threshold])
 
   return (
     <div
-      className={`${className} ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-      } transition-all duration-700 ease-out`}
+      ref={ref}
+      className={`animated-content-wrapper ${isInView ? "in-view" : ""} ${className}`}
     >
       {children}
     </div>

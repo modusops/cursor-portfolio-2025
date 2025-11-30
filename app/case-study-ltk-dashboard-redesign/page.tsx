@@ -90,7 +90,7 @@ export default function CaseStudyLTKDashboard() {
         <div className="flex flex-col gap-[104px]">
           {/* Hero Section */}
           <AnimatedContent>
-            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
             <div className="col-span-1 md:col-span-4 flex items-start">
               <h1 className="text-[28px] md:text-[36px] leading-[32px] md:leading-[40px] font-normal font-sans text-black dark:text-white transition-colors duration-200">
                 LTK Dashboard Redesign
@@ -139,7 +139,7 @@ export default function CaseStudyLTKDashboard() {
 
           {/* Overview Section */}
           <AnimatedContent className="delay-200">
-            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
             <div className="col-span-1 md:col-span-4 flex items-start">
               <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
                 OVERVIEW
@@ -171,7 +171,7 @@ export default function CaseStudyLTKDashboard() {
 
           {/* Problem Section */}
           <AnimatedContent className="delay-350">
-            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 items-center min-h-[400px] md:min-h-[700px]">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 items-center min-h-[400px] md:min-h-[700px] stagger-children">
               {/* LEFT COLUMN: Text content - 4 columns (40%) */}
               <div className="col-span-1 md:col-span-4 flex flex-col gap-3">
               <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
@@ -197,7 +197,7 @@ export default function CaseStudyLTKDashboard() {
 
           {/* How Might We Section */}
           <AnimatedContent className="delay-400">
-            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
             <div className="col-span-1 md:col-span-4 flex items-start">
               <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
                 HOW MIGHT WE
@@ -231,7 +231,7 @@ export default function CaseStudyLTKDashboard() {
 
           {/*Context*/}
           <AnimatedContent className="delay-600">
-            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
             <div className="col-span-1 md:col-span-4 flex items-start">
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
@@ -247,7 +247,7 @@ export default function CaseStudyLTKDashboard() {
             const delayClasses = ['delay-700', 'delay-800', 'delay-900'];
             return (
             <AnimatedContent key={index} className={delayClasses[index] || 'delay-700'}>
-              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 items-center min-h-[400px] md:min-h-[700px]">
+              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 items-center min-h-[400px] md:min-h-[700px] stagger-children">
                 {/* LEFT COLUMN: Text content - 4 columns (40%) */}
                 <div className="col-span-1 md:col-span-4 flex flex-col gap-3">
                   <h2 className="text-[28px] md:text-[36px] leading-[34px] md:leading-[40px] font-normal break-words text-black dark:text-white transition-colors duration-200">
@@ -275,7 +275,7 @@ export default function CaseStudyLTKDashboard() {
 
           {/*Context*/}
           <AnimatedContent className="delay-800">
-            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
             <div className="col-span-1 md:col-span-4 flex items-start">
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
@@ -291,7 +291,7 @@ export default function CaseStudyLTKDashboard() {
             const delayClasses = ['delay-900', 'delay-1000', 'delay-1100', 'delay-1200', 'delay-1300'];
             return (
             <AnimatedContent key={index} className={delayClasses[index] || 'delay-900'}>
-              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 items-center min-h-[400px] md:min-h-[700px]">
+              <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 items-center min-h-[400px] md:min-h-[700px] stagger-children">
                 {/* LEFT COLUMN: Text content - 4 columns (40%) */}
                 <div className="col-span-1 md:col-span-4 flex flex-col gap-3">
                   <h2 className="text-[28px] md:text-[36px] leading-[34px] md:leading-[40px] font-normal break-words text-black dark:text-white transition-colors duration-200">
@@ -319,7 +319,7 @@ export default function CaseStudyLTKDashboard() {
 
           {/* BTS Section */}
           <AnimatedContent className="delay-1000">
-            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
             <div className="col-span-1 md:col-span-4 flex items-start">
               <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
                 BEHIND THE SCENES
@@ -335,7 +335,7 @@ export default function CaseStudyLTKDashboard() {
 
           {/* Retrospective Section */}
           <AnimatedContent className="delay-1100">
-            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
             <div className="col-span-1 md:col-span-4 flex items-start">
               <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
                 RETROSPECTIVE
@@ -351,7 +351,7 @@ export default function CaseStudyLTKDashboard() {
 
           {/* Outcomes Section */}
           <AnimatedContent className="delay-1200">
-            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16 stagger-children">
             <div className="col-span-1 md:col-span-4 flex items-start">
               <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-medium uppercase text-black dark:text-white transition-colors duration-200">
                 OUTCOMES
