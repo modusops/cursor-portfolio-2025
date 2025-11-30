@@ -78,7 +78,7 @@ export default function About() {
 
             <div className="prose max-w-none text-lg dark:prose-invert transition-colors duration-200">
               <p className="text-gray-500 dark:text-gray-400">
-              I was born in Hong Kong and moved to the Bay Area when I was in elementary school. My parents were entrepreneurs who started their own business and I saw firsthand what it meant to build something from the ground up with nothing but dreams and hard work. I took to heart my parents' journey as a kid, tinkering often with dreams of being an entrepreneur. At 12 years old, I created an animated movie using HyperCard on an Apple IIGS. When I was 17 I dabbled in art, film photography (won the class award for best photo), started an apparel business and hustled graphic tees on the streets of SF. 
+              I was born in Hong Kong and moved to the Bay Area when I was in elementary school. My parents were entrepreneurs who started their own business and I saw firsthand what it meant to build something from the ground up with nothing but dreams and hard work. I took to heart my parents' journey as a kid, tinkering often with dreams of being an entrepreneur. At 12 years old, I created an animated movie using HyperCard on an Apple IIGS. When I was 17 I dabbled in art, film photography (won the class award for best photo). That same year I started a street apparel business and my products were carried in stores throughout SF. 
               </p>
 
               <h3 className="text-sm font-medium mt-12 mb-4 text-black dark:text-white transition-colors duration-200">
