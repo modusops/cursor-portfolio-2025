@@ -5,10 +5,20 @@ import { X } from 'lucide-react';
 import { AnimatedContent } from '@/components/animated-content';
 import { AnimatedCounter } from '@/app/components/AnimatedCounter';
 import { Navigation } from '@/app/components/Navigation';
-import { TeamAvatars } from '@/app/components/TeamAvatars';
+import { TeamAvatars, type TeamMember } from '@/app/components/TeamAvatars';
 import { ViewportMedia } from '@/app/components/ViewportMedia';
 
 export default function CaseStudyLTKChatDesign() {
+  const teamMembers: TeamMember[] = [
+    { name: 'Chaitanya Kola', image: '/chaitanya.png', alt: 'Chaitanya' },
+    { name: 'Dave Chan', image: '/dave.png', alt: 'Dave' },
+    { name: 'Jeromy Ko', image: '/jeromy.png', alt: 'Jeromy' },
+    { name: 'Khalid', image: '/khalid.png', alt: 'Khalid' },
+    { name: 'Liz Fox', image: '/liz.png', alt: 'Liz' },
+    { name: 'Maddie Pelton', image: '/maddie.png', alt: 'Maddie' },
+    { name: 'Nathan Fulkerson', image: '/nathan.png', alt: 'Nathan' },
+  ];
+
   const slides1 = [
     {
       title: 'UX Audit',
@@ -19,7 +29,7 @@ export default function CaseStudyLTKChatDesign() {
     },
     {
       title: 'Creating a familiar experience',
-      description: 'I designed an IA leveraging familiar community platform patterns to support user adoption, while optimizing the layout for conversation flow and content discoverability.',
+      description: 'The information architecture leverages familiar community platform patterns to support user adoption, while optimizing the layout for conversation flow and content discoverability.',
       media: '/chatbot.json',
       isVideo: false,
       isLottie: true,
@@ -112,7 +122,7 @@ export default function CaseStudyLTKChatDesign() {
                 </div>
                 <div className="flex flex-col gap-[2px]">
                   <p className="text-[14px] leading-[24px] text-gray-500 dark:text-gray-400 transition-colors duration-200">Team</p>
-                  <TeamAvatars />
+                  <TeamAvatars members={teamMembers} />
                 </div>
               </div>
             </div>
@@ -330,7 +340,7 @@ For this project, I led research and design to support a successful launch that 
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
               <p className="text-[28px] md:text-[36px] leading-[34px] md:leading-[42px] font-light text-black dark:text-white transition-colors duration-200">
-              This project had its share of challenges—engineers reassigned mid-sprint, last-minute feature renaming, and shifting timelines. I kept the team focused by regularly reconnecting the team to our user problems and business goals, ensuring we didn't lose sight of why we were building this.
+              This project had its share of challenges;engineers reassigned mid-sprint, last-minute feature renaming, and shifting timelines. I kept the team focused by regularly reconnecting the team to our user problems and business goals, ensuring we didn't lose sight of why we were building this.
               </p>
             </div>
           </section>

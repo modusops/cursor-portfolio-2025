@@ -8,7 +8,13 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 
-const teamMembers = [
+export type TeamMember = {
+  name: string;
+  image: string;
+  alt: string;
+};
+
+const defaultTeamMembers: TeamMember[] = [
   { name: 'Chaitanya Kola', image: '/chaitanya.png', alt: 'Chaitanya' },
   { name: 'Dave Chan', image: '/dave.png', alt: 'Dave' },
   { name: 'Jeromy Ko', image: '/jeromy.png', alt: 'Jeromy' },
@@ -18,7 +24,13 @@ const teamMembers = [
   { name: 'Nathan Fulkerson', image: '/nathan.png', alt: 'Nathan' },
 ];
 
-export function TeamAvatars() {
+interface TeamAvatarsProps {
+  members?: TeamMember[];
+}
+
+export function TeamAvatars({ members }: TeamAvatarsProps) {
+  const teamMembers = members || defaultTeamMembers;
+
   return (
     <TooltipProvider delayDuration={0}>
       <div className="flex gap-1">
