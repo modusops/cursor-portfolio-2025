@@ -19,7 +19,7 @@ export default function CaseStudyLTKChatDesign() {
     },
     {
       title: 'Creating a familiar experience',
-      description: 'I designed an IA leveraging familiar community platform patterns to support user adoption, while optimizing the layout for conversation flow and content discoverability.',
+      description: 'The information architecture leverages familiar community platform patterns to support user adoption, while optimizing the layout for conversation flow and content discoverability.',
       media: '/chatbot.json',
       isVideo: false,
       isLottie: true,
@@ -330,7 +330,7 @@ For this project, I led research and design to support a successful launch that 
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
               <p className="text-[28px] md:text-[36px] leading-[34px] md:leading-[42px] font-light text-black dark:text-white transition-colors duration-200">
-              This project had its share of challenges—engineers reassigned mid-sprint, last-minute feature renaming, and shifting timelines. I kept the team focused by regularly reconnecting the team to our user problems and business goals, ensuring we didn't lose sight of why we were building this.
+              This project had its share of challenges;engineers reassigned mid-sprint, last-minute feature renaming, and shifting timelines. I kept the team focused by regularly reconnecting the team to our user problems and business goals, ensuring we didn't lose sight of why we were building this.
               </p>
             </div>
           </section>
