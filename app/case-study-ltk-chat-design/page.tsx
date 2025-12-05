@@ -5,10 +5,20 @@ import { X } from 'lucide-react';
 import { AnimatedContent } from '@/components/animated-content';
 import { AnimatedCounter } from '@/app/components/AnimatedCounter';
 import { Navigation } from '@/app/components/Navigation';
-import { TeamAvatars } from '@/app/components/TeamAvatars';
+import { TeamAvatars, type TeamMember } from '@/app/components/TeamAvatars';
 import { ViewportMedia } from '@/app/components/ViewportMedia';
 
 export default function CaseStudyLTKChatDesign() {
+  const teamMembers: TeamMember[] = [
+    { name: 'Chaitanya Kola', image: '/chaitanya.png', alt: 'Chaitanya' },
+    { name: 'Dave Chan', image: '/dave.png', alt: 'Dave' },
+    { name: 'Jeromy Ko', image: '/jeromy.png', alt: 'Jeromy' },
+    { name: 'Khalid', image: '/khalid.png', alt: 'Khalid' },
+    { name: 'Liz Fox', image: '/liz.png', alt: 'Liz' },
+    { name: 'Maddie Pelton', image: '/maddie.png', alt: 'Maddie' },
+    { name: 'Nathan Fulkerson', image: '/nathan.png', alt: 'Nathan' },
+  ];
+
   const slides1 = [
     {
       title: 'UX Audit',
@@ -112,7 +122,7 @@ export default function CaseStudyLTKChatDesign() {
                 </div>
                 <div className="flex flex-col gap-[2px]">
                   <p className="text-[14px] leading-[24px] text-gray-500 dark:text-gray-400 transition-colors duration-200">Team</p>
-                  <TeamAvatars />
+                  <TeamAvatars members={teamMembers} />
                 </div>
               </div>
             </div>

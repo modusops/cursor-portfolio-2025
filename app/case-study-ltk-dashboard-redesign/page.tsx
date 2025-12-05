@@ -5,10 +5,20 @@ import { X } from 'lucide-react';
 import { AnimatedContent } from '@/components/animated-content';
 import { AnimatedCounter } from '@/app/components/AnimatedCounter';
 import { Navigation } from '@/app/components/Navigation';
-import { TeamAvatars } from '@/app/components/TeamAvatars';
+import { TeamAvatars, type TeamMember } from '@/app/components/TeamAvatars';
 import { ViewportMedia } from '@/app/components/ViewportMedia';
 
 export default function CaseStudyLTKDashboard() {
+  const teamMembers: TeamMember[] = [
+    { name: 'Aaron Rennow', image: '/aaron.jpeg', alt: 'Aaron' },
+    { name: 'Dave Chan', image: '/dave.png', alt: 'Dave' },
+    { name: 'Brian Lim', image: '/brian.jpeg', alt: 'Brian' },
+    { name: 'Sarat', image: '/sarat.jpeg', alt: 'Sarat' },
+    { name: 'Zach Gillenwater', image: '/zach.jpeg', alt: 'Zach' },
+    { name: 'Sara Greene', image: '/sara.jpeg', alt: 'Sara' },
+    { name: 'Chris Olney', image: '/chris.jpeg', alt: 'Chris' },
+  ];
+
   const slides1 = [
     {
       title: 'Coach Cards',
@@ -112,7 +122,7 @@ export default function CaseStudyLTKDashboard() {
                 </div>
                 <div className="flex flex-col gap-[2px]">
                   <p className="text-[14px] leading-[24px] text-gray-500 dark:text-gray-400 transition-colors duration-200">Team</p>
-                  <TeamAvatars />
+                  <TeamAvatars members={teamMembers} />
                 </div>
               </div>
             </div>
