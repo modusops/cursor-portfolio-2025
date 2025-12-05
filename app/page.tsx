@@ -234,7 +234,7 @@ export default function Home() {
                               </div>
                             </div>
                           ) : (
-                            <Link href={project.slug === "creator" ? "/case-study-ltk-dashboard-redesign" : project.slug === "lighten" ? "/project-lighten-design" : `/projects/${project.slug}`} className="flex flex-col h-full">
+                            <Link href={project.slug === "creator" ? "/case-study-ltk-dashboard-redesign" : project.slug === "lighten" ? "/project-lighten-design" : project.slug === "ltk-chat" ? "/case-study-ltk-chat-design" : `/projects/${project.slug}`} className="flex flex-col h-full">
                               <div className="aspect-[4/3] relative mb-6 overflow-hidden transition-transform duration-300 group-hover:scale-105">
                                 <Image
                                   src={project.image || "/placeholder.jpg"}
@@ -307,7 +307,7 @@ export default function Home() {
                               </div>
                             </div>
                           ) : (
-                            <Link href={project.slug === "creator" ? "/case-study-ltk-dashboard-redesign" : project.slug === "lighten" ? "/project-lighten-design" : `/projects/${project.slug}`} className="flex flex-col h-full">
+                            <Link href={project.slug === "creator" ? "/case-study-ltk-dashboard-redesign" : project.slug === "lighten" ? "/project-lighten-design" : project.slug === "ltk-chat" ? "/case-study-ltk-chat-design" : `/projects/${project.slug}`} className="flex flex-col h-full">
                               <div className="aspect-[4/3] relative mb-6 overflow-hidden transition-transform duration-300 group-hover:scale-105">
                                 <Image
                                   src={project.image || "/placeholder.jpg"}
