@@ -23,23 +23,23 @@ export default function CaseStudyLTKDashboard() {
     {
       title: 'Coach Cards',
       description: 'Creators are busy and often crave bite-sized information they can understand at a glance. I designed a system of scrollable cards with useful information that was highly interactive and could be repurposed for different use cases.',
-      media: '/swipeablecards.json',
+      media: ['/swipeablecards.json', '/casestudy-ltk-dashboard-slide1-1a.jpg'],
       isVideo: false,
-      isLottie: true,
+      isLottie: [true, false],
     },
     {
       title: 'AI Chatbot',
       description: 'What if creators could chat with the app instead of searching for information? The AI Chatbot leverages LLMs to help creators understand their key business data; lifting insights and business summaries through conversations.',
-      media: '/chatbot2.json',
+      media: ['/chatbot2.json', '/casestudy-ltk-dashboard-slide1-2a.jpg'],
       isVideo: false,
-      isLottie: true,
+      isLottie: [true, false],
     },
     {
       title: 'Data Visualization',
       description: 'Business data can be complex to understand. We found out that while creators are great at driving sales; they lack business acumen. By highlighting key metrics using charts to visualize data, we could help bridge the gap between insight and knowledge.',
-      media: '/datavisualization.json',
+      media: ['/datavisualization.json', '/casestudy-ltk-dashboard-slide1-3a.jpg'],
       isVideo: false,
-      isLottie: true,
+      isLottie: [true, false],
     },
   ];
 
@@ -135,7 +135,7 @@ export default function CaseStudyLTKDashboard() {
             <div className="col-span-1 md:col-span-10">
               <div className="relative w-full rounded-[32px] overflow-hidden" style={{ aspectRatio: '1312/421' }}>
                 <Image
-                  src="/casestudy-ltk-dashboard-hero.jpg"
+                  src="/casestudy-ltk-dashboard-hero-r1.jpg"
                   alt="LTK Dashboard screens showing Overview, Visits, and Earnings analytics"
                   fill
                   className="object-contain rounded-[32px]"
@@ -193,12 +193,12 @@ export default function CaseStudyLTKDashboard() {
               </div>
 
               {/* RIGHT COLUMN: Media content - 6 columns (60%), reduced height to fit viewport */}
-              <div className="col-span-1 md:col-span-6 relative h-[400px] md:h-[700px]">
+              <div className="col-span-1 md:col-span-6 relative h-[400px] md:h-[700px] pb-8">
                 <ViewportMedia
-                  media="/creatorhomeold.json"
-                  title="Coach Cards"
+                  media={['/creatorhomeold.json', '/creatorhomeold-web.jpg']}
+                  title="Problem Section"
                   isVideo={false}
-                  isLottie={true}
+                  isLottie={[true, false]}
                   priority={false}
                 />
               </div>
