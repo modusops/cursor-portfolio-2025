@@ -23,16 +23,16 @@ export default function CaseStudyLTKChatDesign() {
     {
       title: 'UX Audit',
       description: 'I conducted extensive end-to-end user flows of community building tools and interviewed creators to identify gaps and areas of opportunities.',
-      media: '/casestudy-ltk-chat-slide1.jpg',
+      media: ['/casestudy-ltk-chat-slide1.jpg', '/casestudy-ltk-chat-slide1-2.jpg', '/casestudy-ltk-chat-slide1-3.jpg'],
       isVideo: false,
-      isLottie: false,
+      isLottie: [false, false, false],
     },
     {
       title: 'Creating a familiar experience',
       description: 'The information architecture leverages familiar community platform patterns to support user adoption, while optimizing the layout for conversation flow and content discoverability.',
-      media: '/casestudy-ltk-chat-slide2-2.jpg',
+      media: ['/casestudy-ltk-chat-slide2.jpg', '/casestudy-ltk-chat-slide2-2.jpg'],
       isVideo: false,
-      isLottie: false,
+      isLottie: [false, false],
     },
     {
       title: 'Identity & discovery',
