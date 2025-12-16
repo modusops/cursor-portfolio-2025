@@ -686,6 +686,91 @@ export default function Home() {
           </div>
         </AnimatedContent>
 
+        {/* Writing Section */}
+        <AnimatedContent className="delay-500">
+          <div
+            className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200 relative"
+            style={{ boxShadow: "rgba(255, 255, 255, 0.3) 0px 1px 2px 0px inset" }}
+          >
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-4xl font-normal mb-16 flex items-center animate-item">
+                <span className="relative">
+                  Writing
+                  <div className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800/15 dark:bg-white/20"></div>
+                </span>
+              </h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 stagger-children">
+                {/* Article 1 */}
+                <a
+                  href="https://medium.com/@DaveChan/a-short-guide-to-remote-working-1a088c9097f1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative block group transition-opacity duration-200"
+                >
+                  <h3 className="text-xl font-medium transition-colors duration-200 group-hover:underline group-hover:text-gray-700 dark:group-hover:text-gray-300">A Guide To Remote Working</h3>
+                  <div className="absolute -bottom-8 left-0 right-0 h-px bg-gray-800/5 dark:bg-white/10"></div>
+                </a>
+
+                {/* Article 2 */}
+                <a
+                  href="https://medium.com/@DaveChan/interaction-design-framework-for-product-design-planning-41498438a435"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative block group transition-opacity duration-200"
+                >
+                  <h3 className="text-xl font-medium transition-colors duration-200 group-hover:underline group-hover:text-gray-700 dark:group-hover:text-gray-300">A Design Framework for Interaction Design</h3>
+                  <div className="absolute -bottom-8 left-0 right-0 h-px bg-gray-800/5 dark:bg-white/10"></div>
+                </a>
+
+                {/* Article 3 */}
+                <a
+                  href="https://medium.com/@DaveChan/how-starting-a-physical-product-project-made-me-a-better-digital-product-designer-part-1-317d4f046b53"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative block group transition-opacity duration-200"
+                >
+                  <h3 className="text-xl font-medium transition-colors duration-200 group-hover:underline group-hover:text-gray-700 dark:group-hover:text-gray-300">How Starting A Physical Product Project Made Me a Better Designer (Part 1)</h3>
+                  <div className="absolute -bottom-8 left-0 right-0 h-px bg-gray-800/5 dark:bg-white/10"></div>
+                </a>
+
+                {/* Article 4 */}
+                <a
+                  href="https://medium.com/@DaveChan/how-starting-a-physical-product-project-made-me-a-better-digital-product-designer-part-2-307fd5e0fe71"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative block group transition-opacity duration-200"
+                >
+                  <h3 className="text-xl font-medium transition-colors duration-200 group-hover:underline group-hover:text-gray-700 dark:group-hover:text-gray-300">How Starting A Physical Product Project Made Me a Better Designer (Part 2)</h3>
+                  <div className="absolute -bottom-8 left-0 right-0 h-px bg-gray-800/5 dark:bg-white/10"></div>
+                </a>
+
+                {/* Article 5 */}
+                <a
+                  href="https://medium.com/@DaveChan/what-is-the-difference-between-a-single-page-app-spa-and-a-webpage-f46f06ab8c0a"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative block group transition-opacity duration-200"
+                >
+                  <h3 className="text-xl font-medium transition-colors duration-200 group-hover:underline group-hover:text-gray-700 dark:group-hover:text-gray-300">The Difference Between A Single Page App and a Webpage</h3>
+                  <div className="absolute -bottom-8 left-0 right-0 h-px bg-gray-800/5 dark:bg-white/10"></div>
+                </a>
+
+                {/* Article 6 */}
+                <a
+                  href="https://medium.com/@DaveChan/level-up-your-teams-remote-work-culture-with-this-reading-list-2e32393dd19a"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative block group transition-opacity duration-200"
+                >
+                  <h3 className="text-xl font-medium transition-colors duration-200 group-hover:underline group-hover:text-gray-700 dark:group-hover:text-gray-300">A Reading List for Managers of Remote Teams</h3>
+                  <div className="absolute -bottom-8 left-0 right-0 h-px bg-gray-800/5 dark:bg-white/10"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </AnimatedContent>
+
 
         {/* Footer Section */}
         <AnimatedContent className="delay-600">
