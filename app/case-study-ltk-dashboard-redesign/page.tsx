@@ -30,7 +30,7 @@ export default function CaseStudyLTKDashboard() {
     {
       title: 'AI Chatbot',
       description: 'What if creators could chat with the app instead of searching for information? The AI Chatbot leverages LLMs to help creators understand their key business data; lifting insights and business summaries through conversations.',
-      media: '/chatbot.json',
+      media: '/chatbot2.json',
       isVideo: false,
       isLottie: true,
     },
@@ -379,7 +379,7 @@ export default function CaseStudyLTKDashboard() {
                 </div>
                 <div className="flex flex-col gap-2">
                   <div className="text-[32px] md:text-[36px] leading-[38px] md:leading-[40px] font-light text-black dark:text-white transition-colors duration-200">
-                    <AnimatedCounter value={5} suffix="%" />
+                    <AnimatedCounter value={157} suffix="%" />
                     <span className="text-[#8ECE72] text-[1em] inline-block -translate-y-[2px]">+</span>
                   </div>
                   <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">Creators who post</p>
