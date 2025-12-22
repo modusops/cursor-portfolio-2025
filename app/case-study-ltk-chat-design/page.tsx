@@ -364,6 +364,28 @@ For this project, I led research and design to support a successful launch that 
             </div>
             <div className="col-span-1 md:col-span-6 flex flex-col gap-6">
               {/* Metrics Grid - 3 columns */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="flex flex-col gap-2">
+                  <div className="text-[32px] md:text-[36px] leading-[38px] md:leading-[40px] font-light text-black dark:text-white transition-colors duration-200">
+                    <AnimatedCounter value={4} suffix="%" />
+                    <span className="text-[#8ECE72] text-[1em] inline-block -translate-y-[2px]">+</span>
+                  </div>
+                  <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">Daily active users</p>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <div className="text-[32px] md:text-[36px] leading-[38px] md:leading-[40px] font-light text-black dark:text-white transition-colors duration-200">
+                    <AnimatedCounter value={5} suffix="%" />
+                    <span className="text-[#8ECE72] text-[1em] inline-block -translate-y-[2px]">+</span>
+                  </div>
+                  <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">Conversion rate</p>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <div className="text-[32px] md:text-[36px] leading-[38px] md:leading-[40px] font-normal text-black dark:text-white transition-colors duration-200">
+                    -- <span className="text-[#adf98c]">↗</span>
+                  </div>
+                  <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">GMV Obfuscated by NDA </p>
+                </div>
+              </div>
               {/* Description Text */}
               <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-light text-black dark:text-white transition-colors duration-200">
               LTK Chat became one of the company's most significant KPI driver in 2025. My contributions led to additional company investment on the project. Ongoing user research and feedback synthesis continues to uncover new opportunities to provide the best community experience for users.
