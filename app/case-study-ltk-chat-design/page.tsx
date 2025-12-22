@@ -1,3 +1,5 @@
+"use client"
+
 import { CaseStudyWrapper } from '@/app/components/CaseStudyWrapper';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,8 +9,65 @@ import { AnimatedCounter } from '@/app/components/AnimatedCounter';
 import { Navigation } from '@/app/components/Navigation';
 import { TeamAvatars, type TeamMember } from '@/app/components/TeamAvatars';
 import { ViewportMedia } from '@/app/components/ViewportMedia';
+import { SpotlightCard } from '@/components/spotlight-card';
+import { useEffect, useState, useRef } from 'react';
 
 export default function CaseStudyLTKChatDesign() {
+  // State for projects carousel visibility
+  const [showLeftArrow, setShowLeftArrow] = useState(false)
+  const [showRightArrow, setShowRightArrow] = useState(true)
+  const [showLeftGradient, setShowLeftGradient] = useState(false)
+  const [showRightGradient, setShowRightGradient] = useState(true)
+  const carouselRef = useRef<HTMLDivElement>(null)
+
+  // Function to check scroll position and update visibility for projects carousel
+  const updateArrowVisibility = () => {
+    if (!carouselRef.current) return
+
+    const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current
+
+    // Show left arrow and gradient if not at the beginning
+    const isScrolledRight = scrollLeft > 10
+    setShowLeftArrow(isScrolledRight)
+    setShowLeftGradient(isScrolledRight)
+
+    // Show right arrow and gradient if not at the end
+    const hasMoreToScroll = scrollLeft + clientWidth < scrollWidth - 5
+    setShowRightArrow(hasMoreToScroll)
+    setShowRightGradient(hasMoreToScroll)
+  }
+
+  // Set up scroll event listener for the projects carousel
+  useEffect(() => {
+    const carousel = carouselRef.current
+    if (!carousel) return
+
+    // Initial check
+    updateArrowVisibility()
+
+    // Add scroll event listener
+    carousel.addEventListener("scroll", updateArrowVisibility)
+
+    // Add resize listener to update arrows when window size changes
+    window.addEventListener("resize", updateArrowVisibility)
+
+    return () => {
+      carousel.removeEventListener("scroll", updateArrowVisibility)
+      window.removeEventListener("resize", updateArrowVisibility)
+    }
+  }, [])
+
+  // Function to scroll the projects carousel
+  const scrollCarousel = (direction: "left" | "right") => {
+    if (!carouselRef.current) return
+
+    const scrollAmount = carouselRef.current.clientWidth / 2
+    carouselRef.current.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    })
+  }
+
   const teamMembers: TeamMember[] = [
     { name: 'Chaitanya Kola', image: '/chaitanya.png', alt: 'Chaitanya' },
     { name: 'Dave Chan', image: '/dave.png', alt: 'Dave' },
@@ -17,6 +76,34 @@ export default function CaseStudyLTKChatDesign() {
     { name: 'Liz Fox', image: '/liz.png', alt: 'Liz' },
     { name: 'Maddie Pelton', image: '/maddie.png', alt: 'Maddie' },
     { name: 'Nathan Fulkerson', image: '/nathan.png', alt: 'Nathan' },
+  ];
+
+  // Projects array - excluding current project (ltk-chat)
+  const projects = [
+    {
+      title: "LTK Creator",
+      description: "Helping creators understand their business",
+      image: "/feature-thumbnail-2.png",
+      slug: "creator",
+    },
+    {
+      title: "Lighten AI",
+      description: "Using AI to unlock real-time patient insights",
+      image: "/feature-thumbnail-5.png",
+      slug: "lighten",
+    },
+    {
+      title: "Sono",
+      description: "Building the future of knowledge management",
+      image: "/feature-thumbnail-6.png",
+      slug: "sono",
+    },
+    {
+      title: "Experiments",
+      description: "Learning through experimentation",
+      image: "/feature-thumbnail-4.png",
+      slug: "experiments",
+    },
   ];
 
   const slides1 = [
@@ -392,6 +479,155 @@ For this project, I led research and design to support a successful launch that 
               </p>
             </div>
           </section>
+          </AnimatedContent>
+
+          {/* More Projects Carousel */}
+          <AnimatedContent className="delay-1300">
+            <section className="grid grid-cols-1 md:grid-cols-10 gap-6 md:gap-12 px-8 md:px-16">
+              <div className="col-span-1 md:col-span-10">
+                <h2 className="text-[18px] leading-[24px] md:leading-[28px] font-light text-black dark:text-white transition-colors duration-200 mb-2">
+                  More projects
+                </h2>
+                
+                <div className="relative">
+                  {/* Mobile: Vertical Stack */}
+                  <div className="md:hidden">
+                    <div className="pt-2 pb-8 px-4 -mx-4">
+                      <div className="flex flex-col gap-6 stagger-children">
+                        {projects.map((project) => {
+                          return (
+                            <SpotlightCard
+                              key={project.slug}
+                              className="group w-full bg-gray-50 dark:bg-gray-900 rounded-xl p-6 hover-float relative flex flex-col transition-colors duration-500 ease-in-out hover:bg-gray-100 dark:hover:bg-gray-800 hover:shadow-md hover:z-10"
+                            >
+                              <Link href={project.slug === "creator" ? "/case-study-ltk-dashboard-redesign" : project.slug === "lighten" ? "/project-lighten-design" : `/projects/${project.slug}`} className="flex flex-col h-full">
+                                <div className="aspect-[4/3] relative mb-6 overflow-hidden transition-transform duration-300 group-hover:scale-105">
+                                  <Image
+                                    src={project.image || "/placeholder.jpg"}
+                                    alt={project.title}
+                                    fill
+                                    className="object-cover"
+                                  />
+                                </div>
+                                <div className="mt-auto">
+                                  <h2 className="text-2xl font-semibold text-black dark:text-white mb-1 transition-colors duration-200" style={{ letterSpacing: '-0.03em' }}>
+                                    {project.title}
+                                  </h2>
+                                  <p className="text-xs font-light text-gray-500 dark:text-white transition-colors duration-200" style={{ letterSpacing: '-0.03em' }}>
+                                    {project.description}
+                                  </p>
+                                </div>
+                              </Link>
+                            </SpotlightCard>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Desktop: Carousel Container with Feathering */}
+                  <div className="hidden md:block relative overflow-visible">
+                    <div className="pt-2 pb-8 px-4 -mx-4 overflow-hidden">
+                      {/* Left Feathering Gradient - Only show when scrolled */}
+                      <div
+                        className={`absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-r from-white dark:from-black to-transparent transition-opacity duration-300 ${
+                          showLeftGradient ? "opacity-100" : "opacity-0"
+                        }`}
+                      ></div>
+
+                      {/* Carousel */}
+                      <div
+                        ref={carouselRef}
+                        id="carousel-container"
+                        className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 pt-4 scrollbar-hide stagger-children"
+                        style={{ scrollBehavior: "smooth" }}
+                      >
+                        {projects.map((project) => {
+                          return (
+                            <SpotlightCard
+                              key={project.slug}
+                              className="group min-w-[85%] md:min-w-[45%] lg:min-w-[30%] flex-shrink-0 snap-center bg-gray-50 dark:bg-gray-900 rounded-xl p-6 hover-float relative flex flex-col transition-colors duration-500 ease-in-out hover:bg-gray-100 dark:hover:bg-gray-800 hover:shadow-md hover:z-10"
+                            >
+                              <Link href={project.slug === "creator" ? "/case-study-ltk-dashboard-redesign" : project.slug === "lighten" ? "/project-lighten-design" : `/projects/${project.slug}`} className="flex flex-col h-full">
+                                <div className="aspect-[4/3] relative mb-6 overflow-hidden transition-transform duration-300 group-hover:scale-105">
+                                  <Image
+                                    src={project.image || "/placeholder.jpg"}
+                                    alt={project.title}
+                                    fill
+                                    className="object-cover"
+                                  />
+                                </div>
+                                <div className="mt-auto">
+                                  <h2 className="text-2xl font-semibold text-black dark:text-white mb-1 transition-colors duration-200" style={{ letterSpacing: '-0.03em' }}>
+                                    {project.title}
+                                  </h2>
+                                  <p className="text-xs font-light text-gray-500 dark:text-white transition-colors duration-200" style={{ letterSpacing: '-0.03em' }}>
+                                    {project.description}
+                                  </p>
+                                </div>
+                              </Link>
+                            </SpotlightCard>
+                          );
+                        })}
+                      </div>
+
+                      {/* Right Feathering Gradient - Only show when there's more content */}
+                      <div
+                        className={`absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-l from-white dark:from-black to-transparent transition-opacity duration-300 ${
+                          showRightGradient ? "opacity-100" : "opacity-0"
+                        }`}
+                      ></div>
+                    </div>
+                  </div>
+
+                  {/* Navigation Arrows with Fade Effect - Hidden on mobile */}
+                  <button
+                    onClick={() => scrollCarousel("left")}
+                    className={`hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 z-20 items-center justify-center transition-all duration-300 ${
+                      showLeftArrow ? "opacity-50" : "opacity-0 pointer-events-none"
+                    }`}
+                    aria-label="Scroll left"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="size-5 text-gray-700 dark:text-gray-300"
+                    >
+                      <path d="m15 18-6-6 6-6" />
+                    </svg>
+                  </button>
+                  <button
+                    onClick={() => scrollCarousel("right")}
+                    className={`hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 z-20 items-center justify-center transition-all duration-300 ${
+                      showRightArrow ? "opacity-50" : "opacity-0 pointer-events-none"
+                    }`}
+                    aria-label="Scroll right"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="size-5 text-gray-700 dark:text-gray-300"
+                    >
+                      <path d="m9 18 6-6-6-6" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </section>
           </AnimatedContent>
         </div>
       </div>
