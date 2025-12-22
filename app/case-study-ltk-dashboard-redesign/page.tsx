@@ -377,13 +377,13 @@ export default function CaseStudyLTKDashboard() {
                   </div>
                   <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">User satisfaction</p>
                 </div>
-                <div className="flex flex-col gap-2">
+                {/* <div className="flex flex-col gap-2">
                   <div className="text-[32px] md:text-[36px] leading-[38px] md:leading-[40px] font-light text-black dark:text-white transition-colors duration-200">
                     <AnimatedCounter value={157} suffix="%" />
                     <span className="text-[#8ECE72] text-[1em] inline-block -translate-y-[2px]">+</span>
                   </div>
                   <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-normal text-black dark:text-white transition-colors duration-200">Creators who post</p>
-                </div>
+                </div> */}
                 {/* <div className="flex flex-col gap-2">
                   <div className="text-[32px] md:text-[36px] leading-[38px] md:leading-[40px] font-normal text-black dark:text-white transition-colors duration-200">
                     1234<span className="text-[#adf98c]">↗</span>
@@ -393,7 +393,7 @@ export default function CaseStudyLTKDashboard() {
               </div>
               {/* Description Text */}
               <p className="text-[18px] md:text-[20px] leading-[26px] md:leading-[30px] font-light text-black dark:text-white transition-colors duration-200">
-              We shipped the final solution in just under 6 months and saw a positive lift in post rates after the redesign. In addition the redesign resulted an increase in user satisfaction.
+              We shipped the final solution in just under 6 months and resulted a significant increase in user satisfaction.
               </p>
             </div>
           </section>
