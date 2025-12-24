@@ -95,9 +95,9 @@ export default function About() {
               </p>
 
               <h3 className="text-sm font-medium mt-12 mb-4 text-black dark:text-white transition-colors duration-200">
-                What design means to me
+                What great design looks like
               </h3>
-              <p className="text-gray-500 dark:text-gray-400">When people ask me what great design is, I immediately think back to the products and experiences that evoke positive memories. Great design for me isn't just about the aesthetics, it's about the emotions it evokes, and the connection it creates between the user and the product.
+              <p className="text-gray-500 dark:text-gray-400">Great design consists of the following qualities for me: it is well made, aesthetically pleasing, and functionally impressive. A step above great design are the ones that solve problems in intelligent and novel ways while making you feel something.
               </p>
 
             </div>
