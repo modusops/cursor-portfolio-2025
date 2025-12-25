@@ -686,6 +686,69 @@ export default function Home() {
           </div>
         </AnimatedContent>
 
+        {/* Testimonials Section */}
+        <AnimatedContent className="delay-450">
+          <div
+            className="py-20 bg-white dark:bg-black text-black dark:text-white rounded-xl my-20 border border-gray-200 dark:border-gray-700 transition-colors duration-200 relative"
+            style={{ boxShadow: "rgba(255, 255, 255, 0.3) 0px 1px 2px 0px inset" }}
+          >
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-4xl font-normal mb-12 flex items-center animate-item">
+                <span className="relative">
+                  Testimonials
+                  <div className="absolute -bottom-2 left-0 right-0 h-px bg-gray-800/15 dark:bg-white/20"></div>
+                </span>
+              </h2>
+
+              {/* Horizontal Scrolling Carousel */}
+              <div className="relative overflow-hidden">
+                {/* Left Feathering Gradient */}
+                <div className="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-r from-white dark:from-black to-transparent"></div>
+                
+                {/* Right Feathering Gradient */}
+                <div className="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-l from-white dark:from-black to-transparent"></div>
+                
+                <div className="inline-block whitespace-nowrap align-top" style={{ animation: 'scroll-left 54s linear infinite' }}>
+                  {/* Duplicate items for seamless loop */}
+                  {[...testimonials, ...testimonials].map((testimonial, index) => (
+                    <div
+                      key={`${testimonial.name}-${index}`}
+                      className="inline-block align-top px-8 w-[320px]"
+                    >
+                      <div className="flex flex-col gap-4">
+                        <p className="text-gray-600 dark:text-gray-400 text-base leading-6 transition-colors duration-200 whitespace-normal">
+                          {testimonial.quote}
+                        </p>
+                        <div className="flex flex-col gap-2">
+                          <div className="flex items-center gap-2">
+                            <Image
+                              src={testimonial.image}
+                              alt={testimonial.name}
+                              width={28}
+                              height={28}
+                              className="rounded-full flex-shrink-0"
+                            />
+                            <span className="font-medium text-l text-black dark:text-white transition-colors duration-200">
+                              {testimonial.name}
+                            </span>
+                          </div>
+                          <span className="text-gray-600 dark:text-gray-400 text-sm leading-6 transition-colors duration-200">
+                            {testimonial.title}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute bottom-6 right-6">
+              <PlusSign size="lg" />
+            </div>
+          </div>
+        </AnimatedContent>
+
         {/* Writing Section */}
         <AnimatedContent className="delay-500">
           <div
@@ -1062,42 +1125,42 @@ const projects = [
 const testimonials = [
   {
     quote:
-      "David is a master at taming the chaos of the 0 → 1 process. He has the rare ability to jump into the early stages of open-ended projects and rapidly develop structure and systems. He is proactive, works with little to no direction — and he's also very fast!",
-    name: "Tanuj Lalwani",
-    title: "Head of Design, Daylight",
-    image: "/diverse-person-portrait.png",
-    linkedin: "https://www.linkedin.com/in/tanujlalwani/",
+      "The designs Dave delivered were world class - clean, clear, and detailed. That kind of design thinking influences more than just pixels, it shapes the product direction. He often shares working frames with clear UX expectations, which reduces guesswork for the team. He shows strong design leadership by setting up syncs with developers regularly to make sure we are aligned, that had a clear impact on the quality and consistency of what we ship.",
+    name: "Ben Hilston",
+    title: "Engineering Manager, LTK",
+    image: "/benhilston.jpeg",
+    linkedin: "https://www.linkedin.com/in/ben-hillston-3913918/",
   },
   {
     quote:
-      "I cannot recommend David enough. Truly world-class in every sense of the word. From helping to visualize an ambitious product story & vision, to playing an active role in bringing on senior full-time talent, and everything in between – David can seemingly do it all. Our product, team, culture, and customers are in a stronger position thanks to our time together.",
-    name: "Jinen Kamdar",
-    title: "CPO, Gather",
-    image: "/diverse-person-portrait.png",
-    linkedin: "https://www.linkedin.com/in/jinen/",
+      "Dave was our first hire at Sono and completely transformed the quality of our product with his amazing UX / UI skills. We constantly hear how pleasant and intuitive Sono's UX is, and that's all Dave! Best of all, he's always ready to jump in beyond his scope of work (unprompted). He helped with marketing, sales, support, and much more. We're lucky to have found him and it has been a pleasure working w/ Dave!",
+    name: "Zain Ahmed",
+    title: "Founder & CEO, Sono",
+    image: "/zainahmed.jpeg",
+    linkedin: "https://www.linkedin.com/in/zainuahmed/",
   },
   {
     quote:
-      "David is a superb designer. He grasps what we are seeking to build and is lightning fast at turning our thoughts into designs. This facilitates a quick feedback cycle leading to designs we are all happy with in an impressively short period of time.",
-    name: "Greg Dooley",
-    title: "Engineering Partner, GV",
-    image: "/diverse-person-portrait.png",
-    linkedin: "https://www.linkedin.com/in/greg-dooley-03809924/",
+      "I highly recommend Dave for any product team. During our time together at LTK, he was laser-focused on user needs, pushed for UX excellence in execution, and served as a culture leader on our squad. In addition, he was always exploring new technology to help increase our pace and quality of work; leveraging AI to create high functionality prototypes that gave us more in-depth results in user testing. His can-do attitude will help turbo-charge your team's pace.",
+    name: "Jeromy Ko",
+    title: "Product Lead, LTK",
+    image: "/jeromy.png",
+    linkedin: "https://www.linkedin.com/in/jeromy-k-50835424/",
   },
   {
     quote:
-      "Working with David transformed our product development process. His design thinking approach helped us identify user pain points we hadn't considered. Within weeks, he delivered a comprehensive design system that our engineering team could implement seamlessly. His work directly contributed to a 40% increase in user engagement.",
-    name: "Sarah Chen",
-    title: "Founder & CEO, Wavelength",
-    image: "/diverse-person-portrait.png",
-    linkedin: "https://www.linkedin.com/in/havedare/",
+      "Working closely with Dave, our Head of Design, has been fantastic. Not only is he a great designer, but he's also a great person! Dave's vision allows him to lay out the foundational design elements of our startup. His design system work allows engineering to efficiently deliver key features. Additionally, his ability to run workshops has been invaluable in clarifying our strategic thinking. Dave's quick and effective design solutions make him an unparalleled leader in design, and I definitely recommend him.",
+    name: "Nii Mante",
+    title: "Founder & CTO, Sono",
+    image: "/niimante.jpeg",
+    linkedin: "https://www.linkedin.com/in/nmante/",
   },
   {
     quote:
-      "David's ability to balance aesthetic excellence with functional design is unmatched. When we brought him in, we had a complex product with an unclear user journey. He simplified everything without sacrificing depth, creating an intuitive experience that our users love. His collaborative approach made the entire process enjoyable and educational for our team.",
-    name: "Marcus Johnson",
-    title: "Product Director, Nexus Health",
-    image: "/diverse-person-portrait.png",
-    linkedin: "https://www.linkedin.com/in/marcus-johnson-755749216/",
+      "Dave is one of the most thoughtful and supportive designers I have ever had the pleasure of working with. During our time together at Shutterstock, where he was my manager, Dave was always available and encouraging, instructive without being prescriptive. Dave created an environment that fostered independence and empowerment while offering guidance when needed through complex design and workplace matters. His great design and managerial instincts made him a fantastic teammate and mentor and I'm lucky to have had the opportunity to work with him.",
+    name: "Matthew Gottesman",
+    title: "Product Designer, Meta",
+    image: "/mattgottesman.jpeg",
+    linkedin: "https://www.linkedin.com/in/matthewgottesman/",
   },
 ]
