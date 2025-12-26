@@ -716,7 +716,7 @@ export default function Home() {
                       className="inline-block align-top px-8 w-[320px]"
                     >
                       <div className="flex flex-col gap-4">
-                        <p className="text-gray-600 dark:text-gray-400 text-base leading-6 transition-colors duration-200 whitespace-normal">
+                        <p className="text-gray-600 dark:text-gray-400 text-sm leading-5 transition-colors duration-200 whitespace-normal">
                           {testimonial.quote}
                         </p>
                         <div className="flex flex-col gap-2">
@@ -728,11 +728,11 @@ export default function Home() {
                               height={28}
                               className="rounded-full flex-shrink-0"
                             />
-                            <span className="font-medium text-l text-black dark:text-white transition-colors duration-200">
+                            <span className="font-medium text-sm text-black dark:text-white transition-colors duration-200">
                               {testimonial.name}
                             </span>
                           </div>
-                          <span className="text-gray-600 dark:text-gray-400 text-sm leading-6 transition-colors duration-200">
+                          <span className="text-gray-600 dark:text-gray-400 text-xs leading-6 transition-colors duration-200">
                             {testimonial.title}
                           </span>
                         </div>
@@ -1125,7 +1125,7 @@ const projects = [
 const testimonials = [
   {
     quote:
-      "The designs Dave delivered were world class - clean, clear, and detailed. That kind of design thinking influences more than just pixels, it shapes the product direction. He often shares working frames with clear UX expectations, which reduces guesswork for the team. He shows strong design leadership by setting up syncs with developers regularly to make sure we are aligned, that had a clear impact on the quality and consistency of what we ship.",
+      "The designs Dave delivered were world class - clean, clear, and detailed. That kind of design thinking influences more than just pixels, it shapes the product direction. He shows strong design leadership by setting up syncs with developers regularly to make sure we are aligned, that had a clear impact on the quality and consistency of what we ship.",
     name: "Ben Hilston",
     title: "Engineering Manager, LTK",
     image: "/benhilston.jpeg",
@@ -1133,7 +1133,7 @@ const testimonials = [
   },
   {
     quote:
-      "Dave was our first hire at Sono and completely transformed the quality of our product with his amazing UX / UI skills. We constantly hear how pleasant and intuitive Sono's UX is, and that's all Dave! Best of all, he's always ready to jump in beyond his scope of work (unprompted). He helped with marketing, sales, support, and much more. We're lucky to have found him and it has been a pleasure working w/ Dave!",
+      "Dave was our first hire at Sono and completely transformed the quality of our product with his amazing UX / UI skills. Best of all, he's always ready to jump in beyond his scope of work (unprompted). We're lucky to have found him and it has been a pleasure working with Dave!",
     name: "Zain Ahmed",
     title: "Founder & CEO, Sono",
     image: "/zainahmed.jpeg",
@@ -1141,7 +1141,7 @@ const testimonials = [
   },
   {
     quote:
-      "I highly recommend Dave for any product team. During our time together at LTK, he was laser-focused on user needs, pushed for UX excellence in execution, and served as a culture leader on our squad. In addition, he was always exploring new technology to help increase our pace and quality of work; leveraging AI to create high functionality prototypes that gave us more in-depth results in user testing. His can-do attitude will help turbo-charge your team's pace.",
+      "I highly recommend Dave for any product team. He's laser-focused on user needs, pushes for UX excellence, and is seen as a culture leader on our squad. He always explores new technology to help increase our pace and quality of work; leveraging AI that gave us more in-depth results in user testing. His can-do attitude will help turbo-charge your team's pace.",
     name: "Jeromy Ko",
     title: "Product Lead, LTK",
     image: "/jeromy.png",
@@ -1149,7 +1149,7 @@ const testimonials = [
   },
   {
     quote:
-      "Working closely with Dave, our Head of Design, has been fantastic. Not only is he a great designer, but he's also a great person! Dave's vision allows him to lay out the foundational design elements of our startup. His design system work allows engineering to efficiently deliver key features. Additionally, his ability to run workshops has been invaluable in clarifying our strategic thinking. Dave's quick and effective design solutions make him an unparalleled leader in design, and I definitely recommend him.",
+      "Working closely with Dave, our Head of Design, has been fantastic. Not only is he a great designer, but he's also a great person! Dave's vision allows him to lay out the foundational design elements of our startup. Additionally, his ability to run workshops has been invaluable in clarifying our strategic thinking. I definitely recommend him.",
     name: "Nii Mante",
     title: "Founder & CTO, Sono",
     image: "/niimante.jpeg",
@@ -1157,7 +1157,7 @@ const testimonials = [
   },
   {
     quote:
-      "Dave is one of the most thoughtful and supportive designers I have ever had the pleasure of working with. During our time together at Shutterstock, where he was my manager, Dave was always available and encouraging, instructive without being prescriptive. Dave created an environment that fostered independence and empowerment while offering guidance when needed through complex design and workplace matters. His great design and managerial instincts made him a fantastic teammate and mentor and I'm lucky to have had the opportunity to work with him.",
+      "Dave is one of the most thoughtful and supportive designers I have ever had the pleasure of working with. As a manager, Dave created an environment that fostered independence and empowerment while offering guidance when needed. His great design and managerial instincts made him a fantastic teammate and mentor and I'm lucky to have had the opportunity to work with him.",
     name: "Matthew Gottesman",
     title: "Product Designer, Meta",
     image: "/mattgottesman.jpeg",
