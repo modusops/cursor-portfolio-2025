@@ -117,16 +117,16 @@ export default function CaseStudyLTKChatDesign() {
     {
       title: 'Creating a familiar experience',
       description: 'The information architecture leverages familiar community platform patterns to support user adoption, while optimizing the layout for conversation flow and content discoverability.',
-      media: ['/casestudy-ltk-chat-slide2.jpg', '/casestudy-ltk-chat-slide2-2.jpg'],
+      media: ['/familiar1.json', '/familiar2.json','/familiar3.json'],
       isVideo: false,
-      isLottie: [false, false],
+      isLottie: [true, true, true],
     },
     {
       title: 'Identity & discovery',
       description: 'The design includes creator badges to help members distinguish the community owner from followers. Avatars appear within threads to surface other members, encouraging new connections and drive conversations.',
-      media: '/casestudy-ltk-chat-slide3.jpg',
+      media: '/identity.json',
       isVideo: false,
-      isLottie: false,
+      isLottie: true,
     },
   ];
 
