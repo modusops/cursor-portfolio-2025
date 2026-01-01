@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import Script from "next/script"
 import { ThemeProvider } from "@/components/theme-provider"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { ChatButton } from "@/components/chat-button"
 import { GridBackground } from "@/components/grid-background"
 import "./globals.css"
 
@@ -61,6 +62,7 @@ export default function RootLayout({
         <GridBackground />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
+          <ChatButton />
           <ThemeToggle />
         </ThemeProvider>
       </body>
