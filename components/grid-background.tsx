@@ -14,11 +14,12 @@ export function GridBackground() {
   // Hide grid background on project pages and case study pages
   const isProjectPage = pathname?.startsWith("/projects/")
   const isCaseStudyPage = pathname?.startsWith("/new-project-page-test-") || pathname?.startsWith("/case-study-") || pathname?.startsWith("/project-lighten-design")
+  const isChatPage = pathname === "/chat"
 
   if (!mounted || isProjectPage || isCaseStudyPage) return null
 
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+    <div className={`fixed inset-0 ${isChatPage ? 'z-[1]' : 'z-0'} pointer-events-none overflow-hidden`}>
       {/* Horizontal lines */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gray-800/10 dark:bg-white/10" />
       <div className="absolute top-[33vh] left-0 right-0 h-px bg-gray-800/10 dark:bg-white/10" />
