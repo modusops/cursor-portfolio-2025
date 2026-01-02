@@ -20,6 +20,7 @@ const numberToSuggestionId: Record<string, SuggestionId> = {
 export function WelcomeState({ suggestions, onSuggestionSelect }: WelcomeStateProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const scrollAudioRef = useRef<HTMLAudioElement | null>(null)
+  const [isTypewriterComplete, setIsTypewriterComplete] = useState(false)
 
   // Initialize bong audio with preload
   useEffect(() => {
@@ -122,6 +123,7 @@ export function WelcomeState({ suggestions, onSuggestionSelect }: WelcomeStatePr
   // Handle body text completion
   const handleBodyComplete = () => {
     stopScrollAudio()
+    setIsTypewriterComplete(true)
   }
 
   // Keyboard shortcut handler
@@ -151,7 +153,7 @@ export function WelcomeState({ suggestions, onSuggestionSelect }: WelcomeStatePr
   }, [suggestions, onSuggestionSelect])
 
   return (
-    <div className="flex flex-col gap-4 items-start w-full h-[612px] md:h-auto overflow-y-auto">
+    <div className="flex flex-col gap-4 items-start w-full h-[612px] md:h-auto overflow-y-auto chat-scrollbar">
       {/* Welcome Text */}
       <div className="flex flex-col gap-4 items-start w-full">
         {/* Intro */}
@@ -177,12 +179,17 @@ export function WelcomeState({ suggestions, onSuggestionSelect }: WelcomeStatePr
       </div>
 
       {/* Suggestion Buttons */}
-      <div className="w-full flex flex-col gap-3">
-        {suggestions.map((suggestion, index) => (
+      {isTypewriterComplete && (
+        <div className="w-full flex flex-col gap-3">
+          {suggestions.map((suggestion, index) => (
           <button
             key={suggestion.id}
             onClick={() => handleSuggestionClick(suggestion)}
-            className="flex gap-2 items-start w-auto group"
+            className="flex gap-2 items-start w-auto group opacity-0 animate-fade-in"
+            style={{
+              animationDelay: `${index * 100}ms`,
+              animationFillMode: 'forwards'
+            }}
           >
             {/* Number Badge */}
             {/* <div className="bg-gray-800 dark:bg-gray-800 border border-gray-700 dark:border-gray-700 flex items-center justify-center p-2.5 rounded-2xl shrink-0 w-9 h-9">
@@ -198,7 +205,8 @@ export function WelcomeState({ suggestions, onSuggestionSelect }: WelcomeStatePr
             </div>
           </button>
         ))}
-      </div>
+        </div>
+      )}
     </div>
   )
 }
