@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import { WelcomeState } from "./components/WelcomeState"
 import { ResponseState } from "./components/ResponseState"
 import { ExitChatBanner } from "./components/ExitChatBanner"
+import { ChatGridBackground } from "./components/ChatGridBackground"
 
 export type SuggestionId = 
   | "tell-me-about-yourself"
@@ -174,6 +175,7 @@ export default function ChatPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-black transition-colors duration-200 flex flex-col items-center justify-center p-4 relative z-10">
+      <ChatGridBackground />
       {/* Outer Container */}
       <div className="bg-gray-900 dark:bg-gray-900 flex flex-col gap-2.5 items-center overflow-hidden p-4 rounded-[48px] w-full max-w-2xl relative z-10">
         {/* Content Container */}
