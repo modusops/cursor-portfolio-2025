@@ -202,7 +202,7 @@ export default function ChatPage() {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyPress={handleInputKeyPress}
-          placeholder={isWelcomeState ? "Enter a number or type About, Projects, Resume, Examples, Restart" : "Type your question..."}
+          placeholder={isWelcomeState ? "Enter a number or type About, Projects, Resume, Examples, Restart" : "Enter a number or type About, Projects, Resume, Examples, Restart"}
           className="bg-black dark:bg-black border border-gray-700 dark:border-gray-700 flex h-12 items-center justify-between px-4 py-2 rounded-[32px] shrink-0 w-full text-sm font-normal text-white dark:text-white placeholder:text-gray-700 dark:placeholder:text-gray-700 leading-[22px] outline-none focus:border-gray-600 dark:focus:border-gray-600 transition-colors"
         />
       </div>

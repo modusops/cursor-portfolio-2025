@@ -169,7 +169,7 @@ export function WelcomeState({ suggestions, onSuggestionSelect }: WelcomeStatePr
         <div className="flex flex-col items-start w-full">
           <p className="font-light leading-[28px] text-lg text-gray-400 dark:text-gray-400 w-full">
             <TypewriterText 
-              text="Hi! I'm Dave. I'm a product designer based in Seattle. What do you wanna know about me?"
+              text="Hi! I'm Dave 👋. Nice to meet you. I'm a product designer and builder. What do you wanna know about me?"
               delay={50}
               onStart={startScrollAudio}
               onComplete={handleBodyComplete}
@@ -182,10 +182,9 @@ export function WelcomeState({ suggestions, onSuggestionSelect }: WelcomeStatePr
       {isTypewriterComplete && (
         <div className="w-full flex flex-col gap-3">
           {suggestions.map((suggestion, index) => (
-          <button
+          <div
             key={suggestion.id}
-            onClick={() => handleSuggestionClick(suggestion)}
-            className="flex gap-2 items-start w-auto group opacity-0 animate-fade-in"
+            className="flex gap-2 items-start w-auto opacity-0 animate-fade-in"
             style={{
               animationDelay: `${index * 100}ms`,
               animationFillMode: 'forwards'
@@ -198,12 +197,15 @@ export function WelcomeState({ suggestions, onSuggestionSelect }: WelcomeStatePr
               </span>
             </div> */}
             {/* Text Button */}
-            <div className="bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center p-2.5 rounded-2xl text-left group-hover:bg-gray-200 dark:group-hover:bg-gray-700 transition-all duration-200">
+            <button
+              onClick={() => handleSuggestionClick(suggestion)}
+              className="bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center p-2.5 rounded-2xl text-left hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 cursor-pointer"
+            >
               <span className="text-xs font-light text-gray-700 dark:text-gray-300 leading-4 whitespace-nowrap">
                 {suggestion.text}
               </span>
-            </div>
-          </button>
+            </button>
+          </div>
         ))}
         </div>
       )}
