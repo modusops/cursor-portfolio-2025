@@ -11,7 +11,7 @@ export function ChatButton() {
   return (
     <Link
       href={isChatPage ? "/" : "/chat"}
-      className="fixed bottom-20 right-6 z-50 h-10 w-10 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-700 hidden md:flex"
+      className="fixed bottom-20 right-6 z-50 h-10 w-10 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-700"
       aria-label={isChatPage ? "Go to home" : "Open chat"}
     >
       {isChatPage ? (
