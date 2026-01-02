@@ -13,6 +13,7 @@ interface ResponseStateProps {
   allSuggestions: Prompt[]
   onPromptClick: (promptId: SuggestionId) => void
   onSuggestionSelect: (suggestion: Prompt) => void
+  inputError?: string | null
 }
 
 const numberToSuggestionId: Record<string, SuggestionId> = {
@@ -30,10 +31,12 @@ export function ResponseState({
   allSuggestions,
   onPromptClick,
   onSuggestionSelect,
+  inputError,
 }: ResponseStateProps) {
   const promptBarRef = useRef<HTMLDivElement>(null)
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [responseKey, setResponseKey] = useState(0)
+  const [isTypewriterComplete, setIsTypewriterComplete] = useState(false)
   const responseContent = currentPromptId && currentPromptId !== "exit-chat"
     ? responses[currentPromptId as keyof typeof responses] || "Response not found."
     : "Response not found."
@@ -102,10 +105,17 @@ export function ResponseState({
     }
   }, [availableSuggestions, allSuggestions, onSuggestionSelect])
 
-  // Reset response key when prompt changes to restart TypewriterText animation
+  // Reset response key and typewriter completion state when prompt changes to restart TypewriterText animation
   useEffect(() => {
     setResponseKey(prev => prev + 1)
+    setIsTypewriterComplete(false)
+    // Clear error when prompt changes (handled by parent clearing inputError)
   }, [currentPromptId])
+
+  // Handle typewriter completion
+  const handleTypewriterComplete = () => {
+    setIsTypewriterComplete(true)
+  }
 
   // Scroll prompt bar to show selected prompt
   useEffect(() => {
@@ -118,13 +128,19 @@ export function ResponseState({
   }, [currentPromptId])
 
   return (
-    <div className="flex flex-col h-[612px] md:min-h-[80vh] w-full overflow-y-auto">
+    <div className="flex flex-col h-[612px] md:min-h-[80vh] w-full overflow-y-auto chat-scrollbar">
       {/* Sticky Prompt Bar */}
       <div className="sticky top-0 z-10 py-0 w-full">
-        <div className="py-0 w-full">
+        <div className="py-0 w-full relative">
+          {/* Left Feathering Gradient */}
+          <div className="absolute left-0 top-0 bottom-0 w-2 z-10 pointer-events-none bg-gradient-to-r from-black dark:from-black to-transparent"></div>
+          
+          {/* Right Feathering Gradient */}
+          <div className="absolute right-0 top-0 bottom-0 w-2 z-10 pointer-events-none bg-gradient-to-l from-black dark:from-black to-transparent"></div>
+          
           <div
             ref={promptBarRef}
-            className="flex items-start gap-2 overflow-x-auto overflow-y-hidden scrollbar-hide w-full"
+            className="flex items-start gap-2 overflow-x-auto overflow-y-hidden scrollbar-hide w-full relative"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -148,19 +164,26 @@ export function ResponseState({
       {/* Response Content Area */}
       <div className="flex-1 py-0 mt-2 w-full" style={{ width: '100%' }}>
         <div className="flex flex-col items-start w-full" style={{ width: '100%' }}>
-          <p className="font-light leading-[28px] text-xl text-gray-400 dark:text-gray-400 w-full whitespace-pre-wrap" style={{ width: '100%' }}>
-            <TypewriterText 
-              key={responseKey}
-              text={responseContent}
-              delay={25}
-            />
-          </p>
+          {inputError ? (
+            <p className="font-light leading-[28px] text-xl text-red-400 dark:text-red-400 w-full">
+              {inputError}
+            </p>
+          ) : (
+            <p className="font-light leading-[28px] text-xl text-gray-400 dark:text-gray-400 w-full whitespace-pre-wrap" style={{ width: '100%' }}>
+              <TypewriterText 
+                key={responseKey}
+                text={responseContent}
+                delay={25}
+                onComplete={handleTypewriterComplete}
+              />
+            </p>
+          )}
         </div>
 
         {/* Updated Suggestions */}
-        {availableSuggestions.length > 0 && (
+        {isTypewriterComplete && availableSuggestions.length > 0 && (
           <div className="mt-4 flex flex-col gap-3">
-            {availableSuggestions.map((suggestion) => {
+            {availableSuggestions.map((suggestion, index) => {
               // Find the original index in allSuggestions to get the correct number
               const originalIndex = allSuggestions.findIndex(s => s.id === suggestion.id)
               const suggestionNumber = originalIndex + 1
@@ -168,7 +191,11 @@ export function ResponseState({
                 <button
                   key={suggestion.id}
                   onClick={() => handleSuggestionClick(suggestion)}
-                  className="flex gap-2 items-start w-auto group"
+                  className="flex gap-2 items-start w-auto group opacity-0 animate-fade-in"
+                  style={{
+                    animationDelay: `${index * 100}ms`,
+                    animationFillMode: 'forwards'
+                  }}
                 >
                   {/* Number Badge */}
                   {/* <div className="bg-gray-800 dark:bg-gray-800 border border-gray-700 dark:border-gray-700 flex items-center justify-center p-2.5 rounded-2xl shrink-0 w-9 h-9">

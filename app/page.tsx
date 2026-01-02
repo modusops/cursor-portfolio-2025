@@ -9,6 +9,7 @@ import { TypewriterText } from "./components/TypewriterText"
 import { Navigation } from "./components/Navigation"
 import { SpotlightPill } from "@/components/spotlight-pill"
 import { SpotlightCard } from "@/components/spotlight-card"
+import { ChatEntryBanner } from "@/components/chat-entry-banner"
 
 export default function Home() {
   // Scroll to top when component mounts
@@ -174,6 +175,7 @@ export default function Home() {
         {/* Hero Section - Reduced top padding on mobile */}
         <AnimatedContent>
           <div className="py-8 md:pt-44 md:pb-20 relative stagger-children">
+            <ChatEntryBanner />
             <h1
               className="text-4xl md:text-6xl lg:text-7xl font-[200] leading-tight tracking-wider text-black dark:text-white max-w-5xl transition-colors duration-200 font-sans"
               style={{ fontWeight: 200, letterSpacing: "-0.01em" }}

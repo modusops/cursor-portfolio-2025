@@ -62,7 +62,6 @@ export default function RootLayout({
         <GridBackground />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
-          <ChatButton />
           <ThemeToggle />
         </ThemeProvider>
       </body>
