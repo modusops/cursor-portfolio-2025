@@ -17,11 +17,11 @@ export interface Prompt {
 }
 
 const allSuggestions: Prompt[] = [
-  { id: "tell-me-about-yourself", text: "Tell me about yourself." },
-  { id: "what-are-you-working-on", text: "What are you working on now?" },
-  { id: "can-i-see-your-resume", text: "Can I see your resume?" },
-  { id: "examples-of-work", text: "Let's see some examples of your work." },
-  { id: "exit-chat", text: "Restart Chat" },
+  { id: "tell-me-about-yourself", text: "( 1 ) Tell me about yourself." },
+  { id: "what-are-you-working-on", text: "( 2 ) What are you working on now?" },
+  { id: "can-i-see-your-resume", text: "( 3 ) Can I see your resume?" },
+  { id: "examples-of-work", text: "( 4 ) Let's see some examples of your work." },
+  { id: "exit-chat", text: "( 5 ) Restart Chat" },
 ]
 
 export default function ChatPage() {
@@ -65,7 +65,7 @@ export default function ChatPage() {
       {/* Outer Container */}
       <div className="bg-gray-900 dark:bg-gray-900 flex flex-col gap-2.5 items-center overflow-hidden p-4 rounded-[48px] w-full max-w-2xl relative z-10">
         {/* Content Container */}
-        <div className="bg-black dark:bg-black border border-gray-700 dark:border-gray-700 flex flex-col gap-4 grow items-start min-h-0 p-4 rounded-[32px] w-full">
+        <div className="bg-black dark:bg-black border border-gray-700 dark:border-gray-700 flex flex-col gap-4 grow items-start min-h-0 p-4 rounded-[32px] w-full max-h-[60vh] md:max-h-none overflow-y-auto">
           {isWelcomeState ? (
             <WelcomeState
               suggestions={allSuggestions}

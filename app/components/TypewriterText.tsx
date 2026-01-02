@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 interface TypewriterTextProps {
   text: string;
@@ -8,6 +8,8 @@ interface TypewriterTextProps {
   className?: string;
   style?: React.CSSProperties;
   onComplete?: () => void;
+  onStart?: () => void;
+  showCursor?: boolean;
 }
 
 export const TypewriterText: React.FC<TypewriterTextProps> = ({
@@ -15,10 +17,21 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
   delay = 50,
   className = '',
   style = {},
-  onComplete
+  onComplete,
+  onStart,
+  showCursor = true
 }) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
+  const hasStartedRef = useRef(false);
+
+  // Call onStart when component mounts and typing is about to begin
+  useEffect(() => {
+    if (!hasStartedRef.current && text.length > 0 && onStart) {
+      hasStartedRef.current = true
+      onStart()
+    }
+  }, [onStart, text.length])
 
   useEffect(() => {
     if (currentIndex < text.length) {
@@ -36,7 +49,7 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
   return (
     <span className={className} style={style}>
       {displayText}
-      <span className="animate-blink">|</span>
+      {showCursor && <span className="animate-blink">|</span>}
     </span>
   );
 }; 
