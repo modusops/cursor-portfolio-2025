@@ -11,12 +11,12 @@ export function GridBackground() {
     setMounted(true)
   }, [])
 
-  // Hide grid background on project pages and case study pages
+  // Hide grid background on project pages, case study pages, and chat page (has its own grid)
   const isProjectPage = pathname?.startsWith("/projects/")
   const isCaseStudyPage = pathname?.startsWith("/new-project-page-test-") || pathname?.startsWith("/case-study-") || pathname?.startsWith("/project-lighten-design")
   const isChatPage = pathname === "/chat"
 
-  if (!mounted || isProjectPage || isCaseStudyPage) return null
+  if (!mounted || isProjectPage || isCaseStudyPage || isChatPage) return null
 
   return (
     <div className={`fixed inset-0 ${isChatPage ? 'z-[1]' : 'z-0'} pointer-events-none overflow-hidden`}>

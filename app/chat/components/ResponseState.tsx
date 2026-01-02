@@ -168,7 +168,7 @@ export function ResponseState({
                 <TypewriterText 
                   key={responseKey}
                   text={responseContent}
-                  delay={25}
+                  delay={7}
                   onComplete={handleTypewriterComplete}
                 />
               </p>
