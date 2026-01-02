@@ -131,16 +131,10 @@ export function ResponseState({
     <div className="flex flex-col h-[612px] md:min-h-[80vh] w-full overflow-y-auto chat-scrollbar">
       {/* Sticky Prompt Bar */}
       <div className="sticky top-0 z-10 py-0 w-full">
-        <div className="py-0 w-full relative">
-          {/* Left Feathering Gradient */}
-          <div className="absolute left-0 top-0 bottom-0 w-2 z-10 pointer-events-none bg-gradient-to-r from-black dark:from-black to-transparent"></div>
-          
-          {/* Right Feathering Gradient */}
-          <div className="absolute right-0 top-0 bottom-0 w-2 z-10 pointer-events-none bg-gradient-to-l from-black dark:from-black to-transparent"></div>
-          
+        <div className="py-0 w-full">
           <div
             ref={promptBarRef}
-            className="flex items-start gap-2 overflow-x-auto overflow-y-hidden scrollbar-hide w-full relative"
+            className="flex items-start gap-2 overflow-x-auto overflow-y-hidden scrollbar-hide w-full"
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
@@ -169,14 +163,141 @@ export function ResponseState({
               {inputError}
             </p>
           ) : (
-            <p className="font-light leading-[28px] text-xl text-gray-400 dark:text-gray-400 w-full whitespace-pre-wrap" style={{ width: '100%' }}>
-              <TypewriterText 
-                key={responseKey}
-                text={responseContent}
-                delay={25}
-                onComplete={handleTypewriterComplete}
-              />
-            </p>
+            <>
+              <p className="font-light leading-[28px] text-xl text-gray-400 dark:text-gray-400 w-full whitespace-pre-wrap" style={{ width: '100%' }}>
+                <TypewriterText 
+                  key={responseKey}
+                  text={responseContent}
+                  delay={25}
+                  onComplete={handleTypewriterComplete}
+                />
+              </p>
+              {currentPromptId === "can-i-see-your-resume" && isTypewriterComplete && (
+                <div className="mt-6">
+                  <a
+                    href="/dave-chan-resume-web-12302025.pdf"
+                    download="dave-chan-resume-web-12302025.pdf"
+                    className="inline-flex items-center bg-gray-100 dark:bg-gray-800 rounded-3xl px-6 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white transition-all duration-200"
+                  >
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      viewBox="0 0 24 24" 
+                      width="20" 
+                      height="20" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      className="mr-3"
+                    >
+                      <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
+                      <path d="M14 2v4a2 2 0 0 0 2 2h4m-8 10v-6m-3 3l3 3l3-3"/>
+                    </svg>
+                    Download Resume
+                  </a>
+                </div>
+              )}
+              {currentPromptId === "what-are-you-working-on" && isTypewriterComplete && (
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a
+                    href="https://www.shopltk.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center bg-gray-100 dark:bg-gray-800 rounded-3xl px-6 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white transition-all duration-200"
+                  >
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      viewBox="0 0 24 24" 
+                      width="20" 
+                      height="20" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      className="mr-3"
+                    >
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                      <polyline points="15 3 21 3 21 9"/>
+                      <line x1="10" x2="21" y1="14" y2="3"/>
+                    </svg>
+                    LTK Website
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/davejuntochan/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center bg-gray-100 dark:bg-gray-800 rounded-3xl px-6 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white transition-all duration-200"
+                  >
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      viewBox="0 0 24 24" 
+                      width="20" 
+                      height="20" 
+                      fill="currentColor"
+                      className="mr-3"
+                    >
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
+                      <circle cx="4" cy="4" r="2"/>
+                    </svg>
+                    My LinkedIn
+                  </a>
+                </div>
+              )}
+              {currentPromptId === "examples-of-work" && isTypewriterComplete && (
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a
+                    href="https://davechan.design/case-study-ltk-dashboard-redesign"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center bg-gray-100 dark:bg-gray-800 rounded-3xl px-6 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white transition-all duration-200"
+                  >
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      viewBox="0 0 24 24" 
+                      width="20" 
+                      height="20" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      className="mr-3"
+                    >
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                      <polyline points="15 3 21 3 21 9"/>
+                      <line x1="10" x2="21" y1="14" y2="3"/>
+                    </svg>
+                    📊 LTK Creator
+                  </a>
+                  <a
+                    href="https://davechan.design/case-study-ltk-chat-design"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center bg-gray-100 dark:bg-gray-800 rounded-3xl px-6 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white transition-all duration-200"
+                  >
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      viewBox="0 0 24 24" 
+                      width="20" 
+                      height="20" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      className="mr-3"
+                    >
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                      <polyline points="15 3 21 3 21 9"/>
+                      <line x1="10" x2="21" y1="14" y2="3"/>
+                    </svg>
+                    💬 LTK Chat
+                  </a>
+                </div>
+              )}
+            </>
           )}
         </div>
 
@@ -188,10 +309,9 @@ export function ResponseState({
               const originalIndex = allSuggestions.findIndex(s => s.id === suggestion.id)
               const suggestionNumber = originalIndex + 1
               return (
-                <button
+                <div
                   key={suggestion.id}
-                  onClick={() => handleSuggestionClick(suggestion)}
-                  className="flex gap-2 items-start w-auto group opacity-0 animate-fade-in"
+                  className="flex gap-2 items-start w-auto opacity-0 animate-fade-in"
                   style={{
                     animationDelay: `${index * 100}ms`,
                     animationFillMode: 'forwards'
@@ -204,12 +324,15 @@ export function ResponseState({
                     </span>
                   </div> */}
                   {/* Text Button */}
-                  <div className="bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center p-2.5 rounded-2xl text-left group-hover:bg-gray-200 dark:group-hover:bg-gray-700 transition-all duration-200">
+                  <button
+                    onClick={() => handleSuggestionClick(suggestion)}
+                    className="bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center p-2.5 rounded-2xl text-left hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 cursor-pointer"
+                  >
                     <span className="text-xs font-light text-gray-700 dark:text-gray-300 leading-4 whitespace-nowrap">
                       {suggestion.text}
                     </span>
-                  </div>
-                </button>
+                  </button>
+                </div>
               )
             })}
           </div>
