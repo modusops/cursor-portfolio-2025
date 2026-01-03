@@ -91,13 +91,13 @@ export default function About() {
               <h3 className="text-sm font-medium mt-12 mb-4 text-black dark:text-white transition-colors duration-200">
                 What I do now
               </h3>
-              <p className="text-gray-500 dark:text-gray-400">I'm currently a product designer at LTK leading the chat product on the consumer team. My biggest achievement this year has been picking up SwiftUI and Xcode, both of which I had little prior experience with. I put myself through a 30-day coding challenge and by the end of it, I was shipping code to the company repo, which has been a fun journey. Oh, I also built this entire portfolio with Cursor from scratch. I get the feeling I'm gonna be building a lot more with AI. At the top of my list are a few digital art projects.
+              <p className="text-gray-500 dark:text-gray-400">I'm currently a product designer at LTK leading the chat product on the consumer team. My biggest achievement this year has been picking up SwiftUI and Xcode, both of which I had little prior experience with. I put myself through a 30-day coding challenge and by the end of it, I was shipping code to the company repo, which has been a fun journey. With AI, I built this <a href="https://github.com/modusops/cursor-portfolio-2025" target="_blank" rel="noopener noreferrer" className="text-black dark:text-white underline hover:opacity-80 transition-opacity">entire portfolio</a> with Cursor and <a href="https://www.figma.com/community/plugin/1549162158463427516/layout-quality-assistant" target="_blank" rel="noopener noreferrer" className="text-black dark:text-white underline hover:opacity-80 transition-opacity">this Figma plugin</a> to help designers lint their Figma's.
               </p>
 
               <h3 className="text-sm font-medium mt-12 mb-4 text-black dark:text-white transition-colors duration-200">
                 What great design looks like
               </h3>
-              <p className="text-gray-500 dark:text-gray-400">Great design consists of the following qualities for me: it is well made, aesthetically pleasing, and functionally impressive. A step above great design are the ones that solve problems in intelligent and novel ways while making you feel something.
+              <p className="text-gray-500 dark:text-gray-400">Great designs are intentionally crafted, aesthetically pleasing and easy to use. They give us hope, bring light into our lives, and help people envision a better version of themselves.
               </p>
 
             </div>

@@ -295,6 +295,54 @@ export function ResponseState({
                     </svg>
                     💬 LTK Chat
                   </a>
+                  <a
+                    href="https://www.figma.com/community/plugin/1549162158463427516/layout-quality-assistant"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center bg-gray-100 dark:bg-gray-800 rounded-3xl px-6 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white transition-all duration-200"
+                  >
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      viewBox="0 0 24 24" 
+                      width="20" 
+                      height="20" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      className="mr-3"
+                    >
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                      <polyline points="15 3 21 3 21 9"/>
+                      <line x1="10" x2="21" y1="14" y2="3"/>
+                    </svg>
+                    🔍 Layout Quality Assistant
+                  </a>
+                  <a
+                    href="https://github.com/modusops/cursor-portfolio-2025"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center bg-gray-100 dark:bg-gray-800 rounded-3xl px-6 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white transition-all duration-200"
+                  >
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      viewBox="0 0 24 24" 
+                      width="20" 
+                      height="20" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      className="mr-3"
+                    >
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                      <polyline points="15 3 21 3 21 9"/>
+                      <line x1="10" x2="21" y1="14" y2="3"/>
+                    </svg>
+                    🧑‍💻 Github Repository
+                  </a>
                 </div>
               )}
             </>

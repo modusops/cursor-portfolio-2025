@@ -19,11 +19,11 @@ export interface Prompt {
 }
 
 const allSuggestions: Prompt[] = [
-  { id: "tell-me-about-yourself", text: "( 1 ) Tell me about yourself." },
+  { id: "tell-me-about-yourself", text: "( 1 ) Tell me about yourself" },
   { id: "what-are-you-working-on", text: "( 2 ) What are you working on now?" },
   { id: "can-i-see-your-resume", text: "( 3 ) Can I see your resume?" },
-  { id: "examples-of-work", text: "( 4 ) Let's see some examples of your work." },
-  { id: "exit-chat", text: "( 5 ) Restart Chat" },
+  { id: "examples-of-work", text: "( 4 ) Let's see some examples of your work" },
+  { id: "exit-chat", text: "( 5 ) Restart chat" },
 ]
 
 export default function ChatPage() {
