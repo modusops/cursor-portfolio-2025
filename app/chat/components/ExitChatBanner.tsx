@@ -1,10 +1,12 @@
 "use client"
 
 import Link from "next/link"
-import { useRef, useEffect } from "react"
+import { useRouter } from "next/navigation"
+import { useRef, useEffect, useCallback } from "react"
 
 export function ExitChatBanner() {
   const audioRef = useRef<HTMLAudioElement | null>(null)
+  const router = useRouter()
 
   // Initialize audio
   useEffect(() => {
@@ -22,7 +24,7 @@ export function ExitChatBanner() {
     }
   }, [])
 
-  const handleClick = () => {
+  const handleExit = useCallback(() => {
     if (audioRef.current) {
       // Clone the audio to allow overlapping plays
       const audioClone = audioRef.current.cloneNode() as HTMLAudioElement
@@ -32,7 +34,22 @@ export function ExitChatBanner() {
         console.log("Glitch audio play failed:", error)
       })
     }
-  }
+    router.push("/")
+  }, [router])
+
+  // Handle ESC key press
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        handleExit()
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown)
+    }
+  }, [handleExit])
 
   return (
     <div className="flex items-center gap-3 mt-4">
@@ -41,10 +58,10 @@ export function ExitChatBanner() {
       </p> */}
       <Link
         href="/"
-        onClick={handleClick}
+        onClick={handleExit}
         className="text-xs text-white dark:text-white leading-5 underline decoration-solid whitespace-nowrap hover:text-gray-200 dark:hover:text-gray-200 transition-colors"
       >
-        Exit chat mode
+        [ESC] Exit chat mode
       </Link>
     </div>
   )
