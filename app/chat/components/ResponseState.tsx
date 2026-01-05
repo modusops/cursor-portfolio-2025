@@ -5,6 +5,7 @@ import { Prompt, SuggestionId } from "../page"
 import { responses } from "../data/responses"
 import { PromptButton } from "./PromptButton"
 import { TypewriterText } from "../../components/TypewriterText"
+import { ChatBetaHeader } from "./ChatBetaHeader"
 
 interface ResponseStateProps {
   prompts: Prompt[]
@@ -129,6 +130,9 @@ export function ResponseState({
 
   return (
     <div className="flex flex-col h-[612px] md:min-h-[80vh] w-full overflow-y-auto chat-scrollbar">
+      {/* Beta Header */}
+      <ChatBetaHeader />
+
       {/* Sticky Prompt Bar */}
       <div className="sticky top-0 z-10 py-0 w-full">
         <div className="py-0 w-full">

@@ -52,16 +52,19 @@ export function ExitChatBanner() {
   }, [handleExit])
 
   return (
-    <div className="flex items-center gap-3 mt-4">
+    <div className="flex items-center gap-[2px] mt-4">
       {/* <p className="text-xs text-gray-400 dark:text-gray-400 leading-5 whitespace-nowrap">
         Go back to standard view
       </p> */}
+      <span className="text-xs text-gray-400 dark:text-gray-400 leading-5 whitespace-nowrap">
+        [ESC]
+      </span>
       <Link
         href="/"
         onClick={handleExit}
-        className="text-xs text-white dark:text-white leading-5 underline decoration-solid whitespace-nowrap hover:text-gray-200 dark:hover:text-gray-200 transition-colors"
+        className="text-xs text-gray-400 dark:text-gray-400 leading-5 underline decoration-solid whitespace-nowrap hover:text-white dark:hover:text-white transition-colors"
       >
-        [ESC] Exit chat mode
+        Exit chat mode
       </Link>
     </div>
   )

@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react"
 import { Prompt, SuggestionId } from "../page"
 import { TypewriterText } from "../../components/TypewriterText"
+import { ChatBetaHeader } from "./ChatBetaHeader"
 
 interface WelcomeStateProps {
   suggestions: Prompt[]
@@ -21,6 +22,8 @@ export function WelcomeState({ suggestions, onSuggestionSelect }: WelcomeStatePr
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const scrollAudioRef = useRef<HTMLAudioElement | null>(null)
   const [isTypewriterComplete, setIsTypewriterComplete] = useState(false)
+  const [hasUserInteracted, setHasUserInteracted] = useState(false)
+  const pendingScrollAudio = useRef(false)
 
   // Initialize bong audio with preload
   useEffect(() => {
@@ -38,6 +41,32 @@ export function WelcomeState({ suggestions, onSuggestionSelect }: WelcomeStatePr
     }
   }, [])
 
+  // Detect user interaction to enable audio
+  useEffect(() => {
+    const handleInteraction = () => {
+      setHasUserInteracted(true)
+      // If audio was pending, try to play it now
+      if (pendingScrollAudio.current && scrollAudioRef.current) {
+        scrollAudioRef.current.play().catch((error) => {
+          console.log("Scroll audio play failed after interaction:", error)
+        })
+        pendingScrollAudio.current = false
+      }
+    }
+
+    // Listen for any user interaction
+    const events = ['click', 'keydown', 'touchstart']
+    events.forEach(event => {
+      window.addEventListener(event, handleInteraction, { once: true })
+    })
+
+    return () => {
+      events.forEach(event => {
+        window.removeEventListener(event, handleInteraction)
+      })
+    }
+  }, [])
+
   // Initialize scroll audio with preload and loop
   useEffect(() => {
     const scrollAudio = new Audio("/scroll_001.ogg")
@@ -45,15 +74,15 @@ export function WelcomeState({ suggestions, onSuggestionSelect }: WelcomeStatePr
     scrollAudio.volume = 1.0
     scrollAudio.loop = true
     scrollAudioRef.current = scrollAudio
-    
+
     // Load the audio
     scrollAudio.load()
-    
+
     // Ensure audio is ready
     scrollAudio.addEventListener('canplaythrough', () => {
       // Audio is ready to play
     }, { once: true })
-    
+
     return () => {
       if (scrollAudioRef.current) {
         scrollAudioRef.current.pause()
@@ -85,32 +114,29 @@ export function WelcomeState({ suggestions, onSuggestionSelect }: WelcomeStatePr
   const startScrollAudio = useCallback(() => {
     if (scrollAudioRef.current) {
       const audio = scrollAudioRef.current
-      
+
       // Reset to start
       audio.currentTime = 0
-      
-      // Try to play
-      const playPromise = audio.play()
-      
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            // Audio started successfully
-          })
-          .catch((error) => {
-            // If autoplay is blocked, try again after a short delay
-            console.log("Scroll audio play failed, retrying:", error)
-            setTimeout(() => {
-              if (scrollAudioRef.current) {
-                scrollAudioRef.current.play().catch((err) => {
-                  console.log("Scroll audio retry failed:", err)
-                })
-              }
-            }, 100)
-          })
+
+      // Only try to play if user has interacted
+      if (hasUserInteracted) {
+        const playPromise = audio.play()
+
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              // Audio started successfully
+            })
+            .catch((error) => {
+              console.log("Scroll audio play failed:", error)
+            })
+        }
+      } else {
+        // Mark audio as pending to play after user interaction
+        pendingScrollAudio.current = true
       }
     }
-  }, [])
+  }, [hasUserInteracted])
 
   // Stop scroll audio loop
   const stopScrollAudio = () => {
@@ -154,6 +180,9 @@ export function WelcomeState({ suggestions, onSuggestionSelect }: WelcomeStatePr
 
   return (
     <div className="flex flex-col gap-4 items-start w-full h-[612px] md:h-auto overflow-y-auto chat-scrollbar">
+      {/* Beta Header */}
+      <ChatBetaHeader />
+
       {/* Welcome Text */}
       <div className="flex flex-col gap-4 items-start w-full">
         {/* Intro */}
