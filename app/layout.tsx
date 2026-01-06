@@ -66,6 +66,11 @@ export default function RootLayout({
             gtag('config', 'G-YEMXWTK5P2');
           `}
         </Script>
+        {/* Content Square (HotJar) */}
+        <Script
+          src="https://t.contentsquare.net/uxa/28b38949b4108.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body
         className={`${inter.variable} bg-white dark:bg-black text-black dark:text-white transition-colors duration-200`}
