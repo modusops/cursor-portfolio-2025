@@ -52,6 +52,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-YEMXWTK5P2"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YEMXWTK5P2');
+          `}
+        </Script>
+      </head>
       <body
         className={`${inter.variable} bg-white dark:bg-black text-black dark:text-white transition-colors duration-200`}
       >
