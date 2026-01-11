@@ -49,7 +49,7 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
   return (
     <span className={className} style={style}>
       {displayText}
-      {showCursor && <span className="animate-blink">|</span>}
+      {showCursor && <span className="animate-blink"> ▊</span>}
     </span>
   );
 }; 

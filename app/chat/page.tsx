@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import { useTheme } from "next-themes"
 import { WelcomeState } from "./components/WelcomeState"
 import { ResponseState } from "./components/ResponseState"
 import { ExitChatBanner } from "./components/ExitChatBanner"
@@ -33,6 +34,15 @@ export default function ChatPage() {
   const [inputValue, setInputValue] = useState("")
   const [inputError, setInputError] = useState<string | null>(null)
   const selectAudioRef = useRef<HTMLAudioElement | null>(null)
+  const { setTheme } = useTheme()
+
+  // Force dark mode on chat page
+  useEffect(() => {
+    setTheme("dark")
+    // Ensure dark class is applied to html element
+    document.documentElement.classList.add("dark")
+    document.documentElement.setAttribute("data-theme", "dark")
+  }, [setTheme])
 
   // Scroll to top when component mounts
   useEffect(() => {

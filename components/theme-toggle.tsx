@@ -2,16 +2,26 @@
 
 import { useState, useEffect } from "react"
 import { useTheme } from "next-themes"
+import { usePathname } from "next/navigation"
 import { Moon, Sun } from "lucide-react"
 
 export function ThemeToggle() {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
+  const pathname = usePathname()
+
+  // Hide toggle on chat page
+  const isChatPage = pathname === "/chat"
 
   // Avoid hydration mismatch by only rendering after mount
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  // Don't render on chat page
+  if (isChatPage) {
+    return null
+  }
 
   if (!mounted) {
     return (
