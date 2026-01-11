@@ -1054,10 +1054,10 @@ export default function Home() {
           </div>
           <div className="mt-20 mb-10 pb-20 md:pb-0 text-center space-y-3">
             <div className="text-gray-500 dark:text-gray-400 text-sm transition-colors duration-200">
-              © COPYRIGHT 2025 <a href="https://github.com/modusops?tab=overview&from=2025-07-01&to=2025-07-06" target="_blank" rel="noopener noreferrer" className="text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200">Built with Cursor</a>
+              © COPYRIGHT 2026 <a href="https://github.com/modusops?tab=overview&from=2025-07-01&to=2025-07-06" target="_blank" rel="noopener noreferrer" className="text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200">Built with Cursor</a>
             </div>
             <div className="flex justify-center">
-              <span className="inline-flex items-center px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs font-light border border-gray-200 dark:border-gray-700 transition-colors duration-200"><div className="w-2 h-2 rounded-full bg-violet-500 border border-violet-400 mr-2 animate-glow-flicker"></div>Updated November 01, 2025</span>
+              <span className="inline-flex items-center px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs font-light border border-gray-200 dark:border-gray-700 transition-colors duration-200"><div className="w-2 h-2 rounded-full bg-violet-500 border border-violet-400 mr-2 animate-glow-flicker"></div>Updated January 09, 2026</span>
             </div>
           </div>
         </AnimatedContent>

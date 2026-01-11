@@ -21,8 +21,11 @@ const numberToSuggestionId: Record<string, SuggestionId> = {
 export function WelcomeState({ suggestions, onSuggestionSelect }: WelcomeStateProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const scrollAudioRef = useRef<HTMLAudioElement | null>(null)
+  const containerRef = useRef<HTMLDivElement | null>(null)
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const [isTypewriterComplete, setIsTypewriterComplete] = useState(false)
   const [hasUserInteracted, setHasUserInteracted] = useState(false)
+  const [showScrollArrow, setShowScrollArrow] = useState(false)
   const pendingScrollAudio = useRef(false)
 
   // Initialize bong audio with preload
@@ -152,6 +155,71 @@ export function WelcomeState({ suggestions, onSuggestionSelect }: WelcomeStatePr
     setIsTypewriterComplete(true)
   }
 
+  // Check if there's scrollable content below
+  const checkScrollPosition = useCallback(() => {
+    if (containerRef.current) {
+      const { scrollTop, scrollHeight, clientHeight } = containerRef.current
+      // Show arrow if there's content below (with a small threshold to avoid flickering)
+      const hasMoreContent = scrollHeight - scrollTop - clientHeight > 50
+      setShowScrollArrow(hasMoreContent)
+    }
+  }, [])
+
+  // Handle scroll event - hide arrow immediately, then check again after 5 seconds
+  const handleScroll = useCallback(() => {
+    // Hide arrow immediately when scrolling
+    setShowScrollArrow(false)
+
+    // Clear any existing timeout
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current)
+    }
+
+    // Check again after 5 seconds if there's still content below
+    scrollTimeoutRef.current = setTimeout(() => {
+      checkScrollPosition()
+    }, 5000)
+  }, [checkScrollPosition])
+
+  // Monitor scroll position
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container) return
+
+    // Check on mount and when content changes
+    checkScrollPosition()
+
+    // Handle scroll with hide/reappear logic
+    container.addEventListener('scroll', handleScroll)
+    
+    // Check on resize
+    window.addEventListener('resize', checkScrollPosition)
+
+    // Check when typewriter completes (content height changes)
+    if (isTypewriterComplete) {
+      // Small delay to ensure DOM has updated
+      setTimeout(checkScrollPosition, 100)
+    }
+
+    return () => {
+      container.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', checkScrollPosition)
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current)
+      }
+    }
+  }, [checkScrollPosition, handleScroll, isTypewriterComplete])
+
+  // Scroll to bottom handler
+  const scrollToBottom = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollTo({
+        top: containerRef.current.scrollHeight,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   // Keyboard shortcut handler
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
@@ -179,7 +247,10 @@ export function WelcomeState({ suggestions, onSuggestionSelect }: WelcomeStatePr
   }, [suggestions, onSuggestionSelect])
 
   return (
-    <div className="flex flex-col gap-4 items-start w-full h-[612px] md:h-auto overflow-y-auto chat-scrollbar">
+    <div 
+      ref={containerRef}
+      className="flex flex-col gap-4 items-start w-full h-[612px] md:h-auto overflow-y-auto chat-scrollbar relative"
+    >
       {/* Beta Header */}
       <ChatBetaHeader />
 
@@ -199,7 +270,7 @@ export function WelcomeState({ suggestions, onSuggestionSelect }: WelcomeStatePr
           <p className="font-light leading-[28px] text-lg text-gray-400 dark:text-gray-400 w-full">
             <TypewriterText 
               text="Hi! I'm Dave 👋. Nice to meet you. I'm a product designer and builder. What do you wanna know about me?"
-              delay={50}
+              delay={15}
               onStart={startScrollAudio}
               onComplete={handleBodyComplete}
             />
@@ -228,7 +299,7 @@ export function WelcomeState({ suggestions, onSuggestionSelect }: WelcomeStatePr
             {/* Text Button */}
             <button
               onClick={() => handleSuggestionClick(suggestion)}
-              className="bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center p-2.5 rounded-2xl text-left hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 cursor-pointer"
+              className="bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 flex items-center p-2.5 rounded-2xl text-left hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 cursor-pointer"
             >
               <span className="text-xs font-light text-gray-700 dark:text-gray-300 leading-4 whitespace-nowrap">
                 {suggestion.text}
@@ -237,6 +308,30 @@ export function WelcomeState({ suggestions, onSuggestionSelect }: WelcomeStatePr
           </div>
         ))}
         </div>
+      )}
+
+      {/* Scroll Down Arrow */}
+      {showScrollArrow && (
+        <button
+          onClick={scrollToBottom}
+          className="sticky bottom-0.5 left-1/2 -translate-x-1/2 z-50 h-10 w-10 rounded-full backdrop-blur-lg backdrop-saturate-150 backdrop-brightness-110 bg-white/20 dark:bg-gray-800/20 border border-gray-700 dark:border-gray-700 shadow-md flex items-center justify-center transition-all duration-200 hover:scale-110 md:hidden self-center"
+          aria-label="Scroll to bottom"
+        >
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24" 
+            width="20" 
+            height="20" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="2" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+            className="text-gray-300 dark:text-gray-300"
+          >
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
       )}
     </div>
   )
