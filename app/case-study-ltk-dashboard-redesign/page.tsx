@@ -10,6 +10,7 @@ import { Navigation } from '@/app/components/Navigation';
 import { TeamAvatars, type TeamMember } from '@/app/components/TeamAvatars';
 import { ViewportMedia } from '@/app/components/ViewportMedia';
 import { SpotlightCard } from '@/components/spotlight-card';
+import { PasswordGate } from '@/app/components/PasswordGate';
 import { useEffect, useState, useRef } from 'react';
 
 export default function CaseStudyLTKDashboard() {
@@ -173,9 +174,10 @@ export default function CaseStudyLTKDashboard() {
   ];
 
   return (
-    <CaseStudyWrapper>
-      <Navigation hideOnScroll={true} />
-      <div className="min-h-screen bg-white dark:bg-black scroll-smooth pt-32 pb-32 transition-colors duration-200">
+    <PasswordGate projectSlug="case-study-ltk-dashboard-redesign">
+      <CaseStudyWrapper>
+        <Navigation hideOnScroll={true} />
+        <div className="min-h-screen bg-white dark:bg-black scroll-smooth pt-32 pb-32 transition-colors duration-200">
         <Link 
           href="/" 
           className="fixed right-16 top-8 p-2 rounded-full backdrop-blur-lg backdrop-saturate-150 backdrop-brightness-110 bg-white/20 dark:bg-gray-800/20 hover:bg-white/30 dark:hover:bg-gray-800/30 border border-white/30 dark:border-gray-700/30 shadow-lg transition-all duration-200 z-50 hidden"
@@ -635,7 +637,8 @@ export default function CaseStudyLTKDashboard() {
           </AnimatedContent>
         </div>
       </div>
-    </CaseStudyWrapper>
+      </CaseStudyWrapper>
+    </PasswordGate>
   );
 }
 
