@@ -7,6 +7,7 @@ import { AnimatedContent } from '@/components/animated-content';
 import { Navigation } from '@/app/components/Navigation';
 import { AnimatedCounter } from '@/app/components/AnimatedCounter';
 import { SpotlightCard } from '@/components/spotlight-card';
+import { PasswordGate } from '@/app/components/PasswordGate';
 import { useEffect, useState, useRef } from 'react';
 import './image-container.module.css';
 
@@ -94,9 +95,10 @@ export default function NewProjectPageTest11192025() {
     },
   ];
   return (
-    <CaseStudyWrapper>
-      <Navigation hideOnScroll={true} />
-      <div className="lightenProjectPage min-h-screen bg-white dark:bg-black scroll-smooth pt-32 pb-32 transition-colors duration-200">
+    <PasswordGate projectSlug="project-lighten-design">
+      <CaseStudyWrapper>
+        <Navigation hideOnScroll={true} />
+        <div className="lightenProjectPage min-h-screen bg-white dark:bg-black scroll-smooth pt-32 pb-32 transition-colors duration-200">
         <div className="flex flex-col gap-[104px]">
           {/* Hero Section */}
           <AnimatedContent>
@@ -542,7 +544,8 @@ export default function NewProjectPageTest11192025() {
           </AnimatedContent>
         </div>
       </div>
-    </CaseStudyWrapper>
+      </CaseStudyWrapper>
+    </PasswordGate>
   );
 }
 
