@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
 
 // Route segment config for Netlify compatibility
-export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: NextRequest) {
@@ -39,22 +37,22 @@ export async function POST(request: NextRequest) {
     }
 
     if (password === correctPassword) {
-      try {
-        const cookieStore = await cookies();
-        cookieStore.set(`project_access_${projectSlug}`, 'authenticated', {
-          httpOnly: false,
-          secure: process.env.NODE_ENV === 'production',
-          sameSite: 'lax',
-          maxAge: 60 * 60 * 24 * 30,
-          path: '/',
-        });
-        console.log('Cookie set successfully');
-      } catch (cookieError) {
-        console.error('Cookie setting error:', cookieError);
-        // Continue anyway - cookie might still work
-      }
-
-      return NextResponse.json({ success: true });
+      // Use NextResponse to set cookie directly (more reliable on Netlify)
+      const response = NextResponse.json({ success: true });
+      
+      const cookieName = `project_access_${projectSlug}`;
+      const isProduction = process.env.NODE_ENV === 'production';
+      
+      response.cookies.set(cookieName, 'authenticated', {
+        httpOnly: false,
+        secure: isProduction,
+        sameSite: 'lax',
+        maxAge: 60 * 60 * 24 * 30, // 30 days
+        path: '/',
+      });
+      
+      console.log('Cookie set successfully:', cookieName);
+      return response;
     }
 
     console.log('Password mismatch');
@@ -64,8 +62,16 @@ export async function POST(request: NextRequest) {
     );
   } catch (error) {
     console.error('Password verification error:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    const errorStack = error instanceof Error ? error.stack : undefined;
+    console.error('Error stack:', errorStack);
+    
     return NextResponse.json(
-      { success: false, error: 'Internal server error', details: error instanceof Error ? error.message : 'Unknown error' },
+      { 
+        success: false, 
+        error: 'Internal server error', 
+        details: errorMessage 
+      },
       { status: 500 }
     );
   }
