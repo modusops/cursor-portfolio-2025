@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
     if (password === correctPassword) {
       const cookieStore = await cookies();
       cookieStore.set(`project_access_${projectSlug}`, 'authenticated', {
-        httpOnly: true,
+        httpOnly: false,
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'lax',
         maxAge: 60 * 60 * 24 * 30,
