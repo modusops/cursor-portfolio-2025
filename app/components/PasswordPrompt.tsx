@@ -30,16 +30,33 @@ export function PasswordPrompt({ projectSlug, onSuccess }: PasswordPromptProps) 
         body: JSON.stringify({ projectSlug, password }),
       });
 
-      const data = await response.json();
+      // Handle non-JSON responses (like 502 Bad Gateway)
+      if (!response.ok && response.status === 502) {
+        setError(`Server error (502). The API route may not be deployed correctly. Check Netlify logs for: /api/verify-password`);
+        setIsLoading(false);
+        return;
+      }
+
+      let data;
+      try {
+        data = await response.json();
+      } catch (jsonError) {
+        setError(`Server returned invalid response (Status: ${response.status}). Check Netlify function logs.`);
+        setIsLoading(false);
+        return;
+      }
 
       if (data.success) {
         setIsOpen(false);
         onSuccess();
       } else {
-        setError(data.error || 'Incorrect password');
+        const errorMsg = data.error || 'Incorrect password';
+        const details = data.details ? ` (${data.details})` : '';
+        setError(`${errorMsg}${details}`);
       }
     } catch (error) {
-      setError('Failed to verify password. Please try again.');
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      setError(`Network error: ${errorMessage}. Check your connection and try again.`);
     } finally {
       setIsLoading(false);
     }
