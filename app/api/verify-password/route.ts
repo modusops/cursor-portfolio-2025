@@ -3,15 +3,22 @@ import { NextResponse } from 'next/server';
 // Route segment config for Netlify compatibility
 export const dynamic = 'force-dynamic';
 
+// GET handler for testing
+export async function GET() {
+  return NextResponse.json({ 
+    success: true, 
+    message: 'Password verification API is accessible',
+    timestamp: new Date().toISOString()
+  });
+}
+
 export async function POST(request: Request) {
   try {
     console.log('POST /api/verify-password called');
     
     let body;
     try {
-      const text = await request.text();
-      console.log('Request body received');
-      body = JSON.parse(text);
+      body = await request.json();
     } catch (jsonError) {
       console.error('JSON parse error:', jsonError);
       return NextResponse.json(
