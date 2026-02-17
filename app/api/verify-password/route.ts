@@ -1,12 +1,27 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 // Route segment config for Netlify compatibility
 export const dynamic = 'force-dynamic';
 
-export async function POST(request: NextRequest) {
+export async function POST(request: Request) {
+  // Immediate response to test if route is reachable
+  console.log('POST /api/verify-password called');
+  
+  let body;
   try {
-    const body = await request.json();
-    const { projectSlug, password } = body;
+    const text = await request.text();
+    console.log('Request body text:', text);
+    body = JSON.parse(text);
+  } catch (jsonError) {
+    console.error('JSON parse error:', jsonError);
+    return NextResponse.json(
+      { success: false, error: 'Invalid request body', details: jsonError instanceof Error ? jsonError.message : 'Unknown' },
+      { status: 400 }
+    );
+  }
+
+  try {
+    const { projectSlug, password } = body || {};
 
     if (!projectSlug || !password) {
       console.error('Missing fields:', { projectSlug: !!projectSlug, password: !!password });
